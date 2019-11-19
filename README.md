@@ -1,3 +1,25 @@
+# Git Bash
+1. Make sure you are in your directory
+
+```
+<!-- git bash ui --!>
+/custlrwa (your name)
+$
+```
+
+2. Committing and Pushing
+
+```
+git add .
+git commit -m "insert description of changes made"
+git push
+```
+3. Check branch is up to date
+
+```
+git status
+```
+
 # custlrwa
 Custlr Web Application
 
@@ -7,6 +29,8 @@ The basic idea is to create something similar to Booking.com, where a web/mobile
 
 # Frontend
 **Hariz, Hanis, Nooh**
+
+We will start our frontend development using **src boighor** by using their default vanilla javascript and html5. We will customise the template as minimalistic as possible
 
 *To-Do*
 
