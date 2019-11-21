@@ -1,0 +1,67 @@
+{ "international_sizes" : [
+    { "product_name" : "black t-shirt", 
+        "sizing" : "L",
+        "price" :  "25.00",
+        "currency" : "MYR",
+        "brand" : "Adidas", 
+        "image_url" : "https://5.imimg.com/data5/YF/YS/MY/SELLER-87288473/supima-cotton-t-shirts-250x250.jpg"
+    },
+    { "product_name" : "black polo shirt", 
+        "sizing" : "L", 
+        "price" :  "24.99", 
+        "currency" : "MYR", 
+        "brand" : "Nike", 
+        "image_url" : "https://www.bigw.com.au/medias/sys_master/images/images/h8a/ha2/11857393385502.jpg"
+    },
+    { "product_name" : "black shirt", 
+        "sizing" : "L", 
+        "price" :  "29.99", 
+        "currency" : "MYR", 
+        "brand" : "Puma", 
+        "image_url" : "https://rukminim1.flixcart.com/image/714/857/ju1jqfk0/shirt/t/g/w/xxl-cc201-2-dennis-lingo-original-imaff8g2yzbrztfh.jpeg?q=50"
+    }],
+  "user_sizing" : [
+    { "product_name" : "black t-shirt", 
+        "sizing" : {
+            "chest": "41\"",
+            "waist": "34\"",
+            "sleeve_length": "25\"",
+            "shoulder": "18\"",
+            "neck": "16\"",
+            "arm_size" : "13.5\""
+        },
+        "price" :  "25.00",
+        "currency" : "MYR",
+        "brand" : "Adidas", 
+        "image_url" : "https://5.imimg.com/data5/YF/YS/MY/SELLER-87288473/supima-cotton-t-shirts-250x250.jpg"
+    },
+    { "product_name" : "black polo shirt", 
+        "sizing" : {
+            "chest": "41\"",
+            "waist": "34\"",
+            "sleeve_length": "25\"",
+            "shoulder": "18\"",
+            "neck": "16\"",
+            "arm_size" : "13.5\""
+        }, 
+        "price" :  "24.99", 
+        "currency" : "MYR", 
+        "brand" : "Nike", 
+        "image_url" : "https://www.bigw.com.au/medias/sys_master/images/images/h8a/ha2/11857393385502.jpg"
+    },
+    { "product_name" : "black shirt", 
+        "sizing" : {
+            "chest": "41\"",
+            "waist": "34\"",
+            "sleeve_length": "25\"",
+            "shoulder": "18\"",
+            "neck": "16\"",
+            "arm_size" : "13.5\""
+        }, 
+        "price" :  "29.99", 
+        "currency" : "MYR", 
+        "brand" : "Puma", 
+        "image_url" : "https://rukminim1.flixcart.com/image/714/857/ju1jqfk0/shirt/t/g/w/xxl-cc201-2-dennis-lingo-original-imaff8g2yzbrztfh.jpeg?q=50"
+    }
+    ]
+}
