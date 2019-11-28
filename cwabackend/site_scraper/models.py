@@ -19,7 +19,14 @@ class ScrapedResult(models.Model):
 
 class ScrapedCustomResult(models.Model):
     product_name = models.TextField(null = True)
-    #sizing = #still figuring out how to create a custom field for sizing
+    #sizing will no longer be a single field for custom result search, as the logic for that is too much of a hassle when dealing with NoSQL and Django Fields
+    chest_size = models.FloatField(null = True)
+    waist_size = models.FloatField(null = True)
+    sleeve_length = models.FloatField(null = True)
+    shoulder_size = models.FloatField(null = True)
+    neck_size = models.FloatField(null = True)
+    arm_size = models.FloatField(null = True)
+    
     price = models.FloatField(null = True)
     currency = models.CharField(null = True, max_length = 3) #currency like USD, MYR, JPY, THB, etc.
     brand = models.CharField(null = True, max_length = 50)
