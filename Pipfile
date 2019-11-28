@@ -10,6 +10,7 @@ pylint = "*"
 beautifulsoup4 = "*"
 django = "*"
 djangorestframework = "*"
+pyrebase = "*"
 
 [requires]
 python_version = "3.7"
