@@ -1,2 +1,6 @@
 .vscode/
 __pycache__/
+
+#DO NOT REMOVE THIS PLEASE
+.env
+#DO NOT REMOVE THIS PLEASE
