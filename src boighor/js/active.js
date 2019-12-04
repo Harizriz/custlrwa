@@ -79,8 +79,8 @@
                     sticky_menu.addClass('is-sticky');
                   } else {
                     sticky_menu.removeClass('is-sticky');
-                  }
-            });
+                  } 
+            }); 
           }
         });
     }
