@@ -55,7 +55,7 @@ To check what packages are installed right now, run "pipenv run pip freeze"
 - astroid==2.3.3
 - beautifulsoup4==4.8.1
 - colorama==0.4.1
-- Django==2.2.7
+- Django==2.2.9
 - djangorestframework==3.10.3
 - isort==4.3.21
 - lazy-object-proxy==1.4.3
