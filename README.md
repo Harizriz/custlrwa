@@ -44,8 +44,8 @@ The server is going to be hosted on a uni-provided URL, and HTTP requests will b
 ## Getting Started With Backend
 
 *Make sure you have these installed:*
-- python (3.7+)
-- pip 
+- python (3.7+, currently 3.7.6 64-bit)
+- pip
 - pipenv
 
 Run "pipenv install", and all dependencies for the project itself will be added in.
