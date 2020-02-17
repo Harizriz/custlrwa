@@ -8826,3 +8826,11 @@ Footer Styles
         padding-bottom: 60px;
     }
 }
+
+/* modal box vertical centered */
+
+.modal-dialog {
+    transform: translate(0, -50%);
+    top: 40%;
+    margin: 0 auto;
+}
