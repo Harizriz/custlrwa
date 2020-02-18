@@ -27,4 +27,22 @@ https://uqmy-media.s3.amazonaws.com/json/423189.json
 
 ==================================================
 
+Women, shirts & blouses
+https://www2.hm.com/en_asia4/ladies/shop-by-product/shirts-and-blouses/_jcr_content/main/productlisting.display.json?offset=0&page-size=36
+
+Men, shirts
+https://www2.hm.com/en_asia4/men/shop-by-product/shirts/_jcr_content/main/productlisting.display.json?offset=0&page-size=36
+
+Change offset & page size, offset has to be multiples of page size
+
+==================================================
+
+Women, shirts & tops
+https://www.zara.com/my/en/woman-shirts-l1217.html?ajax=true
+
+Men, shirts
+https://www.zara.com/my/en/man-shirts-l737.html?ajax=true
+
+==================================================
+
 https://medium.com/python-pandemonium/6-things-to-develop-an-efficient-web-scraper-in-python-1dffa688793c
