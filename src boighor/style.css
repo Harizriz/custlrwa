@@ -8833,6 +8833,6 @@ Footer Styles
 
 .modal-dialog {
     transform: translate(0, -50%);
-    top: 40%;
+    top: 20%;
     margin: 0 auto;
 }
