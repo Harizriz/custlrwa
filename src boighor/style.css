@@ -3934,10 +3934,17 @@ Product Styles
 .modal-dialog.modal__container {
     max-width: 1170px;
     background: #fff;
+    position: absolute;
 }
 
 .modal-product {
     display: flex;
+}
+
+body.modal-open {
+    height: 100vh;
+    overflow-y: hidden;
+    padding-right: 15px;
 }
 
 .product-images {
