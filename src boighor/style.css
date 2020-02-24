@@ -3927,14 +3927,9 @@ Product Styles
     z-index: 9956748;
 }
 
-/* .table table-hover{
-    table-layout: auto;
-    width: 100%; 
-} */
-
 .modal-body {
     padding: 20px;
-    width:90%;
+    width:104%;
 }
 
 .modal-dialog.modal__container {
