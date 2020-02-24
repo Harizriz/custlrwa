@@ -3929,15 +3929,23 @@ Product Styles
 
 .modal-body {
     padding: 20px;
+    width:104%;
 }
 
 .modal-dialog.modal__container {
     max-width: 1170px;
     background: #fff;
+    position: absolute;
 }
 
 .modal-product {
     display: flex;
+}
+
+body.modal-open {
+    height: 100vh;
+    overflow-y: hidden;
+    padding-right: 15px;
 }
 
 .product-images {
@@ -8836,3 +8844,29 @@ Footer Styles
     top: 20%;
     margin: 0 auto;
 }
+
+.xl75:hover{
+    font-size: 0;
+}
+
+.xl75:hover:after{
+  content: attr(data-hover);
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 600;
+  color: blue;
+}
+
+.xl73:hover{
+    font-size: 0;
+}
+
+.xl73:hover:after{
+  content: attr(data-hover);
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 600;
+  color: blue;
+}
+
+
