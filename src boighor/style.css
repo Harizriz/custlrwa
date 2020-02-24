@@ -6860,11 +6860,11 @@ Portfolio Styles
     visibility: visible;
 }
 
-/* .masonry__wrap {
-    margin: 0;
+.masonry__wrap {
     top: 50%;
-    position: absolute;
-} */
+    margin-left: auto;
+    margin-right: auto;
+}
 
 @media only screen and (max-width: 767px) {
     .portfolio .thumb .link a i {
@@ -6872,10 +6872,10 @@ Portfolio Styles
         line-height: 34px;
         width: 40px;
     }
-    /* .masonry__wrap {
+    .masonry__wrap {
         margin-left: 0px;
         margin-right: 0px;
-    } */
+    }
 }
 
 
