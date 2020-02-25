@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>My Account | Login</title>
+    <title>My Account | Sign Up</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,15 +24,62 @@
 
     <!-- Cusom css -->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Modernizer js -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
+<style>
+    body {
+        font-family: Arial;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    form.example input[type=text] {
+        padding: 5px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 60%;
+        background: #f1f1f1;
+        margin-left: 0px;
+    }
+    
+    form.example button {
+        float: left;
+        width: 20%;
+        padding: 5px;
+        background: rgb(236, 255, 60);
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+    }
+    
+    form.example button:hover {
+        background: #0b7dda;
+    }
+    
+    form.example::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
 
 <body>
     <!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-	<![endif]-->
+    <![endif]
+<--*******************   Search box   ********************--
+<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Search.." name="search2">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>-->
 
     <!-- Main wrapper -->
     <div class="wrapper" id="wrapper">
@@ -159,12 +206,10 @@
                     </div>
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <li class="shop_search">
-                                <a class="search__active" href="#"></a>
-                            </li>
                             <li class="wishlist">
                                 <a href="#"></a>
                             </li>
+
                             <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
@@ -362,19 +407,6 @@
         </header>
         <!-- //Header -->
         <!-- Start Search Popup -->
-        <div class="box-search-content search_active block-bg close__top">
-            <form id="search_mini_form" class="minisearch" action="#">
-                <div class="field__search">
-                    <input type="text" placeholder="Search entire store here...">
-                    <div class="action">
-                        <a href="#"><i class="zmdi zmdi-search"></i></a>
-                    </div>
-                </div>
-            </form>
-            <div class="close__wrap">
-                <span>close</span>
-            </div>
-        </div>
         <!-- End Search Popup -->
         <!-- Start Bradcaump area -->
         <br>
@@ -387,50 +419,26 @@
             <div class="container">
                 <div class="col-lg-6 col-12"></div>
                 <div class="my__account__wrapper">
-                    <h3 class="account__title">Login</h3>
+                    <h3 class="account__title">Sign Up</h3>
                     <form action="#">
                         <div class="account__form">
                             <div class="input__box">
-                                <label>Username or email address <span>*</span></label>
-                                <input type="text">
+                                <label>email address <span>*</span></label>
+                                <input type="email">
                             </div>
                             <div class="input__box">
                                 <label>Password<span>*</span></label>
-                                <input type="text">
+                                <input type="password">
                             </div>
                             <div class="form__btn">
-                                <button>Login</button>
-                                <label class="label-for-checkbox">
-											<input id="rememberme" class="input-checkbox" name="rememberme" value="forever" type="checkbox">
-											<span>Remember me</span>
-										</label>
+                                <button>Sign Up</button>
                             </div>
-                            <a class="forget_pass" href="#">Forgot your password?</a>
-                            <a class="forget_pass" href="#">Dont have an account? Sign Up</a>
+                            <a class="forget_pass" href="#">Already have an account? Login</a>
                         </div>
                     </form>
                 </div>
             </div>
-            <!-- <div class="col-lg-6 col-12">
-                        <div class="my__account__wrapper">
-                            <h3 class="account__title">Register</h3>
-                            <form action="#">
-                                <div class="account__form">
-                                    <div class="input__box">
-                                        <label>Email address <span>*</span></label>
-                                        <input type="email">
-                                    </div>
-                                    <div class="input__box">
-                                        <label>Password<span>*</span></label>
-                                        <input type="password">
-                                    </div>
-                                    <div class="form__btn">
-                                        <button>Register</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>-->
+
     </div>
     </section>
     <!-- End My Account Area -->

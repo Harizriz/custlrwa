@@ -7301,6 +7301,7 @@ MyAccount Styles
     font-size: 28px;
     font-weight: 600;
     margin: 0 0 5px;
+    margin-left: 200px;
 }
 
 .account__form {
@@ -7309,6 +7310,18 @@ MyAccount Styles
     margin: 2em 0;
     padding: 20px;
     text-align: left;
+    margin-right: 250px;
+    margin-left: 200px;
+}
+
+@media screen and (max-width: 600px) {
+    .account__form,
+    .account__title,
+    input[type=submit] {
+        margin-top: 0px;
+        margin-left: 0;
+        margin-right: 0px;
+    }
 }
 
 .account__form .input__box {
@@ -8836,6 +8849,7 @@ Footer Styles
         padding-bottom: 60px;
     }
 }
+
 
 /* modal box vertical centered */
 
