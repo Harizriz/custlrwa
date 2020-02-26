@@ -25,7 +25,11 @@ SECRET_KEY = ')!+0ktp@boe$e10&fz7tc1r(gawmm0hgq3j#9y4-$e+b$v6gdr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0'
+                , '127.0.0.1'
+                , 'localhost'
+                , 'custlrwa.ddns.net'
+                ]
 
 
 # Application definition
