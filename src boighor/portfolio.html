@@ -33,24 +33,48 @@
         padding: 50px;
         background-color: black;
         transition: transform .2s;
-        width: 300px;
+        width: 350px;
         height: 600px;
+        margin-left: 30px;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .zoom,
+        input[type=submit] {
+            margin-left: 10px;
+        }
     }
     
     .zoom2 {
         padding: 50px;
         background-color: black;
         transition: transform .2s;
-        width: 300px;
+        width: 350px;
         height: 600px;
+        margin-left: 60px;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .zoom2,
+        input[type=submit] {
+            margin-left: 10px;
+        }
     }
     
     .zoom3 {
         padding: 50px;
         background-color: black;
         transition: transform .2s;
-        width: 300px;
+        width: 350px;
         height: 600px;
+        margin-left: 90px;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .zoom3,
+        input[type=submit] {
+            margin-left: 5px;
+        }
     }
     
     .zoom:hover {
@@ -443,7 +467,7 @@
         </div>
         <-- End Bradcaump area -->
         <!-- Start Portfolio Area -->
-        <section class="wn__portfolio__area gallery__masonry__activation bg--white ml-5 pl-5">
+        <section class="wn__portfolio__area gallery__masonry__activation bg--white mt--40 pb--100">
             <!-- <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -457,56 +481,54 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="row justify-content-center">
-                            <!-- Start Single Portfolio -->
-                        <div class="col-sm-3 gallery__item mt-5 mb-5" style="margin-right: 140px">
-                            <div class="portfolio">
-                                <div class="thumb">
-                                    <a href="index-men.html" class="button">
-                                        <div class="zoom">
-                                            <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                                <b>MEN</b>
-                                            </p>
-                                        </div>
-                                    </a>
+            <div class="row masonry__wrap">
+                <!-- Start Single Portfolio -->
+                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--1">
+                    <div class="portfolio">
+                        <div class="thumb">
+                            <a href="LowerBody.html" class="button">
+                                <div class="zoom">
+                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
+                                        <b>MEN</b>
+                                    </p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <!-- End Single Portfolio -->
-                        <!-- Start Single Portfolio -->
-                        <div class="col-sm-3 gallery__item mt-5 mb-5" style="margin-right: 140px">
-                            <div class="portfolio">
-                                <div class="thumb">
-                                    <a href="index-women.html" class="button">
-                                        <div class="zoom">
-                                            <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                                <b>WOMEN</b>
-                                            </p>
-                                        </div>
-                                    </a>
-        
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Portfolio -->
-                        <!-- Start Single Portfolio -->
-                        <div class="col-sm-3 gallery__item mt-5 mb-5" style="margin-right: 140px">
-                            <div class="portfolio">
-                                <div class="thumb">
-                                    <a href="index-kids.html" class="button">
-                                        <div class="zoom">
-                                            <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                                <b>KIDS</b>
-                                            </p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Portfolio -->
                     </div>
-                        
+                </div>
+                <!-- End Single Portfolio -->
+                <!-- Start Single Portfolio -->
+                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--2">
+                    <div class="portfolio">
+                        <div class="thumb">
+                            <a href="UpperBody.html" class="button">
+                                <div class="zoom2">
+                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
+                                        <b>WOMEN</b>
+                                    </p>
+                                </div>
+                            </a>
 
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Portfolio -->
+                <!-- Start Single Portfolio -->
+                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--3">
+                    <div class="portfolio">
+                        <div class="thumb">
+                            <a href="team.html" class="button">
+                                <div class="zoom3">
+                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
+                                        <b>KIDS</b>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Portfolio -->
+            </div>
     </div>
     </section>
     <!-- End Portfolio Area -->
