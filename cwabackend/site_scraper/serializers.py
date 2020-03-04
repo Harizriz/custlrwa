@@ -24,7 +24,7 @@ class SizingSerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductPage
-        fields = ('product_name', 'currency', 'price', 'images_id', 'product_description', 'reviews_id', 'original_site')
+        fields = ('product_name', 'product_id', 'currency', 'price', 'product_description', 'original_site')
 
 class ImageListSerializer(serializers.ModelSerializer):
     class Meta:
