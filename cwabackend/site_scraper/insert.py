@@ -17,7 +17,7 @@ cursor = connection.cursor()
 
 tableName = 'site_scraper_scrapedresult'
 
-sql = 'INSERT INTO `' + tableName + '` (`product_name`, `sizing`, `price`, `currency`, `brand`, `image_url`) VALUES (%s, %s, %s, %s, %s, %s)'
+sql = "INSERT INTO " + tableName + " (product_name, sizing, price, currency, brand, image_url) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')"
 
 for i in range(len(jsonObj['response']['docs'])):
     product_name = jsonObj['response']['docs'][i]['meta']['name']
@@ -29,6 +29,6 @@ for i in range(len(jsonObj['response']['docs'])):
     brand = jsonObj['response']['docs'][i]['meta']['brand']
     image_url = jsonObj['response']['docs'][i]['image']
     # print(sql)
-    cursor.execute(sql, (product_name, sizing[0], price, currency, brand, image_url))
+    cursor.execute(sql % (product_name, sizing[0], price, currency, brand, image_url))
 
 connection.commit()
