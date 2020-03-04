@@ -19,7 +19,7 @@ class ScrapedCustomResultSerialzer(serializers.ModelSerializer):
 class SizingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sizing
-        fields = ('code', 'description')
+        fields = ('product_id', 'description')
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
