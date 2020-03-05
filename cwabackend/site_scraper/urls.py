@@ -11,7 +11,6 @@ router.register('Sizing', views.SizingView)
 urlpatterns = [
     # path('', include(router.urls)),
     path('scraped/', views.ScrapedResultAPIView.as_view()),
-    path('page/', views.ProductPageAPIView.as_view()),
     path('images/', views.ImageListAPIView.as_view()),
     path('reviews/', views.ReviewsAPIView.as_view())
 ]

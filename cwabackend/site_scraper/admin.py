@@ -5,6 +5,5 @@ from .models import ScrapedResult, ScrapedCustomResult, Sizing, ProductPage, Ima
 admin.site.register(Sizing)
 admin.site.register(ScrapedResult)
 admin.site.register(ScrapedCustomResult)
-admin.site.register(ProductPage)
 admin.site.register(ImageUrl)
 admin.site.register(Reviews)

@@ -1,14 +1,10 @@
 from django.shortcuts import render
 from rest_framework import viewsets, filters, generics
 from .models import ScrapedCustomResult, ScrapedResult, Sizing, ProductPage, ImageUrl, Reviews
-from .serializers import ScrapedResultSerializer, ScrapedCustomResultSerialzer, SizingSerializer, ProductSerializer, ImageListSerializer, ReviewsSerializer
-
-# class StoredResultView(viewsets.ModelViewSet):
-#     queryset = StoredResult.objects.all()
-#     serializer_class = StoredResultSeralizer
+from .serializers import ScrapedResultSerializer, ScrapedCustomResultSerialzer, SizingSerializer, ImageListSerializer, ReviewsSerializer
 
 class ScrapedResultAPIView(generics.ListCreateAPIView):
-    search_fields = ['product_name', 'brand']
+    search_fields = ['product_name', 'brand', 'product_description']
     filter_backends = (filters.SearchFilter, filters.OrderingFilter,)
     queryset = ScrapedResult.objects.all()
     serializer_class = ScrapedResultSerializer
@@ -20,12 +16,6 @@ class ScrapedCustomResultView(viewsets.ModelViewSet):
 class SizingView(viewsets.ModelViewSet):
     queryset = Sizing.objects.all()
     serializer_class = SizingSerializer
-
-class ProductPageAPIView(generics.ListCreateAPIView):
-    search_fields = ['product_name']
-    filter_backends = (filters.SearchFilter,)
-    queryset = ProductPage.objects.all()
-    serializer_class = ProductSerializer
 
 class ImageListAPIView(generics.ListCreateAPIView):
     search_fields = ['product_id']

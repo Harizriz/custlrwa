@@ -1,15 +1,10 @@
 from rest_framework import serializers
 from .models import ScrapedResult, ScrapedCustomResult, Sizing, ProductPage, ImageUrl, Reviews
 
-# class StoredResultSeralizer(serializers.ModelSerializer):
-#     class Meta:
-#         model = StoredResult
-#         fields = ('id', 'product_name', 'sizing', 'price', 'currency', 'brand', 'image_url')
-
 class ScrapedResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = ScrapedResult
-        fields = ('id', 'product_name', 'sizing', 'price', 'currency', 'brand', 'image_url')
+        fields = ('id', 'product_name', 'sizing', 'price', 'currency', 'brand', 'image_url', 'product_description', 'original_site')
 
 class ScrapedCustomResultSerialzer(serializers.ModelSerializer):
     class Meta:
@@ -20,11 +15,6 @@ class SizingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sizing
         fields = ('product_id', 'description')
-
-class ProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ProductPage
-        fields = ('product_name', 'product_id', 'currency', 'price', 'product_description', 'original_site')
 
 class ImageListSerializer(serializers.ModelSerializer):
     class Meta:
