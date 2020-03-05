@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets, filters, generics
-from .models import ScrapedCustomResult, ScrapedResult, Sizing, ProductPage, ImageUrl, Reviews
+from .models import ScrapedCustomResult, ScrapedResult, Sizing, ImageUrl, Reviews
 from .serializers import ScrapedResultSerializer, ScrapedCustomResultSerialzer, SizingSerializer, ImageListSerializer, ReviewsSerializer
 
 class ScrapedResultAPIView(generics.ListCreateAPIView):

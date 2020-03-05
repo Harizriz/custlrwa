@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ScrapedResult, ScrapedCustomResult, Sizing, ProductPage, ImageUrl, Reviews
+from .models import ScrapedResult, ScrapedCustomResult, Sizing, ImageUrl, Reviews
 # Register your models here.
 # admin.site.register(StoredResult)
 admin.site.register(Sizing)

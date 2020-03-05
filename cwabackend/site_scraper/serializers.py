@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ScrapedResult, ScrapedCustomResult, Sizing, ProductPage, ImageUrl, Reviews
+from .models import ScrapedResult, ScrapedCustomResult, Sizing, ImageUrl, Reviews
 
 class ScrapedResultSerializer(serializers.ModelSerializer):
     class Meta:
