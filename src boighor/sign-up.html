@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>FITTR</title>
+    <title>My Account | Sign Up</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,9 +13,9 @@
     <link rel="apple-touch-icon" href="images/icon.png">
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -24,95 +24,65 @@
 
     <!-- Cusom css -->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Modernizer js -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <style>
-    .zoom {
-        padding: 50px;
-        background-color: black;
-        transition: transform .2s;
-        width: 350px;
-        height: 600px;
-        margin-left: 30px;
+    body {
+        font-family: Arial;
     }
     
-    @media screen and (max-width: 600px) {
-        .zoom,
-        input[type=submit] {
-            margin-left: 10px;
-        }
+    * {
+        box-sizing: border-box;
     }
     
-    .zoom2 {
-        padding: 50px;
-        background-color: black;
-        transition: transform .2s;
-        width: 350px;
-        height: 600px;
-        margin-left: 80px;
+    form.example input[type=text] {
+        padding: 5px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 60%;
+        background: #f1f1f1;
+        margin-left: 0px;
     }
     
-    @media screen and (max-width: 600px) {
-        .zoom2,
-        input[type=submit] {
-            margin-left: 10px;
-        }
-    }
-    
-    .zoom3 {
-        padding: 50px;
-        background-color: black;
-        transition: transform .2s;
-        width: 350px;
-        height: 600px;
-        margin-left: 120px;
-    }
-    
-    @media screen and (max-width: 600px) {
-        .zoom3,
-        input[type=submit] {
-            margin-left: 5px;
-        }
-    }
-    
-    .zoom:hover {
-        -ms-transform: scale(1.5);
-        /* IE 9 */
-        -webkit-transform: scale(1.5);
-        /* Safari 3-8 */
-        transform: scale(1.07);
-    }
-    
-    .zoom2:hover {
-        -ms-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        transform: scale(1.07);
-    }
-    
-    .zoom3:hover {
-        -ms-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        transform: scale(1.07);
-    }
-    
-    .button {
-        background-color: rgb(255, 255, 255);
-        border: none;
-        text-decoration: none;
+    form.example button {
+        float: left;
+        width: 20%;
+        padding: 5px;
+        background: rgb(236, 255, 60);
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
         cursor: pointer;
+    }
+    
+    form.example button:hover {
+        background: #0b7dda;
+    }
+    
+    form.example::after {
+        content: "";
+        clear: both;
+        display: table;
     }
 </style>
 
 <body>
     <!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-	<![endif]-->
+    <![endif]
+<--*******************   Search box   ********************--
+<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Search.." name="search2">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>-->
 
     <!-- Main wrapper -->
     <div class="wrapper" id="wrapper">
-
         <!-- Header -->
         <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
             <div class="container-fluid">
@@ -236,12 +206,10 @@
                     </div>
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <li class="shop_search">
-                                <a class="search__active" href="#"></a>
-                            </li>
                             <li class="wishlist">
                                 <a href="#"></a>
                             </li>
+
                             <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
@@ -439,99 +407,41 @@
         </header>
         <!-- //Header -->
         <!-- Start Search Popup -->
-        <div class="box-search-content search_active block-bg close__top">
-            <form id="search_mini_form" class="minisearch" action="#">
-                <div class="field__search">
-                    <input type="text" placeholder="Search entire store here...">
-                    <div class="action">
-                        <a href="#"><i class="zmdi zmdi-search"></i></a>
-                    </div>
-                </div>
-            </form>
-            <div class="close__wrap">
-                <span>close</span>
-            </div>
-        </div>
         <!-- End Search Popup -->
-        <!-- Start Bradcaump area --
-        <div class="ht__bradcaump__area bg-image--">
+        <!-- Start Bradcaump area -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- End Bradcaump area -->
+        <!-- Start My Account Area -->
+        <section class="my_account_area pt--80 pb--55 bg--white">
             <div class="container">
-                <div class="row">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="images/logo/yellow1.png" alt="logo images">
-                        </a>
-                    </div>
+                <div class="col-lg-6 col-12"></div>
+                <div class="my__account__wrapper">
+                    <h3 class="account__title">Sign Up</h3>
+                    <form action="#">
+                        <div class="account__form">
+                            <div class="input__box">
+                                <label>email address <span>*</span></label>
+                                <input type="email">
+                            </div>
+                            <div class="input__box">
+                                <label>Password<span>*</span></label>
+                                <input type="password">
+                            </div>
+                            <div class="form__btn">
+                                <button>Sign Up</button>
+                            </div>
+                            <a class="forget_pass" href="#">Already have an account? Login</a>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-        <-- End Bradcaump area -->
-        <!-- Start Portfolio Area -->
-        <section class="wn__portfolio__area gallery__masonry__activation bg--white mt--40 pb--100">
-            <!-- <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="gallery__menu">
-                            <button data-filter="*" class="is-checked">Filter - All</button>
-                            <button data-filter=".cat--1">Company News</button>
-                            <button data-filter=".cat--2">Computers</button>
-                            <button data-filter=".cat--3">General News</button>
-                            <button data-filter=".cat--4">Hipster Content</button>
-                            <button data-filter=".cat--5">Just Food</button>
-                        </div>
-                    </div>
-                </div> -->
-            <div class="row masonry__wrap">
-                <!-- Start Single Portfolio -->
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--1 p-0 pl-1">
-                    <div class="portfolio">
-                        <div class="thumb">
-                            <a href="index-men.html" class="button">
-                                <div class="zoom">
-                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                        <b>MEN</b>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Portfolio -->
-                <!-- Start Single Portfolio -->
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--2 p-0 pl-1">
-                    <div class="portfolio">
-                        <div class="thumb">
-                            <a href="index-women.html" class="button">
-                                <div class="zoom2">
-                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                        <b>WOMEN</b>
-                                    </p>
-                                </div>
-                            </a>
 
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Portfolio -->
-                <!-- Start Single Portfolio -->
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--3 p-0 pl-2">
-                    <div class="portfolio">
-                        <div class="thumb">
-                            <a href="index-kids.html" class="button">
-                                <div class="zoom3">
-                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                        <b>KIDS</b>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Portfolio -->
-            </div>
     </div>
     </section>
-    <!-- End Portfolio Area -->
+    <!-- End My Account Area -->
     <!-- Footer Area -->
     <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
         <div class="footer-static-top">
@@ -543,7 +453,7 @@
                                 <a href="index.html">
                                     <img src="images/logo/black1.png" alt="logo">
                                 </a>
-                                <p></p>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
                             </div>
                             <div class="footer__content">
                                 <ul class="social__net social__net--2 d-flex justify-content-center">
@@ -567,12 +477,12 @@
                 </div>
             </div>
         </div>
+
     </footer>
     <!-- //Footer Area -->
 
     </div>
     <!-- //Main wrapper -->
-
 
     <!-- JS Files -->
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
