@@ -51,7 +51,7 @@
         width: 600px;
         margin-top: 00px;
     }
-        
+    
     .addtocart__action {
         margin-left: 100px;
     }
@@ -203,8 +203,8 @@
             margin-left: 0px;
         }
     }
-    
     /* this style moves the log upward */
+    
     img {
         margin-top: 0;
         margin-left: 0px;
@@ -218,6 +218,10 @@
             margin-left: 50px;
             width: 60%;
         }
+    }
+    
+    .image1 {
+        width: 100px;
     }
     
     .rectangle {
@@ -245,6 +249,75 @@
             margin-left: 50px;
         }
     }
+    /*--------------------------------------------------------------------------------------*/
+    
+    .nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        margin-left: 200px;
+        margin-right: 250px;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .nav,
+        input[type=submit] {
+            margin-left: 0px;
+            margin-right: 0;
+        }
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+        text-decoration: none;
+    }
+    
+    .nav-link.disabled {
+        color: #6c757d;
+        pointer-events: none;
+        cursor: default;
+    }
+    
+    .nav-tabs {
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .nav-tabs .nav-item {
+        margin-bottom: -1px;
+    }
+    
+    .nav-tabs .nav-link {
+        border: 1px solid transparent;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+    }
+    
+    .nav-tabs .nav-link:hover,
+    .nav-tabs .nav-link:focus {
+        border-color: #e9ecef #e9ecef #dee2e6;
+    }
+    
+    .nav-tabs .nav-link.disabled {
+        color: #6c757d;
+        background-color: transparent;
+        border-color: transparent;
+    }
+    
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+        color: #495057;
+        background-color: #fff;
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
 </style>
 
 <body>
@@ -261,7 +334,7 @@
                     <div class="col-md-4 col-sm-4 col-7 col-lg-2">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="images/logo/yellow1.png" alt="logo images">
+                                <img src="images/logo/yellow1.png" alt="logo images" class="image1">
                             </a>
                         </div>
                     </div>
@@ -597,9 +670,26 @@
         <!-- Start Bradcaump area -->
         <!-- End Bradcaump area -->
         <!-- Start Portfolio Area -->
-        <button class="rectangle" onclick="window.location.href = 'UpperBody.html';">UPPER BODY</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-        <button class="rectangle2" onclick="window.location.href = 'LowerBody.html';">LOWER BODY</button>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" onclick="window.location.href = 'lower-body.html';" role="tab" aria-controls="home" aria-selected="true">Lower Body</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" onclick="window.location.href = 'upper-body.html';" role="tab" aria-controls="profile" aria-selected="false">Upper Body</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
+        </div>
+
 
         <div class="clearfix">
             <div class="box" style="background-color:#ccc">
