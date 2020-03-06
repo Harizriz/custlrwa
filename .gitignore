@@ -1,1 +1,7 @@
 .vscode/
+__pycache__/
+migrations/
+
+#DO NOT REMOVE THIS PLEASE
+.env
+#DO NOT REMOVE THIS PLEASE

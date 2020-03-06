@@ -8,8 +8,9 @@ pylint = "*"
 
 [packages]
 beautifulsoup4 = "*"
-django = "*"
+django = "==2.2.9"
 djangorestframework = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.7"

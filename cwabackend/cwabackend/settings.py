@@ -25,7 +25,11 @@ SECRET_KEY = ')!+0ktp@boe$e10&fz7tc1r(gawmm0hgq3j#9y4-$e+b$v6gdr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0'
+                , '127.0.0.1'
+                , 'localhost'
+                , 'custlrwa.ddns.net'
+                ]
 
 
 # Application definition
@@ -77,8 +81,12 @@ WSGI_APPLICATION = 'cwabackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE' : 'django.db.backends.mysql',
+        'NAME' : 'custlrwa',
+        'USER' : 'custlrwa',
+        'PASSWORD' : 'YFlDM1lY6Uq1sRcd',
+        'HOST' : 'localhost',
+        'PORT' : '3306',
     }
 }
 
