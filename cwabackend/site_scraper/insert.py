@@ -17,7 +17,9 @@ cursor = connection.cursor()
 
 tableName = 'site_scraper_scrapedresult'
 
-sql = "INSERT INTO " + tableName + " (product_name, sizing, price, currency, brand, image_url) VALUES (\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\")"
+cursor.execute("DELETE FROM " + tableName + ";")
+
+sql = "INSERT INTO " + tableName + " (product_name, sizing, price, currency, brand, image_url) VALUES (\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");"
 
 for i in range(len(jsonObj['response']['docs'])):
     product_name = jsonObj['response']['docs'][i]['meta']['name']
