@@ -10,6 +10,8 @@ class ScrapedResult(models.Model):
     image_url = models.URLField(null = True, max_length = 300)
     product_description = models.TextField(null=True)
     original_site = models.TextField(null=True)
+    category = models.TextField(null=True)
+    subcategory = models.TextField(null=True)
 
 class Sizing(models.Model):
     product_id = models.ForeignKey(ScrapedResult, on_delete=models.CASCADE, null = True, related_name='+')

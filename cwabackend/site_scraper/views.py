@@ -4,7 +4,7 @@ from .models import ScrapedCustomResult, ScrapedResult, Sizing, ImageUrl, Review
 from .serializers import ScrapedResultSerializer, ScrapedCustomResultSerialzer, SizingSerializer, ImageListSerializer, ReviewsSerializer
 
 class ScrapedResultAPIView(generics.ListCreateAPIView):
-    search_fields = ['product_name', 'brand', 'product_description']
+    search_fields = ['product_name', 'brand', 'product_description', 'category', 'subcategory']
     filter_backends = (filters.SearchFilter, filters.OrderingFilter,)
     queryset = ScrapedResult.objects.all()
     serializer_class = ScrapedResultSerializer
