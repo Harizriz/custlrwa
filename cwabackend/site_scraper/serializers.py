@@ -4,7 +4,7 @@ from .models import ScrapedResult, ScrapedCustomResult, Sizing, ImageUrl, Review
 class ScrapedResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = ScrapedResult
-        fields = ('id', 'product_name', 'sizing', 'price', 'currency', 'brand', 'image_url', 'product_description', 'original_site', 'category', 'subcategory')
+        fields = ('id', 'product_name', 'price', 'currency', 'brand', 'image_url', 'product_description', 'original_site', 'category', 'subcategory')
 
 class ScrapedCustomResultSerialzer(serializers.ModelSerializer):
     class Meta:
@@ -14,7 +14,7 @@ class ScrapedCustomResultSerialzer(serializers.ModelSerializer):
 class SizingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sizing
-        fields = ('product_id', 'description')
+        fields = ('product_id', 'sizing')
 
 class ImageListSerializer(serializers.ModelSerializer):
     class Meta:
