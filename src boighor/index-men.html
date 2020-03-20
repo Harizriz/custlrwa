@@ -418,9 +418,9 @@ git<!doctype html>
 		<div class="brown--color box-search-content search_active block-bg close__top">
 			<form id="search_mini_form" class="minisearch" action="#">
 				<div class="field__search">
-					<input type="text" placeholder="Search entire store here...">
+					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="search()">
 					<div class="action">
-						<a href="#"><i class="zmdi zmdi-search"></i></a>
+						<button class="btn btn-light-inverse" type="submit"><i class="zmdi zmdi-search"></i></button>
 					</div>
 				</div>
 			</form>
@@ -3253,6 +3253,24 @@ git<!doctype html>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/active.js"></script>
+	<script>
+		function search(){
+			// Create a request variable and assign a new XMLHttpRequest object to it.
+			var request = new XMLHttpRequest()
+
+			// replaces white space
+			search_value = document.getElementById("search_bar").value
+			console.log(encodeURI(search_value))
+
+			// Open a new connection, using the GET request on the URL endpoint
+			request.open('GET', 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value), true)
+
+			request.onload = console.log('got data')
+
+			// Send request
+			request.send()
+		}
+	</script>
 	
 	
 </body>
