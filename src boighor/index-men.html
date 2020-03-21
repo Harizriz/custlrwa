@@ -420,7 +420,7 @@ git<!doctype html>
 				<div class="field__search">
 					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="search()">
 					<div class="action">
-						<button class="btn btn-light-inverse" type="submit"><i class="zmdi zmdi-search"></i></button>
+						<button class="btn btn-light-inverse" type="submit" onclick="search()"><i class="zmdi zmdi-search"></i></button>
 					</div>
 				</div>
 			</form>
@@ -3260,13 +3260,18 @@ git<!doctype html>
 
 			// replaces white space
 			search_value = document.getElementById("search_bar").value
-			console.log(encodeURI(search_value))
+			// console.log(encodeURI(search_value))
 
 			// Open a new connection, using the GET request on the URL endpoint
-			request.open('GET', 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value), true)
+			var search_corona = 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value)
+			request.open('GET', search_corona, true)
 
-			request.onload = console.log('got data')
-
+			request.onload = function loadHTML(){
+				var resultText = request.responseText;
+				// console.log(resultText);
+				localStorage.setItem("search_result", resultText);
+			}
+			
 			// Send request
 			request.send()
 		}
