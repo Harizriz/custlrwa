@@ -4,9 +4,9 @@ from .models import ScrapedCustomResult, ScrapedResult, Sizing, ImageUrl, Review
 from .serializers import ScrapedResultSerializer, ScrapedCustomResultSerialzer, SizingSerializer, ImageListSerializer, ReviewsSerializer
 
 class PaginationDefault (pagination.PageNumberPagination):
-    page_size = 50
+    page_size = 24
     page_size_query_param = 'page_size'
-    max_page_size = 500
+    max_page_size = 120
 
 class ResultPagination (pagination.PageNumberPagination):
     page_size = 25
