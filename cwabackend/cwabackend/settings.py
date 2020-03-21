@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['0.0.0.0'
 
 
 # Application definition
+CORS_ORIGIN_ALLOW_ALL=True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'site_scraper',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'cwabackend.urls'

@@ -416,7 +416,7 @@ git<!doctype html>
 		<!-- //Header -->
 		<!-- Start Search Popup -->
 		<div class="brown--color box-search-content search_active block-bg close__top">
-			<form id="search_mini_form" class="minisearch" action="#">
+			<form id="search_mini_form" class="minisearch" action="#" onsubmit="return false">
 				<div class="field__search">
 					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="search()">
 					<div class="action">
@@ -3270,7 +3270,7 @@ git<!doctype html>
 				var resultText = request.responseText;
 				// console.log(resultText);
 				sessionStorage.setItem("search_result", resultText);
-				window.location.replace("shop-grid-women.html")
+				window.location.replace("shop-grid-women.html");
 			}
 			
 			// Send request
