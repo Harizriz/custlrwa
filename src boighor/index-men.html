@@ -3260,7 +3260,6 @@ git<!doctype html>
 
 			// replaces white space
 			search_value = document.getElementById("search_bar").value
-			// console.log(encodeURI(search_value))
 
 			// Open a new connection, using the GET request on the URL endpoint
 			var search_corona = 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value)
@@ -3272,7 +3271,6 @@ git<!doctype html>
 				sessionStorage.setItem("search_result", resultText);
 				window.location.replace("shop-grid-women.html");
 			}
-			
 			// Send request
 			request.send()
 		}
