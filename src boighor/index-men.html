@@ -3269,7 +3269,8 @@ git<!doctype html>
 			request.onload = function loadHTML(){
 				var resultText = request.responseText;
 				// console.log(resultText);
-				localStorage.setItem("search_result", resultText);
+				sessionStorage.setItem("search_result", resultText);
+				window.location.replace("shop-grid-women.html")
 			}
 			
 			// Send request
