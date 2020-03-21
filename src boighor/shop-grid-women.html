@@ -505,7 +505,6 @@
 			                        		<option>Latest</option>
 			                        		<option>Price (Low to High)</option>
 			                        		<option>Price (High to Low)</option>
-			                    
 			                        	</select>
                                     </div>
                                 </div>
@@ -963,6 +962,19 @@
                                     <li><a href="#">4</a></li>
                                     <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
                                 </ul>
+                                <div class="container">
+                                    <table class="table table-bordered table-striped" id="result_table">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>product name</th>
+                                            <th>price</th>
+                                            <th>brand</th>
+                                            <th>image_url</th>
+                                            <th>description</th>
+                                            <th>original site</th>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                             <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
                                 <div class="list__view__wrapper">
@@ -1251,6 +1263,30 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/active.js"></script>
+    <script>
+        var myObj = JSON.parse(localStorage.getItem("search_result"));
+        // console.log(myObj.results[0].id)
+        var txt = '';
+        var x = 0;
+        txt += "<table border='1'>"
+        for (x in myObj.results) {
+            txt += "<tr><td>" +myObj.results[x].product_name+ "</tr></td>";
+            txt += "<tr><th>" +myObj.results[x].price+ "</tr></th>";
+            txt += "<tr><th>" +myObj.results[x].brand+ "</tr></th>";
+            // txt += "<th>" +myObj.results[x].image_url+ "</th>";
+            // txt += "<th>" +myObj.results[x].description+ "</th>";
+            // txt += "<th>" +myObj.results[x].original_site+ "</th>";
+        }
+        txt += "</table>"    
+        document.getElementById("result_table").innerHTML = txt;
+        // <th>ID</th>
+        // <th>product name</th>
+        // <th>price</th>
+        // <th>brand</th>
+        // <th>image_url</th>
+        // <th>description</th>
+        // <th>original site</th>
+    </script>
 
 </body>
 
