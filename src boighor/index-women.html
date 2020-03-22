@@ -395,11 +395,11 @@
 		<!-- //Header -->
 		<!-- Start Search Popup -->
 		<div class="brown--color box-search-content search_active block-bg close__top">
-			<form id="search_mini_form" class="minisearch" action="#">
+			<form id="search_mini_form" class="minisearch" action="#" onsubmit="return false">
 				<div class="field__search">
-					<input type="text" placeholder="Search entire store here...">
+					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="search()">
 					<div class="action">
-						<a href="#"><i class="zmdi zmdi-search"></i></a>
+						<button class="btn btn-light-inverse" type="submit" onclick="search()"><i class="zmdi zmdi-search"></i></button>
 					</div>
 				</div>
 			</form>
@@ -3232,6 +3232,28 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/active.js"></script>
+	<script>
+		function search(){
+			// Create a request variable and assign a new XMLHttpRequest object to it.
+			var request = new XMLHttpRequest()
+
+			// replaces white space
+			search_value = document.getElementById("search_bar").value
+
+			// Open a new connection, using the GET request on the URL endpoint
+			var search_corona = 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value)
+			request.open('GET', search_corona, true)
+
+			request.onload = function loadHTML(){
+				var resultText = request.responseText;
+				// console.log(resultText);
+				sessionStorage.setItem("search_result", resultText);
+				window.location.replace("shop-grid-women.html");
+			}
+			// Send request
+			request.send()
+		}
+	</script>
 	
 </body>
 </html>
