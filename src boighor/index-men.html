@@ -337,23 +337,23 @@ git<!doctype html>
 														 <!-- Modal -->
 														 <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 															<div class="modal-dialog modal-dialog-centered" role="document">
-															   <div class="modal-content">
-																  <div class="modal-header" style="background-color:black">
-																	 <h5 class="modal-title" id="exampleModalLongTitle" style="color: yellow; margin-left: 400px;">Track My Orders</h4>
-																	 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																	 <span aria-hidden="true">&times;</span>
-																	 </button>
-																  </div>
-																  <div class="modal-body pl-2">
-																	  <h6 class="pb-3 pl-2"> Email </h6>
-																	 <input type="text" id="emailTracking" name="emailTracking" style=" height:50px; font-size:14pt; text-align:center"><br><br>
-																	 <h6 class="pb-3 pl-2"> Order Number </h6>
-																	 <input type="text" id="orderNumber" name="orderNumber" style=" height:50px; font-size:14pt; text-align:center"><br><br>
-																  </div>
-																  <div class="modal-footer" style="background-color:black">
-																	<button type="button" class="btn btn-warning" style="background-color:yellow; margin-right: 450px;">Track</button>
-																  </div>
-															   </div>
+																<div class="modal-content">
+																	<div class="modal-header" style="background-color:black">
+																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: yellow; margin-left: 400px;">Track My Orders</h4>
+																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																		</button>
+																	</div>
+																	<div class="modal-body pl-2">
+																		<h6 class="pb-3 pl-2"> Email </h6>
+																		<input type="text" id="emailTracking" name="emailTracking" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																		<h6 class="pb-3 pl-2"> Order Number </h6>
+																		<input type="text" id="orderNumber" name="orderNumber" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																	</div>
+																	<div class="modal-footer" style="background-color:black">
+																		<button type="button" class="btn btn-warning" style="background-color:yellow; margin-right: 450px;">Track</button>
+																	</div>
+																</div>
 															</div>
 														</div>
 													</div>
@@ -3260,7 +3260,6 @@ git<!doctype html>
 
 			// replaces white space
 			search_value = document.getElementById("search_bar").value
-			// console.log(encodeURI(search_value))
 
 			// Open a new connection, using the GET request on the URL endpoint
 			var search_corona = 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value)
@@ -3270,9 +3269,8 @@ git<!doctype html>
 				var resultText = request.responseText;
 				// console.log(resultText);
 				sessionStorage.setItem("search_result", resultText);
-				window.location.replace("shop-grid-women.html");
+				window.location.replace("shop-grid-men.html");
 			}
-			
 			// Send request
 			request.send()
 		}

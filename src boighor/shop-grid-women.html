@@ -383,19 +383,19 @@
         </header>
         <!-- //Header -->
         <!-- Start Search Popup -->
-        <div class="box-search-content search_active block-bg close__top">
-            <form id="search_mini_form" class="minisearch" action="#">
-                <div class="field__search">
-                    <input type="text" placeholder="Search entire store here...">
-                    <div class="action">
-                        <a href="#"><i class="zmdi zmdi-search"></i></a>
-                    </div>
-                </div>
-            </form>
-            <div class="close__wrap">
-                <span>close</span>
-            </div>
-        </div>
+        <div class="brown--color box-search-content search_active block-bg close__top">
+			<form id="search_mini_form" class="minisearch" action="#" onsubmit="return false">
+				<div class="field__search">
+					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="search()">
+					<div class="action">
+						<button class="btn btn-light-inverse" type="submit" onclick="search()"><i class="zmdi zmdi-search"></i></button>
+					</div>
+				</div>
+			</form>
+			<div class="close__wrap">
+				<span>close</span>
+			</div>
+		</div>
         <!-- End Search Popup -->
         <!-- Start Bradcaump area  -->
         <!-- <div class="ht__bradcaump__area bg-image--6">
@@ -512,96 +512,19 @@
                         </div>
                         <!-- Start Content Page -->
                         <div class="tab__container">
-                            <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
-                                <div class="row">
-                                    <!-- Start Single Product -->
-                                    <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                        <div class="product__thumb">
-                                            <a class="first__img" href="single-product.html"><img src="images/books/1.jpg" alt="product image"></a>
-                                            <a class="second__img animation1" href="single-product.html"><img src="images/books/2.jpg" alt="product image"></a>
-                                        </div>
-                                        <div class="product__content content--center" id="container">
-                                            <h4><a href="single-product.html"></a></h4>
-                                            <ul class="prize d-flex">
-                                                <li>$35.00</li>
-                                                <!--<li class="old_prize">$35.00</li>-->
-                                            </ul>
-                                            <!-- <div class="action">
-												<div class="actions_inner">
-													<ul class="add_to_links">
-														<li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-														<li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-														<li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-														<li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal"><i class="bi bi-search"></i></a></li>
-													</ul>
-												</div>
-											</div>
-                                            <div class="product__hover--content">
-												<ul class="rating d-flex">
-													<li class="on"><i class="fa fa-star-o"></i></li>
-													<li class="on"><i class="fa fa-star-o"></i></li>
-													<li class="on"><i class="fa fa-star-o"></i></li>
-													<li><i class="fa fa-star-o"></i></li>
-													<li><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div> -->
-                                        </div>
-                                    </div>
-                                    <!-- End Single Product -->
-                                </div>
-                                <ul class="wn__pagination">
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
-                                </ul>
-                                <div class="container">
-                                    <table class="table table-bordered table-striped" id="result_table">
-                                        <tr> 
-                                            <th>ID</th>
-                                            <th>product name</th>
-                                            <th>price</th>
-                                            <th>brand</th>
-                                            <th>image_url</th>
-                                            <th>description</th>
-                                            <th>original site</th>
-                                        </tr>
-                                    </table>
-                                </div>
+                            <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">  
                             </div>
+                            <!-- <ul class="wn__pagination">
+                                <li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
+                            </ul> -->
                             <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
-                                <div class="list__view__wrapper">
-                                    <!-- Start Single Product  -->
-	        						<div class="list__view">
-	        							<div class="thumb">
-	        								<a class="first__img" href="single-product.html"><img src="images/product/1.jpg" alt="product images"></a>
-	        								<a class="second__img animation1" href="single-product.html"><img src="images/product/2.jpg" alt="product images"></a>
-	        							</div>
-	        							<div class="content">
-	        								<h2><a href="single-product.html">Ali Smith</a></h2>
-	        								<ul class="rating d-flex">
-	        									<li class="on"><i class="fa fa-star-o"></i></li>
-	        									<li class="on"><i class="fa fa-star-o"></i></li>
-	        									<li class="on"><i class="fa fa-star-o"></i></li>
-	        									<li class="on"><i class="fa fa-star-o"></i></li>
-	        									<li><i class="fa fa-star-o"></i></li>
-	        									<li><i class="fa fa-star-o"></i></li>
-	        								</ul>
-	        								<ul class="prize__box">
-	        									<li>$111.00</li>
-	        									<li class="old__prize">$220.00</li>
-	        								</ul>
-	        								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
-	        								<ul class="cart__action d-flex">
-	        									<li class="cart"><a href="cart.html">Add to cart</a></li>
-	        									<li class="wishlist"><a href="cart.html"></a></li>
-	        									<li class="compare"><a href="cart.html"></a></li>
-	        								</ul>
-	        							</div>
-	        						</div>
-	        						 <!-- End Single Product -->
-                                </div>
+                            </div>
+                            <div id ="pagination">
                             </div>
                         </div>
                     </div>
@@ -738,30 +661,90 @@
     <script src="js/plugins.js"></script>
     <script src="js/active.js"></script>
     <script>
-        var myObj = JSON.parse(sessionStorage.getItem("search_result"));
-        // console.log(myObj.results[0].id)
-        var txt = '';
-        var x = 0;
-        txt += "<div>";
-        for (x in myObj.results) {
-            txt += "<h4>" +myObj.results[x].product_name+ "</a></h4>";
-            // txt += "<tr><td>" +myObj.results[x].product_name+ "</tr></td>";
-            // txt += "<tr><th>" +myObj.results[x].price+ "</tr></th>";
-            // txt += "<tr><th>" +myObj.results[x].brand+ "</tr></th>";
-            // txt += "<th>" +myObj.results[x].image_url+ "</th>";
-            // txt += "<th>" +myObj.results[x].description+ "</th>";
-            // txt += "<th>" +myObj.results[x].original_site+ "</th>";
+        function search(){ //sends search request to backend for JSON response
+			// Create a request variable and assign a new XMLHttpRequest object to it.
+			var request = new XMLHttpRequest()
+
+			// replaces white space
+            search_value = document.getElementById("search_bar").value
+            
+			// Open a new connection, using the GET request on the URL endpoint
+			var search_corona = 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value)
+            request.open('GET', search_corona, true)
+
+			request.onload = function loadHTML(){
+				var resultText = request.responseText;
+				// console.log(resultText);
+				sessionStorage.setItem("search_result", resultText);
+				window.location.replace("shop-grid-women.html");
+			}
+			// Send request
+			request.send()
         }
-        txt += "</div>"    
-        document.getElementById("container").innerHTML = txt;
-        // <th>ID</th>
-        // <th>product name</th>
-        // <th>price</th>
-        // <th>brand</th>
-        // <th>image_url</th>
-        // <th>description</th>
-        // <th>original site</th>
-    </script>
+
+        function openLink(url){ //sends search request to backend for JSON response
+			// Create a request variable and assign a new XMLHttpRequest object to it.
+			var request = new XMLHttpRequest()
+            
+			// Open a new connection, using the GET request on the URL endpoint
+            request.open('GET', url, true)
+
+			request.onload = function loadHTML(){
+				var resultText = request.responseText;
+				// console.log(resultText);
+				sessionStorage.setItem("search_result", resultText);
+				window.location.replace("shop-grid-women.html");
+			}
+			// Send request
+			request.send()
+        }
+
+        var myObj = JSON.parse(sessionStorage.getItem("search_result"));
+            
+        if (myObj.count > 0){
+            var grid = '';
+            var list = '';
+            var pagi = '';
+            var x_grid, x_list = 0;
+            var x_pagi = 1;
+            grid += '<div class="row">';
+            for (x_grid in myObj.results){
+                grid += '<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12"><div class="product__thumb"><a class="first__img" href="single-product.html"><img src="'
+                grid += myObj.results[x_grid].image_url + '" alt="product image"></a></div><div class="product__content content--center"><h4><a href="single_product-women.html">'
+                grid += myObj.results[x_grid].product_name+ '</a></h4><ul class="prize d-flex"><li>' + myObj.results[x_grid].currency + '&nbsp;' + myObj.results[x_grid].price+ '</li></ul></div></div>';
+            };
+            grid += "</div>"
+
+            list += '<div class="list__view__wrapper">'
+            for (x_list in myObj.results){
+                list += '<div class="list__view"><div class="thumb"><a class="first__img" href="single-product.html"><img src="'
+                list += myObj.results[x_list].image_url +'" alt="product images"></a><a class="second__img animation1" href="single-product.html"><img src="'
+                list += myObj.results[x_list].image_url +'" alt="product images"></a></div><div class="content"><h2><a href="single-product.html">'
+                list += myObj.results[x_list].product_name +'</a></h2><ul class="rating d-flex"><li class="on"><i class="fa fa-star-o"></i></li><li class="on">'
+                list += '<i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li>'
+                list += '<i class="fa fa-star-o"></i></li><li><i class="fa fa-star-o"></i></li></ul><ul class="prize__box"><li>' + myObj.results[x_grid].currency
+                list += '&nbsp;' + myObj.results[x_list].price + '</li></ul><p>' + myObj.results[x_list].product_description +'</p><ul class="cart__action d-flex">'
+                list += '<li class="cart"><a href="cart.html">Add to cart</a></li><li class="wishlist"><a href="cart.html"></a></li><li class="compare"><a href="cart.html"></a></li></ul></div></div>'
+            };
+            list += '</div>'
+            
+            pages_count = (myObj.count / 24).ceil;
+            
+            pagi += '<ul class="wn__pagination"><li><a href="." onclick="prevpage()"><i class="zmdi zmdi-chevron-left"></i></a></li>';
+            for (x_pagi = 1; x_pagi <= pages_count; x_pagi++){
+                pagi += '<li class="active"><a href="#">'+ x_pagi +'</a></li>';
+            };
+            pagi += '<li><a href="."><i class="zmdi zmdi-chevron-right"></i></a></li></ul>';
+
+            document.getElementById("pagination").innerHTML = pagi; //inserts products in from JSON response of search
+            document.getElementById("nav-grid").innerHTML = grid; //inserts products in from JSON response of search
+            document.getElementById("nav-list").innerHTML = list; //inserts products in from JSON response of search
+        }
+        else{
+            document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; //inserts products in from JSON response of search
+            document.getElementById("nav-list").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; //inserts products in from JSON response of search
+        };
+	</script>
 
 </body>
 
