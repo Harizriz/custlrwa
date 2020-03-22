@@ -4,14 +4,14 @@ from .models import ScrapedCustomResult, ScrapedResult, Sizing, ImageUrl, Review
 from .serializers import ScrapedResultSerializer, ScrapedCustomResultSerialzer, SizingSerializer, ImageListSerializer, ReviewsSerializer
 
 class PaginationDefault (pagination.PageNumberPagination):
-    page_size = 50
-    page_size_query_param = 'page_size'
-    max_page_size = 500
-
-class ResultPagination (pagination.PageNumberPagination):
     page_size = 25
     page_size_query_param = 'page_size'
-    max_page_size = 500
+    max_page_size = 125
+
+class ResultPagination (pagination.PageNumberPagination):
+    page_size = 24
+    page_size_query_param = 'page_size'
+    max_page_size = 240
 
 class ScrapedResultAPIView(generics.ListCreateAPIView):
     search_fields = ['product_name', 'brand', 'product_description', 'category', 'subcategory']
@@ -19,11 +19,13 @@ class ScrapedResultAPIView(generics.ListCreateAPIView):
     queryset = ScrapedResult.objects.all()
     serializer_class = ScrapedResultSerializer
     pagination_class = ResultPagination
-    
+    http_method_names = ['get']
+
 class ScrapedResultView(viewsets.ModelViewSet):
     queryset = ScrapedResult.objects.all()
     serializer_class = ScrapedResultSerializer
     pagination_class = PaginationDefault
+    http_method_names = ['get']
 
 class SizingAPIView(generics.ListCreateAPIView):
     search_fields = ['=product__id']
@@ -31,6 +33,7 @@ class SizingAPIView(generics.ListCreateAPIView):
     queryset = Sizing.objects.all()
     serializer_class = SizingSerializer
     pagination_class = PaginationDefault
+    http_method_names = ['get']
 
 class ImageListAPIView(generics.ListCreateAPIView):
     search_fields = ['=product__id']
@@ -38,6 +41,7 @@ class ImageListAPIView(generics.ListCreateAPIView):
     queryset = ImageUrl.objects.all()
     serializer_class = ImageListSerializer
     pagination_class = PaginationDefault
+    http_method_names = ['get']
 
 class ReviewsAPIView(generics.ListCreateAPIView):
     search_fields = ['=product__id']
@@ -45,7 +49,9 @@ class ReviewsAPIView(generics.ListCreateAPIView):
     queryset = Reviews.objects.all()
     serializer_class = ReviewsSerializer
     pagination_class = PaginationDefault
+    http_method_names = ['get', 'post']
 
 class ScrapedCustomResultView(viewsets.ModelViewSet):
     queryset = ScrapedCustomResult.objects.all()
     serializer_class = ScrapedCustomResultSerialzer
+    http_method_names = ['get']
