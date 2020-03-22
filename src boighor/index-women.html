@@ -3233,26 +3233,44 @@
 	<script src="js/plugins.js"></script>
 	<script src="js/active.js"></script>
 	<script>
-		function search(){
+		function search(){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
 			var request = new XMLHttpRequest()
 
 			// replaces white space
-			search_value = document.getElementById("search_bar").value
-
+            search_value = document.getElementById("search_bar").value
+            sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
-			var search_corona = 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value)
-			request.open('GET', search_corona, true)
+			var search = 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value)
+            request.open('GET', search, true)
 
 			request.onload = function loadHTML(){
 				var resultText = request.responseText;
 				// console.log(resultText);
-				sessionStorage.setItem("search_result", resultText);
-				window.location.replace("shop-grid-women.html");
+				sessionStorage.setItem("search_result", resultText); 
+                sessionStorage.setItem("original_result", resultText); //incase changes happen to the result of the search (filtering, etc.)
+                sessionStorage.setItem("current_page", 1);
+                searchfull();
+			}
+			// Send request
+            request.send()
+        };
+        function searchfull(){
+            var request = new XMLHttpRequest()
+            search_value = document.getElementById("search_bar").value
+			// Open a new connection, using the GET request on the URL endpoint
+			var search = 'http://custlrwa.ddns.net:8000/scrapedfull/?search=' + encodeURI(search_value)
+            request.open('GET', search, true)
+
+			request.onload = function loadHTML(){
+				var resultText = request.responseText;
+				// console.log(resultText);
+                sessionStorage.setItem("original_result_full", resultText); //incase changes happen to the result of the search (filtering, etc.)
+                window.location.replace("shop-grid-women.html");
 			}
 			// Send request
 			request.send()
-		}
+        }
 	</script>
 	
 </body>
