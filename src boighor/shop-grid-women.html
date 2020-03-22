@@ -447,17 +447,17 @@
         						<div class="content-shopby">
         						    <div class="price_filter s-filter clear">
         						        <form action="#" method="GET">
-        						            <div id="slider-range"></div>
+        						            <!-- <div id="slider-range"></div>
         						            <div class="slider__range--output">
         						                <div class="price__output--wrap">
         						                    <div class="price--output">
         						                        <span>Price :</span><input type="text" id="amount" readonly="">
+        						                    </div> -->
+        						                    <div>
+        						                        <button class="btn btn-light-inverse mt-2" type="submit" onclick="filterProducts('','')">Filter</button>
         						                    </div>
-        						                    <div class="price--filter">
-        						                        <a href="#">Filter</a>
-        						                    </div>
-        						                </div>
-        						            </div>
+        						                <!-- </div>
+        						            </div> -->
         						        </form>
         						    </div>
         						</div>
@@ -497,14 +497,18 @@
 			                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
 			                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
 			                        </div>
-			                        <p>Showing 1–12 of 40 results</p>
-                                    <div class="orderby__wrapper">
+			                        <p id="show_results"></p>
+                                    <div class="orderby__wrapper" >
                                         <span>Sort By</span>
-                                        <select class="shot__byselect">
-			                        		<option>Default sorting</option>
-			                        		<option>Latest</option>
+                                        <select class="shot__byselect" id="selection" onchange="changeFunction()">
+                                            <option id="selectBox"></option>
+                                            <option disabled>-----------------</option>
 			                        		<option>Price (Low to High)</option>
-			                        		<option>Price (High to Low)</option>
+                                            <option>Price (High to Low)</option>
+                                            <option>Product name (A to Z)</option>
+                                            <option>Product name (Z to A)</option>
+                                            <option>Brand (A to Z)</option>
+                                            <option>Brand (Z to A)</option>
 			                        	</select>
                                     </div>
                                 </div>
@@ -512,20 +516,9 @@
                         </div>
                         <!-- Start Content Page -->
                         <div class="tab__container">
-                            <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">  
-                            </div>
-                            <!-- <ul class="wn__pagination">
-                                <li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
-                            </ul> -->
-                            <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
-                            </div>
-                            <div id ="pagination">
-                            </div>
+                            <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel"></div>
+                            <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel"></div>
+                            <div class="mt-4" id ="pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -661,28 +654,8 @@
     <script src="js/plugins.js"></script>
     <script src="js/active.js"></script>
     <script>
-        function search(){ //sends search request to backend for JSON response
-			// Create a request variable and assign a new XMLHttpRequest object to it.
-			var request = new XMLHttpRequest()
-
-			// replaces white space
-            search_value = document.getElementById("search_bar").value
-            
-			// Open a new connection, using the GET request on the URL endpoint
-			var search_corona = 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value)
-            request.open('GET', search_corona, true)
-
-			request.onload = function loadHTML(){
-				var resultText = request.responseText;
-				// console.log(resultText);
-				sessionStorage.setItem("search_result", resultText);
-				window.location.replace("shop-grid-women.html");
-			}
-			// Send request
-			request.send()
-        }
-
-        function openLink(url){ //sends search request to backend for JSON response
+        var current_page = sessionStorage.getItem("current_page");
+        function openLink(url, page, storage){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
 			var request = new XMLHttpRequest()
             
@@ -692,14 +665,117 @@
 			request.onload = function loadHTML(){
 				var resultText = request.responseText;
 				// console.log(resultText);
-				sessionStorage.setItem("search_result", resultText);
-				window.location.replace("shop-grid-women.html");
+				sessionStorage.setItem(storage, resultText);
+                window.location.replace(page);
 			}
 			// Send request
 			request.send()
         }
+        
+        function search(){ //sends search request to backend for JSON response
+			// Create a request variable and assign a new XMLHttpRequest object to it.
+			var request = new XMLHttpRequest()
 
+			// replaces white space
+            search_value = document.getElementById("search_bar").value
+            sessionStorage.setItem("search_term", search_value);
+			// Open a new connection, using the GET request on the URL endpoint
+			var search_corona = 'http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(search_value)
+            request.open('GET', search_corona, true)
+
+			request.onload = function loadHTML(){
+				var resultText = request.responseText;
+				// console.log(resultText);
+				sessionStorage.setItem("search_result", resultText); 
+                sessionStorage.setItem("original_result", resultText); //incase changes happen to the result of the search (filtering, etc.)
+				window.location.replace("shop-grid-women.html");
+                sessionStorage.setItem("current_page", 1);
+			}
+			// Send request
+			request.send()
+        }
+        
         var myObj = JSON.parse(sessionStorage.getItem("search_result"));
+        document.getElementById("selectBox").innerHTML = sessionStorage.getItem("selectBox");
+
+        function prevPage(){
+            if (myObj.previous != null){ 
+                sessionStorage.setItem("current_page", (sessionStorage.getItem("current_page") - 1));
+                openLink(myObj.previous, "shop-grid-women.html", "search_result")
+            }
+        };
+
+        function nextPage(){
+            if (myObj.next != null){
+                sessionStorage.setItem("current_page", (sessionStorage.getItem("current_page") - 1));
+                openLink(myObj.next, "shop-grid-women.html", "search_result")
+            }
+        };
+
+        function pageChange(page){
+            url = sessionStorage.getItem("search_term");
+            sessionStorage.setItem("current_page", page);
+            openLink(('http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(url) + '&page=' + page), "shop-grid-women.html", "search_result");
+            
+        };
+
+        function filterProducts(lower, upper){
+            sessionStorage.setItem("current_page", 1);
+            filteredResults = myObj.filter(function(mO){
+                filteredResults = myObj.results.price
+                return filteredResults>=lower && filteredResults <= upper
+            });
+            myObj.results = filteredResults;
+            myObj.count = myObj.results.length;
+            sessionStorage.setItem("search_result", JSON.Stringify(myObj));
+            window.location.reload();
+        };
+
+        function changeFunction(){
+            var selectBox = document.getElementById("selection").value;
+            if (selectBox == 'Price (Low to High)'){
+                url = sessionStorage.getItem("search_term");
+                sessionStorage.setItem("selectBox", selectBox);
+                sessionStorage.setItem("current_page", 1);
+                openLink(('http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(url) + '&ordering=price'), "shop-grid-women.html", "search_result");
+                
+            }
+            if (selectBox == 'Price (High to Low)'){
+                url = sessionStorage.getItem("search_term");
+                sessionStorage.setItem("selectBox", selectBox);
+                sessionStorage.setItem("current_page", 1);
+                openLink(('http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(url) + '&ordering=-price'), "shop-grid-women.html", "search_result");
+                
+            }
+            if (selectBox == 'Product name (A to Z)'){
+                url = sessionStorage.getItem("search_term");
+                sessionStorage.setItem("selectBox", selectBox);
+                sessionStorage.setItem("current_page", 1);
+                openLink(('http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(url) + '&ordering=product_name'), "shop-grid-women.html", "search_result");
+                
+            }
+            if (selectBox == 'Product name (Z to A)'){
+                url = sessionStorage.getItem("search_term");
+                sessionStorage.setItem("selectBox", selectBox);
+                sessionStorage.setItem("current_page", 1);
+                openLink(('http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(url) + '&ordering=-product_name'), "shop-grid-women.html", "search_result");
+                
+            }
+            if (selectBox == 'Brand (A to Z)'){
+                url = sessionStorage.getItem("search_term");
+                sessionStorage.setItem("selectBox", selectBox);
+                sessionStorage.setItem("current_page", 1);
+                openLink(('http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(url) + '&ordering=brand'), "shop-grid-women.html", "search_result");
+                
+            }
+            if (selectBox == 'Brand (Z to A)'){
+                url = sessionStorage.getItem("search_term");
+                sessionStorage.setItem("selectBox", selectBox);
+                sessionStorage.setItem("current_page", 1);
+                openLink(('http://custlrwa.ddns.net:8000/scraped/?search=' + encodeURI(url) + '&ordering=-brand'), "shop-grid-women.html", "search_result");
+                
+            }
+        };
             
         if (myObj.count > 0){
             var grid = '';
@@ -707,6 +783,13 @@
             var pagi = '';
             var x_grid, x_list = 0;
             var x_pagi = 1;
+            var showNum = '';
+            current_page = sessionStorage.getItem("current_page");
+
+            showNum += '<p>'
+            showNum += 'Showing ' + (1 + (24*(parseInt(current_page) - 1))).toString() +'&nbsp;-' + (Math.min(myObj.count, (24*current_page))).toString() + ' of ' + myObj.count + ' results';
+            showNum += '</p>'
+
             grid += '<div class="row">';
             for (x_grid in myObj.results){
                 grid += '<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12"><div class="product__thumb"><a class="first__img" href="single-product.html"><img src="'
@@ -728,21 +811,23 @@
             };
             list += '</div>'
             
-            pages_count = (myObj.count / 24).ceil;
+            pages_count = 0;
+            pages_count = Math.ceil(myObj.count / 24);
             
-            pagi += '<ul class="wn__pagination"><li><a href="." onclick="prevpage()"><i class="zmdi zmdi-chevron-left"></i></a></li>';
+            pagi += '<ul class="wn__pagination"><li><a onclick="prevPage()"><i class="zmdi zmdi-chevron-left"></i></a></li>';
             for (x_pagi = 1; x_pagi <= pages_count; x_pagi++){
-                pagi += '<li class="active"><a href="#">'+ x_pagi +'</a></li>';
+                pagi += '<li><a onclick= "pageChange('+ x_pagi.toString() +')">'+ x_pagi +'</a></li>';
             };
-            pagi += '<li><a href="."><i class="zmdi zmdi-chevron-right"></i></a></li></ul>';
+            pagi += '<li><a onclick=nextPage()><i class="zmdi zmdi-chevron-right"></i></a></li></ul>';
 
-            document.getElementById("pagination").innerHTML = pagi; //inserts products in from JSON response of search
-            document.getElementById("nav-grid").innerHTML = grid; //inserts products in from JSON response of search
-            document.getElementById("nav-list").innerHTML = list; //inserts products in from JSON response of search
+            document.getElementById("show_results").innerHTML = showNum; // inserts products in from JSON response of search
+            document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
+            document.getElementById("nav-grid").innerHTML = grid; // inserts products in from JSON response of search
+            document.getElementById("nav-list").innerHTML = list; // inserts products in from JSON response of search
         }
         else{
-            document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; //inserts products in from JSON response of search
-            document.getElementById("nav-list").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; //inserts products in from JSON response of search
+            document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // inserts products in from JSON response of search
+            document.getElementById("nav-list").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // inserts products in from JSON response of search
         };
 	</script>
 
