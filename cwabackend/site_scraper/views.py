@@ -21,6 +21,25 @@ class ScrapedResultAPIView(generics.ListCreateAPIView):
     pagination_class = ResultPagination
     http_method_names = ['get']
 
+    def get_queryset(self):
+        category = self.request.query_params.get('category')
+        brand = self.request.query_params.get('brand')
+        maxprice = self.request.query_params.get('maxprice')
+        minprice = self.request.query_params.get('minprice')
+        queryset = ScrapedResult.objects.all()
+
+        if category != None:
+            queryset = queryset.filter(category__exact=category)
+        if brand != None:
+            queryset = queryset.filter(brand__exact=brand)
+        if maxprice == None and minprice == None:
+            maxprice = 10000
+            minprice = 0
+        
+        queryset = queryset.filter(price__gte=minprice, price__lte=maxprice)
+        
+        return queryset
+
 class ScrapedResultView(viewsets.ModelViewSet):
     queryset = ScrapedResult.objects.all()
     serializer_class = ScrapedResultSerializer
