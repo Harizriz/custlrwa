@@ -30,7 +30,7 @@ class ScrapedResultAPIView(generics.ListCreateAPIView):
         queryset = ScrapedResult.objects
 
         if brandlist == 'true':
-            queryset = queryset.distinct('brand').order_by('brand')
+            queryset = queryset.distinct('brand')
 
             
         queryset = queryset.all()
@@ -40,7 +40,7 @@ class ScrapedResultAPIView(generics.ListCreateAPIView):
         if brand != None:
             queryset = queryset.filter(brand__iexact=brand)
         if maxprice == None or minprice == None:
-            maxprice = 10000
+            maxprice = 100000
             minprice = 0
         
         queryset = queryset.filter(price__gte=minprice, price__lte=maxprice)

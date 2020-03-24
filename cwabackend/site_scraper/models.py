@@ -14,7 +14,7 @@ class ScrapedResult(models.Model):
     subcategory = models.TextField(null=True)
 
 class Sizing(models.Model):
-    sizing = models.CharField(max_length = 10, null = True)
+    sizing = models.CharField(max_length = 20, null = True)
     product = models.ForeignKey(ScrapedResult, on_delete=models.CASCADE, null = True)
 
 class ImageUrl(models.Model):
