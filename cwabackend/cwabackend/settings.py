@@ -85,12 +85,12 @@ WSGI_APPLICATION = 'cwabackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE' : 'django.db.backends.mysql',
+        'ENGINE' : 'django.db.backends.postgresql_psycopg2',
         'NAME' : 'custlrwa',
         'USER' : 'custlrwa',
         'PASSWORD' : 'YFlDM1lY6Uq1sRcd',
         'HOST' : 'localhost',
-        'PORT' : '3306',
+        'PORT' : '',
     }
 }
 

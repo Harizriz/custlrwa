@@ -5,7 +5,7 @@ class ScrapedResult(models.Model):
     id = models.BigIntegerField(primary_key = True, null = False)
     product_name = models.TextField(null=True)
     price = models.DecimalField(null = True, max_digits=9, decimal_places=2)
-    currency = models.CharField(null = True, max_length = 3) #currency like USD, MYR, JPY, THB, etc.
+    currency = models.CharField(null = True, max_length = 10) #currency like USD, MYR, JPY, THB, etc.
     brand = models.CharField(null = True, max_length = 50)
     image_url = models.URLField(null = True, max_length = 300)
     product_description = models.TextField(null=True)
