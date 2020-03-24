@@ -26,13 +26,20 @@ class ScrapedResultAPIView(generics.ListCreateAPIView):
         brand = self.request.query_params.get('brand')
         maxprice = self.request.query_params.get('maxprice')
         minprice = self.request.query_params.get('minprice')
-        queryset = ScrapedResult.objects.all()
+        brandlist = self.request.query_params.get('brandlist')
+        queryset = ScrapedResult.objects
+
+        if brandlist == 'true':
+            queryset = queryset.distinct('brand').order_by('brand')
+
+            
+        queryset = queryset.all()
 
         if category != None:
-            queryset = queryset.filter(category__exact=category)
+            queryset = queryset.filter(category__iexact=category)
         if brand != None:
-            queryset = queryset.filter(brand__exact=brand)
-        if maxprice == None and minprice == None:
+            queryset = queryset.filter(brand__iexact=brand)
+        if maxprice == None or minprice == None:
             maxprice = 10000
             minprice = 0
         
