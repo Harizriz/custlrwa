@@ -19,7 +19,7 @@ class ImageListSerializer(serializers.ModelSerializer):
 class ReviewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reviews
-        fields = ('product_id', 'reviewer_name', 'summary', 'review', 'quality', 'price', 'value')
+        fields = ('product', 'reviewer_name', 'summary', 'review', 'quality', 'price', 'value')
 
 class ScrapedResultSerializer(serializers.ModelSerializer):
     imagelist = ImageListSerializer(source ='images', many=True, required=False)
