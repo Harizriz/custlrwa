@@ -689,6 +689,7 @@
                 var resultText = request.responseText;
 				sessionStorage.setItem("search_result", resultText); 
                 sessionStorage.setItem("current_page", 1);
+                sessionStorage.removeItem("selectBox");
                 getBrandList();
 			}
 			// Send request
@@ -718,16 +719,24 @@
         
         var respData = JSON.parse(sessionStorage.getItem("search_result"));
         var brandList = JSON.parse(sessionStorage.getItem("brand_list"));
-        document.getElementById("selectBox").innerHTML = sessionStorage.getItem("selectBox");
-
+        if (sessionStorage.getItem("selectBox") == ""){
+            document.getElementById("selectBox").innerHTML = "";
+        }
+        else{
+            document.getElementById("selectBox").innerHTML = sessionStorage.getItem("selectBox");
+        };
         var priceRange = [];
         
         function sliderInit(){
+            filteredPrice = JSON.parse(sessionStorage.getItem("filtered_price"));
+            if (filteredPrice == null){
+                filteredPrice = priceRange;
+            };
             $('#slider-range').slider({
                 range: true,
                 min: priceRange[0],
                 max: priceRange[1],
-                values: [priceRange[0], priceRange[1]],
+                values: [filteredPrice[0], filteredPrice[1]],
                 slide: function(event, ui) {
                     $('#amount').val('RM' + ui.values[0] + ' - RM' + ui.values[1]);
                     priceRange = ui.values
@@ -763,6 +772,7 @@
         function filterBtn(){
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", 1);
+            sessionStorage.setItem("filtered_price", JSON.stringify(priceRange));
             filter_search = encodeURI(url) + "&minprice=" + priceRange[0].toString() + "&maxprice=" + priceRange[1].toString();
             openLink("http://custlrwa.ddns.net:8000/scraped/" + filter_search, "shop-grid-women.html", "search_result");
         };
@@ -770,6 +780,7 @@
         function resetFilterBtn(){
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", 1);
+            sessionStorage.setItem("filtered_price", JSON.stringify(priceRange));
             openLink("http://custlrwa.ddns.net:8000/scraped/" + encodeURI(url), "shop-grid-women.html", "search_result");
         }
 
@@ -794,49 +805,44 @@
             
         };
 
+
+        function reorderPage(orderby){
+            url = sessionStorage.getItem("search_term");
+            sessionStorage.setItem("current_page", 1);
+            filteredPrice = JSON.parse(sessionStorage.getItem("filtered_price"));
+            if (filteredPrice == null){
+                filteredPrice = priceRange;
+            }
+            filter_search = encodeURI(url) + "&minprice=" + filteredPrice[0].toString() + "&maxprice=" + filteredPrice[1].toString() + '&ordering=' + orderby;
+            openLink(('http://custlrwa.ddns.net:8000/scraped/' + filter_search), "shop-grid-women.html", "search_result");
+                
+        };
+
         function changeFunction(){
             var selectBox = document.getElementById("selection").value;
             if (selectBox == 'Price (Low to High)'){
-                url = sessionStorage.getItem("search_term");
                 sessionStorage.setItem("selectBox", selectBox);
-                sessionStorage.setItem("current_page", 1);
-                openLink(('http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&ordering=price'), "shop-grid-women.html", "search_result");
-                
+                reorderPage('price');
             }
             if (selectBox == 'Price (High to Low)'){
-                url = sessionStorage.getItem("search_term");
                 sessionStorage.setItem("selectBox", selectBox);
-                sessionStorage.setItem("current_page", 1);
-                openLink(('http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&ordering=-price'), "shop-grid-women.html", "search_result");
-                
+                reorderPage('-price');
             }
             if (selectBox == 'Product name (A to Z)'){
-                url = sessionStorage.getItem("search_term");
                 sessionStorage.setItem("selectBox", selectBox);
-                sessionStorage.setItem("current_page", 1);
-                openLink(('http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&ordering=product_name'), "shop-grid-women.html", "search_result");
-                
+                reorderPage('product_name');
             }
             if (selectBox == 'Product name (Z to A)'){
-                url = sessionStorage.getItem("search_term");
                 sessionStorage.setItem("selectBox", selectBox);
-                sessionStorage.setItem("current_page", 1);
-                openLink(('http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&ordering=-product_name'), "shop-grid-women.html", "search_result");
-                
+                reorderPage('-product_name');   
             }
             if (selectBox == 'Brand (A to Z)'){
-                url = sessionStorage.getItem("search_term");
                 sessionStorage.setItem("selectBox", selectBox);
-                sessionStorage.setItem("current_page", 1);
-                openLink(('http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&ordering=brand'), "shop-grid-women.html", "search_result");
-                
+                reorderPage('brand');
             }
             if (selectBox == 'Brand (Z to A)'){
-                url = sessionStorage.getItem("search_term");
                 sessionStorage.setItem("selectBox", selectBox);
-                sessionStorage.setItem("current_page", 1);
-                openLink(('http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&ordering=-brand'), "shop-grid-women.html", "search_result");
-                
+                reorderPage('-brand');
             }
         };
             
