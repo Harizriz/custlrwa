@@ -763,8 +763,8 @@
         function filterBtn(){
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", 1);
-            filter_search = encodeURI(url) + "&minprice=" + priceRange[0] + "&maxprice=" + priceRange[1]
-            openLink("http://custlrwa.ddns.net:8000/scraped/" + filter_search + "shop-grid-women.html", "search_result");
+            filter_search = encodeURI(url) + "&minprice=" + priceRange[0].toString() + "&maxprice=" + priceRange[1].toString();
+            openLink("http://custlrwa.ddns.net:8000/scraped/" + filter_search, "shop-grid-women.html", "search_result");
         };
 
         function resetFilterBtn(){
@@ -866,7 +866,6 @@
                 var search_page = 'shop-grid-women.html'
                 var result_storage = 'search_result'
                 brand += "<li><a onclick=\"openLink('"+ search_url + "', '"+ search_page +"','" + result_storage + "')\">" + brandList[x_brand] + "</a></li>";
-                // brand += '<li><a href="#">' + brandList[x_brand] + '</a></li>';
             };
             brand += '</li>';
 
