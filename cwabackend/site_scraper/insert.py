@@ -46,7 +46,7 @@ for category, ZaloraSite in category_site.items():
                 currency = re.sub('[\d\. ]', '', jsonObj['response']['docs'][i]['meta']['price']) if not jsonObj['response']['docs'][i]['meta']['special_price'] else re.sub('[\d\.NOW ]', '', jsonObj['response']['docs'][i]['meta']['special_price'])
                 brand = jsonObj['response']['docs'][i]['meta']['brand']
                 original_site = 'https://www.zalora.com.my/' + jsonObj['response']['docs'][i]['link']
-                image_url = jsonObj['response']['docs'][0]['image']
+                image_url = jsonObj['response']['docs'][i]['image']
                 cursor.execute(sql_insert_product, (product_id, product_name, price, currency, brand, original_site, category, image_url))
 
                 for size in jsonObj['response']['docs'][i]['available_sizes']:
