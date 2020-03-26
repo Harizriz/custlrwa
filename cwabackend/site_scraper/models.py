@@ -15,10 +15,10 @@ class ScrapedResult(models.Model):
 
 class Sizing(models.Model):
     sizing = models.CharField(max_length = 20, null = True)
-    product = models.ForeignKey(ScrapedResult, on_delete=models.CASCADE, null = True)
+    product = models.ForeignKey(ScrapedResult, on_delete=models.CASCADE, null = True, related_name='sizing')
 
 class ImageUrl(models.Model):
-    product = models.ForeignKey(ScrapedResult, on_delete=models.CASCADE, null = True)
+    product = models.ForeignKey(ScrapedResult, on_delete=models.CASCADE, null = True, related_name='images')
     image_url = models.TextField()
 
 class Reviews(models.Model):
