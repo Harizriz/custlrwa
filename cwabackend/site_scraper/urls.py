@@ -4,7 +4,6 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('page', views.ScrapedResultView)
-# router.register('ScrapedCustom', views.ScrapedCustomResultView)
 
 urlpatterns = [
     path('', include(router.urls)),

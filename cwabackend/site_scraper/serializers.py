@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ScrapedResult, ScrapedCustomResult, Sizing, ImageUrl, Reviews
+from .models import ScrapedResult, CustomSizing, Sizing, ImageUrl, Reviews
 
 class BrandListSerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,7 +29,15 @@ class ScrapedResultSerializer(serializers.ModelSerializer):
         model = ScrapedResult
         fields = ('id', 'product_name', 'price', 'currency', 'brand', 'image_url', 'product_description', 'original_site', 'category', 'subcategory', 'imagelist', 'sizing')
 
-class ScrapedCustomResultSerialzer(serializers.ModelSerializer):
+class CustomSizingSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ScrapedCustomResult
-        fields = ('id', 'product_name', 'chest_size', 'waist_size', 'sleeve_length', 'shoulder_size', 'neck_size', 'arm_size', 'price', 'currency', 'brand', 'image_url')
+        model = CustomSizing
+        fields = ('product', 'chest_size', 'waist_size', 'sleeve_length', 'shoulder_size', 'neck_size', 'arm_size')
+
+class CustomResultSerializer(serializers.ModelSerializer):
+    imagelist = ImageListSerializer(source ='images', many=True, required=False)
+    sizing = CustomSizingSerializer(required=False)
+
+    class Meta:
+        model = ScrapedResult
+        fields = ('id', 'product_name', 'price', 'currency', 'brand', 'image_url', 'product_description', 'original_site', 'category', 'subcategory', 'imagelist', 'sizing')
