@@ -3233,26 +3233,48 @@
 	<script src="js/plugins.js"></script>
 	<script src="js/active.js"></script>
 	<script>
-		function search(){ //sends search request to backend for JSON response
+        function search(){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
 			var request = new XMLHttpRequest()
 
 			// replaces white space
-            search_value = "?search=" + document.getElementById("search_bar").value + "&category=women"
+            search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+            
             request.open('GET', search, true)
 
 			request.onload = function loadHTML(){
-				var resultText = request.responseText;
-				// console.log(resultText);
+                var resultText = request.responseText;
 				sessionStorage.setItem("search_result", resultText); 
                 sessionStorage.setItem("current_page", 1);
-				window.location.replace("shop-grid-women.html");
+                sessionStorage.removeItem("selectBox");
+                getBrandList();
 			}
 			// Send request
-            request.send()
+            request.send();
+        };
+
+        function getBrandList(){
+			var request = new XMLHttpRequest()
+            var search_value = sessionStorage.getItem("search_term");
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                console.log(brands);
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-women.html");
+            }
+            // Send request
+            request.send();
         };
 	</script>
 	
