@@ -139,6 +139,8 @@ a {
     text-decoration: none;
 }
 
+
+
 a:visited {
     color: #333;
 }
@@ -3585,9 +3587,42 @@ Product Styles
 
 .product:hover .product__content h4,
 .product:hover .product__content ul.prize {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0.5;
+    visibility: visible;
     transition: all 0.2s ease 0s;
+    cursor: pointer;
+}
+
+.product:hover .product__thumb {
+    cursor: pointer;
+    transition: transform .2s;
+    width: 210px;
+    height: 310px;
+    /* margin-left: 30px; */
+}
+
+/* .zoom {
+    padding: 50px;
+    background-color: black;
+    transition: transform .2s;
+    width: 350px;
+    height: 600px;
+    margin-left: 30px;
+} */
+
+@media screen and (max-width: 600px) {
+    .product:hover .product__thumb,
+    input[type=submit] {
+        margin-left: 10px;
+    }
+}
+
+.product:hover .product__thumb:hover {
+    -ms-transform: scale(1.5);
+    /* IE 9 */
+    -webkit-transform: scale(1.5);
+    /* Safari 3-8 */
+    transform: scale(1.07);
 }
 
 .product .product__content .action .actions_inner .add_to_links li a.quickview:hover {
