@@ -2571,6 +2571,13 @@ Header Styles
     padding: 30px;
 }
 
+@media screen and (max-width: 600px) {
+    .row.sidebar {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
 .header__area .container-fluid {
     background-color: #000;
     padding: 0 80px;
@@ -8198,7 +8205,7 @@ Shop Single Styles
     border-bottom: 1px solid #2e2e2e;
     color: #2e2e2e;
     font-size: 16px;
-    margin-top: 170px;
+    margin-top: 100px;
     margin-bottom: 10px;
     padding-bottom: 10px;
     position: relative;
@@ -8412,7 +8419,7 @@ Shop Single Styles
 .shop__list__wrapper {
     border-bottom: 1px solid #e1e1e1;
     border-top: 1px solid #e1e1e1;
-    margin-top: 170px;
+    margin-top: 100px;
     padding: 10px 0;
     width: 100%;
 }
