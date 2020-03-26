@@ -709,7 +709,6 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
-                console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-men.html");
             }
@@ -845,6 +844,11 @@
                 reorderPage('-brand');
             }
         };
+
+        function openPage(id){
+            link = 'http://custlrwa.ddns.net:8000/page/' + id.toString() + '/';
+            openLink(link, "single-product-men.html", "pageRespData");
+        };
             
         if (respData.count > 0){
             var grid = '';
@@ -877,17 +881,19 @@
 
             grid += '<div class="row">';
             for (x_grid in respData.results){
-                grid += '<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12"><div class="product__thumb"><a class="first__img" href="single-product.html"><img src="'
-                grid += respData.results[x_grid].image_url + '" alt="product image"></a></div><div class="product__content content--center"><h4><a href="single_product-men.html">'
-                grid += respData.results[x_grid].product_name+ '</a></h4><ul class="prize d-flex"><li>' + respData.results[x_grid].currency + '&nbsp;' + respData.results[x_grid].price+ '</li></ul></div></div>';
+                onclicktext = "onclick=\"openPage('"+ respData.results[x_grid].id +"')\"";
+                grid += '<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12" ' + onclicktext + '><div class="product__thumb"><a class="first__img"><img src="'
+                grid += respData.results[x_grid].image_url + '" alt="product image"></a></div><div class="product__content content--center"><h4>'
+                grid += respData.results[x_grid].product_name+ '</h4><ul class="prize d-flex"><li>' + respData.results[x_grid].currency + '&nbsp;' + respData.results[x_grid].price+ '</li></ul></div></div>';
             };
             grid += "</div>"
 
             list += '<div class="list__view__wrapper">'
             for (x_list in respData.results){
-                list += '<div class="list__view"><div class="thumb"><a class="first__img" href="single-product.html"><img src="'
-                list += respData.results[x_list].image_url +'" alt="product images"></a><a class="second__img animation1" href="single-product.html"><img src="'
-                list += respData.results[x_list].image_url +'" alt="product images"></a></div><div class="content"><h2><a href="single-product.html">'
+                onclicktext = "onclick=\"openPage('"+ respData.results[x_list].id +"')\"";
+                list += '<div class="list__view"><div class="thumb"><a class="first__img"  '+ onclicktext +'><img src="'
+                list += respData.results[x_list].image_url +'" alt="product images"></a><a class="second__img animation1"  '+ onclicktext +'><img src="'
+                list += respData.results[x_list].image_url +'" alt="product images"></a></div><div class="content"><h2><a '+ onclicktext +'>'
                 list += respData.results[x_list].product_name +'</a></h2><ul class="rating d-flex"><li class="on"><i class="fa fa-star-o"></i></li><li class="on">'
                 list += '<i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li>'
                 list += '<i class="fa fa-star-o"></i></li><li><i class="fa fa-star-o"></i></li></ul><ul class="prize__box"><li>' + respData.results[x_grid].currency
