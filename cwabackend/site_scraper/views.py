@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets, filters, generics, pagination
-from .models import ScrapedCustomResult, ScrapedResult, Sizing, ImageUrl, Reviews
-from .serializers import ScrapedResultSerializer, ScrapedCustomResultSerialzer, SizingSerializer, ImageListSerializer, ReviewsSerializer, BrandListSerializer
+from .models import CustomSizing, ScrapedResult, Sizing, ImageUrl, Reviews
+from .serializers import ScrapedResultSerializer, CustomResultSerializer, SizingSerializer, ReviewsSerializer, BrandListSerializer
 
 class ReviewsPagination(pagination.PageNumberPagination):
     page_size = 5
@@ -67,7 +67,8 @@ class ReviewsAPIView(generics.ListCreateAPIView):
     pagination_class = ReviewsPagination
     http_method_names = ['get', 'post']
 
-class ScrapedCustomResultView(viewsets.ModelViewSet):
-    queryset = ScrapedCustomResult.objects.all()
-    serializer_class = ScrapedCustomResultSerialzer
+class CustomResultView(viewsets.ModelViewSet):
+    queryset = ScrapedResult.objects.all()
+    serializer_class = CustomResultSerializer
+    pagination_class = ResultPagination
     http_method_names = ['get']
