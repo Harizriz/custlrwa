@@ -3407,6 +3407,13 @@ Product Styles
     position: relative;
 }
 
+.product:hover .product__thumb {
+    cursor: pointer;
+    transition: transform .2s;
+    width: 270px;
+    height: 385px;
+}
+
 .product .product__thumb a {
     display: block;
 }
@@ -3598,14 +3605,6 @@ Product Styles
     visibility: visible;
     transition: all 0.2s ease 0s;
     cursor: pointer;
-}
-
-.product:hover .product__thumb {
-    cursor: pointer;
-    transition: transform .2s;
-    width: 270px;
-    height: 390px;
-    /* margin-left: 30px; */
 }
 
 /* .zoom {

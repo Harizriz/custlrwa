@@ -420,22 +420,14 @@
                   <div class="wn__single__product">
                      <div class="row">
                         <div class="col-lg-6 col-12">
-                           <div class="wn__fotorama__wrapper">
-                              <div class="fotorama wn__fotorama__action" data-nav="thumbs">
-                                 <a href="1.jpg"><img src="images/product/1.jpg" alt=""></a>
-                                 <a href="2.jpg"><img src="images/product/2.jpg" alt=""></a>
-                                 <a href="3.jpg"><img src="images/product/3.jpg" alt=""></a>
-                                 <a href="4.jpg"><img src="images/product/4.jpg" alt=""></a>
-                                 <a href="5.jpg"><img src="images/product/5.jpg" alt=""></a>
-                                 <a href="6.jpg"><img src="images/product/6.jpg" alt=""></a>
-                                 <a href="7.jpg"><img src="images/product/7.jpg" alt=""></a>
-                                 <a href="8.jpg"><img src="images/product/8.jpg" alt=""></a>
-                              </div>
+                           <div class="wn__fotorama__wrapper d-flex justify-content-around" id="image_list">
+                              <!-- <div class="fotorama wn__fotorama__action" data-nav="thumbs">
+                              </div> -->
                            </div>
                         </div>
                         <div class="col-lg-6 col-12">
                            <div class="product__info__main">
-                              <h1>Chaz Kangeroo Hoodie</h1>
+                              <h1 id="product_name"></h1>
                               <div class="product-reviews-summary d-flex">
                                  <ul class="rating-summary d-flex">
                                  <li><i class="zmdi zmdi-star-outline"></i></li>
@@ -446,14 +438,12 @@
                                  </ul>
                               </div> 
                               <div class="price-box">
-                                 <span>$52.00</span>
+                                 <span id="product_price"></span>
                               </div>
-                              <div class="product__overview">
-                                 <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.</p>
-                                 <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. </p>
+                              <div class="product__overview" id="product_description">
                               </div>
                               <div class="product_meta">
-                                 <span class="posted_in">Categories:
+                                 <span class="posted_in" id="categories">Categories:
                                     <a href="#">Adventure</a>, 
                                     <a href="#">Kids, Music</a>
                                  </span>
@@ -473,7 +463,7 @@
                                  <!-- Modal -->
                                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
-                                       <div class="modal-content">
+                                       <div class="modal-content" style="height: 500px;">
                                           <div class="modal-header">
                                              <h4 class="modal-title" id="exampleModalLongTitle">Size Chart</h4>
                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1493,5 +1483,86 @@
       <script src="js/bootstrap.min.js"></script>
       <script src="js/plugins.js"></script>
       <script src="js/active.js"></script>
+      <script>
+         pageData = JSON.parse(sessionStorage.getItem("pageRespData"));
+
+         var image = '';
+         var categories = 'Categories: <a href="#" onclick="openCategory(\'\')">'+pageData.category+'</a>, <a href="#" onclick="openCategory(\'&brand='+ pageData.brand+'\')">'+pageData.brand+'</a>';
+         var description = '';
+         var x_image = 0;
+
+         if (pageData.product_description != null){
+            description = "<p>"+ pageData.product_description + "</p>"
+         }
+         else{
+            description = "<p>No product description available</p>"
+         }
+
+         // var image_upsize = '';
+         // for(x_image in pageData.imagelist){
+         //    image_upsize += '<div style="width:500px;height:600px;">' + pageData.imagelist[x_image].image_url + '</div>';
+         // };
+         // console.log(image_upsize);
+
+         if (pageData.imagelist.length > 0){
+            image += '<div class="fotorama wn__fotorama__action" data-nav="thumbs">'
+            for(x_image in pageData.imagelist){
+               image += '<a href="#"><img src="'+ pageData.imagelist[x_image].image_url + '" alt=""></a>';
+            };
+            image += '</div>'  
+         }
+         else{
+            image += '<div class="fotorama wn__fotorama__action" data-nav="thumbs"">'
+            image += '<a href="#"><img src="'+ pageData.image_url + '" alt=""></a>';
+            image += '</div>'  
+         }
+
+         document.getElementById("product_name").innerHTML = pageData.product_name;
+         document.getElementById("product_price").innerHTML = pageData.currency + ' ' + pageData.price;
+         document.getElementById("product_description").innerHTML = description;
+         document.getElementById("categories").innerHTML = categories;
+         document.getElementById("image_list").innerHTML = image;
+
+         function openCategory(category){
+			   // Create a request variable and assign a new XMLHttpRequest object to it.
+			   var request = new XMLHttpRequest()
+
+   			// replaces white space
+            search_value = "?category=women" + category;
+			   // Open a new connection, using the GET request on the URL endpoint
+			   var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+            
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                  var resultText = request.responseText;
+               sessionStorage.setItem("search_result", resultText); 
+                  sessionStorage.setItem("current_page", 1);
+                  sessionStorage.removeItem("selectBox");
+                  getBrandList(search);
+			   }
+			   // Send request
+            request.send();
+        };
+
+         function getBrandList(url){
+		      var request = new XMLHttpRequest()
+            var search = url + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-women.html");
+            }
+            // Send request
+            request.send();
+        };
+      </script>
    </body>
 </html>
