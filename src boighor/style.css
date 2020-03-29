@@ -5948,7 +5948,7 @@ Single Product Styles
     border-color: #e59285;
 }
 
-.product__info__main .product-addto-links a {
+.product__info__main .product-addto-links label {
     border: 2px solid #ebebeb;
     border-radius: 100%;
     float: left;
@@ -5962,19 +5962,29 @@ Single Product Styles
     width: 40px;
 }
 
-.product__info__main .product-addto-links a.wishlist {
+.product__info__main .product-addto-links label.wishlist {
     background: #ffffff url("images/icons/product-info.png") no-repeat scroll 0 0;
 }
 
-.product__info__main .product-addto-links a.compare {
+.product__info__main .product-addto-links label.compare {
     background: #ffffff url("images/icons/button-compare.png") no-repeat scroll 0 0;
 }
 
-.product__info__main .product-addto-links a.email {
+.product__info__main .product-addto-links label.email {
     background: #ffffff url("images/icons/button-email.png") no-repeat scroll 0 0;
 }
 
-.product__info__main .product-addto-links a:hover {
+.product__info__main .product-addto-links label:hover {
+    background-color: #e59285;
+    background-position: 100% center;
+    border-color: #e59285;
+}
+
+#btnControl {
+    display: none;
+}
+
+#btnControl:checked + label {
     background-color: #e59285;
     background-position: 100% center;
     border-color: #e59285;
