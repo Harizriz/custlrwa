@@ -442,10 +442,10 @@
                               </div>
                               <br>
                               <div class="row d-flex justify-content-start">
-                                 <div class="product-addto-links clearfix mr-3 ml-3">
+                                 <div class="product-addto-links clearfix mr-3 ml-3" id="btn">
                                     <input type="checkbox" id="btnControl"/>
-                                    <label class="wishlist m-0" for="btnControl" href="#" onclick="addWishlist()"></label>
-                                    <label class="email" href="#"></label>
+                                    <!-- <label class="wishlist m-0" id="btn" for="btnControl" onclick="addWishlist()"></label> -->
+                                    <!-- <label class="email"></label> -->
                                  </div>
                                  &emsp;
                                  <!-- Button trigger modal -->
@@ -1667,13 +1667,48 @@
          var description = '';
          var x_image = 0;
          var request = new XMLHttpRequest()
-         
-         var wishlist = JSON.parse(sessionStorage.getItem("wishlist"));
-         if (wishlist === null || wishlist.length === 0){
+         var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+         if (wishlist === undefined || wishlist === null){
             wishlist = [];
+            //console.log('empty wishlist');
          }
-         if (wishlist.includes(pageData.original_site)){
-            console.log('this item is on the wishlist!')
+         function updateBtn(){
+            var wishlist_btn = '<div>';
+            if (wishlist.includes(pageData.original_site)){ //highlighted wishlist button
+               console.log('this item is on the wishlist!');
+               wishlist_btn += '<label class="wishlist m-0" for="btnControl" style="background-color: #e59285;background-position: 100% center;border-color: #e59285;" onclick="addWishlist()"></label><label class="email"></label>';
+            }
+            else{ //default, unhighlighted wishlist button
+               console.log('this item is not on the wishlist!');
+               wishlist_btn += '<label class="wishlist m-0" onclick="addWishlist()"></label><label class="email"></label>';
+            };
+            wishlist_btn += '</div>';
+            document.getElementById("btn").innerHTML = wishlist_btn;
+         };
+
+         updateBtn();
+
+         function addWishlist(){
+            if (wishlist.length === 0){
+               //console.log('creating new wishlist');
+               //console.log('adding to wishlist');
+               wishlist.push(pageData.original_site);
+            }
+            else if (wishlist.includes(pageData.original_site)){
+               var removeIndex = wishlist.indexOf(pageData.original_site);
+               var i=0;
+               delete wishlist[removeIndex];
+               wishlist = wishlist.filter(item => item);               
+               console.log('removed from wishlist');
+            }
+            else {
+               //console.log('adding to wishlist');
+               wishlist.push(pageData.original_site);
+            };
+            updateBtn();
+            //console.log(wishlist); 
+            localStorage.setItem("wishlist", JSON.stringify(wishlist));
+            //console.log('wishlist updated'); 
          };
 
          var search = 'http://custlrwa.ddns.net:8000/scraped/?category=women&brandlist=true';
@@ -1892,31 +1927,6 @@
          else{
             description = "<p>No product description available</p>"
          }
-
-         function addWishlist(){
-            if (wishlist === null || wishlist.length === 0){
-               wishlist = [];
-               console.log('creating new wishlist');
-            }
-            else if (wishlist.includes(pageData.original_site)){
-               var updatedwishlist = wishlist;
-               var removeIndex = updatedwishlist.indexOf(pageData.original_site);
-               var i=0;
-               delete updatedwishlist[removeIndex];
-               
-               for (i in updatedwishlist){
-                  wishlist = []
-                  if (updatedwishlist[i] != undefined){
-                     wishlist = wishlist.push(updatedwishlist[i])
-                  }
-               }
-               console.log('removed from wishlist');
-            }
-            wishlist  = JSON.stringify(wishlist.concat(pageData.original_site));
-            sessionStorage.setItem("wishlist", wishlist);
-            console.log('wishlist updated');
-            console.log(wishlist);     
-         };
 
          // var image_upsize = '';
          // for(x_image in pageData.imagelist){
