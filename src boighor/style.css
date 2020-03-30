@@ -3407,6 +3407,13 @@ Product Styles
     position: relative;
 }
 
+.product:hover .product__thumb {
+    cursor: pointer;
+    transition: transform .2s;
+    width: 270px;
+    height: 385px;
+}
+
 .product .product__thumb a {
     display: block;
 }
@@ -3600,14 +3607,6 @@ Product Styles
     cursor: pointer;
 }
 
-.product:hover .product__thumb {
-    cursor: pointer;
-    transition: transform .2s;
-    width: 210px;
-    height: 310px;
-    /* margin-left: 30px; */
-}
-
 /* .zoom {
     padding: 50px;
     background-color: black;
@@ -3617,12 +3616,12 @@ Product Styles
     margin-left: 30px;
 } */
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .product:hover .product__thumb,
     input[type=submit] {
         margin-left: 10px;
     }
-}
+} */
 
 .product:hover .product__thumb:hover {
     -ms-transform: scale(1.5);
@@ -5949,7 +5948,7 @@ Single Product Styles
     border-color: #e59285;
 }
 
-.product__info__main .product-addto-links a {
+.product__info__main .product-addto-links label {
     border: 2px solid #ebebeb;
     border-radius: 100%;
     float: left;
@@ -5963,19 +5962,29 @@ Single Product Styles
     width: 40px;
 }
 
-.product__info__main .product-addto-links a.wishlist {
+.product__info__main .product-addto-links label.wishlist {
     background: #ffffff url("images/icons/product-info.png") no-repeat scroll 0 0;
 }
 
-.product__info__main .product-addto-links a.compare {
+.product__info__main .product-addto-links label.compare {
     background: #ffffff url("images/icons/button-compare.png") no-repeat scroll 0 0;
 }
 
-.product__info__main .product-addto-links a.email {
+.product__info__main .product-addto-links label.email {
     background: #ffffff url("images/icons/button-email.png") no-repeat scroll 0 0;
 }
 
-.product__info__main .product-addto-links a:hover {
+.product__info__main .product-addto-links label:hover {
+    background-color: #e59285;
+    background-position: 100% center;
+    border-color: #e59285;
+}
+
+#btnControl {
+    display: none;
+}
+
+#btnControl:checked + label {
     background-color: #e59285;
     background-position: 100% center;
     border-color: #e59285;

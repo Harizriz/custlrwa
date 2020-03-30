@@ -196,7 +196,7 @@
 					</div>
 					<div class="col-md-6 col-sm-6 col-6 col-lg-2">
 						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-							<li class="shop_search"><a class="search__active" href="#"></a></li>
+							<li class="shop_search" onclick="focusOnSearch()"><a class="search__active"></a></li>
 							<li class="wishlist"><a href="#"></a></li>
 							<li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
 								<!-- Start Shopping Cart -->
@@ -3233,7 +3233,13 @@
 	<script src="js/plugins.js"></script>
 	<script src="js/active.js"></script>
 	<script>
-        function search(){ //sends search request to backend for JSON response
+        function focusOnSearch(){
+			setTimeOut(function(){
+				document.getElementById("search_bar").focus();
+			}, 500);
+		};
+		
+		function search(){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
 			var request = new XMLHttpRequest()
 
@@ -3275,7 +3281,7 @@
             }
             // Send request
             request.send();
-        };
+		};
 	</script>
 	
 </body>
