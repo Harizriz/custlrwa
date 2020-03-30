@@ -45,4 +45,15 @@ https://www.zara.com/my/en/man-shirts-l737.html?ajax=true
 
 ==================================================
 
+Women, dresses
+https://www.eshakti.com/Handler/ProductHandlerNew6.ashx?cate=Dresses&startIndex=0&endIndex=400&viewAll=&price=&color=&fabric=&sorting=Topsellers&feature=&userid=446454949&isNaturalFabric=false&promotion=&customerType=N
+
+Women, tops
+https://www.eshakti.com/Handler/ProductHandlerNew6.ashx?cate=Tops&startIndex=0&endIndex=400&viewAll=&price=&color=&fabric=&sorting=Topsellers&feature=&userid=446454949&isNaturalFabric=false&promotion=&customerType=N
+
+Women, bottoms
+https://www.eshakti.com/Handler/ProductHandlerNew6.ashx?cate=Bottoms&startIndex=0&endIndex=400&viewAll=&price=&color=&fabric=&sorting=Topsellers&feature=&userid=446454949&isNaturalFabric=false&promotion=&customerType=N
+
+==================================================
+
 https://medium.com/python-pandemonium/6-things-to-develop-an-efficient-web-scraper-in-python-1dffa688793c
