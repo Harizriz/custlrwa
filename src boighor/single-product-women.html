@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Single Product | FITTR</title>
+      <title id="tab_title">Single Product | FITTR</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Favicons -->
@@ -175,7 +175,7 @@
                                 <a class="search__active" href="#"></a>
                             </li>
                             <li class="wishlist">
-                                <a href="#"></a>
+                                <a href="wishlist.html"></a>
                             </li>
                             <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
                                 <!-- Start Shopping Cart -->
@@ -377,9 +377,9 @@
       <div class="brown--color box-search-content search_active block-bg close__top">
 			<form id="search_mini_form" class="minisearch" action="#" onsubmit="return false">
 				<div class="field__search">
-					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="search()">
+					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="productsearch();">
 					<div class="action">
-						<button class="btn btn-light-inverse" type="submit" onclick="search()"><i class="zmdi zmdi-search"></i></button>
+						<button class="btn btn-light-inverse" type="submit" onclick="productsearch();"><i class="zmdi zmdi-search"></i></button>
 					</div>
 				</div>
 			</form>
@@ -441,168 +441,194 @@
                                  </span>
                               </div>
                               <br>
-                              <div class="row d-flex justify-content-start">
-                                 <div class="product-addto-links clearfix mr-3 ml-3" id="btn">
-                                    <input type="checkbox" id="btnControl"/>
-                                    <!-- <label class="wishlist m-0" id="btn" for="btnControl" onclick="addWishlist()"></label> -->
-                                    <!-- <label class="email"></label> -->
+                              <div class="row">
+                                 <div class="col-lg-4 col-12">
+                                    <div class="row d-flex justify-content-start">
+                                       <div class="product-addto-links clearfix mr-3 ml-3" id="btn">
+                                          <input type="checkbox" id="btnControl"/>
+                                       </div>
+                                    </div>
+                                    <div class="box-tocart d-flex m-0 mb-2 mt-2">
+                                       <span>Qty</span>
+                                       <input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number">
+                                    </div>
+                                    <div class="addtocart__action mt-4">
+                                       <button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart">Add to Cart</button> 
+                                    </div>
                                  </div>
-                                 &emsp;
-                                 <!-- Button trigger modal -->
-                                 <button type="button" class="btn btn-info btn-sm pl-3 pr-3" style="margin-left: 33px;" data-toggle="modal" data-target="#exampleModalCenter">
-                                    Size Chart
-                                 </button>
-                                 <!-- Modal -->
-                                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                       <div class="modal-content" style="height: 500px;">
-                                          <div class="modal-header">
-                                             <h4 class="modal-title" id="exampleModalLongTitle">Size Chart</h4>
-                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                             <span aria-hidden="true">&times;</span>
-                                             </button>
+                                 <div class="col-lg-8 col-12 p-0">
+                                    <div class="col-lg-8 col-12 p-0">
+                                       <div class="box-sizing">
+                                          <div class="row d-flex justify-content-around">
+                                             <h3 class="wedget__title_size mt-2 pl-1">Select Size</h3>
+                                              <button type="button" class="btn btn-info btn-sm mb-3" data-toggle="modal" data-target="#exampleModalCenter">Size Chart</button>
+                                              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                 <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content" style="height: 500px;">
+                                                       <div class="modal-header">
+                                                          <h4 class="modal-title" id="exampleModalLongTitle">Size Chart</h4>
+                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                          <span aria-hidden="true">&times;</span>
+                                                          </button>
+                                                       </div>
+                                                       <div class="modal-body pl-2">
+                                                          <h6 class="pb-3 pl-2"> Product Measurements (in INCHES) </h6>
+                                                          <table class="table table-hover">
+                                                             <thead>
+                                                                <tr>
+                                                                   <th class="xl80" width="161" height="21">TOP</th>
+                                                                   <th class="xl75" width="122" data-hover="Available">UK 8-S</th>
+                                                                   <th class="xl75" width="122" data-hover="Available">UK 10-M</th>
+                                                                   <th class="xl75" width="122" data-hover="Available">UK 12-L</th>
+                                                                   <th class="xl73" width="124" data-hover="Available">UK 14-XL</th>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td class="xl65" height="21">Neck</td>
+                                                                   <td class="xl69"></td>
+                                                                   <td class="xl69"></td>
+                                                                   <td class="xl69"></td>
+                                                                   <td class="xl71"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td class="xl65" height="21">Shoulder</td>
+                                                                   <td class="xl69"></td>
+                                                                   <td class="xl69"></td>
+                                                                   <td class="xl69"></td>
+                                                                   <td class="xl71"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td class="xl65" height="21">Arm Size</td>
+                                                                   <td class="xl69"></td>
+                                                                   <td class="xl69"></td>
+                                                                   <td class="xl69"></td>
+                                                                   <td class="xl71"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td class="xl65" height="21">Chest</td>
+                                                                   <td class="xl69">33</td>
+                                                                   <td class="xl69">35</td>
+                                                                   <td class="xl69">37</td>
+                                                                   <td class="xl71">39</td>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td class="xl65" height="21">Across Shoulders</td>
+                                                                   <td class="xl69">14.5</td>
+                                                                   <td class="xl69">15</td>
+                                                                   <td class="xl69">15.5</td>
+                                                                   <td class="xl71">16</td>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td class="xl65" height="21">Waist</td>
+                                                                   <td class="xl69">26</td>
+                                                                   <td class="xl69">28</td>
+                                                                   <td class="xl69">30</td>
+                                                                   <td class="xl71">31</td>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td class="xl65" height="21">Hip</td>
+                                                                   <td class="xl69">35</td>
+                                                                   <td class="xl69">37</td>
+                                                                   <td class="xl69">39</td>
+                                                                   <td class="xl71">41</td>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td class="xl65" height="21">Length of Sleeve</td>
+                                                                   <td class="xl70">4.5</td>
+                                                                   <td class="xl69">4.5</td>
+                                                                   <td class="xl69">5</td>
+                                                                   <td class="xl71">5</td>
+                                                                </tr>
+                                                                <tr>
+                                                                   <td class="xl65" height="21">Length of Top</td>
+                                                                   <td class="xl70">23.5</td>
+                                                                   <td class="xl69">24.5</td>
+                                                                   <td class="xl69">25.5</td>
+                                                                   <td class="xl71">26.5</td>
+                                                                </tr>
+                                                             </tbody>
+                                                          </table>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
                                           </div>
-                                          <div class="modal-body pl-2">
-                                             <h6 class="pb-3 pl-2"> Product Measurements (in INCHES) </h6>
-                                             <table class="table table-hover">
-                                                <thead>
-                                                   <tr>
-                                                      <th class="xl80" width="161" height="21">TOP</th>
-                                                      <th class="xl75" width="122" data-hover="Available">UK 8-S</th>
-                                                      <th class="xl75" width="122" data-hover="Available">UK 10-M</th>
-                                                      <th class="xl75" width="122" data-hover="Available">UK 12-L</th>
-                                                      <th class="xl73" width="124" data-hover="Available">UK 14-XL</th>
-                                                   </tr>
-                                                   <tr>
-                                                      <td class="xl65" height="21">Neck</td>
-                                                      <td class="xl69"></td>
-                                                      <td class="xl69"></td>
-                                                      <td class="xl69"></td>
-                                                      <td class="xl71"></td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td class="xl65" height="21">Shoulder</td>
-                                                      <td class="xl69"></td>
-                                                      <td class="xl69"></td>
-                                                      <td class="xl69"></td>
-                                                      <td class="xl71"></td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td class="xl65" height="21">Arm Size</td>
-                                                      <td class="xl69"></td>
-                                                      <td class="xl69"></td>
-                                                      <td class="xl69"></td>
-                                                      <td class="xl71"></td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td class="xl65" height="21">Chest</td>
-                                                      <td class="xl69">33</td>
-                                                      <td class="xl69">35</td>
-                                                      <td class="xl69">37</td>
-                                                      <td class="xl71">39</td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td class="xl65" height="21">Across Shoulders</td>
-                                                      <td class="xl69">14.5</td>
-                                                      <td class="xl69">15</td>
-                                                      <td class="xl69">15.5</td>
-                                                      <td class="xl71">16</td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td class="xl65" height="21">Waist</td>
-                                                      <td class="xl69">26</td>
-                                                      <td class="xl69">28</td>
-                                                      <td class="xl69">30</td>
-                                                      <td class="xl71">31</td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td class="xl65" height="21">Hip</td>
-                                                      <td class="xl69">35</td>
-                                                      <td class="xl69">37</td>
-                                                      <td class="xl69">39</td>
-                                                      <td class="xl71">41</td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td class="xl65" height="21">Length of Sleeve</td>
-                                                      <td class="xl70">4.5</td>
-                                                      <td class="xl69">4.5</td>
-                                                      <td class="xl69">5</td>
-                                                      <td class="xl71">5</td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td class="xl65" height="21">Length of Top</td>
-                                                      <td class="xl70">23.5</td>
-                                                      <td class="xl69">24.5</td>
-                                                      <td class="xl69">25.5</td>
-                                                      <td class="xl71">26.5</td>
-                                                   </tr>
-                                                </tbody>
-                                              </table>
-                                              <!-- <table class="table table-hover">
-                                                <thead>
-                                                   <tr>
-                                                      <th class="xl80" width="161" height="21">TROUSERS</th>
-                                                      <th class="xl75" width="122" data-hover="Available">UK 8-S</th>
-                                                      <th class="xl75" width="122" data-hover="Available">UK 10-M</th>
-                                                      <th class="xl75" width="122" data-hover="Available">UK 12-L</th>
-                                                      <th class="xl73" width="124" data-hover="Available">UK 14-XL</th>
-                                                      </tr>
-                                                      <tr>
-                                                         <td class="xl65" height="21">Low Waist</td>
-                                                         <td class="xl69">32.25</td>
-                                                         <td class="xl69">33.75</td>
-                                                         <td class="xl69">35.5</td>
-                                                         <td class="xl71">37</td>
-                                                      </tr>
-                                                      <tr>
-                                                         <td class="xl65" height="21">Hip</td>
-                                                         <td class="xl69">37</td>
-                                                         <td class="xl69">38.5</td>
-                                                         <td class="xl69">40</td>
-                                                         <td class="xl71">41.75</td>
-                                                      </tr>
-                                                      <tr>
-                                                         <td class="xl65" height="21">Inner Leg</td>
-                                                         <td class="xl69">32.5</td>
-                                                         <td class="xl69">33</td>
-                                                         <td class="xl69">33.5</td>
-                                                         <td class="xl71">33.75</td>
-                                                      </tr>
-                                                </tbody>
-                                              </table> -->
+                                          <div class="row">
+                                             <div class="col-sm-7 col-12">
+                                                <div class="dropdown ml-1 mt-2">
+                                                   <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   International</button>
+                                                   <div class="dropdown-menu" aria-labelledby="International" style="min-width:8rem;">
+                                                      <a class="dropdown-item" href="#">US</a>
+                                                      <a class="dropdown-item" href="#">UK</a>
+                                                      <a class="dropdown-item" href="#">EU</a>
+                                                      <a class="dropdown-item" href="#">AUS</a>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="col-sm-5 col-12">
+                                                <div class="dropdown mt-2">
+                                                   <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   XS</button>
+                                                   <div class="dropdown-menu" aria-labelledby="International" style="min-width:0rem;">
+                                                      <a class="dropdown-item" href="#">S</a>
+                                                      <a class="dropdown-item" href="#">M</a>
+                                                      <a class="dropdown-item" href="#">L</a>
+                                                      <a class="dropdown-item" href="#">XL</a>
+                                                   </div>
+                                                </div>
+                                             </div>
                                           </div>
-                                          <!-- <div class="modal-footer">
-                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                             <button type="button" class="btn btn-primary">Save changes</button>
-                                          </div> -->
                                        </div>
                                     </div>
                                  </div>
                               </div>
                               <br>
-                              <div class="box-tocart d-flex m-0 mb-2">
-                                 <span>Qty</span>
-                                 <input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number">
-                                 <div class="dropdown">
-                                    <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    International</button>
-                                    <div class="dropdown-menu" aria-labelledby="International">
-                                       <a class="dropdown-item" href="#">US</a>
-                                       <a class="dropdown-item" href="#">UK</a>
-                                       <a class="dropdown-item" href="#">EU</a>
-                                       <a class="dropdown-item" href="#">AUS</a>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="row">
-                                 <div class="addtocart__action mr-3 ml-3">
-                                    <button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart">Add to Cart</button> 
-                                 </div>
-                              </div>
+                                 
+                                                      <!-- <table class="table table-hover">
+                                                         <thead>
+                                                            <tr>
+                                                               <th class="xl80" width="161" height="21">TROUSERS</th>
+                                                               <th class="xl75" width="122" data-hover="Available">UK 8-S</th>
+                                                               <th class="xl75" width="122" data-hover="Available">UK 10-M</th>
+                                                               <th class="xl75" width="122" data-hover="Available">UK 12-L</th>
+                                                               <th class="xl73" width="124" data-hover="Available">UK 14-XL</th>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td class="xl65" height="21">Low Waist</td>
+                                                                  <td class="xl69">32.25</td>
+                                                                  <td class="xl69">33.75</td>
+                                                                  <td class="xl69">35.5</td>
+                                                                  <td class="xl71">37</td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td class="xl65" height="21">Hip</td>
+                                                                  <td class="xl69">37</td>
+                                                                  <td class="xl69">38.5</td>
+                                                                  <td class="xl69">40</td>
+                                                                  <td class="xl71">41.75</td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td class="xl65" height="21">Inner Leg</td>
+                                                                  <td class="xl69">32.5</td>
+                                                                  <td class="xl69">33</td>
+                                                                  <td class="xl69">33.5</td>
+                                                                  <td class="xl71">33.75</td>
+                                                               </tr>
+                                                         </tbody>
+                                                      </table> -->
+                                                   <!-- </div> -->
+                                                   <!-- <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                                   </div> -->
+                                                <!-- </div>
+                                             </div>
+                                          </div> -->
+                                          <!-- <div class="row">
+                                             
+                                          </div> -->                                     
                               <!-- <div class="row d-flex justify-content-start">
-                                 <div class="addtocart__action mr-3 ml-3">
-                                    <button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart">Add to Cart</button> 
-                                 </div>
+                                
                                  <div class="addtowishlist__actions ml-3">
                                     <button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to WishList">Add to WishList</button> 
                                  </div>
@@ -1462,21 +1488,6 @@
             </div>
          </div>
          <!-- End main Content -->
-         <!-- Start Search Popup -->
-         <div class="brown--color box-search-content search_active block-bg close__top">
-			<form id="search_mini_form" class="minisearch" action="#" onsubmit="return false">
-				<div class="field__search">
-					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="search()">
-					<div class="action">
-						<button class="btn btn-light-inverse" type="submit" onclick="search()"><i class="zmdi zmdi-search"></i></button>
-					</div>
-				</div>
-			</form>
-			<div class="close__wrap">
-				<span>close</span>
-			</div>
-		</div>
-         <!-- End Search Popup -->
          <br>
          <br>
          <br>
@@ -1617,28 +1628,28 @@
       <script src="js/plugins.js"></script>
       <script src="js/active.js"></script>
       <script>
-		function search(){ //sends search request to backend for JSON response
-			// Create a request variable and assign a new XMLHttpRequest object to it.
-			var request = new XMLHttpRequest()
+         function productsearch(){ //sends search request to backend for JSON response
+            // Create a request variable and assign a new XMLHttpRequest object to it.
+            var request = new XMLHttpRequest()
 
-			// replaces white space
-            search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
-            sessionStorage.setItem("search_term", search_value);
-			// Open a new connection, using the GET request on the URL endpoint
-			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
-            
-            request.open('GET', search, true)
+            // replaces white space
+               search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
+               sessionStorage.setItem("search_term", search_value);
+            // Open a new connection, using the GET request on the URL endpoint
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+               
+               request.open('GET', search, true)
 
-			request.onload = function loadHTML(){
-            var resultText = request.responseText;
-				sessionStorage.setItem("search_result", resultText); 
-            sessionStorage.setItem("current_page", 1);
-            sessionStorage.removeItem("selectBox");
-            getBrandList();
-			}
-			// Send request
-            request.send();
-        };
+            request.onload = function loadHTML(){
+               var resultText = request.responseText;
+               sessionStorage.setItem("search_result", resultText); 
+               sessionStorage.setItem("current_page", 1);
+               sessionStorage.removeItem("selectBox");
+               getBrandList();
+            }
+            // Send request
+               request.send();
+         };
 
          function getBrandList(){
 			var request = new XMLHttpRequest()
@@ -1693,10 +1704,10 @@
                //console.log('creating new wishlist');
                //console.log('adding to wishlist');
                wishlist.push(pageData.original_site);
+               localStorage.setItem("recentCategory", pageData.category);
             }
             else if (wishlist.includes(pageData.original_site)){
                var removeIndex = wishlist.indexOf(pageData.original_site);
-               var i=0;
                delete wishlist[removeIndex];
                wishlist = wishlist.filter(item => item);               
                console.log('removed from wishlist');
@@ -1704,6 +1715,7 @@
             else {
                //console.log('adding to wishlist');
                wishlist.push(pageData.original_site);
+               localStorage.setItem("recentCategory", pageData.category);
             };
             updateBtn();
             //console.log(wishlist); 
@@ -1916,7 +1928,7 @@
             document.getElementById("brand_dropdown_v").innerHTML = brands_v;
             document.getElementById("brand_dropdown_w").innerHTML = brands_w;
             document.getElementById("brand_dropdown_x").innerHTML = brands_x;
-            document.getElementById("brand_dropdown_y").innerHTML = brands_t;
+            document.getElementById("brand_dropdown_y").innerHTML = brands_y;
             document.getElementById("brand_dropdown_z").innerHTML = brands_z;
         }
          request.send();

@@ -79,6 +79,14 @@ Reset Styles
     box-sizing: border-box;
 }
 
+.box-sizing {
+    width: 250px;
+    height: 225px;
+    /* border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 2px; */
+}
+
 article,
 aside,
 details,
@@ -5876,7 +5884,6 @@ Single Product Styles
 
 .product__info__main .box-tocart {
     margin: 0;
-    margin-bottom: 25px;
 }
 
 .product__info__main .box-tocart span {
@@ -5889,13 +5896,14 @@ Single Product Styles
 }
 
 .product__info__main .box-tocart .input-text {
-    border: 1px solid #ebebeb;
+    border: 1px solid black;
     color: #616161;
     font-size: 14px;
-    height: 40px;
+    height: 30px;
     text-align: center;
-    width: 100px;
-    margin: 0 15px 15px 0;
+    width: 60px;
+    margin-top: 7px;
+    border-radius: 3px;
 }
 
 .product__info__main .box-tocart .addtocart__actions .tocart {
@@ -8221,6 +8229,16 @@ Shop Single Styles
     text-transform: uppercase;
 }
 
+.wedget__title_size {
+    color: #2e2e2e;
+    font-size: 16px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
 .wedget__categories.poroduct--cat {
     margin: 0 0 30px;
 }
@@ -9066,4 +9084,25 @@ a {
     margin: 10px 20px 10px 0px;
     cursor: pointer;
     box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.2)
+}
+
+.alert {
+    padding: 20px;
+    background-color: #e7e614;
+    color: black;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+color: white;
 }
