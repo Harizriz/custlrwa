@@ -5998,6 +5998,8 @@ Single Product Styles
     border-color: #e59285;
 }
 
+
+
 .product__info__main .product__overview {
     border-top: 1px solid #ebebeb;
     clear: both;
@@ -8508,6 +8510,7 @@ Shop Single Styles
 
 .list__view .thumb a img {
     width: 100%;
+    cursor: pointer;
 }
 
 .list__view .thumb a.second__img {
@@ -8533,6 +8536,7 @@ Shop Single Styles
     font-size: 24px;
     font-weight: 500;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 .list__view .content .rating {
@@ -8599,16 +8603,13 @@ Shop Single Styles
 
 .list__view .content .cart__action li.wishlist a {
     background: white url("images/icons/wishlist.png") no-repeat scroll -6% 0;
+    cursor: pointer;
 }
 
 .list__view .content .cart__action li.wishlist a:hover {
     background-position: 108% 0;
     border: 2px solid #e59285;
     background-color: #e59285;
-}
-
-.list__view .content .cart__action li.compare a {
-    background: white url("images/icons/compare.png") no-repeat scroll -6% 0;
 }
 
 .list__view .content .cart__action li.compare a:hover {

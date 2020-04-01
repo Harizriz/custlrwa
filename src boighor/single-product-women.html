@@ -683,13 +683,13 @@
                   </div>
                   <!-- Start Single Tab Content -->
                   <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
-                     <div class="description__attribute">
-                        <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.</p>
-                           <ul>
+                     <div class="description__attribute" id="product_details">
+                        <p></p>
+                           <!-- <ul>
                               <li>• Two-tone gray heather hoodie.</li>
                               <li>• Drawstring-adjustable hood. </li>
                               <li>• Machine wash/dry.</li>
-                           </ul>
+                           </ul> -->
                      </div>
                   </div> 
                   <!-- End Single Tab Content -->
@@ -1710,6 +1710,7 @@
                var removeIndex = wishlist.indexOf(pageData.original_site);
                delete wishlist[removeIndex];
                wishlist = wishlist.filter(item => item);               
+               localStorage.setItem("recentCategory", pageData.category);
                console.log('removed from wishlist');
             }
             else {
@@ -1940,11 +1941,12 @@
             description = "<p>No product description available</p>"
          }
 
-         // var image_upsize = '';
-         // for(x_image in pageData.imagelist){
-         //    image_upsize += '<div style="width:500px;height:600px;">' + pageData.imagelist[x_image].image_url + '</div>';
-         // };
-         // console.log(image_upsize);
+         if (pageData.product_description != null){
+            details = "<p>"+ pageData.product_description + "</p>"
+         }
+         else{
+            details = "<p>No product description available</p>"
+         }
 
          if (pageData.imagelist.length > 0){
             image += '<div class="fotorama wn__fotorama__action" data-nav="thumbs">'
@@ -1964,6 +1966,7 @@
          document.getElementById("product_description").innerHTML = description;
          document.getElementById("categories").innerHTML = categories;
          document.getElementById("image_list").innerHTML = image;
+         document.getElementById("product_details").innerHTML = details;
 
          function openCategory(category){
 			   // Create a request variable and assign a new XMLHttpRequest object to it.
