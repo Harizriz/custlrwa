@@ -450,9 +450,9 @@
                                     </div>
                                     <div class="box-tocart d-flex m-0 mb-2 mt-2">
                                        <span>Qty</span>
-                                       <input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number">
+                                       <input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number" oninput="udpateQty()">
                                     </div>
-                                    <div class="addtocart__action mt-4">
+                                    <div class="addtocart__action mt-4" id="addToCart">
                                        <button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart">Add to Cart</button> 
                                     </div>
                                  </div>
@@ -695,24 +695,24 @@
                   <!-- End Single Tab Content -->
                   <!-- Start Single Tab Content -->
                   <div class="pro__tab_label tab-pane fade" id="nav-review" role="tabpanel">
-                     <div class="review__attribute">
-                        <h1>Customer Reviews</h1>
+                     <div class="review__attribute" id="get_review">
+                        <!-- <h1>Customer Reviews</h1>
                         <h2>Hastech</h2>
                         <div class="review__ratings__type d-flex">
                            <div class="review-ratings">
                               <div class="rating-summary d-flex">
                                  <span>Quality</span>
-                                    <ul class="rating d-flex">
-                                       <li><i class="zmdi zmdi-star"></i></li>
-                                       <li><i class="zmdi zmdi-star"></i></li>
-                                       <li><i class="zmdi zmdi-star"></i></li>
-                                       <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                       <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                       </ul>
+                                 <ul class="rating d-flex">
+                                    <li><i class="zmdi zmdi-star"></i></li>
+                                    <li><i class="zmdi zmdi-star"></i></li>
+                                    <li><i class="zmdi zmdi-star"></i></li>
+                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
+                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
+                                 </ul>
                               </div>
                               <div class="rating-summary d-flex">
                                  <span>Price</span>
-                                  <ul class="rating d-flex">
+                                 <ul class="rating d-flex">
                                     <li><i class="zmdi zmdi-star"></i></li>
                                     <li><i class="zmdi zmdi-star"></i></li>
                                     <li><i class="zmdi zmdi-star"></i></li>
@@ -722,81 +722,81 @@
                               </div>
                               <div class="rating-summary d-flex">
                                  <span>value</span>
-                                    <ul class="rating d-flex">
-                                       <li><i class="zmdi zmdi-star"></i></li>
-                                       <li><i class="zmdi zmdi-star"></i></li>
-                                       <li><i class="zmdi zmdi-star"></i></li>
-                                       <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                       <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    </ul>
+                                 <ul class="rating d-flex">
+                                    <li><i class="zmdi zmdi-star"></i></li>
+                                    <li><i class="zmdi zmdi-star"></i></li>
+                                    <li><i class="zmdi zmdi-star"></i></li>
+                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
+                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
+                                 </ul>
+                              </div>
                            </div>
-                        </div>
-                        <div class="review-content">
-                           <p>Hastech</p>
-                           <p>Review by Hastech</p>
-                           <p>Posted on 11/6/2018</p>
+                           <div class="review-content">
+                              <p>Hastech</p>
+                              <p>Review by Hastech</p>
+                              <p>Posted on 11/6/2018</p>
+                           </div>
+                        </div> -->
+                     </div>
+                     <div class="review-fieldset">
+                        <h2>You're reviewing:</h2>
+                        <h3>Chaz Kangeroo Hoodie</h3>
+                           <div class="review-field-ratings">
+                              <div class="product-review-table">
+                                 <div class="review-field-rating d-flex" id="review_quality">
+                                    <span id="quality">Quality</span>
+                                    <div class="rating d-flex">
+                                       <span id="5" onclick="setQualityStar(this.id)">☆</span>
+                                       <span id="4" onclick="setQualityStar(this.id)">☆</span>
+                                       <span id="3" onclick="setQualityStar(this.id)">☆</span>
+                                       <span id="2" onclick="setQualityStar(this.id)">☆</span>
+                                       <span id="1" onclick="setQualityStar(this.id)">☆</span>
+                                    </div>
+                                 </div>
+                                 <div class="review-field-rating d-flex" id="review_price">
+                                    <span id="price">Price</span>
+                                    <div class="rating d-flex">
+                                       <span id="5" onclick="setPriceStar(this.id)">☆</span>
+                                       <span id="4" onclick="setPriceStar(this.id)">☆</span>
+                                       <span id="3" onclick="setPriceStar(this.id)">☆</span>
+                                       <span id="2" onclick="setPriceStar(this.id)">☆</span>
+                                       <span id="1" onclick="setPriceStar(this.id)">☆</span>
+                                    </div>
+                                 </div>
+                                 <div class="review-field-rating d-flex" id="review_value">
+                                    <span id="value">Value</span>
+                                    <div class="rating d-flex">
+                                       <span id="5" onclick="setValueStar(this.id)">☆</span>
+                                       <span id="4" onclick="setValueStar(this.id)">☆</span>
+                                       <span id="3" onclick="setValueStar(this.id)">☆</span>
+                                       <span id="2" onclick="setValueStar(this.id)">☆</span>
+                                       <span id="1" onclick="setValueStar(this.id)">☆</span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="review_form_field">
+                              <div class="input__box">
+                                 <span>Name</span>
+                                    <input id="reviewer_name" type="text" name="nickname">
+                              </div>
+                              <div class="input__box">
+                                 <span>Summary</span>
+                                 <input id="summary" type="text" name="summery">
+                                 </div>
+                              <div class="input__box">
+                                 <span>Review</span>
+                                 <textarea name="review" id="review"></textarea>
+                              </div>
+                              <div class="review-form-actions">
+                                 <button onclick="setReview()">Submit Review</button>
+                              </div>
+                           </div>
                         </div>
                      </div>
+                     <!-- End Single Tab Content -->
                   </div>
-                  <div class="review-fieldset">
-                     <h2>You're reviewing:</h2>
-                     <h3>Chaz Kangeroo Hoodie</h3>
-                        <div class="review-field-ratings">
-                           <div class="product-review-table">
-                              <div class="review-field-rating d-flex">
-                                 <span>Quality</span>
-                                 <ul class="rating d-flex">
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                 </ul>
-                              </div>
-                              <div class="review-field-rating d-flex">
-                                 <span>Price</span>
-                                 <ul class="rating d-flex">
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                 </ul>
-                              </div>
-                              <div class="review-field-rating d-flex">
-                                 <span>Value</span>
-                                 <ul class="rating d-flex">
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                    <li class="off"><i class="zmdi zmdi-star"></i></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="review_form_field">
-                           <div class="input__box">
-                              <span>Nickname</span>
-                               <input id="nickname_field" type="text" name="nickname">
-                           </div>
-                           <div class="input__box">
-                              <span>Summary</span>
-                              <input id="summery_field" type="text" name="summery">
-                            </div>
-                           <div class="input__box">
-                              <span>Review</span>
-                              <textarea name="review"></textarea>
-                           </div>
-                           <div class="review-form-actions">
-                              <button>Submit Review</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- End Single Tab Content -->
-               </div>
-            </div> 
+               </div> 
                   <!--<div class="wn__related__product pt--80 pb--50">
                      <div class="section__title text-center">
                      <h2 class="title__be--2">Related Products</h2>
@@ -1627,387 +1627,634 @@
       <script src="js/bootstrap.min.js"></script>
       <script src="js/plugins.js"></script>
       <script src="js/active.js"></script>
+      <script src="js/sizingCharts.js"></script>
       <script>
-         function productsearch(){ //sends search request to backend for JSON response
-            // Create a request variable and assign a new XMLHttpRequest object to it.
-            var request = new XMLHttpRequest()
-
-            // replaces white space
-               search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
-               sessionStorage.setItem("search_term", search_value);
-            // Open a new connection, using the GET request on the URL endpoint
-            var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
-               
-               request.open('GET', search, true)
-
-            request.onload = function loadHTML(){
-               var resultText = request.responseText;
-               sessionStorage.setItem("search_result", resultText); 
-               sessionStorage.setItem("current_page", 1);
-               sessionStorage.removeItem("selectBox");
-               getBrandList();
+         class Cart{
+         constructor(products) {
+            if (!this.storageSupported()){
+               throw "Browser doesn't support localStorage"
             }
-            // Send request
-               request.send();
-         };
+            this.products = products;
+            //this.items = JSON.parse(localStorage.getItem('cart'))
+         }
+         find(id, source){
+            for(var i = 0; i < source.length; i++){
+               if(source[i].id == id){
+                  return source[i];
+               }
+            }
+            return false;
+         }
+         /*
+         *Add items to cart
+         */         
+         add(id, quantity = 1, size){
+            //Find product from catalog, build object, add to storage
+            if (localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0){
+               var tempItem = this.find(id, this.products);
+               var item = Object.assign({}, tempItem, {quantity: quantity, size: size});
+               localStorage.setItem('cart', JSON.stringify([item]))
+            }else if(this.find(id, JSON.parse(localStorage.getItem('cart')))){
+               //Item already exists in cart, increase quantity
+               if(size === (this.find(id, JSON.parse(localStorage.getItem('cart')))).size){ //adding qty to same size
+                  var cartObj = JSON.parse(localStorage.getItem('cart'));
+                  var oldItem = this.find(id, JSON.parse(localStorage.getItem('cart')));
+                  var itemIndex = cartObj.findIndex(x => x.id === id);
+                  var newItem = Object.assign({}, oldItem, {quantity: (quantity + oldItem.quantity), size: size});
+                  cartObj[itemIndex] = newItem;
+                  localStorage.setItem('cart', JSON.stringify(cartObj))
+               }else{
+                  var tempItem = this.find(id, this.products);
+                  var item = Object.assign({}, tempItem, {quantity: quantity, size: size});
+                  var cartObj = JSON.parse(localStorage.getItem('cart'));
+                  cartObj.push(item)
+                  localStorage.setItem('cart', JSON.stringify(cartObj))
+               };               
+            
+            }else{
+               var tempItem = this.find(id, this.products);
+               var item = Object.assign({}, tempItem, {quantity: quantity, size: size});
+               var cartObj = JSON.parse(localStorage.getItem('cart'));
+               cartObj.push(item)
+               localStorage.setItem('cart', JSON.stringify(cartObj))
+            }
+      	}
+         /*
+         *Show single item from cart
+         */
+         show(id){
+            return this.find(id, JSON.parse(localStorage.getItem('cart')))
+         }
+         /*
+         *List all items in cart
+         */
+         all(){
+            return  JSON.parse(localStorage.getItem('cart'));
+         }
+         /*
+         *Sum cost of items in cart
+         *TODO - get price into object
+         */
+         sum(){
+            var sum = 0;
+            var items = JSON.parse(localStorage.getItem('cart'));
+            for (var i = 0; i < items.length; i++) {
+               sum += (items[i].price * items[i].quantity)
+            }
+            return sum;
+         }
+         findSizeIndex(id, source, size){
+            for(var i = 0; i < source.length; i++){
+               if(source[i].id == id && source[i].size == size){
+                  return i;
+               }
+            }
+            return false;
+         }
+         /*
+         *Remove an item from cart
+         */
+         remove(id, size){
+            
+            var items = JSON.parse(localStorage.getItem('cart'));
+            var index = findSizeIndex(id, items, size)
 
-         function getBrandList(){
-			var request = new XMLHttpRequest()
-            var search_value = sessionStorage.getItem("search_term");
-            var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+            if (index >= 0){
+               items.splice(index, 1)
+               localStorage.setItem('cart', JSON.stringify(items));
+            }
+         }
+         /*
+         *Update cart item by its quantity
+         */
+         update(id, quantity, size){
+            var cartObj = JSON.parse(localStorage.getItem('cart'));
+
+            var oldItem = this.find(id, cartObj)
+            var itemIndex = findSizeIndex(id, items, size)
+            var updatedItem = Object.assign({}, oldItem, {quantity: quantity})
+            cartObj[itemIndex] = updatedItem;
+
+            //Save back to storage
+            localStorage.setItem('cart', JSON.stringify(cartObj))
+         }
+         /**
+         *Remove all items from cart
+         */
+         clear(){
+            localStorage.removeItem('cart')
+         }
+         storageSupported(){
+            return (typeof(Storage) !== "undefined") ? true : false;
+         }
+      };
+      cart = new Cart();
+
+      function productsearch(){ //sends search request to backend for JSON response
+         // Create a request variable and assign a new XMLHttpRequest object to it.
+         var request = new XMLHttpRequest()
+
+         // replaces white space
+            search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
+            sessionStorage.setItem("search_term", search_value);
+         // Open a new connection, using the GET request on the URL endpoint
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+            
             request.open('GET', search, true)
 
-            request.onload = function loadHTML(){
-                var resultText = (JSON.parse(request.responseText)).results;
-                var i;
-                var brands = [];
-                for (i=0; i<resultText.length; i++){
-                    brands = brands.concat(resultText[i].brand);
-                };
-                sessionStorage.setItem("brand_list", JSON.stringify(brands));
-                window.location.replace("shop-grid-women.html");
-            }
-            // Send request
-            request.send();
-		   };
-         
-         pageData = JSON.parse(sessionStorage.getItem("pageRespData"));
-
-         var image = '';
-         var categories = 'Categories: <a href="#" onclick="openCategory(\'\')">'+pageData.category+'</a>, <a href="#" onclick="openCategory(\'&brand='+ pageData.brand+'\')">'+pageData.brand+'</a>';
-         var description = '';
-         var x_image = 0;
-         var request = new XMLHttpRequest()
-         var wishlist = JSON.parse(localStorage.getItem("wishlist"));
-         if (wishlist === undefined || wishlist === null){
-            wishlist = [];
-            //console.log('empty wishlist');
+         request.onload = function loadHTML(){
+            var resultText = request.responseText;
+            sessionStorage.setItem("search_result", resultText); 
+            sessionStorage.setItem("current_page", 1);
+            sessionStorage.removeItem("selectBox");
+            getBrandList();
          }
-         function updateBtn(){
-            var wishlist_btn = '<div>';
-            if (wishlist.includes(pageData.original_site)){ //highlighted wishlist button
-               console.log('this item is on the wishlist!');
-               wishlist_btn += '<label class="wishlist m-0" for="btnControl" style="background-color: #e59285;background-position: 100% center;border-color: #e59285;" onclick="addWishlist()"></label><label class="email"></label>';
-            }
-            else{ //default, unhighlighted wishlist button
-               console.log('this item is not on the wishlist!');
-               wishlist_btn += '<label class="wishlist m-0" onclick="addWishlist()"></label><label class="email"></label>';
-            };
-            wishlist_btn += '</div>';
-            document.getElementById("btn").innerHTML = wishlist_btn;
+         // Send request
+            request.send();
+      };
+
+      function getBrandList(){
+      var request = new XMLHttpRequest()
+         var search_value = sessionStorage.getItem("search_term");
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+         request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+               var resultText = (JSON.parse(request.responseText)).results;
+               var i;
+               var brands = [];
+               for (i=0; i<resultText.length; i++){
+                  brands = brands.concat(resultText[i].brand);
+               };
+               sessionStorage.setItem("brand_list", JSON.stringify(brands));
+               window.location.replace("shop-grid-women.html");
+         }
+         // Send request
+         request.send();
+      };
+      
+      pageData = JSON.parse(sessionStorage.getItem("pageRespData"));
+
+      var image = '';
+      var categories = 'Categories: <a href="#" onclick="openCategory(\'\')">'+pageData.category+'</a>, <a href="#" onclick="openCategory(\'&brand='+ pageData.brand+'\')">'+pageData.brand+'</a>';
+      var description = '';
+      var x_image = 0;
+      var request = new XMLHttpRequest()
+      var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+      if (wishlist === undefined || wishlist === null){
+         wishlist = [];
+         //console.log('empty wishlist');
+      }
+      function updateBtn(){
+         var wishlist_btn = '<div>';
+         if (wishlist.includes(pageData.original_site)){ //highlighted wishlist button
+            console.log('this item is on the wishlist!');
+            wishlist_btn += '<label class="wishlist m-0" for="btnControl" style="background-color: #e59285;background-position: 100% center;border-color: #e59285;" onclick="addWishlist()"></label><label class="email"></label>';
+         }
+         else{ //default, unhighlighted wishlist button
+            console.log('this item is not on the wishlist!');
+            wishlist_btn += '<label class="wishlist m-0" onclick="addWishlist()"></label><label class="email"></label>';
          };
+         wishlist_btn += '</div>';
+         document.getElementById("btn").innerHTML = wishlist_btn;
+      };
 
+      updateBtn();
+
+      function addWishlist(){
+         if (wishlist.length === 0){
+            //console.log('creating new wishlist');
+            //console.log('adding to wishlist');
+            wishlist.push(pageData.original_site);
+            localStorage.setItem("recentCategory", pageData.category);
+         }
+         else if (wishlist.includes(pageData.original_site)){
+            var removeIndex = wishlist.indexOf(pageData.original_site);
+            delete wishlist[removeIndex];
+            wishlist = wishlist.filter(item => item);               
+            localStorage.setItem("recentCategory", pageData.category);
+            console.log('removed from wishlist');
+         }
+         else {
+            //console.log('adding to wishlist');
+            wishlist.push(pageData.original_site);
+            localStorage.setItem("recentCategory", pageData.category);
+         };
          updateBtn();
+         //console.log(wishlist); 
+         localStorage.setItem("wishlist", JSON.stringify(wishlist));
+         //console.log('wishlist updated'); 
+      };
 
-         function addWishlist(){
-            if (wishlist.length === 0){
-               //console.log('creating new wishlist');
-               //console.log('adding to wishlist');
-               wishlist.push(pageData.original_site);
-               localStorage.setItem("recentCategory", pageData.category);
-            }
-            else if (wishlist.includes(pageData.original_site)){
-               var removeIndex = wishlist.indexOf(pageData.original_site);
-               delete wishlist[removeIndex];
-               wishlist = wishlist.filter(item => item);               
-               localStorage.setItem("recentCategory", pageData.category);
-               console.log('removed from wishlist');
+      function getReview(){
+         var request = new XMLHttpRequest()
+         var search_value = sessionStorage.getItem("search_term");
+         var search = 'http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id;
+         request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+            var reviewRes = (JSON.parse(request.responseText)).results;
+            console.log(reviewRes)
+            var i;
+            var review = [];
+            for (i=0; i<reviewRes.length; i++){
+               review = review.concat(reviewRes[i].review);
+            };
+
+            if (reviewRes.length != null){
+               review = '<h1>Customer Reviews</h1>';
+               for(i=0;i<reviewRes.length;i++){
+                  review += '<h2 class="mt-4">' + reviewRes[i].reviewer_name + '</h2><div class="review__ratings__type d-flex"><div class="review-ratings">';
+                  review += '<div class="rating-summary d-flex"><span><strong>Quality</strong></span><div class="rating_zero d-flex"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div></div>';
+                  review += '<div class="rating-summary d-flex"><span><strong>Price</strong></span><div class="rating_zero d-flex"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div></div>';
+                  review += '<div class="rating-summary d-flex"><span><strong>value</strong></span><div class="rating_zero d-flex"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div></div>';
+                  review += '<div class="rating-summary d-flex"><span><strong>Summary</strong></span><span style="margin-left:20px;">' + reviewRes[i].summary + '</span></div>';
+                  review += '<div class="rating-summary d-flex"><span><strong>Review</strong></span><br><span style="margin-left:20px;">' + reviewRes[i].review + '</span></div></div></div></div>';
+               }
             }
             else {
-               //console.log('adding to wishlist');
-               wishlist.push(pageData.original_site);
-               localStorage.setItem("recentCategory", pageData.category);
+               review = "<h1>Customer Reviews</h1><h2>No product review available</h2>";
+            }
+
+            document.getElementById("get_review").innerHTML = review;
+
+            sessionStorage.setItem("get_review", JSON.stringify(review));
+         }
+         // Send request
+         request.send();
+      };
+
+      getReview();
+
+      var quality, price, value = 1;
+      function setQualityStar(clicked_id){
+         low = '<span id="quality">Quality</span><div class="rating d-flex">'
+         quality = clicked_id;
+         if (clicked_id == 1){
+            low += '<span id="5" onclick="setQualityStar(this.id)">☆</span><span id="4" onclick="setQualityStar(this.id)">☆</span><span id="3" onclick="setQualityStar(this.id)">☆</span><span id="2" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 2) {
+            low += '<span id="5" onclick="setQualityStar(this.id)">☆</span><span id="4" onclick="setQualityStar(this.id)">☆</span><span id="3" onclick="setQualityStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 3) {
+            low += '<span id="5" onclick="setQualityStar(this.id)">☆</span><span id="4" onclick="setQualityStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 4) {
+            low += '<span id="5" onclick="setQualityStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }  else {
+            low += '<span id="5" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }
+         low += '</div>'
+         document.getElementById("review_quality").innerHTML = low;
+      };
+
+      function setPriceStar(clicked_id){
+         priceless = '<span id="price">Price</span><div class="rating d-flex">'
+         price = clicked_id;
+         if (clicked_id == 1){
+            priceless += '<span id="5" onclick="setPriceStar(this.id)">☆</span><span id="4" onclick="setPriceStar(this.id)">☆</span><span id="3" onclick="setPriceStar(this.id)">☆</span><span id="2" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 2) {
+            priceless += '<span id="5" onclick="setPriceStar(this.id)">☆</span><span id="4" onclick="setPriceStar(this.id)">☆</span><span id="3" onclick="setPriceStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 3) {
+            priceless += '<span id="5" onclick="setPriceStar(this.id)">☆</span><span id="4" onclick="setPriceStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 4) {
+            priceless += '<span id="5" onclick="setPriceStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }  else {
+            priceless += '<span id="5" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }
+         priceless += '</div>'
+         document.getElementById("review_price").innerHTML = priceless;
+      };
+
+      function setValueStar(clicked_id){
+         zero = '<span id="value">Value</span><div class="rating d-flex">'
+         value = clicked_id;
+         if (clicked_id == 1){
+            zero += '<span id="5" onclick="setValueStar(this.id)">☆</span><span id="4" onclick="setValueStar(this.id)">☆</span><span id="3" onclick="setValueStar(this.id)">☆</span><span id="2" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 2) {
+            zero += '<span id="5" onclick="setValueStar(this.id)">☆</span><span id="4" onclick="setValueStar(this.id)">☆</span><span id="3" onclick="setValueStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 3) {
+            zero += '<span id="5" onclick="setValueStar(this.id)">☆</span><span id="4" onclick="setValueStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 4) {
+            zero += '<span id="5" onclick="setValueStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }  else {
+            zero += '<span id="5" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }
+         zero += '</div>'
+         document.getElementById("review_value").innerHTML = zero;
+      };
+
+      function setReview(){
+         let result = document.querySelector('.result'); 
+         var reviewer_name = document.querySelector('#reviewer_name'); 
+         var summary = document.querySelector('#summary'); 
+         var review = document.querySelector('#review'); 
+
+         var request = new XMLHttpRequest()
+         var search = 'http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id;
+         request.open('POST', search, true);
+         request.setRequestHeader("Content-type", "application/json");
+         var data = JSON.stringify({"product": pageData.id ,"reviewer_name": reviewer_name.value ,"summary": summary.value ,"review": review.value ,"quality": quality ,"price": price ,"value": value});
+         // send request
+         request.send(data);
+      };
+
+      var search = 'http://custlrwa.ddns.net:8000/scraped/?category=women&brandlist=true';
+      request.open('GET', search, true)
+      request.onload = function loadHTML(){
+         var resultText = (JSON.parse(request.responseText)).results;
+         console.log(resultText);
+         var brands = '';
+         var brands_a= '', brands_b= '', brands_c= '', brands_d= '', brands_e= '', brands_f= '', brands_g= '', brands_h= '', brands_i= '', brands_j= '', brands_k= '', brands_l= '', brands_m= '', brands_n= '', brands_o= '', brands_p= '', brands_q= '', brands_r= '', brands_s= '', brands_t= '', brands_u= '', brands_v= '', brands_w= '', brands_x= '', brands_y= '', brands_z= '', brands_num = '';
+         var count_a = 0, count_b = 0, count_c = 0, count_d = 0, count_e = 0, count_f = 0, count_g = 0, count_h = 0, count_i = 0, count_j = 0, count_k = 0, count_l = 0, count_m = 0, count_n = 0, count_o = 0, count_p = 0, count_q = 0, count_r = 0, count_s = 0, count_t = 0, count_u = 0, count_v = 0, count_w = 0, count_x = 0, count_y = 0, count_z = 0, count_num = 0;
+         var count = '';
+         var k = 0;
+         var alphabet = 'A' || 'a';
+         for (i=0; i<resultText.length; i++){
+            // console.log(resultText[i].brand);
+         
+            switch(resultText[i].brand.charAt(0)){
+               case "A":
+               case "a":
+                  brands_a += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_a++;
+                  break;
+               case "B":
+               case "b":
+                  brands_b += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_b++;
+                  break;
+               case "C":
+               case "c":
+                  brands_c += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_c++;
+                  break;
+               case "D":
+               case "d":
+                  brands_d += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_d++;
+                  break;
+               case "E":
+               case "e":
+                  brands_e += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_e++;
+                  break;
+               case "F":
+               case "f":
+                  brands_f += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_f++;
+                  break;
+               case "G":
+               case "g":
+                  brands_g += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_g++;
+                  break;
+               case "H":
+               case "h":
+                  brands_h += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_h++;
+                  break;
+               case "I":
+               case "i":
+                  brands_i += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_i++;
+                  break;
+               case "J":
+               case "j":
+                  brands_j += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_j++;
+                  break;
+               case "K":
+               case "k":
+                  brands_k += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_k++;
+                  break;
+               case "L":
+               case "l":
+                  brands_l += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_l++;
+                  break;
+               case "M":
+               case "m":
+                  brands_m += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_m++;
+                  break;
+               case "N":
+               case "n":
+                  brands_n += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_n++;
+                  break;
+               case "O":
+               case "o":
+                  brands_o += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_o++;
+                  break;
+               case "P":
+               case "p":
+                  brands_p += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_p++;
+                  break;
+               case "Q":
+               case "q":
+                  brands_q += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_q++;
+                  break;
+               case "R":
+               case "r":
+                  brands_r += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_r++;
+                  break;
+               case "S":
+               case "s":
+                  brands_s += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_s++;
+                  break;
+               case "T":
+               case "t":
+                  brands_t += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_t++;
+                  break;
+               case "U":
+               case "u":
+                  brands_u += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_u++;
+                  break;
+               case "V":
+               case "v":
+                  brands_v += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_v++;
+                  break;
+               case "W":
+               case "w":
+                  brands_w += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_w++;
+                  break;
+               case "X":
+               case "x":
+                  brands_x += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_x++;
+                  break;
+               case "Y":
+               case "y":
+                  brands_y += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_y++;
+                  break;
+               case "Z":
+               case "z":
+                  brands_z += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_z++;
+                  break;
+               default:
+                  brands_num += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_num++;
+                  break;
             };
-            updateBtn();
-            //console.log(wishlist); 
-            localStorage.setItem("wishlist", JSON.stringify(wishlist));
-            //console.log('wishlist updated'); 
          };
 
-         var search = 'http://custlrwa.ddns.net:8000/scraped/?category=women&brandlist=true';
+         document.getElementById("brand_count_numbers").innerHTML = ' (' + count_num + ')'
+         document.getElementById("brand_count_a").innerHTML = ' (' + count_a + ')'
+         document.getElementById("brand_count_b").innerHTML = ' (' + count_b + ')'
+         document.getElementById("brand_count_c").innerHTML = ' (' + count_c + ')'
+         document.getElementById("brand_count_d").innerHTML = ' (' + count_d + ')'
+         document.getElementById("brand_count_e").innerHTML = ' (' + count_e + ')'
+         document.getElementById("brand_count_f").innerHTML = ' (' + count_f + ')'
+         document.getElementById("brand_count_g").innerHTML = ' (' + count_g + ')'
+         document.getElementById("brand_count_h").innerHTML = ' (' + count_h + ')'
+         document.getElementById("brand_count_i").innerHTML = ' (' + count_i + ')'
+         document.getElementById("brand_count_j").innerHTML = ' (' + count_j + ')'
+         document.getElementById("brand_count_k").innerHTML = ' (' + count_k + ')'
+         document.getElementById("brand_count_l").innerHTML = ' (' + count_l + ')'
+         document.getElementById("brand_count_m").innerHTML = ' (' + count_m + ')'
+         document.getElementById("brand_count_n").innerHTML = ' (' + count_n + ')'
+         document.getElementById("brand_count_o").innerHTML = ' (' + count_o + ')'
+         document.getElementById("brand_count_p").innerHTML = ' (' + count_p + ')'
+         document.getElementById("brand_count_q").innerHTML = ' (' + count_q + ')'
+         document.getElementById("brand_count_r").innerHTML = ' (' + count_r + ')'
+         document.getElementById("brand_count_s").innerHTML = ' (' + count_s + ')'
+         document.getElementById("brand_count_t").innerHTML = ' (' + count_t + ')'
+         document.getElementById("brand_count_u").innerHTML = ' (' + count_u + ')'
+         document.getElementById("brand_count_v").innerHTML = ' (' + count_v + ')'
+         document.getElementById("brand_count_w").innerHTML = ' (' + count_w + ')'
+         document.getElementById("brand_count_x").innerHTML = ' (' + count_x + ')'
+         document.getElementById("brand_count_y").innerHTML = ' (' + count_y + ')'
+         document.getElementById("brand_count_z").innerHTML = ' (' + count_z + ')'
+
+         document.getElementById("brand_dropdown_numbers").innerHTML = brands_num;
+         document.getElementById("brand_dropdown_a").innerHTML = brands_a;
+         document.getElementById("brand_dropdown_b").innerHTML = brands_b;
+         document.getElementById("brand_dropdown_c").innerHTML = brands_c;
+         document.getElementById("brand_dropdown_d").innerHTML = brands_d;
+         document.getElementById("brand_dropdown_e").innerHTML = brands_e;
+         document.getElementById("brand_dropdown_f").innerHTML = brands_f;
+         document.getElementById("brand_dropdown_g").innerHTML = brands_g;
+         document.getElementById("brand_dropdown_h").innerHTML = brands_h;
+         document.getElementById("brand_dropdown_i").innerHTML = brands_i;
+         document.getElementById("brand_dropdown_j").innerHTML = brands_j;
+         document.getElementById("brand_dropdown_k").innerHTML = brands_k;
+         document.getElementById("brand_dropdown_l").innerHTML = brands_l;
+         document.getElementById("brand_dropdown_m").innerHTML = brands_m;
+         document.getElementById("brand_dropdown_n").innerHTML = brands_n;
+         document.getElementById("brand_dropdown_o").innerHTML = brands_o;
+         document.getElementById("brand_dropdown_p").innerHTML = brands_p;
+         document.getElementById("brand_dropdown_q").innerHTML = brands_q;
+         document.getElementById("brand_dropdown_r").innerHTML = brands_r;
+         document.getElementById("brand_dropdown_s").innerHTML = brands_s;
+         document.getElementById("brand_dropdown_t").innerHTML = brands_t;
+         document.getElementById("brand_dropdown_u").innerHTML = brands_u;
+         document.getElementById("brand_dropdown_v").innerHTML = brands_v;
+         document.getElementById("brand_dropdown_w").innerHTML = brands_w;
+         document.getElementById("brand_dropdown_x").innerHTML = brands_x;
+         document.getElementById("brand_dropdown_y").innerHTML = brands_y;
+         document.getElementById("brand_dropdown_z").innerHTML = brands_z;
+      }
+      request.send();
+
+      if (pageData.product_description != null){
+         description = "<p>"+ pageData.product_description + "</p>"
+      }
+      else{
+         description = "<p>No product description available</p>"
+      }
+
+      if (pageData.product_description != null){
+         details = "<p>"+ pageData.product_description + "</p>"
+      }
+      else{
+         details = "<p>No product description available</p>"
+      }
+
+      if (pageData.imagelist.length > 0){
+         image += '<div class="fotorama wn__fotorama__action" data-nav="thumbs">'
+         for(x_image in pageData.imagelist){
+            image += '<a href="#"><img src="'+ pageData.imagelist[x_image].image_url + '" alt=""></a>';
+         };
+         image += '</div>'  
+      }
+      else{
+         image += '<div class="fotorama wn__fotorama__action" data-nav="thumbs"">'
+         image += '<a href="#"><img src="'+ pageData.image_url + '" alt=""></a>';
+         image += '</div>'  
+      }
+
+      var addQty = 1
+      var addSize = '';
+      var cartHTML = '<button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart" onclick="addCart(\''+ pageData.original_site +'\',\''+ addQty +'\',\''+ addSize +'\')">Add to Cart</button>' //onclick="addCart(\''+ pageData.original_site +'\',\''+ addQty +'\')"
+      
+      function udpateQty() {
+         addQty = document.getElementById("qty").value;
+         console.log(addQty);
+      };
+
+      function updateSizing() {
+         addSize = document.getElementById("szg").value;
+         console.log(addSize);
+      };
+
+      document.getElementById("product_name").innerHTML = pageData.product_name;
+      document.getElementById("product_price").innerHTML = pageData.currency + ' ' + pageData.price;
+      document.getElementById("product_description").innerHTML = description;
+      document.getElementById("categories").innerHTML = categories;
+      document.getElementById("image_list").innerHTML = image;
+      document.getElementById("product_details").innerHTML = details;
+      document.getElementById("addToCart").innerHTML = cartHTML;
+
+      function openCategory(category){
+         // Create a request variable and assign a new XMLHttpRequest object to it.
+         var request = new XMLHttpRequest()
+
+         // replaces white space
+         search_value = "?category=women" + category;
+         // Open a new connection, using the GET request on the URL endpoint
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+         
          request.open('GET', search, true)
+
          request.onload = function loadHTML(){
-            var resultText = (JSON.parse(request.responseText)).results;
-            console.log(resultText);
-            var brands = '';
-            var brands_a= '', brands_b= '', brands_c= '', brands_d= '', brands_e= '', brands_f= '', brands_g= '', brands_h= '', brands_i= '', brands_j= '', brands_k= '', brands_l= '', brands_m= '', brands_n= '', brands_o= '', brands_p= '', brands_q= '', brands_r= '', brands_s= '', brands_t= '', brands_u= '', brands_v= '', brands_w= '', brands_x= '', brands_y= '', brands_z= '', brands_num = '';
-            var count_a = 0, count_b = 0, count_c = 0, count_d = 0, count_e = 0, count_f = 0, count_g = 0, count_h = 0, count_i = 0, count_j = 0, count_k = 0, count_l = 0, count_m = 0, count_n = 0, count_o = 0, count_p = 0, count_q = 0, count_r = 0, count_s = 0, count_t = 0, count_u = 0, count_v = 0, count_w = 0, count_x = 0, count_y = 0, count_z = 0, count_num = 0;
-            var count = '';
-            var k = 0;
-            var alphabet = 'A' || 'a';
-            for (i=0; i<resultText.length; i++){
-               // console.log(resultText[i].brand);
-            
-               switch(resultText[i].brand.charAt(0)){
-                  case "A":
-                  case "a":
-                    brands_a += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_a++;
-                    break;
-                  case "B":
-                  case "b":
-                    brands_b += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_b++;
-                    break;
-                  case "C":
-                  case "c":
-                    brands_c += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_c++;
-                    break;
-                  case "D":
-                  case "d":
-                    brands_d += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_d++;
-                    break;
-                  case "E":
-                  case "e":
-                    brands_e += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_e++;
-                    break;
-                  case "F":
-                  case "f":
-                    brands_f += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_f++;
-                    break;
-                  case "G":
-                  case "g":
-                    brands_g += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_g++;
-                    break;
-                  case "H":
-                  case "h":
-                    brands_h += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_h++;
-                    break;
-                  case "I":
-                  case "i":
-                    brands_i += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_i++;
-                    break;
-                  case "J":
-                  case "j":
-                    brands_j += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_j++;
-                    break;
-                  case "K":
-                  case "k":
-                    brands_k += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_k++;
-                    break;
-                  case "L":
-                  case "l":
-                    brands_l += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_l++;
-                    break;
-                  case "M":
-                  case "m":
-                    brands_m += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_m++;
-                    break;
-                  case "N":
-                  case "n":
-                    brands_n += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_n++;
-                    break;
-                  case "O":
-                  case "o":
-                    brands_o += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_o++;
-                    break;
-                  case "P":
-                  case "p":
-                    brands_p += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_p++;
-                    break;
-                  case "Q":
-                  case "q":
-                    brands_q += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_q++;
-                    break;
-                  case "R":
-                  case "r":
-                    brands_r += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_r++;
-                    break;
-                  case "S":
-                  case "s":
-                    brands_s += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_s++;
-                    break;
-                  case "T":
-                  case "t":
-                    brands_t += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_t++;
-                    break;
-                  case "U":
-                  case "u":
-                    brands_u += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_u++;
-                    break;
-                  case "V":
-                  case "v":
-                    brands_v += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_v++;
-                    break;
-                  case "W":
-                  case "w":
-                    brands_w += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_w++;
-                    break;
-                  case "X":
-                  case "x":
-                    brands_x += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_x++;
-                    break;
-                  case "Y":
-                  case "y":
-                    brands_y += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_y++;
-                    break;
-                  case "Z":
-                  case "z":
-                    brands_z += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_z++;
-                    break;
-                  default:
-                    brands_num += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
-                    count_num++;
-                    break;
-               } ;
-            };
-
-            document.getElementById("brand_count_numbers").innerHTML = ' (' + count_num + ')'
-            document.getElementById("brand_count_a").innerHTML = ' (' + count_a + ')'
-            document.getElementById("brand_count_b").innerHTML = ' (' + count_b + ')'
-            document.getElementById("brand_count_c").innerHTML = ' (' + count_c + ')'
-            document.getElementById("brand_count_d").innerHTML = ' (' + count_d + ')'
-            document.getElementById("brand_count_e").innerHTML = ' (' + count_e + ')'
-            document.getElementById("brand_count_f").innerHTML = ' (' + count_f + ')'
-            document.getElementById("brand_count_g").innerHTML = ' (' + count_g + ')'
-            document.getElementById("brand_count_h").innerHTML = ' (' + count_h + ')'
-            document.getElementById("brand_count_i").innerHTML = ' (' + count_i + ')'
-            document.getElementById("brand_count_j").innerHTML = ' (' + count_j + ')'
-            document.getElementById("brand_count_k").innerHTML = ' (' + count_k + ')'
-            document.getElementById("brand_count_l").innerHTML = ' (' + count_l + ')'
-            document.getElementById("brand_count_m").innerHTML = ' (' + count_m + ')'
-            document.getElementById("brand_count_n").innerHTML = ' (' + count_n + ')'
-            document.getElementById("brand_count_o").innerHTML = ' (' + count_o + ')'
-            document.getElementById("brand_count_p").innerHTML = ' (' + count_p + ')'
-            document.getElementById("brand_count_q").innerHTML = ' (' + count_q + ')'
-            document.getElementById("brand_count_r").innerHTML = ' (' + count_r + ')'
-            document.getElementById("brand_count_s").innerHTML = ' (' + count_s + ')'
-            document.getElementById("brand_count_t").innerHTML = ' (' + count_t + ')'
-            document.getElementById("brand_count_u").innerHTML = ' (' + count_u + ')'
-            document.getElementById("brand_count_v").innerHTML = ' (' + count_v + ')'
-            document.getElementById("brand_count_w").innerHTML = ' (' + count_w + ')'
-            document.getElementById("brand_count_x").innerHTML = ' (' + count_x + ')'
-            document.getElementById("brand_count_y").innerHTML = ' (' + count_y + ')'
-            document.getElementById("brand_count_z").innerHTML = ' (' + count_z + ')'
-
-            document.getElementById("brand_dropdown_numbers").innerHTML = brands_num;
-            document.getElementById("brand_dropdown_a").innerHTML = brands_a;
-            document.getElementById("brand_dropdown_b").innerHTML = brands_b;
-            document.getElementById("brand_dropdown_c").innerHTML = brands_c;
-            document.getElementById("brand_dropdown_d").innerHTML = brands_d;
-            document.getElementById("brand_dropdown_e").innerHTML = brands_e;
-            document.getElementById("brand_dropdown_f").innerHTML = brands_f;
-            document.getElementById("brand_dropdown_g").innerHTML = brands_g;
-            document.getElementById("brand_dropdown_h").innerHTML = brands_h;
-            document.getElementById("brand_dropdown_i").innerHTML = brands_i;
-            document.getElementById("brand_dropdown_j").innerHTML = brands_j;
-            document.getElementById("brand_dropdown_k").innerHTML = brands_k;
-            document.getElementById("brand_dropdown_l").innerHTML = brands_l;
-            document.getElementById("brand_dropdown_m").innerHTML = brands_m;
-            document.getElementById("brand_dropdown_n").innerHTML = brands_n;
-            document.getElementById("brand_dropdown_o").innerHTML = brands_o;
-            document.getElementById("brand_dropdown_p").innerHTML = brands_p;
-            document.getElementById("brand_dropdown_q").innerHTML = brands_q;
-            document.getElementById("brand_dropdown_r").innerHTML = brands_r;
-            document.getElementById("brand_dropdown_s").innerHTML = brands_s;
-            document.getElementById("brand_dropdown_t").innerHTML = brands_t;
-            document.getElementById("brand_dropdown_u").innerHTML = brands_u;
-            document.getElementById("brand_dropdown_v").innerHTML = brands_v;
-            document.getElementById("brand_dropdown_w").innerHTML = brands_w;
-            document.getElementById("brand_dropdown_x").innerHTML = brands_x;
-            document.getElementById("brand_dropdown_y").innerHTML = brands_y;
-            document.getElementById("brand_dropdown_z").innerHTML = brands_z;
-        }
+            var resultText = request.responseText;
+            sessionStorage.setItem("search_result", resultText); 
+            sessionStorage.setItem("current_page", 1);
+            sessionStorage.removeItem("selectBox");
+            getBrands(search);
+         }
+         // Send request
          request.send();
+      };
 
-         if (pageData.product_description != null){
-            description = "<p>"+ pageData.product_description + "</p>"
+      function getBrands(url){
+         var request = new XMLHttpRequest()
+         var search = url + '&brandlist=true';
+         request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+               var resultText = (JSON.parse(request.responseText)).results;
+               var i;
+               var brands = [];
+               for (i=0; i<resultText.length; i++){
+                  brands = brands.concat(resultText[i].brand);
+               };
+               sessionStorage.setItem("brand_list", JSON.stringify(brands));
+               window.location.replace("shop-grid-women.html");
          }
-         else{
-            description = "<p>No product description available</p>"
-         }
-
-         if (pageData.product_description != null){
-            details = "<p>"+ pageData.product_description + "</p>"
-         }
-         else{
-            details = "<p>No product description available</p>"
-         }
-
-         if (pageData.imagelist.length > 0){
-            image += '<div class="fotorama wn__fotorama__action" data-nav="thumbs">'
-            for(x_image in pageData.imagelist){
-               image += '<a href="#"><img src="'+ pageData.imagelist[x_image].image_url + '" alt=""></a>';
-            };
-            image += '</div>'  
-         }
-         else{
-            image += '<div class="fotorama wn__fotorama__action" data-nav="thumbs"">'
-            image += '<a href="#"><img src="'+ pageData.image_url + '" alt=""></a>';
-            image += '</div>'  
-         }
-
-         document.getElementById("product_name").innerHTML = pageData.product_name;
-         document.getElementById("product_price").innerHTML = pageData.currency + ' ' + pageData.price;
-         document.getElementById("product_description").innerHTML = description;
-         document.getElementById("categories").innerHTML = categories;
-         document.getElementById("image_list").innerHTML = image;
-         document.getElementById("product_details").innerHTML = details;
-
-         function openCategory(category){
-			   // Create a request variable and assign a new XMLHttpRequest object to it.
-			   var request = new XMLHttpRequest()
-
-   			// replaces white space
-            search_value = "?category=women" + category;
-			   // Open a new connection, using the GET request on the URL endpoint
-			   var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
-            
-            request.open('GET', search, true)
-
-            request.onload = function loadHTML(){
-                  var resultText = request.responseText;
-               sessionStorage.setItem("search_result", resultText); 
-                  sessionStorage.setItem("current_page", 1);
-                  sessionStorage.removeItem("selectBox");
-                  getBrands(search);
-			   }
-			   // Send request
-            request.send();
-        };
-
-         function getBrands(url){
-		      var request = new XMLHttpRequest()
-            var search = url + '&brandlist=true';
-            request.open('GET', search, true)
-
-            request.onload = function loadHTML(){
-                var resultText = (JSON.parse(request.responseText)).results;
-                var i;
-                var brands = [];
-                for (i=0; i<resultText.length; i++){
-                    brands = brands.concat(resultText[i].brand);
-                };
-                sessionStorage.setItem("brand_list", JSON.stringify(brands));
-                window.location.replace("shop-grid-women.html");
-            }
-            // Send request
-            request.send();
-        };
+         // Send request
+         request.send();
+      };
       </script>
    </body>
 </html>

@@ -5998,8 +5998,6 @@ Single Product Styles
     border-color: #e59285;
 }
 
-
-
 .product__info__main .product__overview {
     border-top: 1px solid #ebebeb;
     clear: both;
@@ -6108,21 +6106,72 @@ Single Product Styles
     margin-bottom: 5px;
 }
 
-.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary span {
+.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating {
     display: inline-block;
     line-height: 28px;
     padding: 0 10px 0 0;
+    margin-left: 20px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
 }
 
-.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating li i {
+.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating_zero {
+    display: inline-block;
+    line-height: 28px;
+    padding: 0 10px 0 0;
+    margin-left: 20px;
+}
+
+.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+}
+
+/* .product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating > span:hover,
+.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating > span:hover ~ span {
+    color: #c7c7c7;
+}
+
+.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating > span:hover:before,
+.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #ff5501;
+} */
+
+.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating span {
     color: #ff5501;
     font-size: 18px;
     height: 28px;
     line-height: 28px;
 }
 
+.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating_zero span {
+    color: #c7c7c7;
+    font-size: 18px;
+    height: 28px;
+    line-height: 28px;
+}
+
+/* .product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating span:hover {
+    color: #ff5501;
+    font-size: 18px;
+    height: 28px;
+    line-height: 28px;
+} */
+
 .product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating li.off i {
     color: #c7c7c7;
+}
+
+.product__info__detailed .review__attribute .review__ratings__type .review-ratings .rating-summary .rating li.off i:hover {
+    color: #ff5501;
+    font-size: 18px;
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
 }
 
 .product__info__detailed .review__attribute .review__ratings__type .review-content {
@@ -6138,7 +6187,7 @@ Single Product Styles
 .product__info__detailed .review-fieldset {
     border-top: 1px solid #c9c9c9;
     margin-top: 34px;
-    padding-top: 72px;
+    padding-top: 30px;
 }
 
 .product__info__detailed .review-fieldset h2 {
@@ -6177,15 +6226,33 @@ Single Product Styles
 }
 
 .product__info__detailed .review-fieldset .review-field-ratings .review-field-rating span {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 28px;
     padding-right: 10px;
 }
 
-.product__info__detailed .review-fieldset .review-field-ratings .review-field-rating .rating li.off i {
-    color: #ddd;
+.product__info__detailed .review-fieldset .review-field-ratings .review-field-rating .rating span {
+    color: #c7c7c7;
     font-size: 18px;
+}
+
+.product__info__detailed .review-fieldset .review-field-ratings .review-field-rating .rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+}
+.product__info__detailed .review-fieldset .review-field-ratings .review-field-rating .rating > span {
+    display: inline-block;
+    position: relative;
+}
+.product__info__detailed .review-fieldset .review-field-ratings .review-field-rating .rating > span:hover,
+.product__info__detailed .review-fieldset .review-field-ratings .review-field-rating .rating > span:hover ~ span {
+    color: transparent;
+}
+.product__info__detailed .review-fieldset .review-field-ratings .review-field-rating .rating > span:hover:before,
+.product__info__detailed .review-fieldset .review-field-ratings .review-field-rating .rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    left: 0; 
+    color: #ff5501;
 }
 
 .product__info__detailed .review-fieldset .review_form_field .input__box {
