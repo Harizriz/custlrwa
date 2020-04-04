@@ -174,10 +174,10 @@
                             <li class="shop_search">
                                 <a class="search__active" href="#"></a>
                             </li>
-                            <li class="wishlist">
-                                <a href="wishlist.html"></a>
+                            <li class="wishlist" id="wishlist">
+                                <a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
                             </li>
-                            <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
+                            <li class="shopcart"><a class="cartbox_active" href="cart.html"><span class="product_qun">3</span></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
                                     <div class="minicart-content-wrapper">
@@ -442,7 +442,7 @@
                               </div>
                               <br>
                               <div class="row">
-                                 <div class="col-lg-4 col-12">
+                                 <div class="col-lg-4 col-12 p-0 pl-3">
                                     <div class="row d-flex justify-content-start">
                                        <div class="product-addto-links clearfix mr-3 ml-3" id="btn">
                                           <input type="checkbox" id="btnControl"/>
@@ -555,25 +555,29 @@
                                           <div class="row">
                                              <div class="col-sm-7 col-12">
                                                 <div class="dropdown ml-1 mt-2">
-                                                   <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="sizingRegionDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                    International</button>
-                                                   <div class="dropdown-menu" aria-labelledby="International" style="min-width:8rem;">
-                                                      <a class="dropdown-item" href="#">US</a>
-                                                      <a class="dropdown-item" href="#">UK</a>
-                                                      <a class="dropdown-item" href="#">EU</a>
-                                                      <a class="dropdown-item" href="#">AUS</a>
+                                                   <div class="dropdown-menu" aria-labelledby="International">
+                                                      <a class="dropdown-item" id="US" onclick="changeFunction(this.id)">US</a>
+                                                      <a class="dropdown-item" id="UK" onclick="changeFunction(this.id)">UK</a>
+                                                      <a class="dropdown-item" id="EU" onclick="changeFunction(this.id)">EU</a>
+                                                      <a class="dropdown-item" id="International" onclick="changeFunction(this.id)">International</a>
                                                    </div>
+                                                   <!-- <select class="shot__byselect" id="selection" onchange="changeFunction()">
+                                                      <option id="selectBox"></option>
+                                                      <option disabled>-----------------</option>
+                                                      <option id="US" onclick="sizeConvert(this.id)">US</option>
+                                                      <option id="UK" onclick="sizeConvert(this.id)">UK</option>
+                                                      <option id="EU" onclick="sizeConvert(this.id)">EU</option>
+                                                      <option id="International" onclick="sizeConvert(this.id)">International</option>
+                                                   </select> -->
                                                 </div>
                                              </div>
                                              <div class="col-sm-5 col-12">
                                                 <div class="dropdown mt-2">
                                                    <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                    XS</button>
-                                                   <div class="dropdown-menu" aria-labelledby="International" style="min-width:0rem;">
-                                                      <a class="dropdown-item" href="#">S</a>
-                                                      <a class="dropdown-item" href="#">M</a>
-                                                      <a class="dropdown-item" href="#">L</a>
-                                                      <a class="dropdown-item" href="#">XL</a>
+                                                   <div id="sizing_dropdown" class="dropdown-menu" aria-labelledby="International" style="min-width:0rem;">
                                                    </div>
                                                 </div>
                                              </div>
@@ -1794,6 +1798,112 @@
       };
       
       pageData = JSON.parse(sessionStorage.getItem("pageRespData"));
+      
+      var sizingDefault = pageData.sizing_type
+      var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category);
+      //console.log(sizing_chart);
+      // aria-labelledby="International"
+      
+
+      function sizingToCode(size){
+         var sizecode;
+         switch(size){
+            case "International":
+               sizecode = "intl";
+               break;
+            case "US":
+               sizecode = "us";
+               break;
+            case "UK":
+               sizecode = "uk";
+               break;
+            case "EU":
+               sizecode = "eu";
+               break;
+            default:
+               sizecode = "notype";
+         };
+         return sizecode;
+      };
+
+      var sizecode = sizingToCode(sizingDefault);
+      function loadSizingData(){
+         var size_dropdown = [];
+         var i = 0;
+
+         switch (sizecode){
+            case "intl":
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].intl);
+               }
+               break;
+            case "uk":
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].uk);
+               }
+               break;
+            case "us":
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].us);
+               }
+               break;
+            case "eu":
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].eu);
+               }
+               break;
+            default:
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].intl);
+               }
+               break;
+            }
+         console.log(size_dropdown);
+         return size_dropdown;
+      };
+
+      var convertedSizingData = loadSizingData();
+      var convertedSizingIndex = 0;
+
+      function updateSizing(id) {
+         document.getElementById("dropdownMenuButton").innerHTML = document.getElementById(id).innerHTML
+         addSize = document.getElementById(id).innerHTML;
+         convertedSizingIndex = id.charAt(id.length-1)
+         console.log(addSize);
+      };
+
+      function sizingDropdown(){
+         var convSize = '';
+         for(var i = 0; i < convertedSizingData.length; i++){
+            convSize += '<a class="dropdown-item" id="' + 'sizingdropdown-' + i.toString() + '" onclick="updateSizing(this.id)">'+ convertedSizingData[i] +'</a>'
+         }
+         document.getElementById("sizing_dropdown").innerHTML = convSize;
+      }
+      
+      function sizeConvert(size_code){
+         sizecode = sizingToCode(size_code);    
+         convertedSizingData = loadSizingData();
+         document.getElementById("dropdownMenuButton").innerHTML = convertedSizingData[convertedSizingIndex];
+         sizingDropdown();
+      }
+      sizeConvert(sizecode);
+
+      function changeFunction(id){
+         document.getElementById("sizingRegionDropdownButton").innerHTML = document.getElementById(id).innerHTML;
+         var selectBox = document.getElementById(id).innerHTML;
+         if (selectBox == 'US'){
+               sizeConvert("US");
+         }
+         if (selectBox == 'UK'){
+               sizeConvert("UK");
+         }
+         if (selectBox == 'EU'){
+               sizeConvert("EU");
+         }
+         if (selectBox == 'International'){
+               sizeConvert("International");
+         }
+      };
 
       var image = '';
       var categories = 'Categories: <a href="#" onclick="openCategory(\'\')">'+pageData.category+'</a>, <a href="#" onclick="openCategory(\'&brand='+ pageData.brand+'\')">'+pageData.brand+'</a>';
@@ -1808,11 +1918,11 @@
       function updateBtn(){
          var wishlist_btn = '<div>';
          if (wishlist.includes(pageData.original_site)){ //highlighted wishlist button
-            console.log('this item is on the wishlist!');
+            // console.log('this item is on the wishlist!');
             wishlist_btn += '<label class="wishlist m-0" for="btnControl" style="background-color: #e59285;background-position: 100% center;border-color: #e59285;" onclick="addWishlist()"></label><label class="email"></label>';
          }
          else{ //default, unhighlighted wishlist button
-            console.log('this item is not on the wishlist!');
+            // console.log('this item is not on the wishlist!');
             wishlist_btn += '<label class="wishlist m-0" onclick="addWishlist()"></label><label class="email"></label>';
          };
          wishlist_btn += '</div>';
@@ -1833,7 +1943,7 @@
             delete wishlist[removeIndex];
             wishlist = wishlist.filter(item => item);               
             localStorage.setItem("recentCategory", pageData.category);
-            console.log('removed from wishlist');
+            // console.log('removed from wishlist');
          }
          else {
             //console.log('adding to wishlist');
@@ -1862,15 +1972,22 @@
          return starText
       };
 
-      function getReview(){
+      var reviewData
+      function prevPage(){
+         getReview(reviewData.previous)
+      };
+      function nextPage(){
+         getReview(reviewData.next)
+      }
+
+      function getReview(search){
          var request = new XMLHttpRequest()
-         var search_value = sessionStorage.getItem("search_term");
-         var search = 'http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id;
          request.open('GET', search, true)
 
          request.onload = function loadHTML(){
-            var reviewRes = (JSON.parse(request.responseText)).results;
-            console.log(reviewRes)
+            reviewData = JSON.parse(request.responseText)
+            var reviewRes = reviewData.results;
+            // console.log(reviewRes)
             var i;
             var review = [];
             for (i=0; i<reviewRes.length; i++){
@@ -1878,7 +1995,7 @@
             };
             
             
-            if (reviewRes.length != null){
+            if (reviewRes.length != 0){
                review = '<h1>Customer Reviews</h1>';
                for(i=0;i<reviewRes.length;i++){
                   review += '<h2 class="mt-4">' + reviewRes[i].reviewer_name + '</h2><div class="review__ratings__type d-flex"><div class="review-ratings">';
@@ -1890,7 +2007,17 @@
                }
             }
             else {
-               review = "<h1>Customer Reviews</h1><h2>No product review available</h2>";
+               review = '<h1>Customer Reviews</h1><h2>No product review available</h2>';
+            }
+            if (reviewData.count > 5){
+               review += '<ul class="wn__pagination">';
+               if (reviewData.previous != null){
+                  review += '<li><a onclick="prevPage()"><i class="zmdi zmdi-chevron-left"></i></a></li>';
+               }
+               if (reviewData.next != null){
+                  review += '<li><a onclick=nextPage()><i class="zmdi zmdi-chevron-right"></i></a></li>';
+               }
+               review += '</ul>';
             }
             document.getElementById("get_review").innerHTML = review;
          }
@@ -1898,7 +2025,7 @@
          request.send();
       };
 
-      getReview();
+      getReview('http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id);
 
       var quality, price, value = 1;
       function setQualityStar(clicked_id){
@@ -1967,7 +2094,7 @@
          request.setRequestHeader("Content-type", "application/json");
          var data = JSON.stringify({"product": pageData.id ,"reviewer_name": reviewer_name.value ,"summary": summary.value ,"review": review.value ,"quality": quality ,"price": price ,"value": value});
          request.onload = function loadHTML() {
-            getReview();
+            getReview('http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id);
          }
          // send request
          request.send(data);
@@ -1977,7 +2104,7 @@
       request.open('GET', search, true)
       request.onload = function loadHTML(){
          var resultText = (JSON.parse(request.responseText)).results;
-         console.log(resultText);
+         // console.log(resultText);
          var brands = '';
          var brands_a= '', brands_b= '', brands_c= '', brands_d= '', brands_e= '', brands_f= '', brands_g= '', brands_h= '', brands_i= '', brands_j= '', brands_k= '', brands_l= '', brands_m= '', brands_n= '', brands_o= '', brands_p= '', brands_q= '', brands_r= '', brands_s= '', brands_t= '', brands_u= '', brands_v= '', brands_w= '', brands_x= '', brands_y= '', brands_z= '', brands_num = '';
          var count_a = 0, count_b = 0, count_c = 0, count_d = 0, count_e = 0, count_f = 0, count_g = 0, count_h = 0, count_i = 0, count_j = 0, count_k = 0, count_l = 0, count_m = 0, count_n = 0, count_o = 0, count_p = 0, count_q = 0, count_r = 0, count_s = 0, count_t = 0, count_u = 0, count_v = 0, count_w = 0, count_x = 0, count_y = 0, count_z = 0, count_num = 0;
@@ -2210,19 +2337,25 @@
          image += '</div>'  
       }
 
+      empty = '';
+
+      if (wishlist.length != 0) {
+         document.getElementById("wishlist_noti").innerHTML = wishlist.length;
+      }
+      else {
+         empty += '<a class="wishlist_active" href="wishlist.html"></a>';
+         document.getElementById("wishlist").innerHTML = empty;
+      }
+
       var addQty = 1
       var addSize = '';
-      var cartHTML = '<button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart" onclick="addCart(\''+ pageData.original_site +'\',\''+ addQty +'\',\''+ addSize +'\')">Add to Cart</button>' //onclick="addCart(\''+ pageData.original_site +'\',\''+ addQty +'\')"
+      // var cartHTML = '<button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart" onclick="addCart(\''+ pageData.original_site +'\',\''+ addQty +'\',\''+ addSize +'\')">Add to Cart</button>' //onclick="addCart(\''+ pageData.original_site +'\',\''+ addQty +'\')"
       
       function udpateQty() {
          addQty = document.getElementById("qty").value;
          console.log(addQty);
       };
 
-      function updateSizing() {
-         addSize = document.getElementById("szg").value;
-         console.log(addSize);
-      };
       document.getElementById("review_product_name").innerHTML = pageData.product_name;
       document.getElementById("product_name").innerHTML = pageData.product_name;
       document.getElementById("product_price").innerHTML = pageData.currency + ' ' + pageData.price;
@@ -2230,7 +2363,6 @@
       document.getElementById("categories").innerHTML = categories;
       document.getElementById("image_list").innerHTML = image;
       document.getElementById("product_details").innerHTML = details;
-      document.getElementById("addToCart").innerHTML = cartHTML;
 
       function openCategory(category){
          // Create a request variable and assign a new XMLHttpRequest object to it.

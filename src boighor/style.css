@@ -2197,6 +2197,10 @@ Cart Box Styles
     position: relative;
 }
 
+.wishlistbox_active {
+    position: relative;
+}
+
 .block-minicart {
     background: #fff none repeat scroll 0 0;
     left: auto;
@@ -2385,6 +2389,10 @@ Cart Box Styles
 }
 
 .header__area.brown__header .header__sidebar__right>li.shopcart>a span.product_qun::before {
+    border-color: transparent #b96946 transparent transparent;
+}
+
+.header__area.brown__header .header__sidebar__right>li.wishlist>a span.product_qun::before {
     border-color: transparent #b96946 transparent transparent;
 }
 
@@ -2689,14 +2697,34 @@ Header Styles
     font-weight: 400;
     height: 17px;
     line-height: 17px;
-    margin: -8px 0 0;
+    margin: -8px -3px 0;
     min-width: auto;
     overflow: visible;
     padding: 0;
     position: absolute;
     right: 0;
     text-align: center;
-    top: 44%;
+    top: 40%;
+    width: 16px;
+}
+
+.header__area .header__sidebar__right>li.wishlist>a span.product_qun {
+    background: #d86666 none repeat scroll 0 0;
+    border-radius: 100px;
+    color: rgb(0, 0, 0);
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    height: 17px;
+    line-height: 17px;
+    margin: -8px -3px 0;
+    min-width: auto;
+    overflow: visible;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 40%;
     width: 16px;
 }
 
