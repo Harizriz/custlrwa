@@ -740,7 +740,7 @@
                      </div>
                      <div class="review-fieldset">
                         <h2>You're reviewing:</h2>
-                        <h3>Chaz Kangeroo Hoodie</h3>
+                        <h3 id="review_product_name"></h3>
                            <div class="review-field-ratings">
                               <div class="product-review-table">
                                  <div class="review-field-rating d-flex" id="review_quality">
@@ -1627,7 +1627,7 @@
       <script src="js/bootstrap.min.js"></script>
       <script src="js/plugins.js"></script>
       <script src="js/active.js"></script>
-      <script src="js/sizingCharts.js"></script>
+      <script src="js/sizingChart.js"></script>
       <script>
          class Cart{
          constructor(products) {
@@ -1846,6 +1846,22 @@
          //console.log('wishlist updated'); 
       };
 
+      function getStars(stars){
+         // style=";color:#ff5501;"
+         var starText = '<div class="rating_zero d-flex">';
+         var emptyStars = 5 - stars;
+         var i = 0;
+         for (i= 0; i<stars;i++){
+            starText += '<span style="color:#ff5501;">☆</span>';
+         };
+         for(i=0; i<emptyStars; i++){
+            starText += '<span>☆</span>';
+         };
+         starText += '</div></div>';
+         
+         return starText
+      };
+
       function getReview(){
          var request = new XMLHttpRequest()
          var search_value = sessionStorage.getItem("search_term");
@@ -1860,14 +1876,15 @@
             for (i=0; i<reviewRes.length; i++){
                review = review.concat(reviewRes[i].review);
             };
-
+            
+            
             if (reviewRes.length != null){
                review = '<h1>Customer Reviews</h1>';
                for(i=0;i<reviewRes.length;i++){
                   review += '<h2 class="mt-4">' + reviewRes[i].reviewer_name + '</h2><div class="review__ratings__type d-flex"><div class="review-ratings">';
-                  review += '<div class="rating-summary d-flex"><span><strong>Quality</strong></span><div class="rating_zero d-flex"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div></div>';
-                  review += '<div class="rating-summary d-flex"><span><strong>Price</strong></span><div class="rating_zero d-flex"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div></div>';
-                  review += '<div class="rating-summary d-flex"><span><strong>value</strong></span><div class="rating_zero d-flex"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div></div>';
+                  review += '<div class="rating-summary d-flex"><span><strong>Quality</strong></span>' + getStars(reviewRes[i].quality);
+                  review += '<div class="rating-summary d-flex"><span><strong>Price</strong></span>' + getStars(reviewRes[i].price);
+                  review += '<div class="rating-summary d-flex"><span><strong>value</strong></span>' + getStars(reviewRes[i].value);
                   review += '<div class="rating-summary d-flex"><span><strong>Summary</strong></span><span style="margin-left:20px;">' + reviewRes[i].summary + '</span></div>';
                   review += '<div class="rating-summary d-flex"><span><strong>Review</strong></span><br><span style="margin-left:20px;">' + reviewRes[i].review + '</span></div></div></div></div>';
                }
@@ -1875,10 +1892,7 @@
             else {
                review = "<h1>Customer Reviews</h1><h2>No product review available</h2>";
             }
-
             document.getElementById("get_review").innerHTML = review;
-
-            sessionStorage.setItem("get_review", JSON.stringify(review));
          }
          // Send request
          request.send();
@@ -1942,7 +1956,7 @@
       };
 
       function setReview(){
-         let result = document.querySelector('.result'); 
+         // let result = document.querySelector('.result'); 
          var reviewer_name = document.querySelector('#reviewer_name'); 
          var summary = document.querySelector('#summary'); 
          var review = document.querySelector('#review'); 
@@ -1952,6 +1966,9 @@
          request.open('POST', search, true);
          request.setRequestHeader("Content-type", "application/json");
          var data = JSON.stringify({"product": pageData.id ,"reviewer_name": reviewer_name.value ,"summary": summary.value ,"review": review.value ,"quality": quality ,"price": price ,"value": value});
+         request.onload = function loadHTML() {
+            getReview();
+         }
          // send request
          request.send(data);
       };
@@ -2206,7 +2223,7 @@
          addSize = document.getElementById("szg").value;
          console.log(addSize);
       };
-
+      document.getElementById("review_product_name").innerHTML = pageData.product_name;
       document.getElementById("product_name").innerHTML = pageData.product_name;
       document.getElementById("product_price").innerHTML = pageData.currency + ' ' + pageData.price;
       document.getElementById("product_description").innerHTML = description;
