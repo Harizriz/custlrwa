@@ -445,7 +445,6 @@ textarea {
 }
 
 table {
-    border-bottom: 1px solid #ededed;
     border-collapse: collapse;
     border-spacing: 0;
     font-size: 14px;
@@ -9072,8 +9071,15 @@ Footer Styles
 }
 
 .img-sm {
-    width: 80px;
-    height: 80px
+    width: 175px;
+    height: 250px
+}
+
+@media only screen and (max-width: 1200px) {
+    .img-sm {
+        width: 400px;
+        height: 225px;
+    }
 }
 
 .itemside .info {
@@ -9081,8 +9087,24 @@ Footer Styles
     padding-right: 7px
 }
 
+.table-shopping-cart .box-tocart {
+    line-height: 1.2;
+}
+
+.table-shopping-cart .box-tocart .input-text {
+    border: 1px solid black;
+    color: #616161;
+    font-size: 14px;
+    height: 30px;
+    text-align: center;
+    width: 60px;
+    margin-top: 100px;
+    border-radius: 3px;
+}
+
 .table-shopping-cart .price-wrap {
-    line-height: 1.2
+    line-height: 1.2;
+    margin-top: 106px;
 }
 
 .table-shopping-cart .price {
