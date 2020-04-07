@@ -1661,21 +1661,21 @@
             /*
             *Add items to cart
             */         
-            add(id, quantity = 1, size, price, name, page, brand, image){
+            add(id, quantity = 1, size, price, name, page, brand, image, category = 'men'){
                //Find product from catalog, build object, add to storage
                if (localStorage.getItem('cart') === undefined || localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0){
-                  var item = Object.assign({}, {id: id, quantity: quantity, size: size, price: price, name: name, page: page, brand: brand, image: image});
+                  var item = Object.assign({}, {id: id, quantity: quantity, size: size, price: price, name: name, page: page, brand: brand, image: image, category: category});
                   localStorage.setItem('cart', JSON.stringify([item]))
                }else if(this.find(id, size, JSON.parse(localStorage.getItem('cart'))) != false){
                   //Item already exists in cart, increase quantity
                   var cartObj = JSON.parse(localStorage.getItem('cart'));
                   var oldItem = this.find(id, size, cartObj);
                   var itemIndex = this.findSizeIndex(id, cartObj, size);
-                  var newItem = Object.assign({}, oldItem, {quantity: (quantity + oldItem.quantity), size: size, price: price, name: name, page: page, brand: brand, image: image});
+                  var newItem = Object.assign({}, oldItem, {quantity: (quantity + oldItem.quantity), size: size, price: price, name: name, page: page, brand: brand, image: image, category: category});
                   cartObj[itemIndex] = newItem;
                   localStorage.setItem('cart', JSON.stringify(cartObj));
                }else{
-                  var item = Object.assign({}, {id: id, quantity: quantity, size: size, price: price, name: name, page: page, brand: brand, image: image});
+                  var item = Object.assign({}, {id: id, quantity: quantity, size: size, price: price, name: name, page: page, brand: brand, image: image, category: category});
                   var cartObj =  JSON.parse(localStorage.getItem('cart'));
                   cartObj.push(item)
                   localStorage.setItem('cart', JSON.stringify(cartObj))
@@ -1755,7 +1755,7 @@
             size_to_add = convertedSizingData[convertedSizingIndex] + ", " + sizingDefault;
          };
          //id, quantity = 1, size, price, name, page, brand, image
-         cart.add(pageData.original_site, addQty, size_to_add, pageData.price, pageData.product_name, pageData.id, pageData.brand, pageData.image_url);
+         cart.add(pageData.original_site, addQty, size_to_add, pageData.price, pageData.product_name, pageData.id, pageData.brand, pageData.image_url, pageData.category);
          localStorage.setItem('recent_category_cart', pageData.category);
          sizeConvert(size_code);
       }

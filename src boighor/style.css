@@ -9072,7 +9072,8 @@ Footer Styles
 
 .img-sm {
     width: 175px;
-    height: 250px
+    height: 250px;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -9162,6 +9163,10 @@ a {
     color: #212529
 }
 
+.title {
+    cursor: pointer;
+}
+
 .btn.btn-out {
     outline: 1px solid #fff;
     outline-offset: -5px
@@ -9179,15 +9184,30 @@ a {
 
 .btn-light {
     color: #ffffff;
-    background-color: #F44336;
+    background-color: #d86666;
     border-color: #f8f9fa;
     font-size: 12px
 }
 
 .btn-light:hover {
     color: #ffffff;
-    background-color: #F44336;
-    border-color: #F44336
+    background-color: #d86666;
+    border-color: #ce3131;
+    border-width: 1.2px;
+}
+
+.btn-remove {
+    color: #ffffff;
+    background-color: #d86666;
+    border-color: #f8f9fa;
+    font-size: 12px
+}
+
+.btn-remove:hover {
+    color: #ffffff;
+    background-color: #d86666;
+    border-color: rgb(0, 0, 0);
+    border-width: 1.2px;
 }
 
 .btn-apply {
