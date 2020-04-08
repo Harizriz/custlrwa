@@ -164,7 +164,8 @@
                             <li class="wishlist" id="wishlist">
                                 <a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
                             </li>
-							<li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
+							<li class="shopcart" id="shopcart">
+								<a class="cartbox_active" href="#"><span class="product_qun" id="cart_noti"></span></a>
 								<!-- Start Shopping Cart -->
 								<div class="block-minicart minicart__active">
 									<div class="minicart-content-wrapper">
@@ -186,7 +187,7 @@
 									</div>
 								</div>
 								<!-- End Shopping Cart -->
-							</li>
+								</li>
 							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
 								<div class="searchbar__content setting__block">
 									<div class="content-inner">
@@ -307,12 +308,12 @@
 		</header>
 		<!-- //Header -->
 		<!-- Start Search Popup -->
-		<div class="box-search-content search_active block-bg close__top">
-			<form id="search_mini_form" class="minisearch" action="#">
+		<div class="brown--color box-search-content search_active block-bg close__top">
+			<form id="search_mini_form" class="minisearch" action="#" onsubmit="return false">
 				<div class="field__search">
-					<input type="text" placeholder="Search entire store here...">
+					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="productsearch()">
 					<div class="action">
-						<a href="#"><i class="zmdi zmdi-search"></i></a>
+						<button class="btn btn-light-inverse" type="submit" onclick="productsearch()"><i class="zmdi zmdi-search"></i></button>
 					</div>
 				</div>
 			</form>
@@ -387,15 +388,15 @@
 										<div class="card-body">
 											<dl class="dlist-align">
 												<dt>Total price:</dt>
-												<dd class="text-right ml-3">$69.97</dd>
+												<dd class="text-right ml-3" id="total_price"></dd>
 											</dl>
 											<dl class="dlist-align">
 												<dt>Discount:</dt>
-												<dd class="text-right text-danger ml-3">- $10.00</dd>
+												<dd class="text-right text-danger ml-3" >RM 0.00</dd>
 											</dl>
 											<dl class="dlist-align">
 												<dt>Total:</dt>
-												<dd class="text-right text-dark b ml-3"><strong>$59.97</strong></dd>
+												<dd class="text-right text-dark b ml-3"><strong id="final_price"></strong></dd>
 											</dl>
 											<hr> 
 											<div class="row d-flex px-3 radio"> <img class="pay" src="https://i.imgur.com/WIAP9Ku.jpg">
@@ -538,12 +539,13 @@
 	<script src="js/plugins.js"></script>
 	<script src="js/active.js"></script>
 	<script src="js/sizingChart.js"></script>
+	<script src="js/cart.js"></script>
+	<script src="js/cart-mini.js"></script>
 	<script>
 		var recentCategory = localStorage.getItem('recent_category_cart');
 		function productsearch(){ //sends search request to backend for JSON response
             // Create a request variable and assign a new XMLHttpRequest object to it.
             var request = new XMLHttpRequest()
-			
 			
 			if (recentCategory === undefined || recentCategory === null){
 				recentCategory = "men";
@@ -609,116 +611,6 @@
 			request.send();
 		};
 
-		class Cart{
-            //constructor(products) {
-            constructor(){
-               if (!this.storageSupported()){
-                  throw "Browser doesn't support localStorage"
-               }
-               // this.products = products;
-               //this.items = JSON.parse(localStorage.getItem('cart'))
-            }
-            find(id, size, source){
-               for(var i = 0; i < source.length; i++){
-                  if(source[i].id == id && source[i].size == size){
-                     return source[i];
-                  }
-               }
-               return false;
-            }
-            findSizeIndex(id, source, size){
-               for(var i = 0; i < source.length; i++){
-                  if(source[i].id == id && source[i].size == size){
-                     return i;
-                  }
-               }
-               return false;
-            }
-            /*
-            *Add items to cart
-            */         
-            add(id, quantity = 1, size, price, name, page, brand, image, category = 'men'){
-               //Find product from catalog, build object, add to storage
-               if (localStorage.getItem('cart') === undefined || localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0){
-                  var item = Object.assign({}, {id: id, quantity: quantity, size: size, price: price, name: name, page: page, brand: brand, image: image, category: category});
-                  localStorage.setItem('cart', JSON.stringify([item]))
-               }else if(this.find(id, size, JSON.parse(localStorage.getItem('cart'))) != false){
-                  //Item already exists in cart, increase quantity
-                  var cartObj = JSON.parse(localStorage.getItem('cart'));
-                  var oldItem = this.find(id, size, cartObj);
-                  var itemIndex = this.findSizeIndex(id, cartObj, size);
-                  var newItem = Object.assign({}, oldItem, {quantity: (quantity + oldItem.quantity), size: size, price: price, name: name, page: page, brand: brand, image: image, category: category});
-                  cartObj[itemIndex] = newItem;
-                  localStorage.setItem('cart', JSON.stringify(cartObj));
-               }else{
-                  var item = Object.assign({}, {id: id, quantity: quantity, size: size, price: price, name: name, page: page, brand: brand, image: image, category: category});
-                  var cartObj =  JSON.parse(localStorage.getItem('cart'));
-                  cartObj.push(item)
-                  localStorage.setItem('cart', JSON.stringify(cartObj))
-               }
-            }
-            /*
-            *Show single item from cart
-            */
-            show(id){
-               return this.find(id, JSON.parse(localStorage.getItem('cart')))
-            }
-            /*
-            *List all items in cart
-            */
-            all(){
-               return  JSON.parse(localStorage.getItem('cart'));
-            }
-            /*
-            *Sum cost of items in cart
-            *TODO - get price into object
-            */
-            sum(){
-               var sum = 0;
-               var items = JSON.parse(localStorage.getItem('cart'));
-               for (var i = 0; i < items.length; i++) {
-                  sum += (items[i].price * items[i].quantity)
-               }
-               return sum;
-            }
-            /*
-            *Remove an item from cart
-            */
-            remove(id, size){
-               
-               var items = JSON.parse(localStorage.getItem('cart'));
-               var index = this.findSizeIndex(id, items, size)
-
-               if (index >= 0){
-                  items.splice(index, 1)
-                  localStorage.setItem('cart', JSON.stringify(items));
-               }
-            }
-            /*
-            *Update cart item by its quantity
-            */
-            update(id, quantity, size){
-               var cartObj = JSON.parse(localStorage.getItem('cart'));
-
-               var oldItem = this.find(id, size, cartObj)
-               var itemIndex = this.findSizeIndex(id, cartObj, size)
-               var updatedItem = Object.assign({}, oldItem, {quantity: quantity})
-               cartObj[itemIndex] = updatedItem;
-
-               //Save back to storage
-               localStorage.setItem('cart', JSON.stringify(cartObj))
-            }
-            /**
-            *Remove all items from cart
-            */
-            clear(){
-               localStorage.removeItem('cart')
-            }
-            storageSupported(){
-               return (typeof(Storage) !== "undefined") ? true : false;
-            }
-		  };
-		
 		var wishlist = JSON.parse(localStorage.getItem("wishlist"));
         if (wishlist === undefined || wishlist === null){
             wishlist = [];
@@ -757,20 +649,22 @@
 			cartData = cart.all();
 			if (cartData.length != 0) {
 				for (i = 0; i<cartData.length; i++){
-				cartHTML += '<tr><td><figure class="itemside align-items-center"><div class="aside"><img src="' + cartData[i].image + '" class="img-sm" onclick="openPage(\'' + cartData[i].page + '\')"></div>';
-				cartHTML += '<figcaption class="info"> <a onclick="openPage(\'' + cartData[i].page + '\')" class="title text-dark" data-abc="true"><strong>'+ cartData[i].name +'</strong></a>';
-				cartHTML += '<p class="text-muted small">SIZE: '+ cartData[i].size + '</p><p onclick="openCategory(\''+ cartData[i].category +'\', \'' + cartData[i].brand +'\')" style="cursor:pointer;"> Brand: ' + cartData[i].brand + '</p></figcaption></figure></td>';
-				cartHTML += '<td class="box-tocart"><input id="qty" class="input-text qty" name="qty" min="1" value="'+ cartData[i].quantity +'" title="Qty" type="number"'
-				cartHTML += ' oninput="updateCart(\''+ cartData[i].id + '\', \''+ cartData[i].quantity +'\', \'' + cartData[i].size + '\')"></td>';
-				cartHTML += '<td><div class="price-wrap"><var class="price">RM ' + cartData[i].price.toString() + '</var></div></td>';
-				cartHTML += '<td class="d-flex justify-content-start"><a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ cartData[i].id + '\', \'' + i +'\')" class="btn btn-light" style="margin-top:100px;" data-toggle="tooltip" data-abc="true">';
-				cartHTML += '<i class="fa fa-heart"></i></a><a onclick="removeFromCart(\''+ cartData[i].id + '\', \''+ cartData[i].size +'\')" class="btn btn-remove ml-2" data-abc="true" style="margin-top:100px;background-color:grey">Remove</a></td></tr>';
+					cartHTML += '<tr><td><figure class="itemside align-items-center"><div class="aside"><img src="' + cartData[i].image + '" class="img-sm" onclick="openPage(\'' + cartData[i].page + '\')"></div>';
+					cartHTML += '<figcaption class="info"> <a onclick="openPage(\'' + cartData[i].page + '\')" class="title text-dark" data-abc="true"><strong>'+ cartData[i].name +'</strong></a>';
+					cartHTML += '<p class="text-muted small">SIZE: '+ cartData[i].size + '</p><p onclick="openCategory(\''+ cartData[i].category +'\', \'' + cartData[i].brand +'\')" style="cursor:pointer;">' + cartData[i].brand + '</p></figcaption></figure></td>';
+					cartHTML += '<td class="box-tocart"><input id="qty" class="input-text qty" name="qty" min="1" value="'+ cartData[i].quantity +'" title="Qty" type="number"'
+					cartHTML += ' oninput="updateCart(\''+ cartData[i].id + '\', \''+ cartData[i].quantity +'\', \'' + cartData[i].size + '\')"></td>';
+					cartHTML += '<td><div class="price-wrap"><var class="price">RM ' + cartData[i].price.toString() + '</var></div></td>';
+					cartHTML += '<td class="d-flex justify-content-start"><a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ cartData[i].id + '\', \'' + i +'\')" class="btn btn-light" style="margin-top:100px;" data-toggle="tooltip" data-abc="true">';
+					cartHTML += '<i class="fa fa-heart"></i></a><a onclick="removeFromCart(\''+ cartData[i].id + '\', \''+ cartData[i].size +'\')" class="btn btn-remove ml-2" data-abc="true" style="margin-top:100px;background-color:grey">Remove</a></td></tr>';
 				};
 			}
 			else {
 				cartHTML = '<tr><td>Cart is empty!<td><td><td></td></td></td></td></tr>'
 			}
 			document.getElementById("cart_list").innerHTML = cartHTML;
+			document.getElementById("total_price").innerHTML = 'RM' + cart.sum().toFixed(2).toString()
+			document.getElementById("final_price").innerHTML = 'RM' + cart.sum().toFixed(2).toString()
 		}
 		
 		loadCart();
@@ -790,7 +684,7 @@
 		else {
 			empty += '<a class="wishlist_active" href="wishlist.html"></a>';
 			document.getElementById("wishlist").innerHTML = empty;
-      	}
+		}
 
 		function openPage(id){
             link = 'http://custlrwa.ddns.net:8000/page/' + id.toString() + '/';
@@ -814,6 +708,5 @@
 			request.send();
 		};
 	</script>
-	<script src="js/cart-mini.js"></script>
 </body>
 </html>

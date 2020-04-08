@@ -158,83 +158,35 @@
 					</div>
 					<div class="col-md-8 col-sm-8 col-5 col-lg-2">
 						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-							<li class="shop_search"><a class="search__active" href="#"></a></li>
-							<li class="wishlist"><a href="#"></a></li>
-							<li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
+							<li class="shop_search">
+								<a class="search__active" href="#"></a>
+							</li>
+							<li class="wishlist" id="wishlist">
+								<a class="wishlist_active" href="#"><span class="product_qun" id="wishlist_noti"></span></a>
+							</li>
+							<li class="shopcart" id="shopcart">
+								<a class="cartbox_active" href="cart.html"><span class="product_qun" id="cart_noti"></span></a>
 								<!-- Start Shopping Cart -->
 								<div class="block-minicart minicart__active">
 									<div class="minicart-content-wrapper">
 										<div class="micart__close">
 											<span>close</span>
 										</div>
-										<div class="items-total d-flex justify-content-between">
-											<span>3 items</span>
-											<span>Cart Subtotal</span>
+										<div class="items-total d-flex justify-content-between" id="cart_count">
 										</div>
 										<div class="total_amount text-right">
-											<span>$66.00</span>
+											<span id="cart_total"></span>
 										</div>
 										<div class="mini_action checkout">
 											<a class="checkout__btn" href="cart.html">Go to Checkout</a>
 										</div>
 										<div class="single__items">
-											<div class="miniproduct">
-												<div class="item01 d-flex">
-													<div class="thumb">
-														<a href="product-details.html"><img src="images/product/sm-img/1.jpg" alt="product images"></a>
-													</div>
-													<div class="content">
-														<h6><a href="product-details.html">Voyage Yoga Bag</a></h6>
-														<span class="prize">$30.00</span>
-														<div class="product_prize d-flex justify-content-between">
-															<span class="qun">Qty: 01</span>
-															<ul class="d-flex justify-content-end">
-																<li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-																<li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="item01 d-flex mt--20">
-													<div class="thumb">
-														<a href="product-details.html"><img src="images/product/sm-img/3.jpg" alt="product images"></a>
-													</div>
-													<div class="content">
-														<h6><a href="product-details.html">Impulse Duffle</a></h6>
-														<span class="prize">$40.00</span>
-														<div class="product_prize d-flex justify-content-between">
-															<span class="qun">Qty: 03</span>
-															<ul class="d-flex justify-content-end">
-																<li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-																<li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="item01 d-flex mt--20">
-													<div class="thumb">
-														<a href="product-details.html"><img src="images/product/sm-img/2.jpg" alt="product images"></a>
-													</div>
-													<div class="content">
-														<h6><a href="product-details.html">Compete Track Tote</a></h6>
-														<span class="prize">$40.00</span>
-														<div class="product_prize d-flex justify-content-between">
-															<span class="qun">Qty: 03</span>
-															<ul class="d-flex justify-content-end">
-																<li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-																<li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="mini_action cart">
-											<a class="cart__btn" href="cart.html">View and edit cart</a>
+											<div class="miniproduct" id="mini_cart">
 										</div>
 									</div>
 								</div>
-								<!-- End Shopping Cart -->
+							</div>
+							<!-- End Shopping Cart -->
 							</li>
 							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
 								<div class="searchbar__content setting__block">
@@ -525,6 +477,8 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/active.js"></script>
+	<script src="js/cart.js"></script>
+	<script src="js/cart-mini.js"></script>
 	<script>
 		var recentCategory = localStorage.getItem("recentCategory");
 
@@ -592,15 +546,19 @@
             // Open a new connection, using the GET request on the URL endpoint
             var search = 'http://custlrwa.ddns.net:8000/scraped/?search=' + url
                
-               request.open('GET', search, true)
+			request.open('GET', search, true)
 
             request.onload = function loadHTML(){
-               var resultText = JSON.parse(request.responseText);
+			   var resultText = JSON.parse(request.responseText);
+			   var empty = '';
                if (resultText.count == 1){
-				   loadProduct(resultText.results[0]);
+					loadProduct(resultText.results[0]);
+					document.getElementById("wishlist_noti").innerHTML = resultText.count;
 			   }
 			   else{
-				   wishlistHTML += "<tr><i>Product No Longer In Store</i></tr>";
+					wishlistHTML += "<tr><i>Product No Longer In Store</i></tr>";
+					empty += '<a class="wishlist_active" href="wishlist.html"></a>';
+					document.getElementById("wishlist").innerHTML = empty;
 			   }
             }
             // Send request
@@ -609,9 +567,9 @@
 		wishlist = JSON.parse(localStorage.getItem("wishlist"));
 		wishlistHTML = '';
 		i = 0;
-		
+			
 		buildWishlist();
-
+		
 		function getProductPage(url, page, storage){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
 			var request = new XMLHttpRequest()
