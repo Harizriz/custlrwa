@@ -1,0 +1,1091 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Track My Order</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="images/yellowicon.png">
+    <link rel="apple-touch-icon" href="images/icon.png">
+
+    <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Cusom css -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Modernizer js -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />-->
+</head>
+<style>
+    .button {
+        background-color: #fbff00;
+        border: none;
+        color: rgb(2, 2, 2);
+        text-align: center;
+        height: 30px;
+        font-size: 16px;
+        margin: 4px 2px;
+        opacity: 0.6;
+        transition: 0.3s;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .button:hover {
+        opacity: 1
+    }
+    
+    input {
+        height: 30px;
+    }
+    
+    label {
+        color: #fafafa;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .clear {
+        clear: both;
+    }
+    
+    .header {
+        margin-top: 7%;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 25px;
+        text-transform: uppercase;
+        color: grey;
+    }
+    
+    .content {
+        width: 60%;
+        margin: 3% auto 0 auto;
+        height: 460px;
+        background-color: #F5F5F5;
+    }
+    
+    .content1 {
+        background-color: #0e0e0e;
+        text-align: center;
+        padding: 2em;
+    }
+    
+    .content1 h2 {
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        margin-top: 10px;
+        color: #fff;
+    }
+    
+    .content1 h3 {
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 10px;
+        color: #fff;
+    }
+    
+    .content2 {
+        background-color: #393a38;
+    }
+    
+    .content2-header1 {
+        float: left;
+        width: 27%;
+        text-align: center;
+        padding: 1.5em;
+    }
+    
+    .content2-header1 p {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        margin: 0;
+    }
+    
+    .content2-header1 span {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .shipment {
+        width: 100%;
+        margin-top: 10%;
+    }
+    
+    span.line {
+        height: 5px;
+        width: 90px;
+        background-color: #F5998E;
+        display: block;
+        position: absolute;
+        top: 28%;
+        left: 45%;
+    }
+    
+    .confirm {
+        text-align: center;
+        width: 20%;
+        position: relative;
+        float: left;
+        margin-left: 5%;
+    }
+    
+    .confirm .imgcircle,
+    .process .imgcircle,
+    .quality .imgcircle {
+        background-color: #98D091;
+    }
+    
+    .confirm span.line,
+    .process span.line {
+        background-color: #98D091;
+    }
+    
+    .content3 p {
+        margin-left: -50%;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    
+    .imgcircle {
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        background-color: #F5998E;
+        position: relative;
+    }
+    
+    .imgcircle img {
+        height: 30px;
+        position: absolute;
+        top: 28%;
+        left: 30%;
+    }
+    
+    .process {
+        position: relative;
+        width: 20%;
+        text-align: center;
+        float: left;
+    }
+    
+    .quality {
+        position: relative;
+        width: 20%;
+        text-align: center;
+        float: left;
+    }
+    
+    .dispatch {
+        position: relative;
+        width: 20%;
+        text-align: center;
+        float: left;
+    }
+    
+    .delivery {
+        position: relative;
+        width: 20%;
+        text-align: center;
+        float: left;
+        margin-right: -9%;
+    }
+    /*---- responsive-design -----------------------------------------------------------------------------------------------------*/
+    
+    @media(max-width:1920px) {
+        span.line {
+            width: 157px;
+            left: 32%;
+        }
+        .shipment {
+            margin-top: 6%;
+        }
+        .content3 p {
+            margin-left: -65%;
+        }
+    }
+    
+    @media(max-width:1366px) {
+        .header {
+            margin-top: 15%;
+        }
+    }
+    
+    @media(max-width:1680px) {
+        .content3 p {
+            margin-left: -60%;
+        }
+        span.line {
+            width: 127px;
+            left: 37%;
+        }
+    }
+    
+    @media(max-width:1600px) {
+        span.line {
+            width: 117px;
+            left: 39%;
+        }
+    }
+    
+    @media(max-width:1440px) {
+        .content3 p {
+            margin-left: -53%;
+        }
+        span.line {
+            width: 99px;
+            left: 43%;
+        }
+    }
+    
+    @media (max-width: 1366px) {
+        span.line {
+            width: 90px;
+            left: 45%;
+        }
+        .shipment {
+            margin-top: 10%;
+        }
+    }
+    
+    @media (max-width: 1280px) {
+        span.line {
+            width: 80px;
+            left: 48%;
+            top: 29%;
+        }
+    }
+    
+    @media (max-width: 1080px) {
+        .content {
+            width: 75%;
+        }
+        span.line {
+            width: 88px;
+            left: 46%;
+        }
+    }
+    
+    @media (max-width: 1050px) {
+        span.line {
+            width: 84px;
+            left: 47%;
+        }
+    }
+    
+    @media (max-width: 1024px) {
+        .content {
+            width: 77%;
+        }
+        .content3 p {
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 991px) {
+        .content {
+            width: 80%;
+        }
+        span.line {
+            width: 84px;
+            left: 47%;
+        }
+    }
+    
+    @media (max-width: 900px) {
+        .content {
+            width: 85%;
+        }
+        span.line {
+            width: 78px;
+            left: 49%;
+        }
+    }
+    
+    @media (max-width: 800px) {
+        .content {
+            width: 95%;
+        }
+        .content2-header1 p {
+            margin: 0 0 0 -7%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .content {
+            width: 90%;
+        }
+        .content2-header1 {
+            width: 25%;
+        }
+        .content2-header1 p {
+            margin: 0 -19% 0 -10%;
+        }
+        span.line {
+            width: 72px;
+            left: 51%;
+        }
+    }
+    
+    @media (max-width: 736px) {
+        span.line {
+            width: 62px;
+            left: 55%;
+        }
+    }
+    
+    @media (max-width: 667px) {
+        .content2-header1 p {
+            font-size: 14px;
+        }
+        .content2-header1 span {
+            font-size: 13px;
+        }
+        .shipment {
+            margin-top: 13%;
+        }
+        .content3 p {
+            font-size: 12px;
+            margin-left: -35%;
+        }
+        .confirm {
+            margin-left: 4%;
+        }
+        span.line {
+            width: 49px;
+            left: 60%;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .content1 {
+            padding: 1.2em;
+        }
+        .content2-header1 p {
+            font-size: 13px;
+        }
+        .content2-header1 span {
+            font-size: 12px;
+        }
+        .content2-header1 {
+            width: 24%;
+        }
+        .imgcircle {
+            height: 65px;
+            width: 65px;
+        }
+        .imgcircle img {
+            top: 26%;
+            left: 27%;
+        }
+        .content3 p {
+            margin-left: -38%;
+            font-size: 11px;
+        }
+        .content {
+            height: 395px;
+        }
+        span.line {
+            width: 50px;
+            left: 58%;
+        }
+    }
+    
+    @media (max-width: 568px) {
+        .content {
+            height: 380px;
+        }
+        .content1 {
+            padding: 1em;
+        }
+        span.line {
+            width: 56px;
+            left: 47%;
+        }
+        .content2-header1 {
+            width: 23%;
+        }
+        .imgcircle {
+            height: 50px;
+            width: 50px;
+        }
+        .imgcircle img {
+            height: 25px;
+            top: 27%;
+            left: 25%;
+        }
+        .content3 p {
+            font-size: 10px;
+            margin-left: -46%;
+        }
+        .confirm {
+            margin-left: 5%;
+        }
+    }
+    
+    @media (max-width: 414px) {
+        .header {
+            margin-top: 8%;
+        }
+        .content {
+            width: 100%;
+            height: 750px;
+            margin-top: 9%;
+            padding: 10%;
+        }
+        .content1 {
+            margin: -14% 0 0 -14%;
+            width: 130%;
+        }
+        .content1 h2 {
+            font-size: 22px;
+        }
+        .content2 {
+            margin-left: -14%;
+            width: 127.5%;
+        }
+        .content2-header1 {
+            padding: 0.7em;
+            width: 80%;
+            margin-left: 3%;
+        }
+        .content2-header1 p {
+            font-size: 19px;
+        }
+        .content2-header1 span {
+            font-size: 16px;
+        }
+        .confirm {
+            width: 100%;
+        }
+        .process {
+            width: 100%;
+            margin: 22% 0 0 5%;
+        }
+        .quality {
+            width: 100%;
+            margin: 22% 0 0 5%;
+        }
+        .dispatch {
+            width: 100%;
+            margin: 22% 0 0 5%;
+        }
+        .delivery {
+            width: 100%;
+            margin: 22% 0 0 5%;
+        }
+        .imgcircle {
+            height: 70px;
+            width: 70px;
+            margin-left: 35%;
+        }
+        .imgcircle img {
+            height: 30px;
+            top: 27%;
+            left: 28%;
+        }
+        span.line {
+            width: 6px;
+            left: 46%;
+            height: 48px;
+            top: 124%;
+        }
+        .content3 p {
+            font-size: 15px;
+            margin: -16% 0 4% -81%;
+        }
+        .shipment {
+            margin-left: 16%;
+        }
+        .footer {
+            padding: 1%;
+        }
+        .footer p {
+            font-size: 16px;
+        }
+    }
+    
+    @media (max-width: 384px) {
+        .header {
+            margin-top: 9%;
+        }
+        .content1 {
+            width: 115%;
+        }
+        .content1 h2 {
+            font-size: 21px;
+        }
+        .content3 p {
+            margin: -18% 0 6% -85%;
+        }
+        .shipment {
+            margin-top: 15%;
+        }
+        span.line {
+            top: 118%;
+            left: 47%;
+            height: 47px;
+        }
+        .content {
+            height: 770px;
+        }
+        .footer {
+            padding: 3%;
+        }
+        .footer p {
+            font-size: 15px;
+        }
+    }
+    
+    @media (max-width: 375px) {
+        .content {
+            height: 755px;
+            width: 68%;
+        }
+        .content2 {
+            width: 128%;
+        }
+        .content1 h2 {
+            font-size: 19px;
+        }
+        .content3 p {
+            margin: -18% 0 8% -86%;
+        }
+        span.line {
+            top: 105%;
+            left: 47.5%;
+            height: 52px;
+        }
+        .shipment {
+            margin-left: 17%;
+        }
+    }
+    
+    @media (max-width: 320px) {
+        .header {
+            margin-top: 10%;
+        }
+        .content {
+            width: 66%;
+            margin-top: 10%;
+            padding: 12%;
+            height: 709px;
+        }
+        .content1 {
+            padding: 0.7em;
+            width: 125%;
+            margin: -18% 0 0 -18%;
+        }
+        .header h1 {
+            font-size: 30px;
+        }
+        .content2 {
+            margin-left: -18%;
+            width: 136.5%;
+        }
+        .content1 h2 {
+            font-size: 16px;
+        }
+        .content2-header1 span {
+            font-size: 15px;
+        }
+        .content3 p {
+            margin: -23% 0 12% -99%;
+        }
+        .shipment {
+            margin: 16% 0 0 19%;
+        }
+        span.line {
+            top: 102%;
+            left: 50%;
+            height: 44px;
+        }
+        .footer {
+            margin-top: 1%;
+        }
+        .footer p {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<body>
+    <!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
+
+    <!-- Main wrapper -->
+    <div class="wrapper" id="wrapper">
+
+        <!-- Header -->
+        <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-7 col-lg-2">
+                        <div class="logo">
+                            <a href="index-men.html">
+                                <img src="images/logo/yellow1.png" alt="logo images">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 d-none d-lg-block">
+                        <nav class="mainmenu__nav">
+                            <ul class="meninmenu d-flex justify-content-start">
+                                <li class="drop with--one--item"><a href="index-men.html">Home</a></li>
+                                <li class="drop"><a href="#">Shop</a>
+                                    <div class="megamenu mega03">
+                                        <ul class="item item03">
+                                            <li class="title">Shop Layout</li>
+                                            <li><a href="shop-grid.html">Shop Grid</a></li>
+                                            <li><a href="single-product.html">Single Product</a></li>
+                                        </ul>
+                                        <ul class="item item03">
+                                            <li class="title">Shop Page</li>
+                                            <li><a href="my-account.html">My Account</a></li>
+                                            <li><a href="cart.html">Cart Page</a></li>
+                                            <li><a href="checkout.html">Checkout Page</a></li>
+                                            <li><a href="wishlist.html">Wishlist Page</a></li>
+                                            <li><a href="error404.html">404 Page</a></li>
+                                            <li><a href="faq.html">Faq Page</a></li>
+                                        </ul>
+                                        <ul class="item item03">
+                                            <li class="title">Bargain Books</li>
+                                            <li><a href="shop-grid.html">Bargain Bestsellers</a></li>
+                                            <li><a href="shop-grid.html">Activity Kits</a></li>
+                                            <li><a href="shop-grid.html">B&N Classics</a></li>
+                                            <li><a href="shop-grid.html">Books Under $5</a></li>
+                                            <li><a href="shop-grid.html">Bargain Books</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="shop-grid.html">Books</a>
+                                    <div class="megamenu mega03">
+                                        <ul class="item item03">
+                                            <li class="title">Categories</li>
+                                            <li><a href="shop-grid.html">Biography </a></li>
+                                            <li><a href="shop-grid.html">Business </a></li>
+                                            <li><a href="shop-grid.html">Cookbooks </a></li>
+                                            <li><a href="shop-grid.html">Health & Fitness </a></li>
+                                            <li><a href="shop-grid.html">History </a></li>
+                                        </ul>
+                                        <ul class="item item03">
+                                            <li class="title">Customer Favourite</li>
+                                            <li><a href="shop-grid.html">Mystery</a></li>
+                                            <li><a href="shop-grid.html">Religion & Inspiration</a></li>
+                                            <li><a href="shop-grid.html">Romance</a></li>
+                                            <li><a href="shop-grid.html">Fiction/Fantasy</a></li>
+                                            <li><a href="shop-grid.html">Sleeveless</a></li>
+                                        </ul>
+                                        <ul class="item item03">
+                                            <li class="title">Collections</li>
+                                            <li><a href="shop-grid.html">Science </a></li>
+                                            <li><a href="shop-grid.html">Fiction/Fantasy</a></li>
+                                            <li><a href="shop-grid.html">Self-Improvemen</a></li>
+                                            <li><a href="shop-grid.html">Home & Garden</a></li>
+                                            <li><a href="shop-grid.html">Humor Books</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="shop-grid.html">Kids</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Top Collections</li>
+                                            <li><a href="shop-grid.html">American Girl</a></li>
+                                            <li><a href="shop-grid.html">Diary Wimpy Kid</a></li>
+                                            <li><a href="shop-grid.html">Finding Dory</a></li>
+                                            <li><a href="shop-grid.html">Harry Potter</a></li>
+                                            <li><a href="shop-grid.html">Land of Stories</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">More For Kids</li>
+                                            <li><a href="shop-grid.html">B&N Educators</a></li>
+                                            <li><a href="shop-grid.html">B&N Kids' Club</a></li>
+                                            <li><a href="shop-grid.html">Kids' Music</a></li>
+                                            <li><a href="shop-grid.html">Toys & Games</a></li>
+                                            <li><a href="shop-grid.html">Hoodies</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="#">Pages</a>
+                                    <div class="megamenu dropdown">
+                                        <ul class="item item01">
+                                            <li><a href="about.html">About Page</a></li>
+                                            <li class="label2"><a href="portfolio.html">Portfolio</a>
+                                                <ul>
+                                                    <li><a href="portfolio.html">Portfolio</a></li>
+                                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="my-account.html">My Account</a></li>
+                                            <li><a href="cart.html">Cart Page</a></li>
+                                            <li><a href="checkout.html">Checkout Page</a></li>
+                                            <li><a href="wishlist.html">Wishlist Page</a></li>
+                                            <li><a href="error404.html">404 Page</a></li>
+                                            <li><a href="faq.html">Faq Page</a></li>
+                                            <li><a href="team.html">Team Page</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="blog.html">Blog</a>
+                                    <div class="megamenu dropdown">
+                                        <ul class="item item01">
+                                            <li><a href="blog.html">Blog Page</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="contact.html">Help</a>
+                                    <div class="megamenu dropdown">
+                                        <ul class="item item01">
+                                            <li><a href="faq.html">FAQs</a></li>
+                                            <li class="label2"><a href="portfolio.html">Legal & Privacy</a>
+                                                <ul>
+                                                    <li><a href="portfolio.html">Portfolio</a></li>
+                                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                            <li><a href="cart.html">Cart Page</a></li>
+                                            <li><a href="checkout.html">Checkout Page</a></li>
+                                            <li><a href="wishlist.html">Wishlist Page</a></li>
+                                            <li><a href="error404.html">404 Page</a></li>
+                                            <li><a href="faq.html">Faq Page</a></li>
+                                            <li><a href="team.html">Team Page</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-5 col-lg-2">
+                        <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+                            <li class="shop_search">
+                                <a class="search__active" href="#"></a>
+                            </li>
+                            <li class="wishlist">
+                                <a href="#"></a>
+                            </li>
+                            <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
+                                <!-- Start Shopping Cart -->
+                                <div class="block-minicart minicart__active">
+                                    <div class="minicart-content-wrapper">
+                                        <div class="micart__close">
+                                            <span>close</span>
+                                        </div>
+                                        <div class="items-total d-flex justify-content-between">
+                                            <span>3 items</span>
+                                            <span>Cart Subtotal</span>
+                                        </div>
+                                        <div class="total_amount text-right">
+                                            <span>$66.00</span>
+                                        </div>
+                                        <div class="mini_action checkout">
+                                            <a class="checkout__btn" href="cart.html">Go to Checkout</a>
+                                        </div>
+                                        <div class="single__items">
+                                            <div class="miniproduct">
+                                                <div class="item01 d-flex">
+                                                    <div class="thumb">
+                                                        <a href="product-details.html"><img src="images/product/sm-img/1.jpg" alt="product images"></a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h6><a href="product-details.html">Voyage Yoga Bag</a></h6>
+                                                        <span class="prize">$30.00</span>
+                                                        <div class="product_prize d-flex justify-content-between">
+                                                            <span class="qun">Qty: 01</span>
+                                                            <ul class="d-flex justify-content-end">
+                                                                <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
+                                                                <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item01 d-flex mt--20">
+                                                    <div class="thumb">
+                                                        <a href="product-details.html"><img src="images/product/sm-img/3.jpg" alt="product images"></a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h6><a href="product-details.html">Impulse Duffle</a></h6>
+                                                        <span class="prize">$40.00</span>
+                                                        <div class="product_prize d-flex justify-content-between">
+                                                            <span class="qun">Qty: 03</span>
+                                                            <ul class="d-flex justify-content-end">
+                                                                <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
+                                                                <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item01 d-flex mt--20">
+                                                    <div class="thumb">
+                                                        <a href="product-details.html"><img src="images/product/sm-img/2.jpg" alt="product images"></a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h6><a href="product-details.html">Compete Track Tote</a></h6>
+                                                        <span class="prize">$40.00</span>
+                                                        <div class="product_prize d-flex justify-content-between">
+                                                            <span class="qun">Qty: 03</span>
+                                                            <ul class="d-flex justify-content-end">
+                                                                <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
+                                                                <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mini_action cart">
+                                            <a class="cart__btn" href="cart.html">View and edit cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Shopping Cart -->
+                            </li>
+                            <li class="setting__bar__icon">
+                                <a class="setting__active" href="#"></a>
+                                <div class="searchbar__content setting__block">
+                                    <div class="content-inner">
+                                        <div class="switcher-currency">
+                                            <strong class="label switcher-label">
+												<span>Currency</span>
+											</strong>
+                                            <div class="switcher-options">
+                                                <div class="switcher-currency-trigger">
+                                                    <span class="currency-trigger">USD - US Dollar</span>
+                                                    <ul class="switcher-dropdown">
+                                                        <li>GBP - British Pound Sterling</li>
+                                                        <li>EUR - Euro</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="switcher-currency">
+                                            <strong class="label switcher-label">
+												<span>Language</span>
+											</strong>
+                                            <div class="switcher-options">
+                                                <div class="switcher-currency-trigger">
+                                                    <span class="currency-trigger">English01</span>
+                                                    <ul class="switcher-dropdown">
+                                                        <li>English02</li>
+                                                        <li>English03</li>
+                                                        <li>English04</li>
+                                                        <li>English05</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="switcher-currency">
+                                            <strong class="label switcher-label">
+												<span>Select Store</span>
+											</strong>
+                                            <div class="switcher-options">
+                                                <div class="switcher-currency-trigger">
+                                                    <span class="currency-trigger">Fashion Store</span>
+                                                    <ul class="switcher-dropdown">
+                                                        <li>Furniture</li>
+                                                        <li>Shoes</li>
+                                                        <li>Speaker Store</li>
+                                                        <li>Furniture</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="switcher-currency">
+                                            <strong class="label switcher-label">
+												<span>My Account</span>
+											</strong>
+                                            <div class="switcher-options">
+                                                <div class="switcher-currency-trigger">
+                                                    <div class="setting__menu">
+                                                        <span><a href="#">Compare Product</a></span>
+                                                        <span><a href="#">My Account</a></span>
+                                                        <span><a href="#">My Wishlist</a></span>
+                                                        <span><a href="#">Sign In</a></span>
+                                                        <span><a href="#">Create An Account</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Start Mobile Menu -->
+                <div class="row d-none">
+                    <div class="col-lg-12 d-none">
+                        <nav class="mobilemenu__nav">
+                            <ul class="meninmenu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="#">Pages</a>
+                                    <ul>
+                                        <li><a href="about.html">About Page</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a>
+                                            <ul>
+                                                <li><a href="portfolio.html">Portfolio</a></li>
+                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="my-account.html">My Account</a></li>
+                                        <li><a href="cart.html">Cart Page</a></li>
+                                        <li><a href="checkout.html">Checkout Page</a></li>
+                                        <li><a href="wishlist.html">Wishlist Page</a></li>
+                                        <li><a href="error404.html">404 Page</a></li>
+                                        <li><a href="faq.html">Faq Page</a></li>
+                                        <li><a href="team.html">Team Page</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="shop-grid.html">Shop</a>
+                                    <ul>
+                                        <li><a href="shop-grid.html">Shop Grid</a></li>
+                                        <li><a href="single-product.html">Single Product</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog.html">Blog</a>
+                                    <ul>
+                                        <li><a href="blog.html">Blog Page</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- End Mobile Menu -->
+                <div class="mobile-menu d-block d-lg-none">
+                </div>
+                <!-- Mobile Menu -->
+            </div>
+        </header>
+        <!-- //Header -->
+        <!-- Start Search Popup -->
+        <div class="box-search-content search_active block-bg close__top">
+            <form id="search_mini_form" class="minisearch" action="#">
+                <div class="field__search">
+                    <input type="text" placeholder="Search entire store here...">
+                    <div class="action">
+                        <a href="#"><i class="zmdi zmdi-search"></i></a>
+                    </div>
+                </div>
+            </form>
+            <div class="close__wrap">
+                <span>close</span>
+            </div>
+        </div>
+        <!-- End Search Popup -->
+        <!-- Start Bradcaump area -->
+        <!-- End Bradcaump area -->
+        <!------------------------------------------------------------------- Start Contact Area ----------------------------------------------------------->
+
+        <body>
+
+            <div class="header">
+                <h1>Track My Order</h1>
+            </div>
+
+            <div class="content">
+                <div class="content1">
+                    <form action="/action_page.php">
+                        <label for="fname"><h3>Enter Your Order Number:</h3></label><br>
+                        <input type="text" id="fname" name="fname">
+                        <button class="button">Submit</button>
+                    </form>
+                    <h2>Order Tracking: Order No</h2>
+                </div>
+                <div class="content2">
+                    <div class="content2-header1">
+                        <p>Shipped Via : <span>XXX</span></p>
+                    </div>
+                    <!---- <div class="content2-header1">
+                        <p>Status : <span>Checking Quality</span></p>
+                    </div>-->
+                    <div class="content2-header1">
+                        <p>Expected Date : <span>7-NOV-2015</span></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="content3">
+                    <div class="shipment">
+                        <div class="confirm">
+                            <div class="imgcircle">
+                                <img src="images/confirm.png" alt="confirm order">
+                            </div>
+                            <span class="line"></span>
+                            <p>Confirmed Order</p>
+                        </div>
+                        <div class="process">
+                            <div class="imgcircle">
+                                <img src="images/process.png" alt="process order">
+                            </div>
+                            <span class="line"></span>
+                            <p>Processing Order</p>
+                        </div>
+                        <!--- <div class="quality">
+                            <div class="imgcircle">
+                                <img src="images/quality.png" alt="quality check">
+                            </div>
+                            <span class="line"></span>
+                            <p>Quality Check</p>
+                        </div>-->
+                        <div class="dispatch">
+                            <div class="imgcircle">
+                                <img src="images/dispatch.png" alt="dispatch product">
+                            </div>
+                            <span class="line"></span>
+                            <p>Dispatched Item</p>
+                        </div>
+                        <div class="delivery">
+                            <div class="imgcircle">
+                                <img src="images/delivery.png" alt="delivery">
+                            </div>
+                            <p>Product Delivered</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+        </body>
+
+</body>
+
+
+</html>
