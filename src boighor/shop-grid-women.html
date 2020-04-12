@@ -51,7 +51,6 @@
                     <div class="col-lg-8 d-none d-lg-block">
 						<nav class="mainmenu__nav">
 							<ul class="meninmenu d-flex justify-content-start">
-								<li class="drop with--one--item"><a href="index.html">Home</a></li>
 								<li class="drop"><a href="#">Shop</a>
 									<div class="megamenu mega03">
 										<ul class="item item03">
@@ -77,8 +76,9 @@
 											<li><a href="shop-grid.html">Bargain Books</a></li>
 										</ul>
 									</div>
-								</li>
-								<li class="drop"><a href="shop-grid.html">Books</a>
+                                </li>
+                                <!-- Occasions -->
+								<!-- <li class="drop"><a href="shop-grid.html">Books</a>
 									<div class="megamenu mega03">
 										<ul class="item item03">
 											<li class="title">Categories</li>
@@ -105,7 +105,7 @@
 											<li><a href="shop-grid.html">Humor Books</a></li>
 										</ul>
 									</div>
-								</li>
+								</li> -->
 								<li class="drop"><a href="index-men.html">Men</a>
 									<div class="megamenu mega02">
 										<ul class="item item02">
@@ -146,7 +146,7 @@
 										</ul>
 									</div>
 								</li>
-								<li class="drop"><a href="#">Pages</a>
+								<!-- <li class="drop"><a href="#">Pages</a>
 									<div class="megamenu dropdown">
 										<ul class="item item01">
 											<li><a href="about.html">About Page</a></li>
@@ -165,7 +165,7 @@
 											<li><a href="team.html">Team Page</a></li>
 										</ul>
 									</div>
-								</li>
+								</li> -->
 								<li class="drop"><a href="blog.html">Blog</a>
 									<div class="megamenu dropdown">
 										<ul class="item item01">
@@ -174,8 +174,27 @@
 										</ul>
 									</div>
 								</li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
+                                <li class="drop"><a href="contact.html">Help</a>
+									<div class="megamenu dropdown">
+										<ul class="item item01">
+											<li><a href="faq.html">FAQs</a></li>
+											<li class="label2"><a href="terms-and-conditions.html">Legal & Privacy</a>
+												<ul>
+													<li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+													<li><a href="privacy-and-cookies.html">Privacy and Cookies</a></li>
+												</ul>
+											</li>
+											<li><a href="contact.html">Contact Us</a></li>
+											<li><a href="cart.html">Cart Page</a></li>
+											<li><a href="checkout.html">Checkout Page</a></li>
+											<li><a href="wishlist.html">Wishlist Page</a></li>
+											<li><a href="error404.html">404 Page</a></li>
+											<li><a href="faq.html">Faq Page</a></li>
+											<li><a href="team.html">Team Page</a></li>
+										</ul>
+									</div>
+                                </li>							
+                            </ul>
 						</nav>
 					</div>
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
@@ -184,101 +203,74 @@
                                 <a class="search__active" href="#"></a>
                             </li>
                             <li class="wishlist" id="wishlist">
-								<a class="wishlist_active" href="#"><span class="product_qun" id="wishlist_noti"></span></a>
+								<a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
 							</li>
 							<li class="shopcart" id="shopcart">
 								<a class="cartbox_active" href="cart.html"><span class="product_qun" id="cart_noti"></span></a>
-                            <!-- Start Shopping Cart -->
-                            <div class="block-minicart minicart__active">
-                                <div class="minicart-content-wrapper">
-                                    <div class="micart__close">
-                                        <span>close</span>
-                                    </div>
-                                    <div class="items-total d-flex justify-content-between" id="cart_count">
-                                    </div>
-                                    <div class="total_amount text-right">
-                                        <span id="cart_total"></span>
-                                    </div>
-                                    <div class="mini_action checkout">
-                                        <a class="checkout__btn" href="cart.html">Go to Checkout</a>
-                                    </div>
-                                    <div class="single__items">
-                                        <div class="miniproduct" id="mini_cart">
+                                <!-- Start Shopping Cart -->
+                                <div class="block-minicart minicart__active">
+                                    <div class="minicart-content-wrapper">
+                                        <div class="micart__close">
+                                            <span>close</span>
+                                        </div>
+                                        <div class="items-total d-flex justify-content-between" id="cart_count">
+                                        </div>
+                                        <div class="total_amount text-right">
+                                            <span id="cart_total"></span>
+                                        </div>
+                                        <div class="mini_action checkout">
+                                            <a class="checkout__btn" href="cart.html">Go to Checkout</a>
+                                        </div>
+                                        <div class="single__items">
+                                            <div class="miniproduct" id="mini_cart">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             <!-- End Shopping Cart -->
-                            </li>
-                            <li class="setting__bar__icon">
-                                <a class="setting__active" href="#"></a>
-                                <div class="searchbar__content setting__block">
-                                    <div class="content-inner">
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Currency</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">USD - US Dollar</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>GBP - British Pound Sterling</li>
-                                                        <li>EUR - Euro</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Language</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">English01</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>English02</li>
-                                                        <li>English03</li>
-                                                        <li>English04</li>
-                                                        <li>English05</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Select Store</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">Fashion Store</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>Furniture</li>
-                                                        <li>Shoes</li>
-                                                        <li>Speaker Store</li>
-                                                        <li>Furniture</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
+                            <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+								<div class="searchbar__content setting__block p-0">
+									<div class="content-inner">
+										<div class="switcher-currency">
+											<strong class="label switcher-label">
 												<span>My Account</span>
 											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <div class="setting__menu">
-                                                        <span><a href="#">Compare Product</a></span>
-                                                        <span><a href="#">My Account</a></span>
-                                                        <span><a href="#">My Wishlist</a></span>
-                                                        <span><a href="#">Sign In</a></span>
-                                                        <span><a href="#">Create An Account</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+											<div class="switcher-options">
+												<div class="switcher-currency-trigger">
+													<div class="setting__menu">
+														<span><a href="#">My Account</a></span>
+														<span><a href="#">My Wishlist</a></span>
+														<span><a href="login.html">Sign In</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #exampleModalCenter id="#exampleModalCenter" class = "">Track My Orders</a></span>
+														 <!-- Modal -->
+														 <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+															<div class="modal-dialog modal-dialog-centered" role="document">
+																<div class="modal-content">
+																	<div class="modal-header" style="background-color:black">
+																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: yellow; margin-left: 400px;">Track My Orders</h4>
+																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																		</button>
+																	</div>
+																	<div class="modal-body pl-2">
+																		<h6 class="pb-3 pl-2"> Email </h6>
+																		<input type="text" id="emailTracking" name="emailTracking" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																		<h6 class="pb-3 pl-2"> Order Number </h6>
+																		<input type="text" id="orderNumber" name="orderNumber" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																	</div>
+																	<div class="modal-footer" style="background-color:black">
+																		<button type="button" class="btn btn-warning" style="background-color:yellow; margin-right: 450px;">Track</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
                         </ul>
                     </div>
                 </div>
@@ -795,12 +787,12 @@
         var request = new XMLHttpRequest()
 
         function getWishlist(){
-        var wishlist = JSON.parse(localStorage.getItem("wishlist"));
-        if (wishlist === undefined || wishlist === null){
-            wishlist = [];
-            //console.log('empty wishlist');
-        }
-        return wishlist;
+            var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+            if (wishlist === undefined || wishlist === null){
+                wishlist = [];
+                //console.log('empty wishlist');
+            }
+            return wishlist;
         }
         
         var wishlist = getWishlist();
@@ -808,20 +800,25 @@
         function updateBtn(original_site, iter){
             var wishlist_btn = '';
             if (wishlist.includes(original_site)){ //highlighted wishlist button
-               console.log('this item is on the wishlist!');
-               wishlist_btn += '<li class="cart"><a href="cart.html">Add to cart</a></li><input type="checkbox" id="btnControl"/><li id="'+ iter.toString() + '" class="wishlist"><a for="btnControl" style="background-color:#e59285;background-position:105%;border-color:#e59285;" onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
+                console.log('this item is on the wishlist!');
+                wishlist_btn += '<li class="cart"><a href="cart.html" data-toggle="modal" data-target="#exampleModalCenter">Quick View</a></li><input type="checkbox" id="btnControl"/><li id="'+ iter.toString() + '" class="wishlist">';
+                wishlist_btn += '<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">';
+                wishlist_btn += '<div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header">';
+                wishlist_btn += '<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+                wishlist_btn += '<div class="modal-body"></div>';
+                wishlist_btn += '<div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Save changes</button></div></div></div></div>';
+                wishlist_btn += '<a for="btnControl" style="background-color:#e59285;background-position:105%;border-color:#e59285;" onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
             }
             else{ //default, unhighlighted wishlist button
                console.log('this item is not on the wishlist!');
-               wishlist_btn += '<li class="cart"><a href="cart.html">Add to cart</a></li><input type="checkbox" id="btnControl"/><li id="'+ iter.toString() + '" class="wishlist"> <a onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
+               wishlist_btn += '<li class="cart"><a href="cart.html" data-toggle="modal" data-target="#exampleModalCenter">Quick View</a></li><input type="checkbox" id="wishControl"/><li id="'+ iter.toString() + '" class="wishlist"><a onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
             };
             // wishlist_btn += '</li>';
             document.getElementById(iter.toString()).innerHTML = wishlist_btn;
          };
-
+         
         function addWishlist(original_site, iter){
             var empty = '';
-            var wishlist = getWishlist();
             if (wishlist.length === 0){
                 //console.log('creating new wishlist');
                 //console.log('adding to wishlist');
@@ -841,9 +838,10 @@
                localStorage.setItem("recentCategory", respData.results[iter].category);
             };
             document.getElementById("wishlist_noti").innerHTML = wishlist.length;
-            updateBtn(original_site, iter);
             //console.log(wishlist); 
             localStorage.setItem("wishlist", JSON.stringify(wishlist));
+            wishlist = getWishlist();
+            updateBtn(original_site, iter);
             //console.log('wishlist updated'); 
         };
 
@@ -902,7 +900,7 @@
                 list += '</div><div class="content"><h2><a '+ onclicktext +'>'
                 list += respData.results[x_list].product_name +'</a></h2><ul class="rating d-flex"><li class="on"><i class="fa fa-star-o"></i></li><li class="on">'
                 list += '<i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li>'
-                list += '<i class="fa fa-star-o"></i></li><li><i class="fa fa-star-o"></i></li></ul><ul class="prize__box"><li>' + respData.results[x_list].currency
+                list += '<i class="fa fa-star-o"></i></li></ul><ul class="prize__box"><li>' + respData.results[x_list].currency
                 list += '&nbsp;' + respData.results[x_list].price + '</li></ul>';
                 if (respData.results[x_list].product_description != null) {
                     list += '<p>'+ respData.results[x_list].product_description +'</p><ul id="'+ x_list.toString() +'" class="cart__action d-flex">';
@@ -929,8 +927,8 @@
             document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
             document.getElementById("nav-grid").innerHTML = grid; // inserts products in from JSON response of search
             document.getElementById("nav-list").innerHTML = list; // inserts products in from JSON response of search
-            for (x_list in respData.results){
-                updateBtn(respData.results[x_list].original_site, x_list);
+            for (i=0; i<respData.results.length; i++){
+                updateBtn(respData.results[i].original_site, i);
             };
         }
         else{

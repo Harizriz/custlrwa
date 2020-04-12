@@ -402,6 +402,7 @@
                                     </div>
                                     <div class="addtocart__action mt-4" id="addToCart">
                                        <button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart" onclick="addToCart()">Add to Cart</button> 
+                                       <div id="notifications"></div>
                                     </div>
                                  </div>
                                  <div class="col-lg-8 col-12 p-0">
@@ -1582,10 +1583,19 @@
       <script src="js/cart.js"></script>
       <script src="js/cart-mini.js"></script>
       <script src="js/sizingChart.js"></script>
+      <script src="js/notify.min.js"></script>
       <script>
       var addQty = 1
       var dropdownSize = '';
       var cart = new Cart();
+
+      function notifyCart() {
+         $( document ).ready(function() {
+            $("div").click(
+               Notify("Added to cart!", 1000, null, "info")
+            )
+         });
+      };
 
       function addToCart(){
          // convert sizing back to the one stored in db, then add to cart       
@@ -1608,6 +1618,7 @@
          };
          //id, quantity = 1, size, price, name, page, brand, image
          cart.add(pageData.original_site, addQty, size_to_add, pageData.price, pageData.product_name, pageData.id, pageData.brand, pageData.image_url, pageData.category);
+         notifyCart();
          localStorage.setItem('recent_category_cart', pageData.category);
          sizeConvert(size_code);
          loadMiniCart();
@@ -1779,12 +1790,27 @@
          wishlist = [];
          //console.log('empty wishlist');
       }
+
+      function notifyWishlist() {
+         $( document ).ready(function() {
+            $("div").click(
+               Notify("Added to wishlist!", 1000, null, "info")
+            )
+         });
+      };
+
+      var pageLoaded = false;
+      
       function updateBtn(){
          var wishlist_btn = '<div>';
          var empty = '';
          if (wishlist.includes(pageData.original_site)){ //highlighted wishlist button
             // console.log('this item is on the wishlist!');
             wishlist_btn += '<label class="wishlist m-0" for="btnControl" style="background-color: #e59285;background-position: 100% center;border-color: #e59285;" onclick="addWishlist()"></label><label class="email"></label>';
+            if (pageLoaded){
+               wishlist_btn += '<div id="notifications"></div>';
+               notifyWishlist();
+            };
          }
          else{ //default, unhighlighted wishlist button
             // console.log('this item is not on the wishlist!');
@@ -1802,6 +1828,7 @@
       };
 
       updateBtn();
+      pageLoaded = true;
 
       function addWishlist(){
          if (wishlist.length === 0){

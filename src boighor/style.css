@@ -2784,7 +2784,7 @@ Header Styles
     display: flex;
     font-size: 14px;
     font-weight: 600;
-    padding: 0 25px;
+    padding: 0 30px;
     text-transform: uppercase;
     transition: all 0.4s ease 0s;
 }
@@ -2818,27 +2818,54 @@ Header Styles
 }
 
 .oth-page .mainmenu__nav .meninmenu li a {
-    color: #fff;
+    color: rgb(100, 100, 100)
+}
+
+.oth-page .mainmenu__nav .meninmenu li a:hover {
+    color: #e7e614;
 }
 
 .oth-page.header__area .header__sidebar__right>li.shop_search>a {
+    background: rgba(0, 0, 0, 0) url("images/icons/search.png") no-repeat scroll 0 center;
+}
+
+.oth-page.header__area .header__sidebar__right>li.shop_search>a:hover {
     background: rgba(0, 0, 0, 0) url("images/icons/search_white.png") no-repeat scroll 0 center;
 }
 
 .oth-page.header__area .header__sidebar__right>li.wishlist>a {
+    background: rgba(0, 0, 0, 0) url("images/icons/button-wishlist.png") no-repeat scroll 0 center;
+}
+
+.oth-page.header__area .header__sidebar__right>li.wishlist>a:hover {
     background: rgba(0, 0, 0, 0) url("images/icons/button-wishlist_white.png") no-repeat scroll 0 center;
 }
 
 .oth-page.header__area .header__sidebar__right>li.setting__bar__icon>a {
-    background: transparent url("images/icons/icon_setting_white.png") no-repeat scroll left center;
+    background: rgba(0, 0, 0, 0) url("images/icons/icon_setting.png") no-repeat scroll left center;
+}
+
+.oth-page.header__area .header__sidebar__right>li.setting__bar__icon>a:hover {
+    background: rgba(0, 0, 0, 0) url("images/icons/icon_setting_white.png") no-repeat scroll left center;
 }
 
 .oth-page.header__area .header__sidebar__right>li.shopcart>a {
+    background: rgba(0, 0, 0, 0) url("images/icons/cart.png") no-repeat scroll 0 center;
+}
+
+.oth-page.header__area .header__sidebar__right>li.shopcart>a:hover {
     background: rgba(0, 0, 0, 0) url("images/icons/cart_white.png") no-repeat scroll 0 center;
 }
 
 .oth-page.header__absolute {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.oth-page.header__area .header__sidebar__right>li.shop_search>a:hover,
+.oth-page.header__area .header__sidebar__right>li.wishlist>a:hover,
+.oth-page.header__area .header__sidebar__right>li.setting__bar__icon>a:hover,
+.oth-page.header__area .header__sidebar__right>li.shopcart>a:hover {
+    color: #e7e614;
 }
 
 
@@ -8639,6 +8666,16 @@ Shop Single Styles
     background-color: #e59285;
 }
 
+#wishControl {
+    display: none;
+}
+
+#wishControl:checked + a {
+    background-color: #e59285;
+    background-position: 100% center;
+    border-color: #e59285;
+}
+
 .list__view .content .cart__action li.compare a:hover {
     background-position: 108% 0;
     border: 2px solid #e59285;
@@ -9170,11 +9207,11 @@ p:hover {
     box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.2)
 }
 
-.alert {
+/* .alert {
     padding: 20px;
     background-color: #e7e614;
     color: black;
-}
+} */
 
 .closebtn {
     margin-left: 15px;
@@ -9189,4 +9226,19 @@ p:hover {
 
 .closebtn:hover {
 color: white;
+}
+
+/*-------------------------
+Notify Styles
+-------------------------*/
+
+#notifications {
+    cursor: pointer;
+    position: fixed;
+    right: 0px;
+    z-index: 9999;
+    bottom: 0px;
+    margin-bottom: 22px;
+    margin-right: 15px;
+    max-width: 300px;   
 }

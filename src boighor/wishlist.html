@@ -549,17 +549,17 @@
 			request.open('GET', search, true)
 
             request.onload = function loadHTML(){
-			   var resultText = JSON.parse(request.responseText);
-			   var empty = '';
-               if (resultText.count == 1){
+				var resultText = JSON.parse(request.responseText);
+				var empty = '';
+				if (resultText.count != 0){
 					loadProduct(resultText.results[0]);
-					document.getElementById("wishlist_noti").innerHTML = resultText.count;
-			   }
-			   else{
+					document.getElementById("wishlist_noti").innerHTML = wishlist.length;
+				}
+				else{
 					wishlistHTML += "<tr><i>Product No Longer In Store</i></tr>";
 					empty += '<a class="wishlist_active" href="wishlist.html"></a>';
 					document.getElementById("wishlist").innerHTML = empty;
-			   }
+				}
             }
             // Send request
 			   request.send();
