@@ -2488,23 +2488,22 @@ Setting Styles
 
 .searchbar__content .content-inner {
     background: #fff none repeat scroll 0 0;
-    max-width: 230px;
-    min-width: 230px;
+    max-width: 200px;
+    min-width: 200px;
     overflow: hidden;
-    padding: 15px 20px;
+    padding: 10px 10px;
     position: relative;
     transition: all 0.4s ease-out 0s;
 }
 
 .searchbar__content .content-inner .switcher-currency {
-    margin-left: 15px;
+    /* margin-left: 10px; */
     margin-right: -6px;
 }
 
 .searchbar__content .content-inner .switcher-currency .label {
     border-bottom: 1px solid #ebebeb;
     color: #363636;
-    cursor: pointer;
     display: block;
     font-size: 11px;
     font-weight: 600;
@@ -2518,13 +2517,14 @@ Setting Styles
 
 .searchbar__content .content-inner .switcher-currency .label span {
     color: #363636;
-    cursor: pointer;
+    cursor: context-menu;
     font-size: 11px;
     font-weight: 600;
     line-height: 30px;
     text-align: left;
     text-shadow: none;
     text-transform: uppercase;
+    padding-left: 10px;
 }
 
 .searchbar__content .content-inner .switcher-currency .switcher-options {
@@ -2572,6 +2572,7 @@ Setting Styles
     text-align: left;
     text-transform: capitalize;
     font-size: 12px;
+    padding-left: 10px;
 }
 
 
