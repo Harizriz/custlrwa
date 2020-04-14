@@ -1,586 +1,517 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>FITTR</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Faq | Bookshop Responsive Bootstrap4 Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="images/yellowicon.png">
-    <link rel="apple-touch-icon" href="images/icon.png">
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/icon.png">
 
-    <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/plugins.css">
-    <link rel="stylesheet" href="style.css">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="style.css">
 
-    <!-- Cusom css -->
-    <link rel="stylesheet" href="css/custom.css">
+	<!-- Cusom css -->
+   <link rel="stylesheet" href="css/custom.css">
 
-    <!-- Modernizer js -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+	<!-- Modernizer js -->
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
-<style>
-    .zoom {
-        padding: 50px;
-        background-color: black;
-        transition: transform .2s;
-        width: 350px;
-        height: 600px;
-        margin-left: 30px;
-    }
-    
-    @media screen and (max-width: 600px) {
-        .zoom,
-        input[type=submit] {
-            margin-left: 10px;
-        }
-    }
-    
-    .zoom2 {
-        padding: 50px;
-        background-color: black;
-        transition: transform .2s;
-        width: 350px;
-        height: 600px;
-        margin-left: 80px;
-    }
-    
-    @media screen and (max-width: 600px) {
-        .zoom2,
-        input[type=submit] {
-            margin-left: 10px;
-        }
-    }
-    
-    .zoom3 {
-        padding: 50px;
-        background-color: black;
-        transition: transform .2s;
-        width: 350px;
-        height: 600px;
-        margin-left: 120px;
-    }
-    
-    @media screen and (max-width: 600px) {
-        .zoom3,
-        input[type=submit] {
-            margin-left: 5px;
-        }
-    }
-    
-    .zoom:hover {
-        -ms-transform: scale(1.5);
-        /* IE 9 */
-        -webkit-transform: scale(1.5);
-        /* Safari 3-8 */
-        transform: scale(1.07);
-    }
-    
-    .zoom2:hover {
-        -ms-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        transform: scale(1.07);
-    }
-    
-    .zoom3:hover {
-        -ms-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        transform: scale(1.07);
-    }
-    
-    .button {
-        background-color: rgb(255, 255, 255);
-        border: none;
-        text-decoration: none;
-        cursor: pointer;
-    }
-</style>
-
 <body>
-    <!--[if lte IE 9]>
+	<!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 
-    <!-- Main wrapper -->
-    <div class="wrapper" id="wrapper">
-
-        <!-- Header -->
-        <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-7 col-lg-2">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="images/logo/yellow1.png" alt="logo images">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 d-none d-lg-block">
-                        <nav class="mainmenu__nav">
-                            <ul class="meninmenu d-flex justify-content-start">
-                                <li class="drop with--one--item"><a href="index.html">Home</a></li>
-                                <li class="drop"><a href="#">Shop</a>
-                                    <div class="megamenu mega03">
-                                        <ul class="item item03">
-                                            <li class="title">Shop Layout</li>
-                                            <li><a href="shop-grid.html">Shop Grid</a></li>
-                                            <li><a href="single-product.html">Single Product</a></li>
-                                        </ul>
-                                        <ul class="item item03">
-                                            <li class="title">Shop Page</li>
-                                            <li><a href="my-account.html">My Account</a></li>
-                                            <li><a href="cart.html">Cart Page</a></li>
-                                            <li><a href="checkout.html">Checkout Page</a></li>
-                                            <li><a href="wishlist.html">Wishlist Page</a></li>
-                                            <li><a href="error404.html">404 Page</a></li>
-                                            <li><a href="faq.html">Faq Page</a></li>
-                                        </ul>
-                                        <ul class="item item03">
-                                            <li class="title">Bargain Books</li>
-                                            <li><a href="shop-grid.html">Bargain Bestsellers</a></li>
-                                            <li><a href="shop-grid.html">Activity Kits</a></li>
-                                            <li><a href="shop-grid.html">B&N Classics</a></li>
-                                            <li><a href="shop-grid.html">Books Under $5</a></li>
-                                            <li><a href="shop-grid.html">Bargain Books</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="drop"><a href="shop-grid.html">Books</a>
-                                    <div class="megamenu mega03">
-                                        <ul class="item item03">
-                                            <li class="title">Categories</li>
-                                            <li><a href="shop-grid.html">Biography </a></li>
-                                            <li><a href="shop-grid.html">Business </a></li>
-                                            <li><a href="shop-grid.html">Cookbooks </a></li>
-                                            <li><a href="shop-grid.html">Health & Fitness </a></li>
-                                            <li><a href="shop-grid.html">History </a></li>
-                                        </ul>
-                                        <ul class="item item03">
-                                            <li class="title">Customer Favourite</li>
-                                            <li><a href="shop-grid.html">Mystery</a></li>
-                                            <li><a href="shop-grid.html">Religion & Inspiration</a></li>
-                                            <li><a href="shop-grid.html">Romance</a></li>
-                                            <li><a href="shop-grid.html">Fiction/Fantasy</a></li>
-                                            <li><a href="shop-grid.html">Sleeveless</a></li>
-                                        </ul>
-                                        <ul class="item item03">
-                                            <li class="title">Collections</li>
-                                            <li><a href="shop-grid.html">Science </a></li>
-                                            <li><a href="shop-grid.html">Fiction/Fantasy</a></li>
-                                            <li><a href="shop-grid.html">Self-Improvemen</a></li>
-                                            <li><a href="shop-grid.html">Home & Garden</a></li>
-                                            <li><a href="shop-grid.html">Humor Books</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="drop"><a href="shop-grid.html">Kids</a>
-                                    <div class="megamenu mega02">
-                                        <ul class="item item02">
-                                            <li class="title">Top Collections</li>
-                                            <li><a href="shop-grid.html">American Girl</a></li>
-                                            <li><a href="shop-grid.html">Diary Wimpy Kid</a></li>
-                                            <li><a href="shop-grid.html">Finding Dory</a></li>
-                                            <li><a href="shop-grid.html">Harry Potter</a></li>
-                                            <li><a href="shop-grid.html">Land of Stories</a></li>
-                                        </ul>
-                                        <ul class="item item02">
-                                            <li class="title">More For Kids</li>
-                                            <li><a href="shop-grid.html">B&N Educators</a></li>
-                                            <li><a href="shop-grid.html">B&N Kids' Club</a></li>
-                                            <li><a href="shop-grid.html">Kids' Music</a></li>
-                                            <li><a href="shop-grid.html">Toys & Games</a></li>
-                                            <li><a href="shop-grid.html">Hoodies</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="drop"><a href="#">Pages</a>
-                                    <div class="megamenu dropdown">
-                                        <ul class="item item01">
-                                            <li><a href="about.html">About Page</a></li>
-                                            <li class="label2"><a href="portfolio.html">Portfolio</a>
-                                                <ul>
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="my-account.html">My Account</a></li>
-                                            <li><a href="cart.html">Cart Page</a></li>
-                                            <li><a href="checkout.html">Checkout Page</a></li>
-                                            <li><a href="wishlist.html">Wishlist Page</a></li>
-                                            <li><a href="error404.html">404 Page</a></li>
-                                            <li><a href="faq.html">Faq Page</a></li>
-                                            <li><a href="team.html">Team Page</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="drop"><a href="blog.html">Blog</a>
-                                    <div class="megamenu dropdown">
-                                        <ul class="item item01">
-                                            <li><a href="blog.html">Blog Page</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-md-8 col-sm-8 col-5 col-lg-2">
-                        <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <li class="shop_search">
-                                <a class="search__active" href="#"></a>
+	<!-- Main wrapper -->
+	<div class="wrapper" id="wrapper">
+		
+		<!-- Header -->
+		<header id="wn__header" class="oth-page header__area header__absolute">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-7 col-lg-2">
+						<div class="logo">
+							<a href="index.html">
+								<img src="images/logo/yellow1.png" alt="logo images">
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-8 d-none d-lg-block">
+						<nav class="mainmenu__nav">
+							<ul class="meninmenu d-flex justify-content-start">
+								<li class="drop"><a href="#">Shop</a>
+									<div class="megamenu mega03">
+										<ul class="item item03">
+											<li class="title">Shop Layout</li>
+											<li><a href="shop-grid.html">Shop Grid</a></li>
+											<li><a href="single-product.html">Single Product</a></li>
+										</ul>
+										<ul class="item item03">
+											<li class="title">Shop Page</li>
+											<li><a href="my-account.html">My Account</a></li>
+											<li><a href="cart.html">Cart Page</a></li>
+											<li><a href="checkout.html">Checkout Page</a></li>
+											<li><a href="wishlist.html">Wishlist Page</a></li>
+											<li><a href="error404.html">404 Page</a></li>
+											<li><a href="faq.html">Faq Page</a></li>
+										</ul>
+										<ul class="item item03">
+											<li class="title">Bargain Books</li>
+											<li><a href="shop-grid.html">Bargain Bestsellers</a></li>
+											<li><a href="shop-grid.html">Activity Kits</a></li>
+											<li><a href="shop-grid.html">B&N Classics</a></li>
+											<li><a href="shop-grid.html">Books Under $5</a></li>
+											<li><a href="shop-grid.html">Bargain Books</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="drop"><a href="index-men.html">Women</a>
+									<div class="megamenu mega02">
+										<ul class="item item02">
+											<li class="title">Top Collections</li>
+											<li><a href="shop-grid.html">American Girl</a></li>
+											<li><a href="shop-grid.html">Diary Wimpy Kid</a></li>
+											<li><a href="shop-grid.html">Finding Dory</a></li>
+											<li><a href="shop-grid.html">Harry Potter</a></li>
+											<li><a href="shop-grid.html">Land of Stories</a></li>
+										</ul>
+										<ul class="item item02">
+											<li class="title">More For Kids</li>
+											<li><a href="shop-grid.html">B&N Educators</a></li>
+											<li><a href="shop-grid.html">B&N Kids' Club</a></li>
+											<li><a href="shop-grid.html">Kids' Music</a></li>
+											<li><a href="shop-grid.html">Toys & Games</a></li>
+											<li><a href="shop-grid.html">Hoodies</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="drop"><a href="index-kids.html">Kids</a>
+									<div class="megamenu mega02">
+										<ul class="item item02">
+											<li class="title">Top Collections</li>
+											<li><a href="shop-grid.html">American Girl</a></li>
+											<li><a href="shop-grid.html">Diary Wimpy Kid</a></li>
+											<li><a href="shop-grid.html">Finding Dory</a></li>
+											<li><a href="shop-grid.html">Harry Potter</a></li>
+											<li><a href="shop-grid.html">Land of Stories</a></li>
+										</ul>
+										<ul class="item item02">
+											<li class="title">More For Kids</li>
+											<li><a href="shop-grid.html">B&N Educators</a></li>
+											<li><a href="shop-grid.html">B&N Kids' Club</a></li>
+											<li><a href="shop-grid.html">Kids' Music</a></li>
+											<li><a href="shop-grid.html">Toys & Games</a></li>
+											<li><a href="shop-grid.html">Hoodies</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="drop"><a href="#">Pages</a>
+									<div class="megamenu dropdown">
+										<ul class="item item01">
+											<li><a href="about.html">About Page</a></li>
+											<li class="label2"><a href="portfolio.html">Portfolio</a>
+												<ul>
+													<li><a href="portfolio.html">Portfolio</a></li>
+													<li><a href="portfolio-details.html">Portfolio Details</a></li>
+												</ul>
+											</li>
+											<li><a href="my-account.html">My Account</a></li>
+											<li><a href="cart.html">Cart Page</a></li>
+											<li><a href="checkout.html">Checkout Page</a></li>
+											<li><a href="wishlist.html">Wishlist Page</a></li>
+											<li><a href="error404.html">404 Page</a></li>
+											<li><a href="faq.html">Faq Page</a></li>
+											<li><a href="team.html">Team Page</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="drop"><a href="contact.html">Help</a>
+									<div class="megamenu dropdown">
+										<ul class="item item01">
+											<li><a href="faq.html">FAQs</a></li>
+											<li class="label2"><a href="portfolio.html">Legal & Privacy</a>
+												<ul>
+													<li><a href="portfolio.html">Portfolio</a></li>
+													<li><a href="portfolio-details.html">Portfolio Details</a></li>
+												</ul>
+											</li>
+											<li><a href="contact.html">Contact Us</a></li>
+											<li><a href="cart.html">Cart Page</a></li>
+											<li><a href="checkout.html">Checkout Page</a></li>
+											<li><a href="wishlist.html">Wishlist Page</a></li>
+											<li><a href="error404.html">404 Page</a></li>
+											<li><a href="faq.html">Faq Page</a></li>
+											<li><a href="team.html">Team Page</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-md-8 col-sm-8 col-5 col-lg-2">
+						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+                            <li class="wishlist" id="wishlist">
+                                <a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
                             </li>
-                            <li class="wishlist">
-                                <a href="#"></a>
-                            </li>
-                            <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
-                                <!-- Start Shopping Cart -->
-                                <div class="block-minicart minicart__active">
-                                    <div class="minicart-content-wrapper">
-                                        <div class="micart__close">
-                                            <span>close</span>
-                                        </div>
-                                        <div class="items-total d-flex justify-content-between">
-                                            <span>3 items</span>
-                                            <span>Cart Subtotal</span>
-                                        </div>
-                                        <div class="total_amount text-right">
-                                            <span>$66.00</span>
-                                        </div>
-                                        <div class="mini_action checkout">
-                                            <a class="checkout__btn" href="cart.html">Go to Checkout</a>
-                                        </div>
-                                        <div class="single__items">
-                                            <div class="miniproduct">
-                                                <div class="item01 d-flex">
-                                                    <div class="thumb">
-                                                        <a href="product-details.html"><img src="images/product/sm-img/1.jpg" alt="product images"></a>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h6><a href="product-details.html">Voyage Yoga Bag</a></h6>
-                                                        <span class="prize">$30.00</span>
-                                                        <div class="product_prize d-flex justify-content-between">
-                                                            <span class="qun">Qty: 01</span>
-                                                            <ul class="d-flex justify-content-end">
-                                                                <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                                <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item01 d-flex mt--20">
-                                                    <div class="thumb">
-                                                        <a href="product-details.html"><img src="images/product/sm-img/3.jpg" alt="product images"></a>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h6><a href="product-details.html">Impulse Duffle</a></h6>
-                                                        <span class="prize">$40.00</span>
-                                                        <div class="product_prize d-flex justify-content-between">
-                                                            <span class="qun">Qty: 03</span>
-                                                            <ul class="d-flex justify-content-end">
-                                                                <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                                <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item01 d-flex mt--20">
-                                                    <div class="thumb">
-                                                        <a href="product-details.html"><img src="images/product/sm-img/2.jpg" alt="product images"></a>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h6><a href="product-details.html">Compete Track Tote</a></h6>
-                                                        <span class="prize">$40.00</span>
-                                                        <div class="product_prize d-flex justify-content-between">
-                                                            <span class="qun">Qty: 03</span>
-                                                            <ul class="d-flex justify-content-end">
-                                                                <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                                <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mini_action cart">
-                                            <a class="cart__btn" href="cart.html">View and edit cart</a>
-                                        </div>
+                            <li class="shopcart">
+                            <a class="cartbox_active" href="#"><span class="product_qun" id="cart_noti"></span></a>
+                            <!-- Start Shopping Cart -->
+                            <div class="block-minicart minicart__active">
+                                <div class="minicart-content-wrapper">
+                                <div class="micart__close">
+                                    <span>close</span>
+                                </div>
+                                <div class="items-total d-flex justify-content-between" id="cart_count">
+                                </div>
+                                <div class="total_amount text-right">
+                                    <span id="cart_total"></span>
+                                </div>
+                                <div class="mini_action checkout">
+                                    <a class="checkout__btn" href="cart.html">Go to Checkout</a>
+                                </div>
+                                <div class="single__items">
+                                    <div class="miniproduct" id="mini_cart">
                                     </div>
                                 </div>
-                                <!-- End Shopping Cart -->
-                            </li>
-                            <li class="setting__bar__icon">
-                                <a class="setting__active" href="#"></a>
-                                <div class="searchbar__content setting__block">
-                                    <div class="content-inner">
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
+                                </div>
+                            </div>
+								<!-- End Shopping Cart -->
+							</li>
+							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+								<div class="searchbar__content setting__block">
+									<div class="content-inner">
+										<div class="switcher-currency">
+											<strong class="label switcher-label">
 												<span>Currency</span>
 											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">USD - US Dollar</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>GBP - British Pound Sterling</li>
-                                                        <li>EUR - Euro</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
+											<div class="switcher-options">
+												<div class="switcher-currency-trigger">
+													<span class="currency-trigger">USD - US Dollar</span>
+													<ul class="switcher-dropdown">
+														<li>GBP - British Pound Sterling</li>
+														<li>EUR - Euro</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="switcher-currency">
+											<strong class="label switcher-label">
 												<span>Language</span>
 											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">English01</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>English02</li>
-                                                        <li>English03</li>
-                                                        <li>English04</li>
-                                                        <li>English05</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
+											<div class="switcher-options">
+												<div class="switcher-currency-trigger">
+													<span class="currency-trigger">English01</span>
+													<ul class="switcher-dropdown">
+														<li>English02</li>
+														<li>English03</li>
+														<li>English04</li>
+														<li>English05</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="switcher-currency">
+											<strong class="label switcher-label">
 												<span>Select Store</span>
 											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">Fashion Store</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>Furniture</li>
-                                                        <li>Shoes</li>
-                                                        <li>Speaker Store</li>
-                                                        <li>Furniture</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
+											<div class="switcher-options">
+												<div class="switcher-currency-trigger">
+													<span class="currency-trigger">Fashion Store</span>
+													<ul class="switcher-dropdown">
+														<li>Furniture</li>
+														<li>Shoes</li>
+														<li>Speaker Store</li>
+														<li>Furniture</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="switcher-currency">
+											<strong class="label switcher-label">
 												<span>My Account</span>
 											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <div class="setting__menu">
-                                                        <span><a href="#">Compare Product</a></span>
-                                                        <span><a href="#">My Account</a></span>
-                                                        <span><a href="#">My Wishlist</a></span>
-                                                        <span><a href="#">Sign In</a></span>
-                                                        <span><a href="#">Create An Account</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Start Mobile Menu -->
-                <div class="row d-none">
-                    <div class="col-lg-12 d-none">
-                        <nav class="mobilemenu__nav">
-                            <ul class="meninmenu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul>
-                                        <li><a href="about.html">About Page</a></li>
-                                        <li><a href="portfolio.html">Portfolio</a>
-                                            <ul>
-                                                <li><a href="portfolio.html">Portfolio</a></li>
-                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="my-account.html">My Account</a></li>
-                                        <li><a href="cart.html">Cart Page</a></li>
-                                        <li><a href="checkout.html">Checkout Page</a></li>
-                                        <li><a href="wishlist.html">Wishlist Page</a></li>
-                                        <li><a href="error404.html">404 Page</a></li>
-                                        <li><a href="faq.html">Faq Page</a></li>
-                                        <li><a href="team.html">Team Page</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="shop-grid.html">Shop</a>
-                                    <ul>
-                                        <li><a href="shop-grid.html">Shop Grid</a></li>
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog.html">Blog</a>
-                                    <ul>
-                                        <li><a href="blog.html">Blog Page</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <!-- End Mobile Menu -->
-                <div class="mobile-menu d-block d-lg-none">
-                </div>
-                <!-- Mobile Menu -->
-            </div>
-        </header>
-        <!-- //Header -->
-        <!-- Start Search Popup -->
-        <div class="box-search-content search_active block-bg close__top">
-            <form id="search_mini_form" class="minisearch" action="#">
-                <div class="field__search">
-                    <input type="text" placeholder="Search entire store here...">
-                    <div class="action">
-                        <a href="#"><i class="zmdi zmdi-search"></i></a>
-                    </div>
-                </div>
-            </form>
-            <div class="close__wrap">
-                <span>close</span>
-            </div>
-        </div>
-        <!-- End Search Popup -->
-        <!-- Start Bradcaump area --
-        <div class="ht__bradcaump__area bg-image--">
-            <div class="container">
-                <div class="row">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="images/logo/yellow1.png" alt="logo images">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <-- End Bradcaump area -->
-        <!-- Start Portfolio Area -->
-        <section class="wn__portfolio__area gallery__masonry__activation bg--white mt--40 pb--100">
-            <!-- <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="gallery__menu">
-                            <button data-filter="*" class="is-checked">Filter - All</button>
-                            <button data-filter=".cat--1">Company News</button>
-                            <button data-filter=".cat--2">Computers</button>
-                            <button data-filter=".cat--3">General News</button>
-                            <button data-filter=".cat--4">Hipster Content</button>
-                            <button data-filter=".cat--5">Just Food</button>
-                        </div>
-                    </div>
-                </div> -->
-            <div class="row masonry__wrap">
-                <!-- Start Single Portfolio -->
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--1 p-0 pl-1">
-                    <div class="portfolio">
-                        <div class="thumb">
-                            <a href="index-men.html" class="button">
-                                <div class="zoom">
-                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                        <b>MEN</b>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Portfolio -->
-                <!-- Start Single Portfolio -->
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--2 p-0 pl-1">
-                    <div class="portfolio">
-                        <div class="thumb">
-                            <a href="index-women.html" class="button">
-                                <div class="zoom2">
-                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                        <b>WOMEN</b>
-                                    </p>
-                                </div>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Portfolio -->
-                <!-- Start Single Portfolio -->
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--3 p-0 pl-2">
-                    <div class="portfolio">
-                        <div class="thumb">
-                            <a href="index-kids.html" class="button">
-                                <div class="zoom3">
-                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                        <b>KIDS</b>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Portfolio -->
-            </div>
-    </div>
-    </section>
-    <!-- End Portfolio Area -->
-    <!-- Footer Area -->
-    <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
-        <div class="footer-static-top">
+											<div class="switcher-options">
+												<div class="switcher-currency-trigger">
+													<div class="setting__menu">
+														<span><a href="#">Compare Product</a></span>
+														<span><a href="#">My Account</a></span>
+														<span><a href="#">My Wishlist</a></span>
+														<span><a href="#">Sign In</a></span>
+														<span><a href="#">Create An Account</a></span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Start Mobile Menu -->
+				<div class="row d-none">
+					<div class="col-lg-12 d-none">
+						<nav class="mobilemenu__nav">
+							<ul class="meninmenu">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="#">Pages</a>
+									<ul>
+										<li><a href="about.html">About Page</a></li>
+										<li><a href="portfolio.html">Portfolio</a>
+											<ul>
+												<li><a href="portfolio.html">Portfolio</a></li>
+												<li><a href="portfolio-details.html">Portfolio Details</a></li>
+											</ul>
+										</li>
+										<li><a href="my-account.html">My Account</a></li>
+										<li><a href="cart.html">Cart Page</a></li>
+										<li><a href="checkout.html">Checkout Page</a></li>
+										<li><a href="wishlist.html">Wishlist Page</a></li>
+										<li><a href="error404.html">404 Page</a></li>
+										<li><a href="faq.html">Faq Page</a></li>
+										<li><a href="team.html">Team Page</a></li>
+									</ul>
+								</li>
+								<li><a href="shop-grid.html">Shop</a>
+									<ul>
+										<li><a href="shop-grid.html">Shop Grid</a></li>
+										<li><a href="single-product.html">Single Product</a></li>
+									</ul>
+								</li>
+								<li><a href="blog.html">Blog</a>
+									<ul>
+										<li><a href="blog.html">Blog Page</a></li>
+										<li><a href="blog-details.html">Blog Details</a></li>
+									</ul>
+								</li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<!-- End Mobile Menu -->
+	            <div class="mobile-menu d-block d-lg-none">
+	            </div>
+	            <!-- Mobile Menu -->	
+			</div>		
+		</header>
+		<!-- //Header -->
+		<!-- Start Search Popup -->
+		<div class="box-search-content search_active block-bg close__top">
+			<form id="search_mini_form" class="minisearch" action="#">
+				<div class="field__search">
+					<input type="text" placeholder="Search entire store here...">
+					<div class="action">
+						<a href="#"><i class="zmdi zmdi-search"></i></a>
+					</div>
+				</div>
+			</form>
+			<div class="close__wrap">
+				<span>close</span>
+			</div>
+		</div>
+		<!-- End Search Popup -->
+        <!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="footer__widget footer__menu">
-                            <div class="ft__logo">
-                                <a href="index.html">
-                                    <img src="images/logo/black1.png" alt="logo">
-                                </a>
-                                <p></p>
-                            </div>
-                            <div class="footer__content">
-                                <ul class="social__net social__net--2 d-flex justify-content-center">
-                                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-google"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-youtube"></i></a></li>
-                                </ul>
-                                <ul class="mainmenu d-flex justify-content-center">
-                                    <li><a href="index.html">Trending</a></li>
-                                    <li><a href="index.html">Best Seller</a></li>
-                                    <li><a href="index.html">All Product</a></li>
-                                    <li><a href="index.html">Wishlist</a></li>
-                                    <li><a href="index.html">Blog</a></li>
-                                    <li><a href="index.html">Contact</a></li>
-                                </ul>
+                        <!-- <div class="bradcaump__inner text-center">
+                        	<h2 class="bradcaump-title">Faq</h2>
+                            <nav class="bradcaump-content">
+                              <a class="breadcrumb_item" href="index.html">Home</a>
+                              <span class="brd-separetor">/</span>
+                              <span class="breadcrumb_item active">Faq</span>
+                            </nav>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Bradcaump area -->
+		<!-- Start Faq Area -->
+		<div class="page-shop-sidebar left--sidebar bg--white section-padding--lg" style="padding: 0px;">
+            <div class="row">
+                <div class="col-lg-3 col-12 order-2 order-lg-1" style="padding:0%;max-width: 265px;">
+                    <div class="img_trans" id="cf4a">
+                        <img src="https://dynamic.zacdn.com/LjXOKPgZWZlwuzYnW1BV6ZKbOL4=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/levis-7756-0478161-1.jpg" width="280" height="350" alt="product image">
+                        <img src="https://dynamic.zacdn.com/pkFq26xLrObifjy0Reb5pHV-Hvs=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/jack-jones-0293-9835381-1.jpg" width="280" height="350" alt="product image">
+                        <img src="https://dynamic.zacdn.com/imYOeOHZeBfAR37o-pDITPiECeg=/fit-in/236x345/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/dockers-0708-9252581-1.jpg" width="280" height="350" alt="product image">
+                        <img src="https://dynamic.zacdn.com/P8dcBZUcDZAzMTrO1YA4MfVelbI=/fit-in/236x345/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/puma-7343-6990091-1.jpg" width="280" height="350" alt="product image">
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10802356/2019/11/18/5c820ea6-2559-440f-b615-c988c11d335f1574059337969-Jack--Jones-Men-Lounge-Tshirts-7111574059336287-1.jpg" width="280" height="350" alt="product image">
+                    </div>
+                    <div class="img_trans" id="cf4a">
+                        <img src="https://dynamic.zacdn.com/_q4Y7xBY5eeyk4DmxVjjWUbozMg=/fit-in/236x345/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/mango-man-4278-5750102-1.jpg" width="280" height="350" alt="product image">
+                        <img src="https://dynamic.zacdn.com/5hZvE8EQDDsDw21pb9KRHQg1VOQ=/fit-in/236x345/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/adidas-1662-1573351-1.jpg" width="280" height="350" alt="product image">
+                        <img src="https://dynamic.zacdn.com/IwxD5kT-kawp-MhiDEU5ykegBxs=/fit-in/236x345/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/adidas-3279-9045091-1.jpg" width="280" height="350" alt="product image">
+                        <img src="https://dynamic.zacdn.com/D0K0QuJbitglFXmoKQso_nXDPJw=/fit-in/236x345/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/superdry-3653-5745981-1.jpg" width="280" height="350" alt="product image">
+                        <img src="https://dynamic.zacdn.com/CLGog_POyP1HM7Bvg7EKGmSLBaY=/fit-in/236x345/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/esprit-8386-0957881-1.jpg" width="280" height="350" alt="product image">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-12 order-2 order-lg-1" style="padding: 0px;">
+                    <div class="img_trans-big m-0" id="cf5a">
+                        <img src="https://images.sg.content-cdn.io/cdn//in-resources/8d757d40-6065-42bb-9044-c8a5073cfb70/Images/ProductImages/Source/levi-s-engineered-jeans-knit-tee-796820003_01_Front.jpg" width="525" height="700" alt="product image">
+                        <img src="https://pvh-brands.imgix.net/catalog/product/media/mw0mw10829403-mo-tp-f1.jpg?w=700&h=933&crop=edges&fit=crop&auto=compress&auto=format" width="525" height="700" alt="product image">
+                        <img src="https://d356cpcjxoolwe.cloudfront.net/media/catalog/product/cache/1/image/533x704/72b4a3c89279b6295f5413414e9ad668/7/1/7170859.01.0100_ab49966.jpg" width="525" height="700" alt="product image">
+                        <img src="https://assets.myntassets.com/fl_progressive/h_960,q_80,w_720/v1/assets/images/1852718/2017/8/7/11502088929985-ether-Men-Grey-Melange-Self-Design-Hooded-Sweatshirt-5301502088929767-1.jpg" width="525" height="700" alt="product image">
+                        <img src="https://images.topman.com/i/TopMan/TM71W44RBLK_M_1.jpg?$w700$&qlt=80" width="525" height="700" alt="product image">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 order-1 order-lg-2" style="padding: 0px; padding-top: 270px;">
+                    <h2 class="mb-0">Search</h2>
+                        <div class="row d-flex justify-content-start">
+                            <div class="wrap">
+                                <div class="search">
+                                <input type="text" class="searchTerm" placeholder="What are you looking for?" name="search_value" id="search_bar" onsearch="search()">
+                                <button type="submit" class="searchButton" onclick="search()">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- //Footer Area -->
+		
+		<!-- End Faq Area -->
+		<!-- Footer Area -->
+        <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+            <div class="footer-static-top">
+               <div class="container">
+                  <div class="row">
+                        <div class="col-lg-12">
+                           <div class="footer__widget footer__menu">
+                              <div class="ft__logo">
+                                    <a href="index.html">
+                                       <img src="images/logo/black1.png" alt="logo">
+                                    </a>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                                 </div>
+                              <div class="footer__content">
+                                    <ul class="social__net social__net--2 d-flex justify-content-center">
+                                       <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                       <li><a href="#"><i class="bi bi-google"></i></a></li>
+                                       <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                                       <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                                       <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                                    </ul>
+                                    <ul class="mainmenu d-flex justify-content-center">
+                                       <li><a href="index.html">Trending</a></li>
+                                       <li><a href="index.html">Best Seller</a></li>
+                                       <li><a href="index.html">All Product</a></li>
+                                       <li><a href="index.html">Wishlist</a></li>
+                                       <li><a href="index.html">Blog</a></li>
+                                       <li><a href="index.html">Contact</a></li>
+                                    </ul>
+                              </div>
+                           </div>
+                        </div>
+                  </div>
+               </div>
+            </div>
+      </footer>
+      <!-- //Footer Area -->
+			<!-- <div class="copyright__wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="copyright">
+								<div class="copy__right__inner text-left">
+									<p>Copyright <i class="fa fa-copyright"></i> <a href="https://freethemescloud.com/">Free themes Cloud.</a> All Rights Reserved</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="payment text-right">
+								<img src="images/icons/payment.png" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</footer>
+		<!-- //Footer Area -->
 
-    </div>
-    <!-- //Main wrapper -->
+	</div>
+	<!-- //Main wrapper -->
 
-
-    <!-- JS Files -->
-    <script src="js/vendor/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
+	<!-- JS Files -->
+	<script src="js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
     <script src="js/active.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/cart-mini.js"></script>
+    <script>
+        function focusOnSearch(){
+			setTimeOut(function(){
+				document.getElementById("search_bar").focus();
+			}, 500);
+		};
+		
+		function search(){ //sends search request to backend for JSON response
+			// Create a request variable and assign a new XMLHttpRequest object to it.
+			var request = new XMLHttpRequest()
 
+			// replaces white space
+            search_value = "?search=" + document.getElementById("search_bar").value + "&category=men";
+            sessionStorage.setItem("search_term", search_value);
+			// Open a new connection, using the GET request on the URL endpoint
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+            
+            request.open('GET', search, true)
+
+			request.onload = function loadHTML(){
+                var resultText = request.responseText;
+				sessionStorage.setItem("search_result", resultText); 
+                sessionStorage.setItem("current_page", 1);
+                sessionStorage.removeItem("selectBox");
+                getBrandList();
+			}
+			// Send request
+            request.send();
+        };
+
+        function getBrandList(){
+			var request = new XMLHttpRequest()
+            var search_value = sessionStorage.getItem("search_term");
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                console.log(brands);
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-men.html");
+            }
+            // Send request
+            request.send();
+		};
+
+		var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+		if (wishlist.length != 0) {
+			document.getElementById("wishlist_noti").innerHTML = wishlist.length;
+		}
+		else {
+			empty += '<a class="wishlist_active" href="wishlist.html"></a>';
+			document.getElementById("wishlist").innerHTML = empty;
+		}
+	</script>
 </body>
-
 </html>

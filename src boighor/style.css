@@ -2491,7 +2491,7 @@ Setting Styles
     max-width: 200px;
     min-width: 200px;
     overflow: hidden;
-    padding: 10px 10px;
+    padding: 10px 20px;
     position: relative;
     transition: all 0.4s ease-out 0s;
 }
@@ -5726,7 +5726,7 @@ Breadcaump Styles
 ----------------------------*/
 
 .ht__bradcaump__area {
-    padding-top: 100px;
+    padding-top: 90px;
     margin-left: 650px;
     margin-right: 500px;
 }
@@ -9243,3 +9243,328 @@ Notify Styles
     margin-right: 15px;
     max-width: 300px;   
 }
+
+/*-------------------------
+Search Styles
+-------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #bbbbbb;
+  border-right: none;
+  padding: 5px;
+  /* height: 20px; */
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: rgb(0, 0, 0);
+}
+
+.searchTerm:focus{
+  color: #000000;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #bbbbbb;
+  background: #bbbbbb;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  margin-top: 20px;
+  margin-left: 16px;
+  width: 200%;
+}
+
+/*-------------------------
+Image Search Page Styles
+-------------------------*/
+
+@-webkit-keyframes cf4FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+@-moz-keyframes cf4FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+@-o-keyframes cf4FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+@keyframes cf4FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+#cf4a {
+  position:relative;
+  height: 350px;
+  width: 265px;
+}
+#cf4a img {
+  position:absolute;
+  left:0;
+}
+
+#cf4a img {
+  -webkit-animation-name: cf4FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 20s;
+
+  -moz-animation-name: cf4FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 20s;
+
+  -o-animation-name: cf4FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 20s;
+
+  animation-name: cf4FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+}
+#cf4a img:nth-of-type(1) {
+  -webkit-animation-delay: 16s;
+  -moz-animation-delay: 16s;
+  -o-animation-delay: 16s;
+  animation-delay: 16s;
+}
+#cf4a img:nth-of-type(2) {
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  -o-animation-delay: 12s;
+  animation-delay: 12s;
+}
+#cf4a img:nth-of-type(3) {
+  -webkit-animation-delay: 8s;
+  -moz-animation-delay: 8s;
+  -o-animation-delay: 8s;
+  animation-delay: 8s;
+}
+#cf4a img:nth-of-type(4) {
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  -o-animation-delay: 4s;
+  animation-delay: 4s;
+}
+
+#cf4a img:nth-of-type(5) {
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+@-webkit-keyframes cf5FadeInOut {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+   }
+   
+   @-moz-keyframes cf5FadeInOut {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+   }
+   
+   @-o-keyframes cf5FadeInOut {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+   }
+   
+   @keyframes cf5FadeInOut {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+   }
+   
+   #cf5a {
+     position:relative;
+     height: 700px;
+     width: 600px;
+   }
+   #cf5a img {
+     position:absolute;
+     left:0;
+   }
+   
+   #cf5a img {
+     -webkit-animation-name: cf5FadeInOut;
+     -webkit-animation-timing-function: ease-in-out;
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-duration: 20s;
+   
+     -moz-animation-name: cf5FadeInOut;
+     -moz-animation-timing-function: ease-in-out;
+     -moz-animation-iteration-count: infinite;
+     -moz-animation-duration: 20s;
+   
+     -o-animation-name: cf5FadeInOut;
+     -o-animation-timing-function: ease-in-out;
+     -o-animation-iteration-count: infinite;
+     -o-animation-duration: 20s;
+   
+     animation-name: cf5FadeInOut;
+     animation-timing-function: ease-in-out;
+     animation-iteration-count: infinite;
+     animation-duration: 20s;
+   }
+   #cf5a img:nth-of-type(1) {
+     -webkit-animation-delay: 16s;
+     -moz-animation-delay: 16s;
+     -o-animation-delay: 16s;
+     animation-delay: 16s;
+   }
+   #cf5a img:nth-of-type(2) {
+     -webkit-animation-delay: 12s;
+     -moz-animation-delay: 12s;
+     -o-animation-delay: 12s;
+     animation-delay: 12s;
+   }
+   #cf5a img:nth-of-type(3) {
+     -webkit-animation-delay: 8s;
+     -moz-animation-delay: 8s;
+     -o-animation-delay: 8s;
+     animation-delay: 8s;
+   }
+   #cf5a img:nth-of-type(4) {
+     -webkit-animation-delay: 4s;
+     -moz-animation-delay: 4s;
+     -o-animation-delay: 4s;
+     animation-delay: 4s;
+   }
+   
+   #cf5a img:nth-of-type(5) {
+       -webkit-animation-delay: 0s;
+       -moz-animation-delay: 0s;
+       -o-animation-delay: 0s;
+       animation-delay: 0s;
+   }

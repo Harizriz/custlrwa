@@ -196,7 +196,7 @@
 					</div>
 					<div class="col-md-6 col-sm-6 col-6 col-lg-2">
 						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-							<li class="shop_search" onclick="focusOnSearch()"><a class="search__active"></a></li>
+							<li class="shop_search" onclick="focusSearch()"><a class="search__active"></a></li>
 							<li class="wishlist" id="wishlist">
                                 <a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
                             </li>
@@ -3185,7 +3185,7 @@
 	<script src="js/cart.js"></script>
 	<script src="js/cart-mini.js"></script>
 	<script>
-        function focusOnSearch(){
+        function focusSearch(){
 			setTimeOut(function(){
 				document.getElementById("search_bar").focus();
 			}, 500);
