@@ -8324,7 +8324,7 @@ Shop Single Styles
     border-bottom: 1px solid #2e2e2e;
     color: #2e2e2e;
     font-size: 16px;
-    padding-top: 29px;
+    padding-top: 24px;
     padding-bottom: 10px;
     position: relative;
     text-transform: uppercase;
@@ -9292,51 +9292,9 @@ Notify Styles
 Search Styles
 -------------------------*/
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-}
-
-.searchTerm {
-  width: 100%;
-  border: 3px solid #bbbbbb;
-  border-right: none;
-  padding: 5px;
-  /* height: 20px; */
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: rgb(0, 0, 0);
-}
-
-.searchTerm:focus{
-  color: #000000;
-}
-
-.searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #bbbbbb;
-  background: #bbbbbb;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/*Resize the wrap to see the search bar change!*/
-.wrap{
-  margin-top: 20px;
-  margin-left: 16px;
-  width: 200%;
+.wrap_search {
+    margin-left: 10px;
+    width: 100%;
 }
 
 /*-------------------------

@@ -369,14 +369,14 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-12 order-1 order-lg-2" style="padding: 0px; padding-top: 260px;">
-                    <h2 class="mb-0">Search</h2>
+                    <h2>Search</h2>
                         <div class="row d-flex justify-content-start">
-                            <div class="wrap">
-                                <div class="search">
-                                <input type="text" class="searchTerm" placeholder="What are you looking for?" name="search_value" id="search_bar" onsearch="search()">
-                                <button type="submit" class="searchButton" onclick="search()">
-                                    <i class="fa fa-search"></i>
-                                </button>
+                            <div class="wrap_search">
+                                <div class="input-group mb-5 border border-dark rounded-pill p-1">
+                                    <div class="input-group-prepend border-0">
+                                        <button id="button-addon4" type="button" class="btn btn-link text-info" onclick="search()"><i class="fa fa-search"></i></button>
+                                    </div>
+                                    <input type="search" onsearch="search()" placeholder="Searching for something else?" aria-describedby="button-addon4" class="form-control bg-none border-0" name="search_value" id="search_bar">
                                 </div>
                             </div>
                         </div>
