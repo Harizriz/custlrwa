@@ -13,6 +13,8 @@ class ScrapedResult(models.Model):
     original_site = models.TextField(null=True)
     category = models.TextField(null=True)
     subcategory = models.TextField(null=True)
+    sizing_type = models.TextField(null=True)
+    occasion = models.TextField(null=True)
 
 class Sizing(models.Model):
     sizing = models.CharField(max_length = 20, null = True)
