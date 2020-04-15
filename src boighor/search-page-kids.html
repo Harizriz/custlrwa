@@ -367,7 +367,7 @@
                         <img src="https://cdn.clipart.email/60ed38ccd03870faeffa1bfadf040ed6_kids-model-yellow-spring-kids-png-image-and-clipart-for-free-_513-769.jpeg" width="525" height="700" alt="product image">
                     </div>
                 </div>
-                <div class="col-lg-4 col-12 order-1 order-lg-2" style="padding: 0px; padding-top: 270px;">
+                <div class="col-lg-4 col-12 order-1 order-lg-2" style="padding: 0px; padding-top: 260px;">
                     <h2 class="mb-0">Search</h2>
                         <div class="row d-flex justify-content-start">
                             <div class="wrap">
@@ -466,7 +466,8 @@
 
 			// replaces white space
             search_value = "?search=" + document.getElementById("search_bar").value + "&category=kids";
-            sessionStorage.setItem("search_term", search_value);
+            sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
+			sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
             

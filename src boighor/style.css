@@ -2478,6 +2478,11 @@ Setting Styles
     position: inherit;
 }
 
+.input-group {
+    border-radius: 19px;
+    margin-top: 50px;
+}
+
 .searchbar__content {
     border: 1px solid #ebebeb;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.17);
@@ -5776,6 +5781,19 @@ Breadcaump Styles
 }
 */
 
+.breadcrumb {
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 40px;
+    border-bottom: 1px solid #000;
+}
+.breadcrumb .breadcrumb-item a:hover {
+    color: #e7e614;
+}
+
 
 /*--------------------------
 Single Product Styles
@@ -5934,11 +5952,7 @@ Single Product Styles
 
 .product__info__main .product-share {
     margin-top: 15px;
-}
-
-.product__info__detailed {
-    margin-top: 25px;
-}
+} 
 
 .product__info__main .box-tocart .addtocart__actions .tocart:hover {
     background-color: #e59285;
@@ -7434,6 +7448,15 @@ MyAccount Styles
     margin-left: 200px;
 }
 
+.account__title_shop {
+    color: #2e2e2e;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 50px;
+    /* margin: 0 0 5px;
+    margin-left: 200px; */
+}
+
 .account__form {
     border: 1px solid #d3ced2;
     border-radius: 5px;
@@ -8279,8 +8302,29 @@ Shop Single Styles
     border-bottom: 1px solid #2e2e2e;
     color: #2e2e2e;
     font-size: 16px;
-    margin-top: 100px;
+    padding-top: 60px;
     margin-bottom: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.wedget__title_shop {
+    border-bottom: 1px solid #2e2e2e;
+    color: #2e2e2e;
+    font-size: 16px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.wedget__title_product {
+    border-bottom: 1px solid #2e2e2e;
+    color: #2e2e2e;
+    font-size: 16px;
+    padding-top: 29px;
     padding-bottom: 10px;
     position: relative;
     text-transform: uppercase;
@@ -8503,7 +8547,7 @@ Shop Single Styles
 .shop__list__wrapper {
     border-bottom: 1px solid #e1e1e1;
     border-top: 1px solid #e1e1e1;
-    margin-top: 100px;
+    margin-top: 80px;
     padding: 10px 0;
     width: 100%;
 }

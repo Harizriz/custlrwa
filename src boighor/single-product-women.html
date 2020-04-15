@@ -355,18 +355,50 @@
       </div>
       <!-- End Bradcaump area -->
       <!-- Start main Content -->
-      <div class="maincontent bg--white pt--80 pb--55">
+      <div class="maincontent bg--white pb--55">
          <div class="container">
+            <div class="row">
+               <div class="col-12 p-0">
+                   <nav aria-label="breadcrumb">
+                       <nav aria-label="breadcrumb">
+                       <ol class="breadcrumb" style="margin-top: 30px;">
+                           <li class="breadcrumb-item"><a href="portfolio.html">Home</a></li>
+                           <li class="breadcrumb-item"><a href="search-page-women.html">Search</a></li>
+                           <li class="breadcrumb-item"><a href="shop-grid-women.html">Shop Grid</a></li>
+                           <li class="breadcrumb-item active" aria-current="page" id="product_name_bread"></li>
+                       </ol>
+                   </nav>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12 p-0">
+                  <div class="row">
+                     <div class="col-sm-2 col-12">
+                        <h3 class="account__title_shop">Product</h3>
+                     </div>
+                     <div class="col-sm-10 col-12">
+                        <form action="">
+                           <div class="input-group mb-4 border border-dark rounded-pill p-1">
+                              <div class="input-group-prepend border-0">
+                              <button id="button-addon4" type="button" class="btn btn-link text-info"><i class="fa fa-search"></i></button>
+                              </div>
+                              <input type="search" placeholder="Searching for something else?" aria-describedby="button-addon4" class="form-control bg-none border-0">
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
             <div class="row">
                <div class="col-lg-9 col-12">
                   <div class="wn__single__product">
-                     <div class="row">
-                        <div class="col-lg-6 col-12">
-                           <div class="wn__fotorama__wrapper d-flex justify-content-around" id="image_list">
+                     <div class="row" style="padding-top: 60px;">
+                        <div class="col-lg-6 col-12" style="border-top:1px solid #e1e1e1;">
+                           <div class="wn__fotorama__wrapper d-flex justify-content-around" id="image_list" style="padding-top: 30px;">
                            </div>
                         </div>
-                        <div class="col-lg-6 col-12">
-                           <div class="product__info__main">
+                        <div class="col-lg-6 col-12" style="border-top:1px solid #e1e1e1;">
+                           <div class="product__info__main" style="padding-top: 30px;">
                               <h1 id="product_name"></h1>
                               <div class="product-reviews-summary d-flex">
                                  <ul class="rating-summary d-flex">
@@ -617,6 +649,7 @@
                                  </li>
                               </ul>
                            </div> -->
+                           
                         </div>
                        <!--  <div class="col-lg-6 col-12">
                            <div class = "media">
@@ -1213,175 +1246,7 @@
                      </div>
                      </div>
                      </div> -->
-                  <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
-                     <div class="shop__sidebar">
-                        <aside class="wedget__categories poroduct--cat">
-                           <h3 class="wedget__title mt-0">Brands</h3>
-                           <ul>
-                              <li>
-                                 <a href="#sub_num" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>0-9<span id="brand_count_numbers"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_num">
-                                    <li id="brand_dropdown_numbers"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_a" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>A<span id="brand_count_a"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_a">
-                                    <li id="brand_dropdown_a"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_b" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>B<span id="brand_count_b"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_b">
-                                    <li id="brand_dropdown_b"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_c" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>C<span id="brand_count_c"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_c">
-                                    <li id="brand_dropdown_c"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_d" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>D<span id="brand_count_d"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_d">
-                                    <li id="brand_dropdown_d"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_e" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>E<span id="brand_count_e"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_e">
-                                    <li id="brand_dropdown_e"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_f" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>F<span id="brand_count_f"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_f">
-                                    <li id="brand_dropdown_f"></li>
-                                 </ul>     
-                              </li>
-                              <li> 
-                                 <a href="#sub_g" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>G<span id="brand_count_g"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_g">
-                                    <li id="brand_dropdown_g"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_h" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>H<span id="brand_count_h"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_h">
-                                    <li id="brand_dropdown_h"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>I<span id="brand_count_i"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_i">
-                                    <li id="brand_dropdown_i"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_j" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>J<span id="brand_count_j"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_j">
-                                    <li id="brand_dropdown_j"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_k" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>K<span id="brand_count_k"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_k">
-                                    <li id="brand_dropdown_k"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_l" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>L<span id="brand_count_l"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_l">
-                                    <li id="brand_dropdown_l"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_m" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>M<span id="brand_count_m"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_m">
-                                    <li id="brand_dropdown_m"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_n" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>N<span id="brand_count_n"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_n">
-                                    <li id="brand_dropdown_n"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_o" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>O<span id="brand_count_o"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_o">
-                                    <li id="brand_dropdown_o"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_p" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>P<span id="brand_count_p"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_p">
-                                    <li id="brand_dropdown_p"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_q" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Q<span id="brand_count_q"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_q">
-                                    <li id="brand_dropdown_q"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_r" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>R<span id="brand_count_r"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_r">
-                                    <li id="brand_dropdown_r"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_s" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>S<span id="brand_count_s"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_s">
-                                    <li id="brand_dropdown_s"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_t" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>T<span id="brand_count_t"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_t">
-                                    <li id="brand_dropdown_t"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_u" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>U<span id="brand_count_u"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_u">
-                                    <li id="brand_dropdown_u"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_v" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>V<span id="brand_count_v"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_v">
-                                    <li id="brand_dropdown_v"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_w" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>W<span id="brand_count_w"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_w">
-                                    <li id="brand_dropdown_w"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_x" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>X<span id="brand_count_x"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_x">
-                                    <li id="brand_dropdown_x"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_y" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Y<span id="brand_count_y"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_y">
-                                    <li id="brand_dropdown_y"></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="#sub_z" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Z<span id="brand_count_z"></span></b></a>
-                                 <ul class="collapse list-unstyled" id="sub_z">
-                                    <li id="brand_dropdown_z"></li>
-                                 </ul>
-                              </li>
-                           </ul>
-                        </aside>
+                  
                        <!--  <aside class="wedget__categories pro--range">
                            <h3 class="wedget__title">Filter by price</h3>
                               <div class="content-shopby">
@@ -1435,18 +1300,19 @@
                         <h6>save up to <br> <strong>40%</strong>off</h6>
                         </div>
                      </aside> -->
+                     <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
+                        <div class="shop__sidebar">
+                           <aside class="wedget__categories poroduct--cat">
+                              <h3 class="wedget__title_product" id="brandlist_title"></h3>
+                              <ul id="brandlist">
+                              </ul>
+                           </aside>
+                        </div>
                      </div>
-                     </div> 
                </div>
             </div>
          </div>
          <!-- End main Content -->
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
          <!-- Footer Area -->
          <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
             <div class="footer-static-top">
@@ -1630,6 +1496,7 @@
 
          // replaces white space
             search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
+            sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
          // Open a new connection, using the GET request on the URL endpoint
          var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
@@ -1670,7 +1537,7 @@
       pageData = JSON.parse(sessionStorage.getItem("pageRespData"));
       
       var sizingDefault = pageData.sizing_type
-      var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category);
+      var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category, pageData.subcatego);
       document.getElementById("sizingRegionDropdownButton").innerHTML = sizingDefault;
       //console.log(sizing_chart);
       // aria-labelledby="International"
@@ -1999,7 +1866,7 @@
          request.send(data);
       };
 
-      var search = 'http://custlrwa.ddns.net:8000/scraped/?category=women&brandlist=true';
+      var search = 'http://custlrwa.ddns.net:8000/scraped/' + sessionStorage.getItem("search_term") + '&brandlist=true';
       request.open('GET', search, true)
       request.onload = function loadHTML(){
          var resultText = (JSON.parse(request.responseText)).results;
@@ -2010,202 +1877,287 @@
          var count = '';
          var k = 0;
          var alphabet = 'A' || 'a';
-         for (i=0; i<resultText.length; i++){
-            // console.log(resultText[i].brand);
-         
+         for (i=0; i<resultText.length; i++){         
             switch(resultText[i].brand.charAt(0)){
                case "A":
                case "a":
-                  brands_a += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_a += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_a++;
                   break;
                case "B":
                case "b":
-                  brands_b += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_b += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_b++;
                   break;
                case "C":
                case "c":
-                  brands_c += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_c += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_c++;
                   break;
                case "D":
                case "d":
-                  brands_d += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_d += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_d++;
                   break;
                case "E":
                case "e":
-                  brands_e += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_e += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_e++;
                   break;
                case "F":
                case "f":
-                  brands_f += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_f += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_f++;
                   break;
                case "G":
                case "g":
-                  brands_g += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_g += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_g++;
                   break;
                case "H":
                case "h":
-                  brands_h += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_h += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_h++;
                   break;
                case "I":
                case "i":
-                  brands_i += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_i += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_i++;
                   break;
                case "J":
                case "j":
-                  brands_j += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_j += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_j++;
                   break;
                case "K":
                case "k":
-                  brands_k += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_k += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_k++;
                   break;
                case "L":
                case "l":
-                  brands_l += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_l += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_l++;
                   break;
                case "M":
                case "m":
-                  brands_m += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_m += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_m++;
                   break;
                case "N":
                case "n":
-                  brands_n += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_n += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_n++;
                   break;
                case "O":
                case "o":
-                  brands_o += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_o += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_o++;
                   break;
                case "P":
                case "p":
-                  brands_p += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_p += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_p++;
                   break;
                case "Q":
                case "q":
-                  brands_q += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_q += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_q++;
                   break;
                case "R":
                case "r":
-                  brands_r += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_r += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_r++;
                   break;
                case "S":
                case "s":
-                  brands_s += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_s += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_s++;
                   break;
                case "T":
                case "t":
-                  brands_t += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_t += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_t++;
                   break;
                case "U":
                case "u":
-                  brands_u += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_u += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_u++;
                   break;
                case "V":
                case "v":
-                  brands_v += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_v += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_v++;
                   break;
                case "W":
                case "w":
-                  brands_w += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_w += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_w++;
                   break;
                case "X":
                case "x":
-                  brands_x += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_x += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_x++;
                   break;
                case "Y":
                case "y":
-                  brands_y += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_y += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_y++;
                   break;
                case "Z":
                case "z":
-                  brands_z += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_z += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_z++;
                   break;
                default:
-                  brands_num += '<li><a href="#" onclick="openCategory(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  brands_num += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
                   count_num++;
                   break;
             };
          };
 
-         document.getElementById("brand_count_numbers").innerHTML = ' (' + count_num + ')'
-         document.getElementById("brand_count_a").innerHTML = ' (' + count_a + ')'
-         document.getElementById("brand_count_b").innerHTML = ' (' + count_b + ')'
-         document.getElementById("brand_count_c").innerHTML = ' (' + count_c + ')'
-         document.getElementById("brand_count_d").innerHTML = ' (' + count_d + ')'
-         document.getElementById("brand_count_e").innerHTML = ' (' + count_e + ')'
-         document.getElementById("brand_count_f").innerHTML = ' (' + count_f + ')'
-         document.getElementById("brand_count_g").innerHTML = ' (' + count_g + ')'
-         document.getElementById("brand_count_h").innerHTML = ' (' + count_h + ')'
-         document.getElementById("brand_count_i").innerHTML = ' (' + count_i + ')'
-         document.getElementById("brand_count_j").innerHTML = ' (' + count_j + ')'
-         document.getElementById("brand_count_k").innerHTML = ' (' + count_k + ')'
-         document.getElementById("brand_count_l").innerHTML = ' (' + count_l + ')'
-         document.getElementById("brand_count_m").innerHTML = ' (' + count_m + ')'
-         document.getElementById("brand_count_n").innerHTML = ' (' + count_n + ')'
-         document.getElementById("brand_count_o").innerHTML = ' (' + count_o + ')'
-         document.getElementById("brand_count_p").innerHTML = ' (' + count_p + ')'
-         document.getElementById("brand_count_q").innerHTML = ' (' + count_q + ')'
-         document.getElementById("brand_count_r").innerHTML = ' (' + count_r + ')'
-         document.getElementById("brand_count_s").innerHTML = ' (' + count_s + ')'
-         document.getElementById("brand_count_t").innerHTML = ' (' + count_t + ')'
-         document.getElementById("brand_count_u").innerHTML = ' (' + count_u + ')'
-         document.getElementById("brand_count_v").innerHTML = ' (' + count_v + ')'
-         document.getElementById("brand_count_w").innerHTML = ' (' + count_w + ')'
-         document.getElementById("brand_count_x").innerHTML = ' (' + count_x + ')'
-         document.getElementById("brand_count_y").innerHTML = ' (' + count_y + ')'
-         document.getElementById("brand_count_z").innerHTML = ' (' + count_z + ')'
+         var search_text = sessionStorage.getItem("search_term_text");
+         if (search_text.length > 12){ //handles search terms that are too long
+            search_text = search_text.substring(0, 11) + '...'
+         }
+         document.getElementById("brandlist_title").innerHTML = 'Brands with \'' + search_text +'\''
 
-         document.getElementById("brand_dropdown_numbers").innerHTML = brands_num;
-         document.getElementById("brand_dropdown_a").innerHTML = brands_a;
-         document.getElementById("brand_dropdown_b").innerHTML = brands_b;
-         document.getElementById("brand_dropdown_c").innerHTML = brands_c;
-         document.getElementById("brand_dropdown_d").innerHTML = brands_d;
-         document.getElementById("brand_dropdown_e").innerHTML = brands_e;
-         document.getElementById("brand_dropdown_f").innerHTML = brands_f;
-         document.getElementById("brand_dropdown_g").innerHTML = brands_g;
-         document.getElementById("brand_dropdown_h").innerHTML = brands_h;
-         document.getElementById("brand_dropdown_i").innerHTML = brands_i;
-         document.getElementById("brand_dropdown_j").innerHTML = brands_j;
-         document.getElementById("brand_dropdown_k").innerHTML = brands_k;
-         document.getElementById("brand_dropdown_l").innerHTML = brands_l;
-         document.getElementById("brand_dropdown_m").innerHTML = brands_m;
-         document.getElementById("brand_dropdown_n").innerHTML = brands_n;
-         document.getElementById("brand_dropdown_o").innerHTML = brands_o;
-         document.getElementById("brand_dropdown_p").innerHTML = brands_p;
-         document.getElementById("brand_dropdown_q").innerHTML = brands_q;
-         document.getElementById("brand_dropdown_r").innerHTML = brands_r;
-         document.getElementById("brand_dropdown_s").innerHTML = brands_s;
-         document.getElementById("brand_dropdown_t").innerHTML = brands_t;
-         document.getElementById("brand_dropdown_u").innerHTML = brands_u;
-         document.getElementById("brand_dropdown_v").innerHTML = brands_v;
-         document.getElementById("brand_dropdown_w").innerHTML = brands_w;
-         document.getElementById("brand_dropdown_x").innerHTML = brands_x;
-         document.getElementById("brand_dropdown_y").innerHTML = brands_y;
-         document.getElementById("brand_dropdown_z").innerHTML = brands_z;
+         if(count_num != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_num" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>0-9<span id="brand_count_numbers"></span></b></a><ul class="collapse list-unstyled" id="sub_num"><li id="brand_dropdown_numbers"></li></ul></li>';
+            document.getElementById("brand_count_numbers").innerHTML = ' (' + count_num + ')';
+            document.getElementById("brand_dropdown_numbers").innerHTML = brands_num;
+         };
+         if(count_a != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_a" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>A<span id="brand_count_a"></span></b></a><ul class="collapse list-unstyled" id="sub_a"><li id="brand_dropdown_a"></li></ul></li>';
+            document.getElementById("brand_count_a").innerHTML = ' (' + count_a + ')'
+            document.getElementById("brand_dropdown_a").innerHTML = brands_a;
+         };
+         if(count_b != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_b" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>B<span id="brand_count_b"></span></b></a><ul class="collapse list-unstyled" id="sub_b"><li id="brand_dropdown_b"></li></ul></li>';
+            document.getElementById("brand_count_b").innerHTML = ' (' + count_b + ')'
+            document.getElementById("brand_dropdown_b").innerHTML = brands_b;         
+         };
+         if(count_c != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_c" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>C<span id="brand_count_c"></span></b></a><ul class="collapse list-unstyled" id="sub_c"><li id="brand_dropdown_c"></li></ul></li>';
+            document.getElementById("brand_count_c").innerHTML = ' (' + count_c + ')'
+            document.getElementById("brand_dropdown_c").innerHTML = brands_c;
+         };
+         if(count_d != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_d" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>D<span id="brand_count_d"></span></b></a><ul class="collapse list-unstyled" id="sub_d"><li id="brand_dropdown_d"></li></ul></li>';
+            document.getElementById("brand_count_d").innerHTML = ' (' + count_d + ')'
+            document.getElementById("brand_dropdown_d").innerHTML = brands_d;
+         };
+         if(count_e != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_e" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>E<span id="brand_count_e"></span></b></a><ul class="collapse list-unstyled" id="sub_e"><li id="brand_dropdown_e"></li></ul></li>';
+            document.getElementById("brand_count_e").innerHTML = ' (' + count_e + ')'
+            document.getElementById("brand_dropdown_e").innerHTML = brands_e;
+         };
+         if(count_f != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_f" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>F<span id="brand_count_f"></span></b></a><ul class="collapse list-unstyled" id="sub_f"><li id="brand_dropdown_f"></li></ul></li>';
+            document.getElementById("brand_count_f").innerHTML = ' (' + count_f + ')'
+            document.getElementById("brand_dropdown_f").innerHTML = brands_f;
+         };
+         if(count_g != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_g" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>G<span id="brand_count_g"></span></b></a><ul class="collapse list-unstyled" id="sub_g"><li id="brand_dropdown_g"></li></ul></li>';
+            document.getElementById("brand_count_g").innerHTML = ' (' + count_g + ')'
+            document.getElementById("brand_dropdown_g").innerHTML = brands_g;
+         };
+         if(count_h != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_h" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>H<span id="brand_count_h"></span></b></a><ul class="collapse list-unstyled" id="sub_h"><li id="brand_dropdown_h"></li></ul></li>';
+            document.getElementById("brand_count_h").innerHTML = ' (' + count_h + ')'
+            document.getElementById("brand_dropdown_h").innerHTML = brands_h;
+         };
+         if(count_i != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_i" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>I<span id="brand_count_i"></span></b></a><ul class="collapse list-unstyled" id="sub_i"><li id="brand_dropdown_i"></li></ul></li>';
+            document.getElementById("brand_count_i").innerHTML = ' (' + count_i + ')'
+            document.getElementById("brand_dropdown_i").innerHTML = brands_i;
+         };
+         if(count_j != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_j" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>J<span id="brand_count_j"></span></b></a><ul class="collapse list-unstyled" id="sub_j"><li id="brand_dropdown_j"></li></ul></li>';
+            document.getElementById("brand_count_j").innerHTML = ' (' + count_j + ')'
+            document.getElementById("brand_dropdown_j").innerHTML = brands_j;
+         };
+         if(count_k != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_k" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>K<span id="brand_count_k"></span></b></a><ul class="collapse list-unstyled" id="sub_k"><li id="brand_dropdown_k"></li></ul></li>';
+            document.getElementById("brand_count_k").innerHTML = ' (' + count_k + ')'
+            document.getElementById("brand_dropdown_k").innerHTML = brands_k;
+         };
+         if(count_l != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_l" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>L<span id="brand_count_l"></span></b></a><ul class="collapse list-unstyled" id="sub_l"><li id="brand_dropdown_l"></li></ul></li>';
+            document.getElementById("brand_count_l").innerHTML = ' (' + count_l + ')'
+            document.getElementById("brand_dropdown_l").innerHTML = brands_l;
+         };
+         if(count_m != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_m" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>M<span id="brand_count_m"></span></b></a><ul class="collapse list-unstyled" id="sub_m"><li id="brand_dropdown_m"></li></ul></li>';
+            document.getElementById("brand_count_m").innerHTML = ' (' + count_m + ')'
+            document.getElementById("brand_dropdown_m").innerHTML = brands_m;
+         };
+         if(count_n != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_n" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>N<span id="brand_count_n"></span></b></a><ul class="collapse list-unstyled" id="sub_n"><li id="brand_dropdown_n"></li></ul></li>';
+            document.getElementById("brand_count_n").innerHTML = ' (' + count_n + ')'
+            document.getElementById("brand_dropdown_n").innerHTML = brands_n;
+         };
+         if(count_o != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_o" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>O<span id="brand_count_o"></span></b></a><ul class="collapse list-unstyled" id="sub_o"><li id="brand_dropdown_o"></li></ul></li>';
+            document.getElementById("brand_count_o").innerHTML = ' (' + count_o + ')'
+            document.getElementById("brand_dropdown_o").innerHTML = brands_o;
+         };
+         if(count_p != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_p" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>P<span id="brand_count_p"></span></b></a><ul class="collapse list-unstyled" id="sub_p"><li id="brand_dropdown_p"></li></ul></li>';
+            document.getElementById("brand_count_p").innerHTML = ' (' + count_p + ')'
+            document.getElementById("brand_dropdown_p").innerHTML = brands_p;
+         };
+         if(count_q != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_q" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Q<span id="brand_count_q"></span></b></a><ul class="collapse list-unstyled" id="sub_q"><li id="brand_dropdown_q"></li></ul></li>';
+            document.getElementById("brand_count_q").innerHTML = ' (' + count_q + ')'
+            document.getElementById("brand_dropdown_q").innerHTML = brands_q;
+         };
+         if(count_r != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_r" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>R<span id="brand_count_r"></span></b></a><ul class="collapse list-unstyled" id="sub_r"><li id="brand_dropdown_r"></li></ul></li>';
+            document.getElementById("brand_count_r").innerHTML = ' (' + count_r + ')'
+            document.getElementById("brand_dropdown_r").innerHTML = brands_r;
+         };
+         if(count_s != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_s" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>S<span id="brand_count_s"></span></b></a><ul class="collapse list-unstyled" id="sub_s"><li id="brand_dropdown_s"></li></ul></li>';
+            document.getElementById("brand_count_s").innerHTML = ' (' + count_s + ')'
+            document.getElementById("brand_dropdown_s").innerHTML = brands_s;
+         };
+         if(count_t != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_t" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>T<span id="brand_count_t"></span></b></a><ul class="collapse list-unstyled" id="sub_t"><li id="brand_dropdown_t"></li></ul></li>';
+            document.getElementById("brand_count_t").innerHTML = ' (' + count_t + ')'
+            document.getElementById("brand_dropdown_t").innerHTML = brands_t;
+         };
+         if(count_u != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_u" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>U<span id="brand_count_u"></span></b></a><ul class="collapse list-unstyled" id="sub_u"><li id="brand_dropdown_u"></li></ul></li>';
+            document.getElementById("brand_count_u").innerHTML = ' (' + count_u + ')'
+            document.getElementById("brand_dropdown_u").innerHTML = brands_u;
+         };
+         if(count_v != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_v" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>V<span id="brand_count_v"></span></b></a><ul class="collapse list-unstyled" id="sub_v"><li id="brand_dropdown_v"></li></ul></li>';
+            document.getElementById("brand_count_v").innerHTML = ' (' + count_v + ')'
+            document.getElementById("brand_dropdown_v").innerHTML = brands_v;
+         };
+         if(count_w != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_w" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>W<span id="brand_count_w"></span></b></a><ul class="collapse list-unstyled" id="sub_w"><li id="brand_dropdown_w"></li></ul></li>';
+            document.getElementById("brand_count_w").innerHTML = ' (' + count_w + ')'
+            document.getElementById("brand_dropdown_w").innerHTML = brands_w;
+         };
+         if(count_x != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_x" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>X<span id="brand_count_x"></span></b></a><ul class="collapse list-unstyled" id="sub_x"><li id="brand_dropdown_x"></li></ul></li>';
+            document.getElementById("brand_count_x").innerHTML = ' (' + count_x + ')'
+            document.getElementById("brand_dropdown_x").innerHTML = brands_x;
+         };
+         if(count_y != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_y" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Y<span id="brand_count_y"></span></b></a><ul class="collapse list-unstyled" id="sub_y"><li id="brand_dropdown_y"></li></ul></li>';
+            document.getElementById("brand_count_y").innerHTML = ' (' + count_y + ')'
+            document.getElementById("brand_dropdown_y").innerHTML = brands_y;
+         };
+         if(count_z != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_z" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Z<span id="brand_count_z"></span></b></a><ul class="collapse list-unstyled" id="sub_z"><li id="brand_dropdown_z"></li></ul></li>';
+            document.getElementById("brand_count_z").innerHTML = ' (' + count_z + ')'
+            document.getElementById("brand_dropdown_z").innerHTML = brands_z;
+         };
+         
       }
       request.send();
 
@@ -2242,6 +2194,7 @@
 
       document.getElementById("review_product_name").innerHTML = pageData.product_name;
       document.getElementById("product_name").innerHTML = pageData.product_name;
+      document.getElementById("product_name_bread").innerHTML = pageData.product_name;
       document.getElementById("product_price").innerHTML = pageData.currency + ' ' + pageData.price;
       document.getElementById("product_description").innerHTML = description;
       document.getElementById("categories").innerHTML = categories;
@@ -2252,8 +2205,28 @@
          // Create a request variable and assign a new XMLHttpRequest object to it.
          var request = new XMLHttpRequest()
 
-         // replaces white space
          search_value = "?category=women" + category;
+         // Open a new connection, using the GET request on the URL endpoint
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+         
+         request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+            var resultText = request.responseText;
+            sessionStorage.setItem("search_result", resultText); 
+            sessionStorage.setItem("current_page", 1);
+            sessionStorage.removeItem("selectBox");
+            getBrands(search);
+         }
+         // Send request
+         request.send();
+      };
+
+      function openBrand(brand){
+         // Create a request variable and assign a new XMLHttpRequest object to it.
+         var request = new XMLHttpRequest()
+
+         search_value = sessionStorage.getItem("search_term") + brand;
          // Open a new connection, using the GET request on the URL endpoint
          var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
          

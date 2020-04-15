@@ -199,9 +199,6 @@
 					</div>
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <li class="shop_search">
-                                <a class="search__active" href="#"></a>
-                            </li>
                             <li class="wishlist" id="wishlist">
 								<a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
 							</li>
@@ -323,19 +320,6 @@
         </header>
         <!-- //Header -->
         <!-- Start Search Popup -->
-        <div class="brown--color box-search-content search_active block-bg close__top">
-			<form id="search_mini_form" class="minisearch" action="#" onsubmit="return false">
-				<div class="field__search">
-					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="search()">
-					<div class="action">
-						<button class="btn btn-light-inverse" type="submit" onclick="search()"><i class="zmdi zmdi-search"></i></button>
-					</div>
-				</div>
-			</form>
-			<div class="close__wrap">
-				<span>close</span>
-			</div>
-		</div>
         <!-- End Search Popup -->
         <!-- Start Bradcaump area  -->
         <!-- <div class="ht__bradcaump__area bg-image--6">
@@ -358,11 +342,24 @@
         <!-- Start Shop Page -->
         <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
             <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="portfolio.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="search-page-women.html">Search</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Shop Grid</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
                 <div class="row sidebar">
                     <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
                         <div class="shop__sidebar">
+                            <h3 class="account__title_shop">Shop Grid</h3>
                             <aside class="wedget__categories poroduct--cat">
-                                <h3 class="wedget__title">Product Categories</h3>
+                                <h3 class="wedget__title_shop mb-0">Product Categories</h3>
                                 <ul>
                                     <li>
                                         <a href="#sub" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Brand <span id="brand_count"></span></b></a>
@@ -423,6 +420,14 @@
                     <div class="col-lg-9 col-12 order-1 order-lg-2">
                         <div class="row">
                             <div class="col-lg-12">
+                                <form action="#">
+                                    <div class="input-group mb-4 border border-dark rounded-pill p-1">
+                                        <div class="input-group-prepend border-0">
+                                            <button id="button-addon4" type="button" class="btn btn-link text-info"><i class="fa fa-search" onclick="search()"></i></button>
+                                        </div>
+                                        <input type="search" placeholder="Searching for something else?" aria-describedby="button-addon4" class="form-control bg-none border-0" name="search_value" id="search_bar" onsearch="search()">
+                                    </div>
+                                </form>
                                 <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between mb-2">
                                     <div class="shop__list nav justify-content-center" role="tablist">
 			                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
@@ -586,6 +591,7 @@
     <script src="js/active.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/cart-mini.js"></script>
+    <script src="js/sizingChart.js"></script>
     <script>
         var current_page = sessionStorage.getItem("current_page");
         function openLink(url, page, storage){ //sends search request to backend for JSON response
@@ -610,6 +616,7 @@
 
 			// replaces white space
             search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
+            sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
