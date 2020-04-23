@@ -55,14 +55,18 @@ for category, eShaktiSite in category_site.items():
                 cursor.execute(sql_insert_product, (product_id, product_name, price, currency, brand, original_site, 'Women', image_url))
                 connection.commit()
 
-                if soup.select('#ContentPlaceHolder1_divthumbImgs .myimage'):
-                    for img in soup.select('#ContentPlaceHolder1_divthumbImgs .myimage'):
-                        cursor.execute(sql_insert_image,(img['src'], product_id))
-                        connection.commit()
-                else:
-                    for img in soup.select('#ContentPlaceHolder1_divthumbImgs')[0].find_all('a'):
-                        cursor.execute(sql_insert_image,(img['href'], product_id))
-                        connection.commit()
+                try:
+                    if soup.select('#ContentPlaceHolder1_divthumbImgs .myimage'):
+                        for img in soup.select('#ContentPlaceHolder1_divthumbImgs .myimage'):
+                            cursor.execute(sql_insert_image,(img['src'], product_id))
+                            connection.commit()
+                    else:
+                        for img in soup.select('#ContentPlaceHolder1_divthumbImgs')[0].find_all('a'):
+                            cursor.execute(sql_insert_image,(img['href'], product_id))
+                            connection.commit()
+                except:
+                    cursor.execute(sql_insert_image,('', product_id))
+                    connection.commit()
 
                 product_id += 1
                 print(str(i) + ' ' + product_name)
