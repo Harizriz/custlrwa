@@ -33,7 +33,7 @@ for category, ZaloraSite in category_site.items():
         else:
             maxOffset = jsonObj['response']['numFound']
             # sql_count_size = 'SELECT COUNT(*) FROM `site_scraper_sizing` WHERE `description` = %s;'
-            sql_insert_product = 'INSERT INTO site_scraper_scrapedresult (id, product_name, price, currency, brand, original_site, category, image_url) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);'
+            sql_insert_product = 'INSERT INTO site_scraper_scrapedresult (id, product_name, price, currency, brand, original_site, category, image_url, sizing_type) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);'
             sql_insert_size = 'INSERT INTO site_scraper_sizing (sizing, product_id) VALUES (%s, %s);'
             sql_insert_image = 'INSERT INTO site_scraper_imageurl (image_url, product_id) VALUES (%s, %s);'
 
@@ -44,7 +44,8 @@ for category, ZaloraSite in category_site.items():
                 brand = jsonObj['response']['docs'][i]['meta']['brand']
                 original_site = 'https://www.zalora.com.my/' + jsonObj['response']['docs'][i]['link']
                 image_url = jsonObj['response']['docs'][i]['image']
-                cursor.execute(sql_insert_product, (product_id, product_name, price, currency, brand, original_site, category, image_url))
+                sizing_type = jsonObj['response']['docs'][i]['meta']['sizesystembrand']
+                cursor.execute(sql_insert_product, (product_id, product_name, price, currency, brand, original_site, category, image_url, sizing_type))
 
                 for size in jsonObj['response']['docs'][i]['available_sizes']:
                     cursor.execute(sql_insert_size, (size['size'].upper(), product_id))
