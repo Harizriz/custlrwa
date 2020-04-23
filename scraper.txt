@@ -30,8 +30,14 @@ https://uqmy-media.s3.amazonaws.com/json/423189.json
 Women, shirts & blouses
 https://www2.hm.com/en_asia4/ladies/shop-by-product/shirts-and-blouses/_jcr_content/main/productlisting.display.json?offset=0&page-size=36
 
+Women, view all
+https://www2.hm.com/en_asia4/ladies/shop-by-product/view-all/_jcr_content/main/productlisting_30ab.display.json?offset=0&page-size=36
+
 Men, shirts
 https://www2.hm.com/en_asia4/men/shop-by-product/shirts/_jcr_content/main/productlisting.display.json?offset=0&page-size=36
+
+Men, view all
+https://www2.hm.com/en_asia4/men/shop-by-product/view-all/_jcr_content/main/productlisting_fa5b.display.json?offset=0&page-size=36
 
 Change offset & page size, offset has to be multiples of page size
 
