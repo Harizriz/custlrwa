@@ -36,20 +36,14 @@
     .box {
         float: left;
         width: 50%;
-        padding: 50px;
-        height: 540px;
-        width: 500px;
+        padding: 40px 40px;
+        height: 550px;
+        width: 1100px;
         margin-top: 0px;
         margin-left: 200px;
-    }
-    
-    .box2 {
-        float: left;
-        width: 50%;
-        padding: 50px;
-        height: 540px;
-        width: 600px;
-        margin-top: 00px;
+        margin-bottom: 70px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
     }
     
     .addtocart__action {
@@ -80,7 +74,7 @@
         display: table;
     }
     
-    input[type=text],
+    input[type=number],
     select,
     textarea {
         width: 100%;
@@ -118,16 +112,16 @@
     
     .col-25 {
         float: left;
-        width: 10%;
-        margin-top: 6px;
+        width: 25%;
         margin-left: 60px;
+        margin-top: 6px;
     }
     
     .col-75 {
         float: left;
-        width: 30%;
+        width: 35%;
+        margin-left: 30px;
         margin-top: 6px;
-        margin-left: 60px;
     }
     /* Clear floats after the columns */
     
@@ -176,6 +170,7 @@
         color: black;
         border: 2px solid rgb(0, 0, 0);
         margin-left: 270px;
+        border-radius: 20px;
     }
     
     .button1:hover {
@@ -187,6 +182,10 @@
         background-color: white;
         color: black;
         border: 2px solid #008CBA;
+        margin-right: 20px;
+        margin-left: 10px;
+        border-radius: 20px;
+    
     }
     
     .button2:hover {
@@ -204,10 +203,10 @@
         }
     }
     
-    img {
+    .image img {
         margin-top: 0;
-        margin-left: 0px;
-        width: 40%;
+        margin-left: 80px;
+        width: 50%;
     }
     
     @media screen and (max-width: 600px) {
@@ -217,10 +216,6 @@
             margin-left: auto;
             width: 100%;
         }
-    }
-    
-    .image1 {
-        width: 100px;
     }
     
     .rectangle {
@@ -419,15 +414,9 @@
         cursor: pointer;
     }
 </style>
-
 <body>
-    <!--[if lte IE 9]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-	<![endif]-->
-
     <!-- Main wrapper -->
     <div class="wrapper" id="wrapper">
-
         <!-- Header -->
         <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
             <div class="container-fluid">
@@ -443,57 +432,43 @@
                         <nav class="mainmenu__nav">
                             <ul class="meninmenu d-flex justify-content-start">
                                 <li class="drop with--one--item"><a href="index.html">Home</a></li>
-                                <li class="drop"><a href="#">Shop</a>
-                                    <div class="megamenu mega03">
-                                        <ul class="item item03">
-                                            <li class="title">Shop Layout</li>
-                                            <li><a href="shop-grid.html">Shop Grid</a></li>
-                                            <li><a href="single-product.html">Single Product</a></li>
+                                <li class="drop"><a href="shop-grid.html">Men</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Top Collections</li>
+                                            <li><a href="shop-grid.html">American Girl</a></li>
+                                            <li><a href="shop-grid.html">Diary Wimpy Kid</a></li>
+                                            <li><a href="shop-grid.html">Finding Dory</a></li>
+                                            <li><a href="shop-grid.html">Harry Potter</a></li>
+                                            <li><a href="shop-grid.html">Land of Stories</a></li>
                                         </ul>
-                                        <ul class="item item03">
-                                            <li class="title">Shop Page</li>
-                                            <li><a href="my-account.html">My Account</a></li>
-                                            <li><a href="cart.html">Cart Page</a></li>
-                                            <li><a href="checkout.html">Checkout Page</a></li>
-                                            <li><a href="wishlist.html">Wishlist Page</a></li>
-                                            <li><a href="error404.html">404 Page</a></li>
-                                            <li><a href="faq.html">Faq Page</a></li>
-                                        </ul>
-                                        <ul class="item item03">
-                                            <li class="title">Bargain Books</li>
-                                            <li><a href="shop-grid.html">Bargain Bestsellers</a></li>
-                                            <li><a href="shop-grid.html">Activity Kits</a></li>
-                                            <li><a href="shop-grid.html">B&N Classics</a></li>
-                                            <li><a href="shop-grid.html">Books Under $5</a></li>
-                                            <li><a href="shop-grid.html">Bargain Books</a></li>
+                                        <ul class="item item02">
+                                            <li class="title">More For Kids</li>
+                                            <li><a href="shop-grid.html">B&N Educators</a></li>
+                                            <li><a href="shop-grid.html">B&N Kids' Club</a></li>
+                                            <li><a href="shop-grid.html">Kids' Music</a></li>
+                                            <li><a href="shop-grid.html">Toys & Games</a></li>
+                                            <li><a href="shop-grid.html">Hoodies</a></li>
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="drop"><a href="shop-grid.html">Books</a>
-                                    <div class="megamenu mega03">
-                                        <ul class="item item03">
-                                            <li class="title">Categories</li>
-                                            <li><a href="shop-grid.html">Biography </a></li>
-                                            <li><a href="shop-grid.html">Business </a></li>
-                                            <li><a href="shop-grid.html">Cookbooks </a></li>
-                                            <li><a href="shop-grid.html">Health & Fitness </a></li>
-                                            <li><a href="shop-grid.html">History </a></li>
+                                <li class="drop"><a href="shop-grid.html">Women</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Top Collections</li>
+                                            <li><a href="shop-grid.html">American Girl</a></li>
+                                            <li><a href="shop-grid.html">Diary Wimpy Kid</a></li>
+                                            <li><a href="shop-grid.html">Finding Dory</a></li>
+                                            <li><a href="shop-grid.html">Harry Potter</a></li>
+                                            <li><a href="shop-grid.html">Land of Stories</a></li>
                                         </ul>
-                                        <ul class="item item03">
-                                            <li class="title">Customer Favourite</li>
-                                            <li><a href="shop-grid.html">Mystery</a></li>
-                                            <li><a href="shop-grid.html">Religion & Inspiration</a></li>
-                                            <li><a href="shop-grid.html">Romance</a></li>
-                                            <li><a href="shop-grid.html">Fiction/Fantasy</a></li>
-                                            <li><a href="shop-grid.html">Sleeveless</a></li>
-                                        </ul>
-                                        <ul class="item item03">
-                                            <li class="title">Collections</li>
-                                            <li><a href="shop-grid.html">Science </a></li>
-                                            <li><a href="shop-grid.html">Fiction/Fantasy</a></li>
-                                            <li><a href="shop-grid.html">Self-Improvemen</a></li>
-                                            <li><a href="shop-grid.html">Home & Garden</a></li>
-                                            <li><a href="shop-grid.html">Humor Books</a></li>
+                                        <ul class="item item02">
+                                            <li class="title">More For Kids</li>
+                                            <li><a href="shop-grid.html">B&N Educators</a></li>
+                                            <li><a href="shop-grid.html">B&N Kids' Club</a></li>
+                                            <li><a href="shop-grid.html">Kids' Music</a></li>
+                                            <li><a href="shop-grid.html">Toys & Games</a></li>
+                                            <li><a href="shop-grid.html">Hoodies</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -517,191 +492,101 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="drop"><a href="#">Pages</a>
-                                    <div class="megamenu dropdown">
-                                        <ul class="item item01">
-                                            <li><a href="about.html">About Page</a></li>
-                                            <li class="label2"><a href="portfolio.html">Portfolio</a>
-                                                <ul>
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="my-account.html">My Account</a></li>
-                                            <li><a href="cart.html">Cart Page</a></li>
-                                            <li><a href="checkout.html">Checkout Page</a></li>
-                                            <li><a href="wishlist.html">Wishlist Page</a></li>
-                                            <li><a href="error404.html">404 Page</a></li>
-                                            <li><a href="faq.html">Faq Page</a></li>
-                                            <li><a href="team.html">Team Page</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="drop"><a href="blog.html">Blog</a>
-                                    <div class="megamenu dropdown">
-                                        <ul class="item item01">
-                                            <li><a href="blog.html">Blog Page</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li class="drop"><a href="contact.html">Help</a>
+									<div class="megamenu dropdown">
+										<ul class="item item01">
+											<li><a href="faq.html">FAQs</a></li>
+											<li class="label2"><a href="portfolio.html">Legal & Privacy</a>
+												<ul>
+													<li><a href="portfolio.html">Portfolio</a></li>
+													<li><a href="portfolio-details.html">Portfolio Details</a></li>
+												</ul>
+											</li>
+											<li><a href="contact.html">Contact Us</a></li>
+											<li><a href="cart.html">Cart Page</a></li>
+											<li><a href="checkout.html">Checkout Page</a></li>
+											<li><a href="wishlist.html">Wishlist Page</a></li>
+											<li><a href="error404.html">404 Page</a></li>
+											<li><a href="faq.html">Faq Page</a></li>
+											<li><a href="team.html">Team Page</a></li>
+										</ul>
+									</div>
+                                </li>                            
                             </ul>
                         </nav>
                     </div>
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <li class="shop_search">
-                                <a class="search__active" href="#"></a>
+                            <li class="wishlist" id="wishlist">
+                                <a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
                             </li>
-                            <li class="wishlist">
-                                <a href="#"></a>
-                            </li>
-                            <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
-                                <!-- Start Shopping Cart -->
-                                <div class="block-minicart minicart__active">
-                                    <div class="minicart-content-wrapper">
-                                        <div class="micart__close">
-                                            <span>close</span>
-                                        </div>
-                                        <div class="items-total d-flex justify-content-between">
-                                            <span>3 items</span>
-                                            <span>Cart Subtotal</span>
-                                        </div>
-                                        <div class="total_amount text-right">
-                                            <span>$66.00</span>
-                                        </div>
-                                        <div class="mini_action checkout">
-                                            <a class="checkout__btn" href="cart.html">Go to Checkout</a>
-                                        </div>
-                                        <div class="single__items">
-                                            <div class="miniproduct">
-                                                <div class="item01 d-flex">
-                                                    <div class="thumb">
-                                                        <a href="product-details.html"><img src="images/product/sm-img/1.jpg" alt="product images"></a>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h6><a href="product-details.html">Voyage Yoga Bag</a></h6>
-                                                        <span class="prize">$30.00</span>
-                                                        <div class="product_prize d-flex justify-content-between">
-                                                            <span class="qun">Qty: 01</span>
-                                                            <ul class="d-flex justify-content-end">
-                                                                <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                                <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item01 d-flex mt--20">
-                                                    <div class="thumb">
-                                                        <a href="product-details.html"><img src="images/product/sm-img/3.jpg" alt="product images"></a>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h6><a href="product-details.html">Impulse Duffle</a></h6>
-                                                        <span class="prize">$40.00</span>
-                                                        <div class="product_prize d-flex justify-content-between">
-                                                            <span class="qun">Qty: 03</span>
-                                                            <ul class="d-flex justify-content-end">
-                                                                <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                                <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item01 d-flex mt--20">
-                                                    <div class="thumb">
-                                                        <a href="product-details.html"><img src="images/product/sm-img/2.jpg" alt="product images"></a>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h6><a href="product-details.html">Compete Track Tote</a></h6>
-                                                        <span class="prize">$40.00</span>
-                                                        <div class="product_prize d-flex justify-content-between">
-                                                            <span class="qun">Qty: 03</span>
-                                                            <ul class="d-flex justify-content-end">
-                                                                <li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>
-                                                                <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mini_action cart">
-                                            <a class="cart__btn" href="cart.html">View and edit cart</a>
-                                        </div>
+                            <li class="shopcart">
+                            <a class="cartbox_active" href="#"><span class="product_qun" id="cart_noti"></span></a>
+                            <!-- Start Shopping Cart -->
+                            <div class="block-minicart minicart__active">
+                                <div class="minicart-content-wrapper">
+                                <div class="micart__close">
+                                    <span>close</span>
+                                </div>
+                                <div class="items-total d-flex justify-content-between" id="cart_count">
+                                </div>
+                                <div class="total_amount text-right">
+                                    <span id="cart_total"></span>
+                                </div>
+                                <div class="mini_action checkout">
+                                    <a class="checkout__btn" href="cart.html">Go to Checkout</a>
+                                </div>
+                                <div class="single__items">
+                                    <div class="miniproduct" id="mini_cart">
                                     </div>
                                 </div>
-                                <!-- End Shopping Cart -->
-                            </li>
-                            <li class="setting__bar__icon">
-                                <a class="setting__active" href="#"></a>
-                                <div class="searchbar__content setting__block">
-                                    <div class="content-inner">
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Currency</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">USD - US Dollar</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>GBP - British Pound Sterling</li>
-                                                        <li>EUR - Euro</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Language</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">English01</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>English02</li>
-                                                        <li>English03</li>
-                                                        <li>English04</li>
-                                                        <li>English05</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Select Store</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">Fashion Store</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>Furniture</li>
-                                                        <li>Shoes</li>
-                                                        <li>Speaker Store</li>
-                                                        <li>Furniture</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
+                                </div>
+                            </div>
+								<!-- End Shopping Cart -->
+							</li>
+							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+								<div class="searchbar__content setting__block p-0">
+									<div class="content-inner">
+										<div class="switcher-currency">
+											<strong class="label switcher-label">
 												<span>My Account</span>
 											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <div class="setting__menu">
-                                                        <span><a href="#">Compare Product</a></span>
-                                                        <span><a href="#">My Account</a></span>
-                                                        <span><a href="#">My Wishlist</a></span>
-                                                        <span><a id="myBtn">sign in</a></span>
-                                                        <span><a id="myBtn2">Create An Account</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+											<div class="switcher-options">
+												<div class="switcher-currency-trigger">
+													<div class="setting__menu">
+														<span><a href="#">My Account</a></span>
+														<span><a href="#">My Wishlist</a></span>
+														<span><a href="login.html">Sign In</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #exampleModalCenter id="#exampleModalCenter" class = "">Track My Orders</a></span>
+														 <!-- Modal -->
+														 <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+															<div class="modal-dialog modal-dialog-centered" role="document">
+																<div class="modal-content">
+																	<div class="modal-header" style="background-color:black">
+																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: yellow; margin-left: 400px;">Track My Orders</h4>
+																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																		</button>
+																	</div>
+																	<div class="modal-body pl-2">
+																		<h6 class="pb-3 pl-2"> Email </h6>
+																		<input type="text" id="emailTracking" name="emailTracking" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																		<h6 class="pb-3 pl-2"> Order Number </h6>
+																		<input type="text" id="orderNumber" name="orderNumber" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																	</div>
+																	<div class="modal-footer" style="background-color:black">
+																		<button type="button" class="btn btn-warning" style="background-color:yellow; margin-right: 450px;">Track</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
                         </ul>
                     </div>
                 </div>
@@ -776,8 +661,11 @@
         <br>
         <br>
         <br>
-
-
+        <div class="row">
+            <div class="col-12">
+                <h3 class="account__title_shop mt-4 mb-5" style="margin-left: 200px;">Custom Size</h3>
+            </div>
+        </div>
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" onclick="window.location.href = 'upper-body.html';" role="tab" aria-controls="home" aria-selected="true">Upper Body</a>
@@ -790,91 +678,61 @@
             <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
         </div>
-
-
-
         <div class="clearfix">
             <div class="box" style="background-color:#ccc">
-                <form action="/action_page.php">
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="fname">Neck</label>
+                <div class="row">
+                    <div class="col-sm-4 col-12">
+                        <form>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="waist">Waist</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="number" id="waist" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="hip">Hip</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="number" id="hip" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="chest">Chest</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="number" id="chest" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="armLength">Arm Length</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="number" id="armLength" placeholder="">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-8 col-12">
+                        <div class="image">
+                            <img src="images/upperbodymeasurements.png" alt="shirt1">
                         </div>
-                        <div class="col-75">
-                            <input type="text" id="fname" name="firstname" placeholder="...">
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row d-flex justify-content-end mb-5">
+                            <button class="button button1">Home</button>
+                            <button class="button button2" onclick="saveSizing()">Save</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="lname">Chest</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="lname" name="lastname" placeholder="...">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="fname">Waist</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="fname" name="firstname" placeholder="...">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="fname">Shoulders</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="fname" name="firstname" placeholder="...">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="fname">Arm Size</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="fname" name="firstname" placeholder="...">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="fname">Arm Length</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="fname" name="firstname" placeholder="...">
-                        </div>
-                    </div>
-                    <!--<div class="row">
-                        <div class="col-25">
-                            <label for="country">Country</label>
-                        </div>
-                        <div class="col-75">
-                            <select id="country" name="country">
-                                        <option value="australia">Australia</option>
-                                        <option value="canada">Canada</option>
-                                        <option value="usa">USA</option>
-                                    </select>
-                        </div>
-                    </div>-->
-                </form>
-            </div>
-            <div class="box2" style="background-color:#ccc">
-                <br>
-                <br>
-                <br>
-
-                <img src="images/shirt1.png" alt="shirt1" style="width: 60%;">
-                <br>
-                <br>
-                <br>
-                <button class="button button1">Home</button>
-                <button class="button button2">Save</button>
-
-
+                </div>
             </div>
         </div>
         <div id="myModal" class="modal">
-
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -906,12 +764,10 @@
                             </form>
                         </div>
                     </div>
-
             </div>
             </section>
         </div>
         <div id="myModal2" class="modal2">
-
             <!-- Modal content -->
             <div class="modal-content2">
                 <span class="close2">&times;</span>
@@ -942,19 +798,77 @@
             </div>
             </section>
         </div>
-
+        <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+            <div class="footer-static-top">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__widget footer__menu">
+                            <div class="ft__logo">
+                                <a href="index.html">
+                                    <img class="logo" src="images/logo/black1.png" alt="logo">
+                                </a>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                            </div>
+                            <div class="footer__content">
+                                <ul class="social__net social__net--2 d-flex justify-content-center">
+                                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-google"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                                </ul>
+                                <ul class="mainmenu d-flex justify-content-center">
+                                    <li><a href="index.html">Trending</a></li>
+                                    <li><a href="index.html">Best Seller</a></li>
+                                    <li><a href="index.html">All Product</a></li>
+                                    <li><a href="index.html">Wishlist</a></li>
+                                    <li><a href="index.html">Blog</a></li>
+                                    <li><a href="index.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
     <!-- //Main wrapper -->
-
-
     <!-- JS Files -->
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/active.js"></script>
-
+    <script src="js/cart.js"></script>
+    <script src="js/cart-mini.js"></script>
     <script>
+    
+    function saveSizing() {
+        var chest = document.getElementById('chest').value;
+        var arm = document.getElementById('armLength').value;
+        var waist = document.getElementById('waist').value;
+        var hip = document.getElementById('hip').value;
+
+        var customSize = { "chest": chest
+                         , "arm": arm
+                         , "waist": waist
+                         , "hip": hip
+                         };
+
+        localStorage.setItem('custom_top', JSON.stringify(customSize));
+        console.log(customSize)
+    }
+
+    </script>
+    <script>
+        var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+		if (wishlist.length != 0) {
+			document.getElementById("wishlist_noti").innerHTML = wishlist.length;
+		}
+		else {
+			empty += '<a class="wishlist_active" href="wishlist.html"></a>';
+			document.getElementById("wishlist").innerHTML = empty;
+		}
         // Get the modal
         var modal = document.getElementById("myModal");
 
@@ -964,10 +878,10 @@
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
+        // // When the user clicks the button, open the modal 
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        // }
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
@@ -992,10 +906,10 @@
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close2")[0];
 
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-            modal2.style.display = "block";
-        }
+        // // When the user clicks the button, open the modal 
+        // btn.onclick = function() {
+        //     modal2.style.display = "block";
+        // }
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {

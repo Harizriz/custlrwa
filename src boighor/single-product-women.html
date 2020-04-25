@@ -201,75 +201,49 @@
                               </div>
                               <!-- End Shopping Cart -->
                             </li>
-                            <li class="setting__bar__icon">
-                                <a class="setting__active" href="#"></a>
-                                <div class="searchbar__content setting__block">
-                                    <div class="content-inner">
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Currency</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">USD - US Dollar</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>GBP - British Pound Sterling</li>
-                                                        <li>EUR - Euro</li>
-                                                    </ul>
+                            <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+                              <div class="searchbar__content setting__block p-0">
+                                 <div class="content-inner">
+                                    <div class="switcher-currency">
+                                       <strong class="label switcher-label">
+                                          <span>My Account</span>
+                                       </strong>
+                                       <div class="switcher-options">
+                                          <div class="switcher-currency-trigger">
+                                             <div class="setting__menu">
+                                                <span><a href="#">My Account</a></span>
+                                                <span><a href="#">My Wishlist</a></span>
+                                                <span><a href="login.html">Sign In</a></span>
+                                                <span><a href="#exampleModalCenter" data-toggle="modal" data-target= #exampleModalCenter id="#exampleModalCenter" class = "">Track My Orders</a></span>
+                                                 <!-- Modal -->
+                                                 <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                   <div class="modal-dialog modal-dialog-centered" role="document">
+                                                      <div class="modal-content">
+                                                         <div class="modal-header" style="background-color:black">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle" style="color: yellow; margin-left: 400px;">Track My Orders</h4>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                         </div>
+                                                         <div class="modal-body pl-2">
+                                                            <h6 class="pb-3 pl-2"> Email </h6>
+                                                            <input type="text" id="emailTracking" name="emailTracking" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+                                                            <h6 class="pb-3 pl-2"> Order Number </h6>
+                                                            <input type="text" id="orderNumber" name="orderNumber" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+                                                         </div>
+                                                         <div class="modal-footer" style="background-color:black">
+                                                            <button type="button" class="btn btn-warning" style="background-color:yellow; margin-right: 450px;">Track</button>
+                                                         </div>
+                                                      </div>
+                                                   </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Language</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">English01</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>English02</li>
-                                                        <li>English03</li>
-                                                        <li>English04</li>
-                                                        <li>English05</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Select Store</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">Fashion Store</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>Furniture</li>
-                                                        <li>Shoes</li>
-                                                        <li>Speaker Store</li>
-                                                        <li>Furniture</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>My Account</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <div class="setting__menu">
-                                                        <span><a href="#">Compare Product</a></span>
-                                                        <span><a href="#">My Account</a></span>
-                                                        <span><a href="#">My Wishlist</a></span>
-                                                        <span><a href="#">Sign In</a></span>
-                                                        <span><a href="#">Create An Account</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                             </div>
+                                          </div>
+                                       </div>
                                     </div>
-                                </div>
-                            </li>
+                                 </div>
+                              </div>
+                           </li>
                         </ul>
                     </div>
                 </div>
@@ -1520,7 +1494,7 @@
       pageData = JSON.parse(sessionStorage.getItem("pageRespData"));
       
       var sizingDefault = pageData.sizing_type
-      var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category, pageData.subcatego);
+      var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category, pageData.subcategory);
       document.getElementById("sizingRegionDropdownButton").innerHTML = sizingDefault;
       //console.log(sizing_chart);
       // aria-labelledby="International"
@@ -1775,6 +1749,20 @@
       };
 
       getReview('http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id);
+      
+      if (reviewData.count > 0){
+         var avg_stars = 0
+         for (i = 0; i < reviewData.count; i++){
+            var review = reviewData.results[i];
+            stars += review.quality;
+            stars += review.price;
+            stars += review.value;
+            stars = stars/3;
+            avg_stars += stars;
+         }
+         avg_stars = avg_stars/reviewData.count
+         //TODO setelementbyid on the stars display
+      }
 
       var quality, price, value = 1;
       function setQualityStar(clicked_id){
