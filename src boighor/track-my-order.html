@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>FITTR</title>
+    <title>Track My Order</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,9 +13,9 @@
     <link rel="apple-touch-icon" href="images/icon.png">
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -27,81 +27,620 @@
 
     <!-- Modernizer js -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />-->
 </head>
 <style>
-    .zoom {
-        padding: 50px;
-        background-color: black;
-        transition: transform .2s;
-        width: 350px;
-        height: 600px;
-        margin-left: 30px;
-    }
-    
-    @media screen and (max-width: 1200px) {
-        .zoom,
-        input[type=submit] {
-            margin-left: 10px;
-        }
-    }
-    
-    .zoom2 {
-        padding: 50px;
-        background-color: black;
-        transition: transform .2s;
-        width: 350px;
-        height: 600px;
-        margin-left: 80px;
-    }
-    
-    @media screen and (max-width: 1200px) {
-        .zoom2,
-        input[type=submit] {
-            margin-left: 10px;
-        }
-    }
-    
-    .zoom3 {
-        padding: 50px;
-        background-color: black;
-        transition: transform .2s;
-        width: 350px;
-        height: 600px;
-        margin-left: 120px;
-    }
-    
-    @media screen and (max-width: 1200px) {
-        .zoom3,
-        input[type=submit] {
-            margin-left: 5px;
-        }
-    }
-    
-    .zoom:hover {
-        -ms-transform: scale(1.5);
-        /* IE 9 */
-        -webkit-transform: scale(1.5);
-        /* Safari 3-8 */
-        transform: scale(1.07);
-    }
-    
-    .zoom2:hover {
-        -ms-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        transform: scale(1.07);
-    }
-    
-    .zoom3:hover {
-        -ms-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        transform: scale(1.07);
-    }
-    
     .button {
-        background-color: rgb(255, 255, 255);
+        background-color: #fbff00;
         border: none;
+        color: rgb(2, 2, 2);
+        text-align: center;
+        height: 30px;
+        font-size: 16px;
+        margin: 4px 2px;
+        opacity: 0.6;
+        transition: 0.3s;
+        display: inline-block;
         text-decoration: none;
         cursor: pointer;
+    }
+    
+    .button:hover {
+        opacity: 1
+    }
+    
+    input {
+        height: 30px;
+    }
+    
+    label {
+        color: #fafafa;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .clear {
+        clear: both;
+    }
+    
+    .header {
+        margin-top: 7%;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 25px;
+        text-transform: uppercase;
+        color: grey;
+    }
+    
+    .content {
+        width: 60%;
+        margin: 3% auto 0 auto;
+        height: 460px;
+        background-color: #F5F5F5;
+    }
+    
+    .content1 {
+        background-color: #0e0e0e;
+        text-align: center;
+        padding: 2em;
+    }
+    
+    .content1 h2 {
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        margin-top: 10px;
+        color: #fff;
+    }
+    
+    .content1 h3 {
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 10px;
+        color: #fff;
+    }
+    
+    .content2 {
+        background-color: #393a38;
+    }
+    
+    .content2-header1 {
+        float: left;
+        width: 27%;
+        text-align: center;
+        padding: 1.5em;
+    }
+    
+    .content2-header1 p {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        margin: 0;
+    }
+    
+    .content2-header1 span {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .shipment {
+        width: 100%;
+        margin-top: 10%;
+    }
+    
+    span.line {
+        height: 5px;
+        width: 90px;
+        background-color: #F5998E;
+        display: block;
+        position: absolute;
+        top: 28%;
+        left: 45%;
+    }
+    
+    .confirm {
+        text-align: center;
+        width: 20%;
+        position: relative;
+        float: left;
+        margin-left: 5%;
+    }
+    
+    .confirm .imgcircle,
+    .process .imgcircle,
+    .quality .imgcircle {
+        background-color: #98D091;
+    }
+    
+    .confirm span.line,
+    .process span.line {
+        background-color: #98D091;
+    }
+    
+    .content3 p {
+        margin-left: -50%;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    
+    .imgcircle {
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        background-color: #F5998E;
+        position: relative;
+    }
+    
+    .imgcircle img {
+        height: 30px;
+        position: absolute;
+        top: 28%;
+        left: 30%;
+    }
+    
+    .process {
+        position: relative;
+        width: 20%;
+        text-align: center;
+        float: left;
+    }
+    
+    .quality {
+        position: relative;
+        width: 20%;
+        text-align: center;
+        float: left;
+    }
+    
+    .dispatch {
+        position: relative;
+        width: 20%;
+        text-align: center;
+        float: left;
+    }
+    
+    .delivery {
+        position: relative;
+        width: 20%;
+        text-align: center;
+        float: left;
+        margin-right: -9%;
+    }
+    /*---- responsive-design -----------------------------------------------------------------------------------------------------*/
+    
+    @media(max-width:1920px) {
+        span.line {
+            width: 157px;
+            left: 32%;
+        }
+        .shipment {
+            margin-top: 6%;
+        }
+        .content3 p {
+            margin-left: -65%;
+        }
+    }
+    
+    @media(max-width:1366px) {
+        .header {
+            margin-top: 15%;
+        }
+    }
+    
+    @media(max-width:1680px) {
+        .content3 p {
+            margin-left: -60%;
+        }
+        span.line {
+            width: 127px;
+            left: 37%;
+        }
+    }
+    
+    @media(max-width:1600px) {
+        span.line {
+            width: 117px;
+            left: 39%;
+        }
+    }
+    
+    @media(max-width:1440px) {
+        .content3 p {
+            margin-left: -53%;
+        }
+        span.line {
+            width: 99px;
+            left: 43%;
+        }
+    }
+    
+    @media (max-width: 1366px) {
+        span.line {
+            width: 90px;
+            left: 45%;
+        }
+        .shipment {
+            margin-top: 10%;
+        }
+    }
+    
+    @media (max-width: 1280px) {
+        span.line {
+            width: 80px;
+            left: 48%;
+            top: 29%;
+        }
+    }
+    
+    @media (max-width: 1080px) {
+        .content {
+            width: 75%;
+        }
+        span.line {
+            width: 88px;
+            left: 46%;
+        }
+    }
+    
+    @media (max-width: 1050px) {
+        span.line {
+            width: 84px;
+            left: 47%;
+        }
+    }
+    
+    @media (max-width: 1024px) {
+        .content {
+            width: 77%;
+        }
+        .content3 p {
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 991px) {
+        .content {
+            width: 80%;
+        }
+        span.line {
+            width: 84px;
+            left: 47%;
+        }
+    }
+    
+    @media (max-width: 900px) {
+        .content {
+            width: 85%;
+        }
+        span.line {
+            width: 78px;
+            left: 49%;
+        }
+    }
+    
+    @media (max-width: 800px) {
+        .content {
+            width: 95%;
+        }
+        .content2-header1 p {
+            margin: 0 0 0 -7%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .content {
+            width: 90%;
+        }
+        .content2-header1 {
+            width: 25%;
+        }
+        .content2-header1 p {
+            margin: 0 -19% 0 -10%;
+        }
+        span.line {
+            width: 72px;
+            left: 51%;
+        }
+    }
+    
+    @media (max-width: 736px) {
+        span.line {
+            width: 62px;
+            left: 55%;
+        }
+    }
+    
+    @media (max-width: 667px) {
+        .content2-header1 p {
+            font-size: 14px;
+        }
+        .content2-header1 span {
+            font-size: 13px;
+        }
+        .shipment {
+            margin-top: 13%;
+        }
+        .content3 p {
+            font-size: 12px;
+            margin-left: -35%;
+        }
+        .confirm {
+            margin-left: 4%;
+        }
+        span.line {
+            width: 49px;
+            left: 60%;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .content1 {
+            padding: 1.2em;
+        }
+        .content2-header1 p {
+            font-size: 13px;
+        }
+        .content2-header1 span {
+            font-size: 12px;
+        }
+        .content2-header1 {
+            width: 24%;
+        }
+        .imgcircle {
+            height: 65px;
+            width: 65px;
+        }
+        .imgcircle img {
+            top: 26%;
+            left: 27%;
+        }
+        .content3 p {
+            margin-left: -38%;
+            font-size: 11px;
+        }
+        .content {
+            height: 395px;
+        }
+        span.line {
+            width: 50px;
+            left: 58%;
+        }
+    }
+    
+    @media (max-width: 568px) {
+        .content {
+            height: 380px;
+        }
+        .content1 {
+            padding: 1em;
+        }
+        span.line {
+            width: 56px;
+            left: 47%;
+        }
+        .content2-header1 {
+            width: 23%;
+        }
+        .imgcircle {
+            height: 50px;
+            width: 50px;
+        }
+        .imgcircle img {
+            height: 25px;
+            top: 27%;
+            left: 25%;
+        }
+        .content3 p {
+            font-size: 10px;
+            margin-left: -46%;
+        }
+        .confirm {
+            margin-left: 5%;
+        }
+    }
+    
+    @media (max-width: 414px) {
+        .header {
+            margin-top: 8%;
+        }
+        .content {
+            width: 100%;
+            height: 750px;
+            margin-top: 9%;
+            padding: 10%;
+        }
+        .content1 {
+            margin: -14% 0 0 -14%;
+            width: 130%;
+        }
+        .content1 h2 {
+            font-size: 22px;
+        }
+        .content2 {
+            margin-left: -14%;
+            width: 127.5%;
+        }
+        .content2-header1 {
+            padding: 0.7em;
+            width: 80%;
+            margin-left: 3%;
+        }
+        .content2-header1 p {
+            font-size: 19px;
+        }
+        .content2-header1 span {
+            font-size: 16px;
+        }
+        .confirm {
+            width: 100%;
+        }
+        .process {
+            width: 100%;
+            margin: 22% 0 0 5%;
+        }
+        .quality {
+            width: 100%;
+            margin: 22% 0 0 5%;
+        }
+        .dispatch {
+            width: 100%;
+            margin: 22% 0 0 5%;
+        }
+        .delivery {
+            width: 100%;
+            margin: 22% 0 0 5%;
+        }
+        .imgcircle {
+            height: 70px;
+            width: 70px;
+            margin-left: 35%;
+        }
+        .imgcircle img {
+            height: 30px;
+            top: 27%;
+            left: 28%;
+        }
+        span.line {
+            width: 6px;
+            left: 46%;
+            height: 48px;
+            top: 124%;
+        }
+        .content3 p {
+            font-size: 15px;
+            margin: -16% 0 4% -81%;
+        }
+        .shipment {
+            margin-left: 16%;
+        }
+        .footer {
+            padding: 1%;
+        }
+        .footer p {
+            font-size: 16px;
+        }
+    }
+    
+    @media (max-width: 384px) {
+        .header {
+            margin-top: 9%;
+        }
+        .content1 {
+            width: 115%;
+        }
+        .content1 h2 {
+            font-size: 21px;
+        }
+        .content3 p {
+            margin: -18% 0 6% -85%;
+        }
+        .shipment {
+            margin-top: 15%;
+        }
+        span.line {
+            top: 118%;
+            left: 47%;
+            height: 47px;
+        }
+        .content {
+            height: 770px;
+        }
+        .footer {
+            padding: 3%;
+        }
+        .footer p {
+            font-size: 15px;
+        }
+    }
+    
+    @media (max-width: 375px) {
+        .content {
+            height: 755px;
+            width: 68%;
+        }
+        .content2 {
+            width: 128%;
+        }
+        .content1 h2 {
+            font-size: 19px;
+        }
+        .content3 p {
+            margin: -18% 0 8% -86%;
+        }
+        span.line {
+            top: 105%;
+            left: 47.5%;
+            height: 52px;
+        }
+        .shipment {
+            margin-left: 17%;
+        }
+    }
+    
+    @media (max-width: 320px) {
+        .header {
+            margin-top: 10%;
+        }
+        .content {
+            width: 66%;
+            margin-top: 10%;
+            padding: 12%;
+            height: 709px;
+        }
+        .content1 {
+            padding: 0.7em;
+            width: 125%;
+            margin: -18% 0 0 -18%;
+        }
+        .header h1 {
+            font-size: 30px;
+        }
+        .content2 {
+            margin-left: -18%;
+            width: 136.5%;
+        }
+        .content1 h2 {
+            font-size: 16px;
+        }
+        .content2-header1 span {
+            font-size: 15px;
+        }
+        .content3 p {
+            margin: -23% 0 12% -99%;
+        }
+        .shipment {
+            margin: 16% 0 0 19%;
+        }
+        span.line {
+            top: 102%;
+            left: 50%;
+            height: 44px;
+        }
+        .footer {
+            margin-top: 1%;
+        }
+        .footer p {
+            font-size: 14px;
+        }
     }
 </style>
 
@@ -119,7 +658,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-7 col-lg-2">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="index-men.html">
                                 <img src="images/logo/yellow1.png" alt="logo images">
                             </a>
                         </div>
@@ -127,7 +666,7 @@
                     <div class="col-lg-8 d-none d-lg-block">
                         <nav class="mainmenu__nav">
                             <ul class="meninmenu d-flex justify-content-start">
-                                <li class="drop with--one--item"><a href="index.html">Home</a></li>
+                                <li class="drop with--one--item"><a href="index-men.html">Home</a></li>
                                 <li class="drop"><a href="#">Shop</a>
                                     <div class="megamenu mega03">
                                         <ul class="item item03">
@@ -230,7 +769,26 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li class="drop"><a href="contact.html">Help</a>
+                                    <div class="megamenu dropdown">
+                                        <ul class="item item01">
+                                            <li><a href="faq.html">FAQs</a></li>
+                                            <li class="label2"><a href="portfolio.html">Legal & Privacy</a>
+                                                <ul>
+                                                    <li><a href="portfolio.html">Portfolio</a></li>
+                                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                            <li><a href="cart.html">Cart Page</a></li>
+                                            <li><a href="checkout.html">Checkout Page</a></li>
+                                            <li><a href="wishlist.html">Wishlist Page</a></li>
+                                            <li><a href="error404.html">404 Page</a></li>
+                                            <li><a href="faq.html">Faq Page</a></li>
+                                            <li><a href="team.html">Team Page</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -453,134 +1011,81 @@
             </div>
         </div>
         <!-- End Search Popup -->
-        <!-- Start Bradcaump area --
-        <div class="ht__bradcaump__area bg-image--">
-            <div class="container">
-                <div class="row">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="images/logo/yellow1.png" alt="logo images">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <-- End Bradcaump area -->
-        <!-- Start Portfolio Area -->
-        <section class="wn__portfolio__area gallery__masonry__activation bg--white mt--40 pb--100">
-            <!-- <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="gallery__menu">
-                            <button data-filter="*" class="is-checked">Filter - All</button>
-                            <button data-filter=".cat--1">Company News</button>
-                            <button data-filter=".cat--2">Computers</button>
-                            <button data-filter=".cat--3">General News</button>
-                            <button data-filter=".cat--4">Hipster Content</button>
-                            <button data-filter=".cat--5">Just Food</button>
-                        </div>
-                    </div>
-                </div> -->
-            <div class="row masonry__wrap">
-                <!-- Start Single Portfolio -->
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--1 p-0 pl-1">
-                    <div class="portfolio">
-                        <div class="thumb">
-                            <a href="search-page-men.html" class="button">
-                                <div class="zoom">
-                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                        <b>MEN</b>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Portfolio -->
-                <!-- Start Single Portfolio -->
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--2 p-0 pl-1">
-                    <div class="portfolio">
-                        <div class="thumb">
-                            <a href="search-page-women.html" class="button">
-                                <div class="zoom2">
-                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                        <b>WOMEN</b>
-                                    </p>
-                                </div>
-                            </a>
+        <!-- Start Bradcaump area -->
+        <!-- End Bradcaump area -->
+        <!------------------------------------------------------------------- Start Contact Area ----------------------------------------------------------->
 
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Portfolio -->
-                <!-- Start Single Portfolio -->
-                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 gallery__item cat--3 p-0 pl-2">
-                    <div class="portfolio">
-                        <div class="thumb">
-                            <a href="search-page-kids.html" class="button">
-                                <div class="zoom3">
-                                    <p style="color: yellow; font-size: 30px;font-family:Arial;text-align: center; margin-top: 200px;">
-                                        <b>KIDS</b>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Portfolio -->
+        <body>
+
+            <div class="header">
+                <h1>Track My Order</h1>
             </div>
-    </div>
-    </section>
-    <!-- End Portfolio Area -->
-    <!-- Footer Area -->
-    <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
-        <div class="footer-static-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer__widget footer__menu">
-                            <div class="ft__logo">
-                                <a href="index.html">
-                                    <img src="images/logo/black1.png" alt="logo">
-                                </a>
-                                <p></p>
+
+            <div class="content">
+                <div class="content1">
+                    <form action="/action_page.php">
+                        <label for="fname"><h3>Enter Your Order Number:</h3></label><br>
+                        <input type="text" id="fname" name="fname">
+                        <button class="button">Submit</button>
+                    </form>
+                    <h2>Order Tracking: Order No</h2>
+                </div>
+                <div class="content2">
+                    <div class="content2-header1">
+                        <p>Shipped Via : <span>XXX</span></p>
+                    </div>
+                    <!---- <div class="content2-header1">
+                        <p>Status : <span>Checking Quality</span></p>
+                    </div>-->
+                    <div class="content2-header1">
+                        <p>Expected Date : <span>7-NOV-2015</span></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="content3">
+                    <div class="shipment">
+                        <div class="confirm">
+                            <div class="imgcircle">
+                                <img src="images/confirm.png" alt="confirm order">
                             </div>
-                            <div class="footer__content">
-                                <ul class="social__net social__net--2 d-flex justify-content-center">
-                                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-google"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="bi bi-youtube"></i></a></li>
-                                </ul>
-                                <ul class="mainmenu d-flex justify-content-center">
-                                    <li><a href="index.html">Trending</a></li>
-                                    <li><a href="index.html">Best Seller</a></li>
-                                    <li><a href="index.html">All Product</a></li>
-                                    <li><a href="index.html">Wishlist</a></li>
-                                    <li><a href="index.html">Blog</a></li>
-                                    <li><a href="index.html">Contact</a></li>
-                                </ul>
-                            </div>
+                            <span class="line"></span>
+                            <p>Confirmed Order</p>
                         </div>
+                        <div class="process">
+                            <div class="imgcircle">
+                                <img src="images/process.png" alt="process order">
+                            </div>
+                            <span class="line"></span>
+                            <p>Processing Order</p>
+                        </div>
+                        <!--- <div class="quality">
+                            <div class="imgcircle">
+                                <img src="images/quality.png" alt="quality check">
+                            </div>
+                            <span class="line"></span>
+                            <p>Quality Check</p>
+                        </div>-->
+                        <div class="dispatch">
+                            <div class="imgcircle">
+                                <img src="images/dispatch.png" alt="dispatch product">
+                            </div>
+                            <span class="line"></span>
+                            <p>Dispatched Item</p>
+                        </div>
+                        <div class="delivery">
+                            <div class="imgcircle">
+                                <img src="images/delivery.png" alt="delivery">
+                            </div>
+                            <p>Product Delivered</p>
+                        </div>
+                        <div class="clear"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- //Footer Area -->
 
-    </div>
-    <!-- //Main wrapper -->
-
-
-    <!-- JS Files -->
-    <script src="js/vendor/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/active.js"></script>
+        </body>
 
 </body>
+
 
 </html>

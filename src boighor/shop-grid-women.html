@@ -51,7 +51,6 @@
                     <div class="col-lg-8 d-none d-lg-block">
 						<nav class="mainmenu__nav">
 							<ul class="meninmenu d-flex justify-content-start">
-								<li class="drop with--one--item"><a href="index.html">Home</a></li>
 								<li class="drop"><a href="#">Shop</a>
 									<div class="megamenu mega03">
 										<ul class="item item03">
@@ -77,8 +76,9 @@
 											<li><a href="shop-grid.html">Bargain Books</a></li>
 										</ul>
 									</div>
-								</li>
-								<li class="drop"><a href="shop-grid.html">Books</a>
+                                </li>
+                                <!-- Occasions -->
+								<!-- <li class="drop"><a href="shop-grid.html">Books</a>
 									<div class="megamenu mega03">
 										<ul class="item item03">
 											<li class="title">Categories</li>
@@ -105,7 +105,7 @@
 											<li><a href="shop-grid.html">Humor Books</a></li>
 										</ul>
 									</div>
-								</li>
+								</li> -->
 								<li class="drop"><a href="index-men.html">Men</a>
 									<div class="megamenu mega02">
 										<ul class="item item02">
@@ -146,7 +146,7 @@
 										</ul>
 									</div>
 								</li>
-								<li class="drop"><a href="#">Pages</a>
+								<!-- <li class="drop"><a href="#">Pages</a>
 									<div class="megamenu dropdown">
 										<ul class="item item01">
 											<li><a href="about.html">About Page</a></li>
@@ -165,7 +165,7 @@
 											<li><a href="team.html">Team Page</a></li>
 										</ul>
 									</div>
-								</li>
+								</li> -->
 								<li class="drop"><a href="blog.html">Blog</a>
 									<div class="megamenu dropdown">
 										<ul class="item item01">
@@ -174,111 +174,100 @@
 										</ul>
 									</div>
 								</li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
+                                <li class="drop"><a href="contact.html">Help</a>
+									<div class="megamenu dropdown">
+										<ul class="item item01">
+											<li><a href="faq.html">FAQs</a></li>
+											<li class="label2"><a href="terms-and-conditions.html">Legal & Privacy</a>
+												<ul>
+													<li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+													<li><a href="privacy-and-cookies.html">Privacy and Cookies</a></li>
+												</ul>
+											</li>
+											<li><a href="contact.html">Contact Us</a></li>
+											<li><a href="cart.html">Cart Page</a></li>
+											<li><a href="checkout.html">Checkout Page</a></li>
+											<li><a href="wishlist.html">Wishlist Page</a></li>
+											<li><a href="error404.html">404 Page</a></li>
+											<li><a href="faq.html">Faq Page</a></li>
+											<li><a href="team.html">Team Page</a></li>
+										</ul>
+									</div>
+                                </li>							
+                            </ul>
 						</nav>
 					</div>
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <li class="shop_search">
-                                <a class="search__active" href="#"></a>
-                            </li>
                             <li class="wishlist" id="wishlist">
-								<a class="wishlist_active" href="#"><span class="product_qun" id="wishlist_noti"></span></a>
+								<a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
 							</li>
 							<li class="shopcart" id="shopcart">
 								<a class="cartbox_active" href="cart.html"><span class="product_qun" id="cart_noti"></span></a>
-                            <!-- Start Shopping Cart -->
-                            <div class="block-minicart minicart__active">
-                                <div class="minicart-content-wrapper">
-                                    <div class="micart__close">
-                                        <span>close</span>
-                                    </div>
-                                    <div class="items-total d-flex justify-content-between" id="cart_count">
-                                    </div>
-                                    <div class="total_amount text-right">
-                                        <span id="cart_total"></span>
-                                    </div>
-                                    <div class="mini_action checkout">
-                                        <a class="checkout__btn" href="cart.html">Go to Checkout</a>
-                                    </div>
-                                    <div class="single__items">
-                                        <div class="miniproduct" id="mini_cart">
+                                <!-- Start Shopping Cart -->
+                                <div class="block-minicart minicart__active">
+                                    <div class="minicart-content-wrapper">
+                                        <div class="micart__close">
+                                            <span>close</span>
+                                        </div>
+                                        <div class="items-total d-flex justify-content-between" id="cart_count">
+                                        </div>
+                                        <div class="total_amount text-right">
+                                            <span id="cart_total"></span>
+                                        </div>
+                                        <div class="mini_action checkout">
+                                            <a class="checkout__btn" href="cart.html">Go to Checkout</a>
+                                        </div>
+                                        <div class="single__items">
+                                            <div class="miniproduct" id="mini_cart">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             <!-- End Shopping Cart -->
-                            </li>
-                            <li class="setting__bar__icon">
-                                <a class="setting__active" href="#"></a>
-                                <div class="searchbar__content setting__block">
-                                    <div class="content-inner">
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Currency</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">USD - US Dollar</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>GBP - British Pound Sterling</li>
-                                                        <li>EUR - Euro</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Language</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">English01</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>English02</li>
-                                                        <li>English03</li>
-                                                        <li>English04</li>
-                                                        <li>English05</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Select Store</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">Fashion Store</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>Furniture</li>
-                                                        <li>Shoes</li>
-                                                        <li>Speaker Store</li>
-                                                        <li>Furniture</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
+                            <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+								<div class="searchbar__content setting__block p-0">
+									<div class="content-inner">
+										<div class="switcher-currency">
+											<strong class="label switcher-label">
 												<span>My Account</span>
 											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <div class="setting__menu">
-                                                        <span><a href="#">Compare Product</a></span>
-                                                        <span><a href="#">My Account</a></span>
-                                                        <span><a href="#">My Wishlist</a></span>
-                                                        <span><a href="#">Sign In</a></span>
-                                                        <span><a href="#">Create An Account</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+											<div class="switcher-options">
+												<div class="switcher-currency-trigger">
+													<div class="setting__menu">
+														<span><a href="#">My Account</a></span>
+														<span><a href="#">My Wishlist</a></span>
+														<span><a href="login.html">Sign In</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #exampleModalCenter id="#exampleModalCenter" class = "">Track My Orders</a></span>
+														 <!-- Modal -->
+														 <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+															<div class="modal-dialog modal-dialog-centered" role="document">
+																<div class="modal-content">
+																	<div class="modal-header" style="background-color:black">
+																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: yellow; margin-left: 400px;">Track My Orders</h4>
+																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																		</button>
+																	</div>
+																	<div class="modal-body pl-2">
+																		<h6 class="pb-3 pl-2"> Email </h6>
+																		<input type="text" id="emailTracking" name="emailTracking" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																		<h6 class="pb-3 pl-2"> Order Number </h6>
+																		<input type="text" id="orderNumber" name="orderNumber" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																	</div>
+																	<div class="modal-footer" style="background-color:black">
+																		<button type="button" class="btn btn-warning" style="background-color:yellow; margin-right: 450px;">Track</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
                         </ul>
                     </div>
                 </div>
@@ -331,19 +320,6 @@
         </header>
         <!-- //Header -->
         <!-- Start Search Popup -->
-        <div class="brown--color box-search-content search_active block-bg close__top">
-			<form id="search_mini_form" class="minisearch" action="#" onsubmit="return false">
-				<div class="field__search">
-					<input type="search" placeholder="Search entire store here..." name="search_value" id="search_bar" onsearch="search()">
-					<div class="action">
-						<button class="btn btn-light-inverse" type="submit" onclick="search()"><i class="zmdi zmdi-search"></i></button>
-					</div>
-				</div>
-			</form>
-			<div class="close__wrap">
-				<span>close</span>
-			</div>
-		</div>
         <!-- End Search Popup -->
         <!-- Start Bradcaump area  -->
         <!-- <div class="ht__bradcaump__area bg-image--6">
@@ -366,11 +342,23 @@
         <!-- Start Shop Page -->
         <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
             <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="portfolio.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="search-page-women.html">Search</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Shop Grid</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
                 <div class="row sidebar">
                     <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
                         <div class="shop__sidebar">
+                            <h3 class="account__title_shop">Shop Grid</h3>
                             <aside class="wedget__categories poroduct--cat">
-                                <h3 class="wedget__title">Product Categories</h3>
+                                <h3 class="wedget__title_shop mb-0">Product Categories</h3>
                                 <ul>
                                     <li>
                                         <a href="#sub" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Brand <span id="brand_count"></span></b></a>
@@ -395,9 +383,9 @@
         						                        <button class="btn btn-light-inverse mt-2" type="submit" onclick="filterBtn()">Filter</button>
                                                         <button class="btn btn-light-inverse mt-2" type="submit" onclick="resetFilterBtn()">Reset Filter</button>
         						                    </div>
-        						                <!-- </div>
+        						                </div>
         						            </div>
-        						        </form> -->
+        						        </form>
         						    </div>
         						</div>
         					</aside>
@@ -431,6 +419,12 @@
                     <div class="col-lg-9 col-12 order-1 order-lg-2">
                         <div class="row">
                             <div class="col-lg-12">
+                                <div class="input-group mb-4 border border-dark rounded-pill p-1">
+                                    <div class="input-group-prepend border-0">
+                                        <button id="button-addon4" type="button" class="btn btn-link text-info" onclick="search()"><i class="fa fa-search"></i></button>
+                                    </div>
+                                    <input type="search" onsearch="search()" placeholder="Searching for something else?" aria-describedby="button-addon4" class="form-control bg-none border-0" name="search_value" id="search_bar">
+                                </div>
                                 <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between mb-2">
                                     <div class="shop__list nav justify-content-center" role="tablist">
 			                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
@@ -594,6 +588,7 @@
     <script src="js/active.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/cart-mini.js"></script>
+    <script src="js/sizingChart.js"></script>
     <script>
         var current_page = sessionStorage.getItem("current_page");
         function openLink(url, page, storage){ //sends search request to backend for JSON response
@@ -618,6 +613,7 @@
 
 			// replaces white space
             search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
+			sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
@@ -648,12 +644,13 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
+                console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-women.html");
             }
             // Send request
             request.send();
-        };
+		};
         
         var respData = JSON.parse(sessionStorage.getItem("search_result"));
         var brandList = JSON.parse(sessionStorage.getItem("brand_list"));
@@ -795,12 +792,12 @@
         var request = new XMLHttpRequest()
 
         function getWishlist(){
-        var wishlist = JSON.parse(localStorage.getItem("wishlist"));
-        if (wishlist === undefined || wishlist === null){
-            wishlist = [];
-            //console.log('empty wishlist');
-        }
-        return wishlist;
+            var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+            if (wishlist === undefined || wishlist === null){
+                wishlist = [];
+                //console.log('empty wishlist');
+            }
+            return wishlist;
         }
         
         var wishlist = getWishlist();
@@ -808,20 +805,25 @@
         function updateBtn(original_site, iter){
             var wishlist_btn = '';
             if (wishlist.includes(original_site)){ //highlighted wishlist button
-               console.log('this item is on the wishlist!');
-               wishlist_btn += '<li class="cart"><a href="cart.html">Add to cart</a></li><input type="checkbox" id="btnControl"/><li id="'+ iter.toString() + '" class="wishlist"><a for="btnControl" style="background-color:#e59285;background-position:105%;border-color:#e59285;" onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
+                console.log('this item is on the wishlist!');
+                wishlist_btn += '<li class="cart"><a href="cart.html" data-toggle="modal" data-target="#exampleModalCenter">Quick View</a></li><input type="checkbox" id="btnControl"/><li id="'+ iter.toString() + '" class="wishlist">';
+                wishlist_btn += '<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">';
+                wishlist_btn += '<div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header">';
+                wishlist_btn += '<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+                wishlist_btn += '<div class="modal-body"></div>';
+                wishlist_btn += '<div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Save changes</button></div></div></div></div>';
+                wishlist_btn += '<a for="btnControl" style="background-color:#e59285;background-position:105%;border-color:#e59285;" onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
             }
             else{ //default, unhighlighted wishlist button
                console.log('this item is not on the wishlist!');
-               wishlist_btn += '<li class="cart"><a href="cart.html">Add to cart</a></li><input type="checkbox" id="btnControl"/><li id="'+ iter.toString() + '" class="wishlist"> <a onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
+               wishlist_btn += '<li class="cart"><a href="cart.html" data-toggle="modal" data-target="#exampleModalCenter">Quick View</a></li><input type="checkbox" id="wishControl"/><li id="'+ iter.toString() + '" class="wishlist"><a onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
             };
             // wishlist_btn += '</li>';
             document.getElementById(iter.toString()).innerHTML = wishlist_btn;
          };
-
+         
         function addWishlist(original_site, iter){
             var empty = '';
-            var wishlist = getWishlist();
             if (wishlist.length === 0){
                 //console.log('creating new wishlist');
                 //console.log('adding to wishlist');
@@ -841,9 +843,10 @@
                localStorage.setItem("recentCategory", respData.results[iter].category);
             };
             document.getElementById("wishlist_noti").innerHTML = wishlist.length;
-            updateBtn(original_site, iter);
             //console.log(wishlist); 
             localStorage.setItem("wishlist", JSON.stringify(wishlist));
+            wishlist = getWishlist();
+            updateBtn(original_site, iter);
             //console.log('wishlist updated'); 
         };
 
@@ -902,7 +905,7 @@
                 list += '</div><div class="content"><h2><a '+ onclicktext +'>'
                 list += respData.results[x_list].product_name +'</a></h2><ul class="rating d-flex"><li class="on"><i class="fa fa-star-o"></i></li><li class="on">'
                 list += '<i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li>'
-                list += '<i class="fa fa-star-o"></i></li><li><i class="fa fa-star-o"></i></li></ul><ul class="prize__box"><li>' + respData.results[x_list].currency
+                list += '<i class="fa fa-star-o"></i></li></ul><ul class="prize__box"><li>' + respData.results[x_list].currency
                 list += '&nbsp;' + respData.results[x_list].price + '</li></ul>';
                 if (respData.results[x_list].product_description != null) {
                     list += '<p>'+ respData.results[x_list].product_description +'</p><ul id="'+ x_list.toString() +'" class="cart__action d-flex">';
@@ -929,8 +932,8 @@
             document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
             document.getElementById("nav-grid").innerHTML = grid; // inserts products in from JSON response of search
             document.getElementById("nav-list").innerHTML = list; // inserts products in from JSON response of search
-            for (x_list in respData.results){
-                updateBtn(respData.results[x_list].original_site, x_list);
+            for (i=0; i<respData.results.length; i++){
+                updateBtn(respData.results[i].original_site, i);
             };
         }
         else{

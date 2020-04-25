@@ -60,7 +60,6 @@ class Cart{
     }
     /*
     *Sum cost of items in cart
-    *TODO - get price into object
     */
     sum(){
        var sum = 0;
