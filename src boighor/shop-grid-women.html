@@ -366,6 +366,12 @@
                                             <li id="brand_dropdown"></li>
                                         </ul>
                                     </li>
+                                    <li>
+                                        <a href="#size" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Size </b></a>
+                                        <ul class="collapse list-unstyled" id="size">
+                                            <li id="size_dropdown"></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </aside>
                             <aside class="wedget__categories pro--range">
@@ -427,7 +433,6 @@
                                 </div>
                                 <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between mb-2">
                                     <div class="shop__list nav justify-content-center" role="tablist">
-			                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
                                     </div>
 			                        <p id="show_results"></p>
                                     <div class="orderby__wrapper" >
@@ -845,6 +850,7 @@
             var showNum = '';
             var brand = '';
             var count = '';
+            var size = '';
             current_page = sessionStorage.getItem("current_page");
 
             showNum += '<p>'
@@ -864,6 +870,18 @@
                 brand += "<li><a onclick=\"openLink('"+ search_url + "', '"+ search_page +"','" + result_storage + "')\">" + brandList[x_brand] + "</a></li>";
             };
             brand += '</li>';
+            
+            var sizeList = ['XS', 'S', 'M', 'L', 'XL']
+            
+            size += '<li class="pb-2">'
+            for (x_size in sizeList){
+                url = sessionStorage.getItem("search_term")
+                var search_url = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&intl=' + sizeList[x_size]
+                var search_page = 'shop-grid-women.html'
+                var result_storage = 'search_result'
+                size += "<li><a onclick=\"openLink('"+ search_url + "', '"+ search_page +"','" + result_storage + "')\">" + sizeList[x_size] + "</a></li>";
+            };
+            size += '</li>'; 
 
             grid += '<div class="row">';
             for (x_grid in respData.results){
@@ -886,8 +904,9 @@
             document.getElementById("brand_count").innerHTML = count; // inserts products in from JSON response of search
             document.getElementById("brand_dropdown").innerHTML = brand; // inserts products in from JSON response of search
             document.getElementById("show_results").innerHTML = showNum; // inserts products in from JSON response of search
-            document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
             document.getElementById("nav-grid").innerHTML = grid; // inserts products in from JSON response of search
+            document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
+            document.getElementById("size_dropdown").innerHTML = size; // inserts products in from JSON response of search
         }
         else{
             document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // inserts products in from JSON response of search
