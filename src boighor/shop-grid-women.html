@@ -428,7 +428,6 @@
                                 <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between mb-2">
                                     <div class="shop__list nav justify-content-center" role="tablist">
 			                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
                                     </div>
 			                        <p id="show_results"></p>
                                     <div class="orderby__wrapper" >
@@ -450,7 +449,6 @@
                         <!-- Start Content Page -->
                         <div class="tab__container">
                             <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel"></div>
-                            <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel"></div>
                             <div class="mt-4" id ="pagination"></div>
                         </div>
                     </div>
@@ -801,71 +799,34 @@
         }
         
         var wishlist = getWishlist();
-
-        function getProductDetail(product_id){
-            var quickView_btn = '';
-            if (respData.results.length != null){
-                quickView_btn += '<div class="modal fade" id="modal_product" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">';
-                quickView_btn += '<div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header">';
-                quickView_btn += '<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
-                quickView_btn += '<div class="modal-body">' + product_id + '</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Save changes</button>';
-                quickView_btn += ' </div></div></div></div>';
-            }
-            document.getElementById("product_det").innerHTML = quickView_btn;           
-                      
-        };
-
-        function quickViewButton(iter) {
-            var button = '';
-            if (respData.results.length != null) {
-                button += '<li class="cart"><a href="#product_det" data-toggle="modal" data-target="#modal_product" id="product_det" onclick="getProductDetail('+ iter +')">Quick View</a>';
-            }
-            else {
-                button += '<li class="cart"><a href="#product_det" data-toggle="modal" data-target="#modal_product" id="product_det" onclick="getProductDetail('+ iter +')">Quick View</a>';
-            }
-        };
-
-        function updateBtn(original_site, iter){
-            var wishlist_btn = '';
-            if (wishlist.includes(original_site)){ //highlighted wishlist button
-                console.log('this item is on the wishlist!');
-                wishlist_btn += '<input type="checkbox" id="btnControl"/><li id="'+ iter.toString() + '" class="wishlist">';
-                wishlist_btn += '<a for="btnControl" style="background-color:#e59285;background-position:105%;border-color:#e59285;" onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
-            }
-            else{ //default, unhighlighted wishlist button
-               console.log('this item is not on the wishlist!');
-               wishlist_btn += '<input type="checkbox" id="wishControl"/><li id="'+ iter.toString() + '" class="wishlist"><a onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
-            };
-            document.getElementById(iter.toString()).innerHTML = wishlist_btn;
-         };
          
-        function addWishlist(original_site, iter){
-            var empty = '';
-            if (wishlist.length === 0){
-                //console.log('creating new wishlist');
-                //console.log('adding to wishlist');
-                wishlist.push(original_site);
-                localStorage.setItem("recentCategory", respData.results[iter].category);
-            }
-            else if (wishlist.includes(original_site)){
-               var removeIndex = wishlist.indexOf(original_site);
-               delete wishlist[removeIndex];
-               wishlist = wishlist.filter(item => item);               
-               console.log('removed from wishlist');
-               localStorage.setItem("recentCategory", respData.results[iter].category);
-            }
-            else {
-               //console.log('adding to wishlist');
-               wishlist.push(original_site);
-               localStorage.setItem("recentCategory", respData.results[iter].category);
-            };
-            document.getElementById("wishlist_noti").innerHTML = wishlist.length;
-            //console.log(wishlist); 
-            localStorage.setItem("wishlist", JSON.stringify(wishlist));
-            wishlist = getWishlist();
-            updateBtn(original_site, iter);
-            //console.log('wishlist updated'); 
-        };
+        // function addWishlist(original_site, iter){
+        //     var empty = '';
+        //     if (wishlist.length === 0){
+        //         //console.log('creating new wishlist');
+        //         //console.log('adding to wishlist');
+        //         wishlist.push(original_site);
+        //         localStorage.setItem("recentCategory", respData.results[iter].category);
+        //     }
+        //     else if (wishlist.includes(original_site)){
+        //        var removeIndex = wishlist.indexOf(original_site);
+        //        delete wishlist[removeIndex];
+        //        wishlist = wishlist.filter(item => item);               
+        //        console.log('removed from wishlist');
+        //        localStorage.setItem("recentCategory", respData.results[iter].category);
+        //     }
+        //     else {
+        //        //console.log('adding to wishlist');
+        //        wishlist.push(original_site);
+        //        localStorage.setItem("recentCategory", respData.results[iter].category);
+        //     };
+        //     document.getElementById("wishlist_noti").innerHTML = wishlist.length;
+        //     //console.log(wishlist); 
+        //     localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        //     wishlist = getWishlist();
+        //     updateBtn(original_site, iter);
+        //     //console.log('wishlist updated'); 
+        // };
 
         if (wishlist.length != 0) {
 			document.getElementById("wishlist_noti").innerHTML = wishlist.length;
@@ -912,26 +873,6 @@
                 grid += respData.results[x_grid].product_name + '</h4><ul class="prize d-flex justify-content-end"><li>' + respData.results[x_grid].currency + '&nbsp;' + respData.results[x_grid].price+ '</li></ul></div></div>';
             };
             grid += "</div>"
-
-            list += '<div class="list__view__wrapper">'
-            for (x_list in respData.results){
-                onclicktext = "onclick=\"openPage('"+ respData.results[x_list].id +"')\"";
-                list += '<div class="list__view"><div class="thumb"><a class="first__img"  '+ onclicktext +'><img src="'
-                list += respData.results[x_list].image_url +'" alt="product images"></a>'
-                list += '</div><div class="content"><h2><a '+ onclicktext +'>'
-                list += respData.results[x_list].product_name +'</a></h2><ul class="rating d-flex"><li class="on"><i class="fa fa-star-o"></i></li><li class="on">'
-                list += '<i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li>'
-                list += '<i class="fa fa-star-o"></i></li></ul><ul class="prize__box"><li>' + respData.results[x_list].currency
-                list += '&nbsp;' + respData.results[x_list].price + '</li></ul>';
-                if (respData.results[x_list].product_description != null) {
-                    list += '<p>'+ respData.results[x_list].product_description +'</p><ul id="'+ x_list.toString() +'" class="cart__action d-flex">';
-                }
-                else {
-                    list += '<p>Product description unavailable</p><ul id="'+ x_list.toString() +'" class="cart__action d-flex">';
-                }
-                list += '</ul></div></div>'
-            };
-            list += '</div>'
             
             pages_count = 0;
             pages_count = Math.ceil(respData.count / 24); // >15 dont show numbers
@@ -947,15 +888,9 @@
             document.getElementById("show_results").innerHTML = showNum; // inserts products in from JSON response of search
             document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
             document.getElementById("nav-grid").innerHTML = grid; // inserts products in from JSON response of search
-            document.getElementById("nav-list").innerHTML = list; // inserts products in from JSON response of search
-            for (i=0; i<respData.results.length; i++){
-                updateBtn(respData.results[i].original_site, i);
-                quickViewButton(i);
-            };
         }
         else{
             document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // inserts products in from JSON response of search
-            document.getElementById("nav-list").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // inserts products in from JSON response of search
         };
 	</script>
 
