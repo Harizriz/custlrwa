@@ -379,7 +379,7 @@
                               </div>
                               <br>
                               <div class="row">
-                                 <div class="col-lg-4 col-12 p-0 pl-3">
+                                 <div class="col-sm-4 col-12 p-0 pl-3">
                                     <div class="row d-flex justify-content-start">
                                        <div class="product-addto-links clearfix mr-3 ml-3" id="btn">
                                           <input type="checkbox" id="btnControl"/>
@@ -394,7 +394,7 @@
                                        <div id="notifications"></div>
                                     </div>
                                  </div>
-                                 <div class="col-lg-8 col-12 p-0">
+                                 <div class="col-sm-8 col-12 p-0">
                                     <div class="col-lg-8 col-12 p-0">
                                        <div class="box-sizing">
                                           <div class="row d-flex justify-content-around">
@@ -523,6 +523,11 @@
                                        </div>
                                     </div>
                                  </div>
+                              </div>
+                              <div class="row">
+                                 <div class="alert alert-dark" role="alert">
+                                    <p id="recommend_size"></p>
+                                 </div> 
                               </div>
                               <br>
                                  
@@ -1495,6 +1500,28 @@
       
       var sizingDefault = pageData.sizing_type
       var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category, pageData.subcategory);
+      
+      if (pageData.subcategory == 'tops'){
+         var sizing_top = JSON.parse(localStorage.getItem("custom_top"));
+         if (sizing_top !== null){
+            sizing_match(sizing_top, sizing_chart, 'tops', 'Women');
+            var best = JSON.parse(localStorage.getItem('best_womens_top'));
+            var bestHTML = 'Recommended sizes (based on your measurements): ';
+            bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu;
+            document.getElementById('recommend_size').innerHTML = bestHTML;
+         }
+      }
+      if (pageData.subcategory == 'bottoms'){
+         var sizing_bottom = JSON.parse(localStorage.getItem("custom_bottom"));
+         if (sizing_bottom !== null){
+            sizing_match(sizing_bottom, sizing_chart, 'bottoms', 'Women');
+            var best = JSON.parse(localStorage.getItem('best_womens_bottom'));
+            var bestHTML = 'Recommended sizes (based on your measurements) : ';
+            bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu;
+            document.getElementById('recommend_size').innerHTML = bestHTML;
+         }
+      }
+      
       document.getElementById("sizingRegionDropdownButton").innerHTML = sizingDefault;
       //console.log(sizing_chart);
       // aria-labelledby="International"

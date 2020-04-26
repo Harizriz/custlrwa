@@ -431,6 +431,19 @@
                                     </div>
                                     <input type="search" onsearch="search()" placeholder="Searching for something else?" aria-describedby="button-addon4" class="form-control border-0" name="search_value" id="search_bar">
                                 </div>
+                                <!-- Rounded switch -->
+								<div class="row">
+									<div class="col-12 d-flex justify-content-start">
+                                        <p class="search mr-3">Tops</p>
+										<label class="switch" id="resetTB">
+										</label>
+                                            <p class="ml-3 mr-5">Bottoms</p>
+                                        <label class="switch ml-5" id="resetCustomSizing">
+                                        </label>
+                                        <div id="notifications"></div>
+                                            <p class="search ml-3 mr-3">Enable custom sizing</p>
+									</div>
+								</div>
                                 <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between mb-2">
                                     <div class="shop__list nav justify-content-center" role="tablist">
                                     </div>
@@ -592,7 +605,81 @@
     <script src="js/cart.js"></script>
     <script src="js/cart-mini.js"></script>
     <script src="js/sizingChart.js"></script>
+    <script src="js/notify.min.js"></script>
     <script>
+        function notifyCustomSizing() {
+			$( document ).ready(function() {
+				$("div").click(
+				NotifyLink("Custom sizing unavailable!", 1000, null, "danger", "upper-body.html")
+				)
+			});
+        };
+        
+        var sizing_toggle = false;
+		var tb_toggle = 'tops';
+		var tb_search = '&subcategory=tops';
+		setTimeout(function(){
+			document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+			document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';			
+		}, 100);
+		var to_search = '';
+
+		function toggleCustomSizing(){
+			sizing_toggle = !sizing_toggle;
+			console.log(sizing_toggle);
+			if (sizing_toggle){
+				if (tb_toggle == 'tops'){
+					var measurements = JSON.parse(localStorage.getItem("custom_top"));
+					if (measurements === null){
+						notifyCustomSizing();
+						document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+						sizing_toggle = false;
+					}
+					else{
+						var adjusted_measurements = {
+							"bust": measurements.chest,
+							"waist": measurements.waist,
+							"arm": measurements.arm,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, women_tops, 'tops', 'Women')
+						var temp_obj = JSON.parse(localStorage.getItem('best_womens_top'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+					}
+				}
+				else{
+					var measurements = localStorage.getItem("custom_bottom");
+					if (measurements === null){
+						notifyCustomSizing();
+						document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+						sizing_toggle = false;
+					}
+					else{
+						var adjusted_measurements = {
+							"inner_leg": measurements.inseam,
+							"waist": measurements.waist,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, women_bottoms, 'bottoms', 'Women')
+						var temp_obj = JSON.parse(localStorage.getItem('best_womens_bottom'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+					}
+				}
+			}	
+		};
+		
+
+		function toggleTopOrBottom(){
+			if (tb_toggle == 'tops'){
+				tb_toggle = 'bottoms';
+				tb_search = '&subcategory=bottoms';
+			}
+			else{
+				tb_toggle = 'tops';
+				tb_search = '&subcategory=tops';
+			}
+		};
+
         var current_page = sessionStorage.getItem("current_page");
         function openLink(url, page, storage){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
@@ -915,4 +1002,4 @@
 
 </body>
 
-</html> 
+</html> .
