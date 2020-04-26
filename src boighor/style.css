@@ -6877,6 +6877,9 @@ Portfolio Styles
 .portfolio {
     margin-top: 30px;
     position: relative;
+    width: 325px;
+    height: 550px;
+    margin-left: 23px;
 }
 
 .portfolio .thumb {
@@ -7002,7 +7005,7 @@ Portfolio Styles
 }
 
 .masonry__wrap {
-    margin-left: 150px;
+    margin-left: 70px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -8688,6 +8691,7 @@ Shop Single Styles
     color: #fff;
     border-radius: 0;
     font-weight: 700;
+    font-size: small;
     height: 44px;
     line-height: 44px;
     padding: 0 25px;
@@ -9682,4 +9686,8 @@ Image Search Page Styles
     
     .slider_tb.round:before {
         border-radius: 50%;
+    }
+
+    #btnInvisible {
+        display:none;
     }

@@ -238,9 +238,9 @@
 														<span><a href="#">My Account</a></span>
 														<span><a href="#">My Wishlist</a></span>
 														<span><a href="login.html">Sign In</a></span>
-														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #exampleModalCenter id="#exampleModalCenter" class = "">Track My Orders</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter" class = "">Track My Orders</a></span>
 														 <!-- Modal -->
-														 <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+														 <div class="modal" id="modal_order" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 															<div class="modal-dialog modal-dialog-centered" role="document">
 																<div class="modal-content">
 																	<div class="modal-header" style="background-color:black">
@@ -428,8 +428,8 @@
                                 <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between mb-2">
                                     <div class="shop__list nav justify-content-center" role="tablist">
 			                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
-			                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
-			                        </div>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
+                                    </div>
 			                        <p id="show_results"></p>
                                     <div class="orderby__wrapper" >
                                         <span>Sort By</span>
@@ -802,6 +802,29 @@
         
         var wishlist = getWishlist();
 
+        function getProductDetail(product_id){
+            var quickView_btn = '';
+            if (respData.results.length != null){
+                quickView_btn += '<div class="modal fade" id="modal_product" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">';
+                quickView_btn += '<div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header">';
+                quickView_btn += '<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+                quickView_btn += '<div class="modal-body">' + product_id + '</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Save changes</button>';
+                quickView_btn += ' </div></div></div></div>';
+            }
+            document.getElementById("product_det").innerHTML = quickView_btn;           
+                      
+        };
+
+        function quickViewButton(iter) {
+            var button = '';
+            if (respData.results.length != null) {
+                button += '<li class="cart"><a href="#product_det" data-toggle="modal" data-target="#modal_product" id="product_det" onclick="getProductDetail('+ iter +')">Quick View</a>';
+            }
+            else {
+                button += '<li class="cart"><a href="#product_det" data-toggle="modal" data-target="#modal_product" id="product_det" onclick="getProductDetail('+ iter +')">Quick View</a>';
+            }
+        };
+
         function updateBtn(original_site, iter){
             var wishlist_btn = '';
             if (wishlist.includes(original_site)){ //highlighted wishlist button
@@ -813,7 +836,6 @@
                console.log('this item is not on the wishlist!');
                wishlist_btn += '<input type="checkbox" id="wishControl"/><li id="'+ iter.toString() + '" class="wishlist"><a onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
             };
-            // wishlist_btn += '</li>';
             document.getElementById(iter.toString()).innerHTML = wishlist_btn;
          };
          
@@ -852,7 +874,6 @@
 			empty += '<a class="wishlist_active" href="wishlist.html"></a>';
 			document.getElementById("wishlist").innerHTML = empty;
 		}
-
             
         if (respData.count > 0){
             var grid = '';
@@ -909,7 +930,6 @@
                     list += '<p>Product description unavailable</p><ul id="'+ x_list.toString() +'" class="cart__action d-flex">';
                 }
                 list += '</ul></div></div>'
-                list += '<li class="cart"><a href="cart.html" data-toggle="modal" data-target="#exampleModalCenter">Quick View</a></li>'
             };
             list += '</div>'
             
@@ -930,6 +950,7 @@
             document.getElementById("nav-list").innerHTML = list; // inserts products in from JSON response of search
             for (i=0; i<respData.results.length; i++){
                 updateBtn(respData.results[i].original_site, i);
+                quickViewButton(i);
             };
         }
         else{
