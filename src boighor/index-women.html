@@ -3237,6 +3237,10 @@
 		};
 
 		var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+		if (wishlist === undefined || wishlist === null){
+            wishlist = [];
+            //console.log('empty wishlist');
+        };
 		if (wishlist.length != 0) {
 			document.getElementById("wishlist_noti").innerHTML = wishlist.length;
 		}
