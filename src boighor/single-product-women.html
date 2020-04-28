@@ -201,75 +201,49 @@
                               </div>
                               <!-- End Shopping Cart -->
                             </li>
-                            <li class="setting__bar__icon">
-                                <a class="setting__active" href="#"></a>
-                                <div class="searchbar__content setting__block">
-                                    <div class="content-inner">
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Currency</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">USD - US Dollar</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>GBP - British Pound Sterling</li>
-                                                        <li>EUR - Euro</li>
-                                                    </ul>
+                            <li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+                              <div class="searchbar__content setting__block p-0">
+                                 <div class="content-inner">
+                                    <div class="switcher-currency">
+                                       <strong class="label switcher-label">
+                                          <span>My Account</span>
+                                       </strong>
+                                       <div class="switcher-options">
+                                          <div class="switcher-currency-trigger">
+                                             <div class="setting__menu">
+                                                <span><a href="#">My Account</a></span>
+                                                <span><a href="#">My Wishlist</a></span>
+                                                <span><a href="login.html">Sign In</a></span>
+                                                <span><a href="#" data-toggle="modal" data-target="#modal_order">Track My Orders</a></span>
+                                                <!-- Modal -->
+                                                <div class="modal" id="modal_order" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                   <div class="modal-dialog modal-dialog-centered" role="document">
+                                                      <div class="modal-content">
+                                                         <div class="modal-header" style="background-color:black">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle" style="color: yellow; margin-left: 400px;">Track My Orders</h4>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                         </div>
+                                                         <div class="modal-body pl-2">
+                                                            <h6 class="pb-3 pl-2"> Email </h6>
+                                                            <input type="text" id="emailTracking" name="emailTracking" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+                                                            <h6 class="pb-3 pl-2"> Order Number </h6>
+                                                            <input type="text" id="orderNumber" name="orderNumber" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+                                                         </div>
+                                                         <div class="modal-footer" style="background-color:black">
+                                                            <button type="button" class="btn btn-warning" style="background-color:yellow; margin-right: 450px;">Track</button>
+                                                         </div>
+                                                      </div>
+                                                   </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Language</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">English01</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>English02</li>
-                                                        <li>English03</li>
-                                                        <li>English04</li>
-                                                        <li>English05</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>Select Store</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <span class="currency-trigger">Fashion Store</span>
-                                                    <ul class="switcher-dropdown">
-                                                        <li>Furniture</li>
-                                                        <li>Shoes</li>
-                                                        <li>Speaker Store</li>
-                                                        <li>Furniture</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="switcher-currency">
-                                            <strong class="label switcher-label">
-												<span>My Account</span>
-											</strong>
-                                            <div class="switcher-options">
-                                                <div class="switcher-currency-trigger">
-                                                    <div class="setting__menu">
-                                                        <span><a href="#">Compare Product</a></span>
-                                                        <span><a href="#">My Account</a></span>
-                                                        <span><a href="#">My Wishlist</a></span>
-                                                        <span><a href="#">Sign In</a></span>
-                                                        <span><a href="#">Create An Account</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                             </div>
+                                          </div>
+                                       </div>
                                     </div>
-                                </div>
-                            </li>
+                                 </div>
+                              </div>
+                           </li>
                         </ul>
                     </div>
                 </div>
@@ -337,31 +311,14 @@
 		</div>
       <!-- End Search Popup -->
       <!-- Start Bradcaump area -->
-      <div class="ht__bradcaump__area">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <!-- <div class="bradcaump__inner text-center">
-                     <h2 class="bradcaump-title">Shop Single</h2>
-                     <nav class="bradcaump-content">
-                        <a class="breadcrumb_item" href="index.html">Home</a>
-                        <span class="brd-separetor">/</span>
-                        <span class="breadcrumb_item active">Shop Single</span>
-                     </nav>
-                  </div> -->
-               </div>
-            </div>
-         </div>
-      </div>
       <!-- End Bradcaump area -->
       <!-- Start main Content -->
-      <div class="maincontent bg--white pb--55">
+      <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
          <div class="container">
-            <div class="row">
-               <div class="col-12 p-0">
+            <div class="row" style="height:89px">
+               <div class="col-12">
                    <nav aria-label="breadcrumb">
-                       <nav aria-label="breadcrumb">
-                       <ol class="breadcrumb" style="margin-top: 30px;">
+                       <ol class="breadcrumb">
                            <li class="breadcrumb-item"><a href="portfolio.html">Home</a></li>
                            <li class="breadcrumb-item"><a href="search-page-women.html">Search</a></li>
                            <li class="breadcrumb-item"><a href="shop-grid-women.html">Shop Grid</a></li>
@@ -371,7 +328,7 @@
                </div>
             </div>
             <div class="row">
-               <div class="col-12 p-0">
+               <div class="col-12">
                   <div class="row">
                      <div class="col-sm-2 col-12">
                         <h3 class="account__title_shop">Product</h3>
@@ -389,10 +346,10 @@
                   </div>
                </div>
             </div>
-            <div class="row">
+            <div class="row pl-3">
                <div class="col-lg-9 col-12">
                   <div class="wn__single__product">
-                     <div class="row" style="padding-top: 60px;">
+                     <div class="row" style="padding-top: 56px;">
                         <div class="col-lg-6 col-12" style="border-top:1px solid #e1e1e1;">
                            <div class="wn__fotorama__wrapper d-flex justify-content-around" id="image_list" style="padding-top: 30px;">
                            </div>
@@ -401,12 +358,12 @@
                            <div class="product__info__main" style="padding-top: 30px;">
                               <h1 id="product_name"></h1>
                               <div class="product-reviews-summary d-flex">
-                                 <ul class="rating-summary d-flex">
+                                 <ul class="rating-summary d-flex" id = "avstar">
                                  <li><i class="zmdi zmdi-star-outline"></i></li>
                                  <li><i class="zmdi zmdi-star-outline"></i></li>
                                  <li><i class="zmdi zmdi-star-outline"></i></li>
-                                 <li class="off"><i class="zmdi zmdi-star-outline"></i></li>
-                                 <li class="off"><i class="zmdi zmdi-star-outline"></i></li>
+                                 <li><i class="zmdi zmdi-star-outline"></i></li>
+                                 <li><i class="zmdi zmdi-star-outline"></i></li>
                                  </ul>
                               </div> 
                               <div class="price-box">
@@ -422,7 +379,7 @@
                               </div>
                               <br>
                               <div class="row">
-                                 <div class="col-lg-4 col-12 p-0 pl-3">
+                                 <div class="col-sm-4 col-12 p-0 pl-3">
                                     <div class="row d-flex justify-content-start">
                                        <div class="product-addto-links clearfix mr-3 ml-3" id="btn">
                                           <input type="checkbox" id="btnControl"/>
@@ -437,13 +394,13 @@
                                        <div id="notifications"></div>
                                     </div>
                                  </div>
-                                 <div class="col-lg-8 col-12 p-0">
+                                 <div class="col-sm-8 col-12 p-0">
                                     <div class="col-lg-8 col-12 p-0">
                                        <div class="box-sizing">
                                           <div class="row d-flex justify-content-around">
                                              <h3 class="wedget__title_size mt-2 pl-1">Select Size</h3>
-                                              <button type="button" class="btn btn-info btn-sm mb-3" data-toggle="modal" data-target="#exampleModalCenter">Size Chart</button>
-                                              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                              <button type="button" class="btn btn-info btn-sm mb-3" data-toggle="modal" data-target="#modal_product">Size Chart</button>
+                                              <div class="modal fade" id="modal_product" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                  <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content" style="height: 500px;">
                                                        <div class="modal-header">
@@ -566,6 +523,11 @@
                                        </div>
                                     </div>
                                  </div>
+                              </div>
+                              <div class="row">
+                                 <div class="alert alert-dark" role="alert">
+                                    <p id="recommend_size"></p>
+                                 </div> 
                               </div>
                               <br>
                                  
@@ -1537,7 +1499,29 @@
       pageData = JSON.parse(sessionStorage.getItem("pageRespData"));
       
       var sizingDefault = pageData.sizing_type
-      var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category, pageData.subcatego);
+      var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category, pageData.subcategory);
+      
+      if (pageData.subcategory == 'tops'){
+         var sizing_top = JSON.parse(localStorage.getItem("custom_top"));
+         if (sizing_top !== null){
+            sizing_match(sizing_top, sizing_chart, 'tops', 'Women');
+            var best = JSON.parse(localStorage.getItem('best_womens_top'));
+            var bestHTML = 'Recommended sizes (based on your measurements): ';
+            bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu;
+            document.getElementById('recommend_size').innerHTML = bestHTML;
+         }
+      }
+      if (pageData.subcategory == 'bottoms'){
+         var sizing_bottom = JSON.parse(localStorage.getItem("custom_bottom"));
+         if (sizing_bottom !== null){
+            sizing_match(sizing_bottom, sizing_chart, 'bottoms', 'Women');
+            var best = JSON.parse(localStorage.getItem('best_womens_bottom'));
+            var bestHTML = 'Recommended sizes (based on your measurements) : ';
+            bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu;
+            document.getElementById('recommend_size').innerHTML = bestHTML;
+         }
+      }
+      
       document.getElementById("sizingRegionDropdownButton").innerHTML = sizingDefault;
       //console.log(sizing_chart);
       // aria-labelledby="International"
@@ -1786,12 +1770,40 @@
                review += '</ul>';
             }
             document.getElementById("get_review").innerHTML = review;
+            if (reviewData.count > 0){
+               var avg_stars = 0
+               for (i = 0; i < reviewData.count; i++){
+                  var review = reviewData.results[i];
+                  var stars = 0;
+                  stars += review.quality;
+                  stars += review.price;
+                  stars += review.value;
+                  stars = stars/3;
+                  avg_stars += stars;
+               }
+               avg_stars = avg_stars/reviewData.count;
+
+               var star_html = '';
+               avg_stars = Math.floor(avg_stars);
+               var remain_stars = 5 - avg_stars
+
+               for (i=0; i<avg_stars; i++){
+                  star_html += '<li><i class="zmdi zmdi-star"></i></li>'
+               }
+               for (i=0; i<remain_stars; i++){
+                  star_html += '<li><i class="zmdi zmdi-star-outline"></i></li>'
+               }
+
+               document.getElementById('avstar').innerHTML = star_html               
+            }
          }
          // Send request
          request.send();
       };
 
       getReview('http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id);
+      
+     
 
       var quality, price, value = 1;
       function setQualityStar(clicked_id){

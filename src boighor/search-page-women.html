@@ -189,54 +189,8 @@
 								<!-- End Shopping Cart -->
 							</li>
 							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
-								<div class="searchbar__content setting__block">
+								<div class="searchbar__content setting__block p-0">
 									<div class="content-inner">
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>Currency</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<span class="currency-trigger">USD - US Dollar</span>
-													<ul class="switcher-dropdown">
-														<li>GBP - British Pound Sterling</li>
-														<li>EUR - Euro</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>Language</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<span class="currency-trigger">English01</span>
-													<ul class="switcher-dropdown">
-														<li>English02</li>
-														<li>English03</li>
-														<li>English04</li>
-														<li>English05</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>Select Store</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<span class="currency-trigger">Fashion Store</span>
-													<ul class="switcher-dropdown">
-														<li>Furniture</li>
-														<li>Shoes</li>
-														<li>Speaker Store</li>
-														<li>Furniture</li>
-													</ul>
-												</div>
-											</div>
-										</div>
 										<div class="switcher-currency">
 											<strong class="label switcher-label">
 												<span>My Account</span>
@@ -244,11 +198,32 @@
 											<div class="switcher-options">
 												<div class="switcher-currency-trigger">
 													<div class="setting__menu">
-														<span><a href="#">Compare Product</a></span>
 														<span><a href="#">My Account</a></span>
 														<span><a href="#">My Wishlist</a></span>
-														<span><a href="#">Sign In</a></span>
-														<span><a href="#">Create An Account</a></span>
+														<span><a href="login.html">Sign In</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #exampleModalCenter id="#exampleModalCenter" class = "">Track My Orders</a></span>
+														 <!-- Modal -->
+														 <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+															<div class="modal-dialog modal-dialog-centered" role="document">
+																<div class="modal-content">
+																	<div class="modal-header" style="background-color:black">
+																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: yellow; margin-left: 400px;">Track My Orders</h4>
+																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																		</button>
+																	</div>
+																	<div class="modal-body pl-2">
+																		<h6 class="pb-3 pl-2"> Email </h6>
+																		<input type="text" id="emailTracking" name="emailTracking" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																		<h6 class="pb-3 pl-2"> Order Number </h6>
+																		<input type="text" id="orderNumber" name="orderNumber" style=" height:50px; font-size:14pt; text-align:center"><br><br>
+																	</div>
+																	<div class="modal-footer" style="background-color:black">
+																		<button type="button" class="btn btn-warning" style="background-color:yellow; margin-right: 450px;">Track</button>
+																	</div>
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -368,16 +343,29 @@
                         <img src="https://res-3.cloudinary.com/tara-jarmon/image/upload/c_fill,dpr_1.0,f_auto,h_910,q_auto,w_645/media/catalog/product/1/3/13626-h0375-10_blanc_1.jpg" width="525" height="700" alt="product image">
                     </div>
                 </div>
-                <div class="col-lg-4 col-12 order-1 order-lg-2" style="padding: 0px; padding-top: 260px;">
-                    <h2 class="mb-0">Search</h2>
+                <div class="col-lg-4 col-12 order-1 order-lg-2" style="padding: 0px; padding-top: 230px;">
+                    <h2>Search</h2>
                         <div class="row d-flex justify-content-start">
-                            <div class="wrap">
-                                <div class="search">
-                                <input type="text" class="searchTerm" placeholder="What are you looking for?" name="search_value" id="search_bar" onsearch="search()">
-                                <button type="submit" class="searchButton" onclick="search()">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                                </div>
+                            <div class="wrap_search">
+                                <div class="input-group mb-5 border border-dark rounded-pill p-1">
+                                    <div class="input-group-prepend border-0">
+                                        <button id="button-addon4" type="button" class="btn btn-link text-dark" onclick="search()"><i class="fa fa-search"></i></button>
+                                    </div>
+									<input type="search" onsearch="search()" placeholder="What are you looking for?" aria-describedby="button-addon4" class="form-control border-0" name="search_value" id="search_bar">
+								</div>
+								<!-- Rounded switch -->
+								<div class="row">
+									<div class="col-12 d-flex justify-content-start">
+										<p class="search mr-3">Tops</p>
+										<label class="switch" id="resetTB">
+										</label>
+                                            <p class="ml-3 mr-5">Bottoms</p>
+                                        <label class="switch ml-5" id="resetCustomSizing">
+                                        </label>
+                                        <div id="notifications"></div>
+                                            <p class="search ml-3 mr-3">Enable custom sizing</p>
+									</div>
+								</div>
                             </div>
                         </div>
                     </div>
@@ -454,12 +442,90 @@
     <script src="js/active.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/cart-mini.js"></script>
+	<script src="js/sizingChart.js"></script>
+	<script src="js/notify.min.js"></script>
     <script>
+
+		function notifyCustomSizing() {
+			$( document ).ready(function() {
+				$("div").click(
+				NotifyLink("Custom sizing unavailable!", 1000, null, "danger", "upper-body.html")
+				)
+			});
+		};
+
+		var sizing_toggle = false;
+		var tb_toggle = 'tops';
+		var tb_search = '&subcategory=tops';
+		setTimeout(function(){
+			document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+			document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';			
+		}, 100);
+		var to_search = '';
+
+		function toggleCustomSizing(){
+			sizing_toggle = !sizing_toggle;
+			console.log(sizing_toggle);
+			if (sizing_toggle){
+				if (tb_toggle == 'tops'){
+					var measurements = JSON.parse(localStorage.getItem("custom_top"));
+					if (measurements === null){
+						notifyCustomSizing();
+						document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+						sizing_toggle = false;
+					}
+					else{
+						var adjusted_measurements = {
+							"bust": measurements.chest,
+							"waist": measurements.waist,
+							"arm": measurements.arm,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, women_tops, 'tops', 'Women')
+						var temp_obj = JSON.parse(localStorage.getItem('best_womens_top'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+					}
+				}
+				else{
+					var measurements = localStorage.getItem("custom_bottom");
+					if (measurements === null){
+						notifyCustomSizing();
+						document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+						sizing_toggle = false;
+					}
+					else{
+						var adjusted_measurements = {
+							"inner_leg": measurements.inseam,
+							"waist": measurements.waist,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, women_bottoms, 'bottoms', 'Women')
+						var temp_obj = JSON.parse(localStorage.getItem('best_womens_bottom'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+					}
+				}
+			}	
+		};
+		
+
+		function toggleTopOrBottom(){
+			if (tb_toggle == 'tops'){
+				tb_toggle = 'bottoms';
+				tb_search = '&subcategory=bottoms';
+			}
+			else{
+				tb_toggle = 'tops';
+				tb_search = '&subcategory=tops';
+			}
+		};
+
         function focusOnSearch(){
-			setTimeOut(function(){
+			setTimeout(function(){
 				document.getElementById("search_bar").focus();
 			}, 500);
 		};
+
+		focusOnSearch()
 		
 		function search(){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
@@ -471,7 +537,11 @@
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
-            
+            if (sizing_toggle){
+				search += to_search;
+				search += tb_search;
+			}
+			console.log(search);
             request.open('GET', search, true)
 
 			request.onload = function loadHTML(){

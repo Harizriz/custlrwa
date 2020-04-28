@@ -549,8 +549,11 @@ function sizing_match(user_sizing, size, type, gender){ // user measurements, av
     if (type == 'tops'){
         return top_match(user_sizing, size, gender);
     }
-    else{ //bottoms
+    else if (type == 'bottoms'){ //bottoms
         return bottom_match(user_sizing, size, gender);
+    }
+    else{ // null
+        return 'notype'; // have if statement to handle in pages
     }
 };
 
@@ -564,11 +567,11 @@ function top_match(user, size, gender){
 }
 
 function bottom_match(user, size, gender){
-    if (gender == 'men'){
+    if (gender == 'Men'){
         return bottoms_men(user, size);
     }
     else{
-        return bottomss_women(user, size);
+        return bottoms_women(user, size);
     }
 }
 
@@ -653,7 +656,7 @@ function tops_men(user, size){
         
     }
     scores = scores.sort(compare);
-    localStorage.setItem('best_mens_top',scores[0].original); //best size in general, this will be sent to backend
+    localStorage.setItem('best_mens_top', JSON.stringify(scores[0].original)); //best size in general, this will be sent to backend
     console.log(scores[0].original);
     return scores; //returns list of sizing with score, unused if in search.
 }
@@ -722,7 +725,7 @@ function tops_women(user, size){
         scores.push({"score": score, "original": original});
     }
     scores = scores.sort(compare);
-    localStorage.setItem('best_womens_top',scores[0].original); //best size in general, this will be sent to backend
+    localStorage.setItem('best_womens_top', JSON.stringify(scores[0].original)); //best size in general, this will be sent to backend
     return scores; //returns list of sizing with score, unused if in search.
 }
 
@@ -783,7 +786,7 @@ function bottoms_men(user, size){
         scores.push({"score": score, "original": original});
     }
     scores = scores.sort(compare);
-    localStorage.setItem('best_mens_bottom',scores[0].original); //best size in general, this will be sent to backend
+    localStorage.setItem('best_mens_bottom', JSON.stringify(scores[0].original)); //best size in general, this will be sent to backend
     return scores; //returns list of sizing with score, unused if in search.
 }
 
@@ -844,6 +847,6 @@ function bottoms_women(user, size){
         scores.push({"score": score, "original": original});
     }
     scores = scores.sort(compare);
-    localStorage.setItem('best_womens_bottom',scores[0].original); //best size in general, this will be sent to backend
+    localStorage.setItem('best_womens_bottom', JSON.stringify(scores[0].original)); //best size in general, this will be sent to backend
     return scores; //returns list of sizing with score, unused if in search.
 }

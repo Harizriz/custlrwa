@@ -6877,6 +6877,9 @@ Portfolio Styles
 .portfolio {
     margin-top: 30px;
     position: relative;
+    width: 325px;
+    height: 550px;
+    margin-left: 23px;
 }
 
 .portfolio .thumb {
@@ -7002,7 +7005,7 @@ Portfolio Styles
 }
 
 .masonry__wrap {
-    margin-left: 150px;
+    margin-left: 70px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -8324,7 +8327,7 @@ Shop Single Styles
     border-bottom: 1px solid #2e2e2e;
     color: #2e2e2e;
     font-size: 16px;
-    padding-top: 29px;
+    padding-top: 24px;
     padding-bottom: 10px;
     position: relative;
     text-transform: uppercase;
@@ -8547,7 +8550,7 @@ Shop Single Styles
 .shop__list__wrapper {
     border-bottom: 1px solid #e1e1e1;
     border-top: 1px solid #e1e1e1;
-    margin-top: 80px;
+    margin-top: 25px;
     padding: 10px 0;
     width: 100%;
 }
@@ -8688,6 +8691,7 @@ Shop Single Styles
     color: #fff;
     border-radius: 0;
     font-weight: 700;
+    font-size: small;
     height: 44px;
     line-height: 44px;
     padding: 0 25px;
@@ -9191,9 +9195,9 @@ a:hover {
 
 }
 
-p:hover {
+/* p:hover {
     color: #e59285;
-}
+} */
 
 .btn.btn-out {
     outline: 1px solid #fff;
@@ -9292,51 +9296,9 @@ Notify Styles
 Search Styles
 -------------------------*/
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-}
-
-.searchTerm {
-  width: 100%;
-  border: 3px solid #bbbbbb;
-  border-right: none;
-  padding: 5px;
-  /* height: 20px; */
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: rgb(0, 0, 0);
-}
-
-.searchTerm:focus{
-  color: #000000;
-}
-
-.searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #bbbbbb;
-  background: #bbbbbb;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/*Resize the wrap to see the search bar change!*/
-.wrap{
-  margin-top: 20px;
-  margin-left: 16px;
-  width: 200%;
+.wrap_search {
+    margin-left: 15px;
+    width: 100%;
 }
 
 /*-------------------------
@@ -9612,3 +9574,120 @@ Image Search Page Styles
        -o-animation-delay: 0s;
        animation-delay: 0s;
    }
+
+   /*-------------------------
+    Slide Toggle Styles
+    -------------------------*/
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+    }
+    
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider_tb {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    .slider_tb:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+    
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider_tb {
+        background-color: rgb(90, 102, 112);
+    }
+    
+    input:focus + .slider_tb {
+        box-shadow: 0 0 1px rgb(90, 102, 112);
+    }
+    
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    input:checked + .slider_tb:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .slider_tb.round {
+        border-radius: 34px;
+    }
+    
+    .slider_tb.round:before {
+        border-radius: 50%;
+    }
+
+    #btnInvisible {
+        display:none;
+    }

@@ -238,9 +238,9 @@
 														<span><a href="#">My Account</a></span>
 														<span><a href="#">My Wishlist</a></span>
 														<span><a href="login.html">Sign In</a></span>
-														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #exampleModalCenter id="#exampleModalCenter" class = "">Track My Orders</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter" class = "">Track My Orders</a></span>
 														 <!-- Modal -->
-														 <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+														 <div class="modal" id="modal_order" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 															<div class="modal-dialog modal-dialog-centered" role="document">
 																<div class="modal-content">
 																	<div class="modal-header" style="background-color:black">
@@ -345,7 +345,6 @@
                 <div class="row">
                     <div class="col-12">
                         <nav aria-label="breadcrumb">
-                            <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="portfolio.html">Home</a></li>
                                 <li class="breadcrumb-item"><a href="search-page-women.html">Search</a></li>
@@ -367,6 +366,12 @@
                                             <li id="brand_dropdown"></li>
                                         </ul>
                                     </li>
+                                    <li>
+                                        <a href="#size" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Size </b></a>
+                                        <ul class="collapse list-unstyled" id="size">
+                                            <li id="size_dropdown"></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </aside>
                             <aside class="wedget__categories pro--range">
@@ -384,9 +389,9 @@
         						                        <button class="btn btn-light-inverse mt-2" type="submit" onclick="filterBtn()">Filter</button>
                                                         <button class="btn btn-light-inverse mt-2" type="submit" onclick="resetFilterBtn()">Reset Filter</button>
         						                    </div>
-        						                <!-- </div>
+        						                </div>
         						            </div>
-        						        </form> -->
+        						        </form>
         						    </div>
         						</div>
         					</aside>
@@ -420,19 +425,28 @@
                     <div class="col-lg-9 col-12 order-1 order-lg-2">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form action="#">
-                                    <div class="input-group mb-4 border border-dark rounded-pill p-1">
-                                        <div class="input-group-prepend border-0">
-                                            <button id="button-addon4" type="button" class="btn btn-link text-info"><i class="fa fa-search" onclick="search()"></i></button>
-                                        </div>
-                                        <input type="search" placeholder="Searching for something else?" aria-describedby="button-addon4" class="form-control bg-none border-0" name="search_value" id="search_bar" onsearch="search()">
+                                <div class="input-group mb-4 border border-dark rounded-pill p-1">
+                                    <div class="input-group-prepend border-0">
+                                        <button id="button-addon4" type="button" class="btn btn-link text-dark" onclick="search()"><i class="fa fa-search"></i></button>
                                     </div>
-                                </form>
+                                    <input type="search" onsearch="search()" placeholder="Searching for something else?" aria-describedby="button-addon4" class="form-control border-0" name="search_value" id="search_bar">
+                                </div>
+                                <!-- Rounded switch -->
+								<div class="row">
+									<div class="col-12 d-flex justify-content-start">
+                                        <p class="search mr-3">Tops</p>
+										<label class="switch" id="resetTB">
+										</label>
+                                            <p class="ml-3 mr-5">Bottoms</p>
+                                        <label class="switch ml-5" id="resetCustomSizing">
+                                        </label>
+                                        <div id="notifications"></div>
+                                            <p class="search ml-3 mr-3">Enable custom sizing</p>
+									</div>
+								</div>
                                 <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between mb-2">
                                     <div class="shop__list nav justify-content-center" role="tablist">
-			                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
-			                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
-			                        </div>
+                                    </div>
 			                        <p id="show_results"></p>
                                     <div class="orderby__wrapper" >
                                         <span>Sort By</span>
@@ -453,7 +467,6 @@
                         <!-- Start Content Page -->
                         <div class="tab__container">
                             <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel"></div>
-                            <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel"></div>
                             <div class="mt-4" id ="pagination"></div>
                         </div>
                     </div>
@@ -592,7 +605,81 @@
     <script src="js/cart.js"></script>
     <script src="js/cart-mini.js"></script>
     <script src="js/sizingChart.js"></script>
+    <script src="js/notify.min.js"></script>
     <script>
+        function notifyCustomSizing() {
+			$( document ).ready(function() {
+				$("div").click(
+				NotifyLink("Custom sizing unavailable!", 1000, null, "danger", "upper-body.html")
+				)
+			});
+        };
+        
+        var sizing_toggle = false;
+		var tb_toggle = 'tops';
+		var tb_search = '&subcategory=tops';
+		setTimeout(function(){
+			document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+			document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';			
+		}, 100);
+		var to_search = '';
+
+		function toggleCustomSizing(){
+			sizing_toggle = !sizing_toggle;
+			console.log(sizing_toggle);
+			if (sizing_toggle){
+				if (tb_toggle == 'tops'){
+					var measurements = JSON.parse(localStorage.getItem("custom_top"));
+					if (measurements === null){
+						notifyCustomSizing();
+						document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+						sizing_toggle = false;
+					}
+					else{
+						var adjusted_measurements = {
+							"bust": measurements.chest,
+							"waist": measurements.waist,
+							"arm": measurements.arm,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, women_tops, 'tops', 'Women')
+						var temp_obj = JSON.parse(localStorage.getItem('best_womens_top'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+					}
+				}
+				else{
+					var measurements = localStorage.getItem("custom_bottom");
+					if (measurements === null){
+						notifyCustomSizing();
+						document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+						sizing_toggle = false;
+					}
+					else{
+						var adjusted_measurements = {
+							"inner_leg": measurements.inseam,
+							"waist": measurements.waist,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, women_bottoms, 'bottoms', 'Women')
+						var temp_obj = JSON.parse(localStorage.getItem('best_womens_bottom'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+					}
+				}
+			}	
+		};
+		
+
+		function toggleTopOrBottom(){
+			if (tb_toggle == 'tops'){
+				tb_toggle = 'bottoms';
+				tb_search = '&subcategory=bottoms';
+			}
+			else{
+				tb_toggle = 'tops';
+				tb_search = '&subcategory=tops';
+			}
+		};
+
         var current_page = sessionStorage.getItem("current_page");
         function openLink(url, page, storage){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
@@ -616,7 +703,7 @@
 
 			// replaces white space
             search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
-            sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
+			sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
@@ -647,12 +734,13 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
+                console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-women.html");
             }
             // Send request
             request.send();
-        };
+		};
         
         var respData = JSON.parse(sessionStorage.getItem("search_result"));
         var brandList = JSON.parse(sessionStorage.getItem("brand_list"));
@@ -803,54 +891,34 @@
         }
         
         var wishlist = getWishlist();
-
-        function updateBtn(original_site, iter){
-            var wishlist_btn = '';
-            if (wishlist.includes(original_site)){ //highlighted wishlist button
-                console.log('this item is on the wishlist!');
-                wishlist_btn += '<li class="cart"><a href="cart.html" data-toggle="modal" data-target="#exampleModalCenter">Quick View</a></li><input type="checkbox" id="btnControl"/><li id="'+ iter.toString() + '" class="wishlist">';
-                wishlist_btn += '<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">';
-                wishlist_btn += '<div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header">';
-                wishlist_btn += '<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
-                wishlist_btn += '<div class="modal-body"></div>';
-                wishlist_btn += '<div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Save changes</button></div></div></div></div>';
-                wishlist_btn += '<a for="btnControl" style="background-color:#e59285;background-position:105%;border-color:#e59285;" onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
-            }
-            else{ //default, unhighlighted wishlist button
-               console.log('this item is not on the wishlist!');
-               wishlist_btn += '<li class="cart"><a href="cart.html" data-toggle="modal" data-target="#exampleModalCenter">Quick View</a></li><input type="checkbox" id="wishControl"/><li id="'+ iter.toString() + '" class="wishlist"><a onclick="addWishlist(\''+ original_site +'\',\''+ iter.toString() +'\')"></a></li>';
-            };
-            // wishlist_btn += '</li>';
-            document.getElementById(iter.toString()).innerHTML = wishlist_btn;
-         };
          
-        function addWishlist(original_site, iter){
-            var empty = '';
-            if (wishlist.length === 0){
-                //console.log('creating new wishlist');
-                //console.log('adding to wishlist');
-                wishlist.push(original_site);
-                localStorage.setItem("recentCategory", respData.results[iter].category);
-            }
-            else if (wishlist.includes(original_site)){
-               var removeIndex = wishlist.indexOf(original_site);
-               delete wishlist[removeIndex];
-               wishlist = wishlist.filter(item => item);               
-               console.log('removed from wishlist');
-               localStorage.setItem("recentCategory", respData.results[iter].category);
-            }
-            else {
-               //console.log('adding to wishlist');
-               wishlist.push(original_site);
-               localStorage.setItem("recentCategory", respData.results[iter].category);
-            };
-            document.getElementById("wishlist_noti").innerHTML = wishlist.length;
-            //console.log(wishlist); 
-            localStorage.setItem("wishlist", JSON.stringify(wishlist));
-            wishlist = getWishlist();
-            updateBtn(original_site, iter);
-            //console.log('wishlist updated'); 
-        };
+        // function addWishlist(original_site, iter){
+        //     var empty = '';
+        //     if (wishlist.length === 0){
+        //         //console.log('creating new wishlist');
+        //         //console.log('adding to wishlist');
+        //         wishlist.push(original_site);
+        //         localStorage.setItem("recentCategory", respData.results[iter].category);
+        //     }
+        //     else if (wishlist.includes(original_site)){
+        //        var removeIndex = wishlist.indexOf(original_site);
+        //        delete wishlist[removeIndex];
+        //        wishlist = wishlist.filter(item => item);               
+        //        console.log('removed from wishlist');
+        //        localStorage.setItem("recentCategory", respData.results[iter].category);
+        //     }
+        //     else {
+        //        //console.log('adding to wishlist');
+        //        wishlist.push(original_site);
+        //        localStorage.setItem("recentCategory", respData.results[iter].category);
+        //     };
+        //     document.getElementById("wishlist_noti").innerHTML = wishlist.length;
+        //     //console.log(wishlist); 
+        //     localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        //     wishlist = getWishlist();
+        //     updateBtn(original_site, iter);
+        //     //console.log('wishlist updated'); 
+        // };
 
         if (wishlist.length != 0) {
 			document.getElementById("wishlist_noti").innerHTML = wishlist.length;
@@ -859,7 +927,6 @@
 			empty += '<a class="wishlist_active" href="wishlist.html"></a>';
 			document.getElementById("wishlist").innerHTML = empty;
 		}
-
             
         if (respData.count > 0){
             var grid = '';
@@ -870,6 +937,7 @@
             var showNum = '';
             var brand = '';
             var count = '';
+            var size = '';
             current_page = sessionStorage.getItem("current_page");
 
             showNum += '<p>'
@@ -889,6 +957,18 @@
                 brand += "<li><a onclick=\"openLink('"+ search_url + "', '"+ search_page +"','" + result_storage + "')\">" + brandList[x_brand] + "</a></li>";
             };
             brand += '</li>';
+            
+            var sizeList = ['XS', 'S', 'M', 'L', 'XL']
+            
+            size += '<li class="pb-2">'
+            for (x_size in sizeList){
+                url = sessionStorage.getItem("search_term")
+                var search_url = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&intl=' + sizeList[x_size]
+                var search_page = 'shop-grid-women.html'
+                var result_storage = 'search_result'
+                size += "<li><a onclick=\"openLink('"+ search_url + "', '"+ search_page +"','" + result_storage + "')\">" + sizeList[x_size] + "</a></li>";
+            };
+            size += '</li>'; 
 
             grid += '<div class="row">';
             for (x_grid in respData.results){
@@ -898,26 +978,6 @@
                 grid += respData.results[x_grid].product_name + '</h4><ul class="prize d-flex justify-content-end"><li>' + respData.results[x_grid].currency + '&nbsp;' + respData.results[x_grid].price+ '</li></ul></div></div>';
             };
             grid += "</div>"
-
-            list += '<div class="list__view__wrapper">'
-            for (x_list in respData.results){
-                onclicktext = "onclick=\"openPage('"+ respData.results[x_list].id +"')\"";
-                list += '<div class="list__view"><div class="thumb"><a class="first__img"  '+ onclicktext +'><img src="'
-                list += respData.results[x_list].image_url +'" alt="product images"></a>'
-                list += '</div><div class="content"><h2><a '+ onclicktext +'>'
-                list += respData.results[x_list].product_name +'</a></h2><ul class="rating d-flex"><li class="on"><i class="fa fa-star-o"></i></li><li class="on">'
-                list += '<i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li class="on"><i class="fa fa-star-o"></i></li><li>'
-                list += '<i class="fa fa-star-o"></i></li></ul><ul class="prize__box"><li>' + respData.results[x_list].currency
-                list += '&nbsp;' + respData.results[x_list].price + '</li></ul>';
-                if (respData.results[x_list].product_description != null) {
-                    list += '<p>'+ respData.results[x_list].product_description +'</p><ul id="'+ x_list.toString() +'" class="cart__action d-flex">';
-                }
-                else {
-                    list += '<p>Product description unavailable</p><ul id="'+ x_list.toString() +'" class="cart__action d-flex">';
-                }
-                list += '</ul></div></div>'
-            };
-            list += '</div>'
             
             pages_count = 0;
             pages_count = Math.ceil(respData.count / 24); // >15 dont show numbers
@@ -931,19 +991,15 @@
             document.getElementById("brand_count").innerHTML = count; // inserts products in from JSON response of search
             document.getElementById("brand_dropdown").innerHTML = brand; // inserts products in from JSON response of search
             document.getElementById("show_results").innerHTML = showNum; // inserts products in from JSON response of search
-            document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
             document.getElementById("nav-grid").innerHTML = grid; // inserts products in from JSON response of search
-            document.getElementById("nav-list").innerHTML = list; // inserts products in from JSON response of search
-            for (i=0; i<respData.results.length; i++){
-                updateBtn(respData.results[i].original_site, i);
-            };
+            document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
+            document.getElementById("size_dropdown").innerHTML = size; // inserts products in from JSON response of search
         }
         else{
             document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // inserts products in from JSON response of search
-            document.getElementById("nav-list").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // inserts products in from JSON response of search
         };
 	</script>
 
 </body>
 
-</html> 
+</html> .
