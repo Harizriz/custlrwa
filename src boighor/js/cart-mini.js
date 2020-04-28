@@ -2,23 +2,22 @@ var miniCart = new Cart();
 
 function loadMiniCart(){
     var miniCartData = miniCart.all();
-    var cartCount = '<span>'+ miniCartData.length.toString() +' items</span><span>Cart Subtotal</span>'
-    var cartTotal = 'RM' + miniCart.sum().toFixed(2).toString();
-    var miniCartHTML = '';
-
-    if (miniCartData.length !=0){
+    if (miniCartData !== null || miniCartData !== undefined){
+        var cartCount = '<span>'+ miniCartData.length.toString() +' items</span><span>Cart Subtotal</span>'
+        var cartTotal = 'RM' + miniCart.sum().toFixed(2).toString();
+        var miniCartHTML = '';
         for (i=0; i<miniCartData.length; i++){
             miniCartHTML += '<div class="item01 d-flex"><div class="thumb"><a onclick="openPage(\'' + miniCartData[i].page + '\')"><img src="'+ miniCartData[i].image +'"></a></div>';
             miniCartHTML += '<div class="content"><h6><a onclick="openPage(\'' + miniCartData[i].page + '\')">'+ miniCartData[i].name +'</a></h6><span class="prize">RM '+ miniCartData[i].price +'</span>';
             miniCartHTML += '<div class="product_prize d-flex justify-content-between"><span class="qun">Quantity: ' + miniCartData[i].quantity + '</span>';
             miniCartHTML += '<ul class="d-flex justify-content-end"><li><a onclick="removeFromCart(\''+ miniCartData[i].id + '\', \''+ miniCartData[i].size +'\')"><i class="zmdi zmdi-delete"></i></a></li></ul></div></div></div>';
         }
+        document.getElementById('cart_total').innerHTML = cartTotal;
+        document.getElementById('cart_count').innerHTML = cartCount;
     }
     else {
         miniCartHTML = '<div class="item01 d-flex">Cart is empty!</div>'
     }
-    document.getElementById('cart_total').innerHTML = cartTotal;
-    document.getElementById('cart_count').innerHTML = cartCount;
     document.getElementById('mini_cart').innerHTML = miniCartHTML;
     // update cart notif here
     getCartNotification();
@@ -27,7 +26,7 @@ function loadMiniCart(){
 function getCartNotification() {
     var empty = '';
     var miniCartData = miniCart.all();
-    if (miniCartData.length != null) {
+    if (miniCartData !== null) {
         document.getElementById("cart_noti").innerHTML = miniCartData.length;
     }
     else {
