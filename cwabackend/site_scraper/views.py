@@ -57,14 +57,17 @@ class ScrapedResultAPIView(generics.ListCreateAPIView):
             '''
             id_list = list((qs_uk.union(qs_us, qs_eu, qs_intl)).distinct('product_id').values_list('product_id', flat=True))                 
             queryset = ScrapedResult.objects.filter(id__in = id_list)
+        elif intl_size !=None:
+            qs_intl = size_qs.all().filter(sizing__iexact=intl_size)
+
+            id_list = list(qs_intl.distinct('product_id').values_list('product_id', flat=True))
+            queryset = ScrapedResult.objects.filter(id__in = id_list)
 
         if brandlist == 'true':
             queryset = queryset.distinct('brand')
             self.pagination_class = LargePagination
             self.serializer_class = BrandListSerializer
             
-        queryset = queryset.all()
-
         if subcategory != None:
             queryset = queryset.filter(subcategory__iexact=subcategory)
         if occasion != None:
