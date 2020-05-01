@@ -12,7 +12,6 @@
 .mean-container{
 	position: unset;
 	width: 100%;
-	background: #transparent;
 }
 
 /* hide the link until viewport size is reached */
@@ -25,7 +24,7 @@ a.meanmenu-reveal {
   display: inline-block;
   padding: 0;
   position: absolute;
-  right: 10px;
+  right: 1px;
   top: 12px;
   width: 100%;
   z-index: 8;
@@ -79,7 +78,8 @@ a.meanmenu-reveal {
 }
 
 .mean-container .mean-nav {
-  background: #f1f1f1 none repeat scroll 0 0;
+  background: #d1d1d1 none repeat scroll 0 0;
+  box-shadow: 5px 10px #888888;
   float: left;
   margin-bottom: 0;
   margin-left: 0;
@@ -204,7 +204,7 @@ a.meanmenu-reveal {
 
 .mean-container a.meanmenu-reveal.meanclose {
     top: 0;
-    font-size: 25px !important;
+    font-size: 20px !important;
 }
 
 /*Code New*/
