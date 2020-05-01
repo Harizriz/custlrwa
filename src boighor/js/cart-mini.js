@@ -2,7 +2,7 @@ var miniCart = new Cart();
 
 function loadMiniCart(){
     var miniCartData = miniCart.all();
-    if (miniCartData !== null || miniCartData !== undefined){
+    if (miniCartData != null || miniCartData != undefined){
         var cartCount = '<span>'+ miniCartData.length.toString() +' items</span><span>Cart Subtotal</span>'
         var cartTotal = 'RM' + miniCart.sum().toFixed(2).toString();
         var miniCartHTML = '';
@@ -26,11 +26,11 @@ function loadMiniCart(){
 function getCartNotification() {
     var empty = '';
     var miniCartData = miniCart.all();
-    if (miniCartData !== null) {
+    if (miniCartData != null) {
         document.getElementById("cart_noti").innerHTML = miniCartData.length;
     }
     else {
-        empty += '<a class="cartbox_active" href="#"></a>';
+        empty = '<a class="cartbox_active" href="#"></a>';
         document.getElementById("shopcart").innerHTML = empty;
     }
 }

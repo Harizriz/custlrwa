@@ -168,7 +168,7 @@
 								<a class="cartbox_active" href="#"><span class="product_qun" id="cart_noti"></span></a>
 								<!-- Start Shopping Cart -->
 								<div class="block-minicart minicart__active">
-									<div class="minicart-content-wrapper">
+									<div class="minicart-content-rapper">
 										<div class="micart__close">
 											<span>close</span>
 										</div>
@@ -618,7 +618,23 @@
             //console.log('empty wishlist');
         };
 		function updateBtn(original_site, iter){
-			//TODO Update button on click
+			var wishlist_btn = '';
+			var empty = '';
+			if (wishlist.includes(original_site)){ //highlighted wishlist button
+				wishlist_btn = '<a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ original_site + '\', \'' + iter +'\')" class="btn btn-light" style="margin-top:100px;background-color:#fff;border-color:#d86666;" data-toggle="tooltip" data-abc="true"><i class="fa fa-heart-clicked"></i></a><a onclick="removeFromCart(\''+ original_site + '\', \''+ cartData[iter].size +'\')" class="btn btn-remove ml-2" data-abc="true" style="margin-top:100px;background-color:grey">Remove</a>'
+			}
+			else{ //default, unhighlighted wishlist button
+				wishlist_btn = '<a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ original_site + '\', \'' + iter +'\')" class="btn btn-light" style="margin-top:100px;" data-toggle="tooltip" data-abc="true"><i class="fa fa-heart"></i></a><a onclick="removeFromCart(\''+ original_site + '\', \''+ cartData[iter].size +'\')" class="btn btn-remove ml-2" data-abc="true" style="margin-top:100px;background-color:grey">Remove</a>';
+			};
+			document.getElementById(iter.toString()).innerHTML = wishlist_btn;
+			if (wishlist.length != 0) {
+				empty = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length.toString() +'</span></a>';
+				document.getElementById("wishlist").innerHTML = empty;
+			}
+			else {
+				empty = '<a class="wishlist_active" href="wishlist.html"></a>';
+				document.getElementById("wishlist").innerHTML = empty;
+			}
         };
 		function addWishlist(original_site, iter){
             if (wishlist.length === 0){
@@ -657,8 +673,7 @@
 					cartHTML += '<td class="box-tocart"><input id="qty" class="input-text qty" name="qty" min="1" value="'+ cartData[i].quantity +'" title="Qty" type="number"'
 					cartHTML += ' oninput="updateCart(\''+ cartData[i].id + '\', \''+ cartData[i].quantity +'\', \'' + cartData[i].size + '\')"></td>';
 					cartHTML += '<td><div class="price-wrap"><var class="price">RM ' + cartData[i].price.toString() + '</var></div></td>';
-					cartHTML += '<td class="d-flex justify-content-start"><a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ cartData[i].id + '\', \'' + i +'\')" class="btn btn-light" style="margin-top:100px;" data-toggle="tooltip" data-abc="true">';
-					cartHTML += '<i class="fa fa-heart"></i></a><a onclick="removeFromCart(\''+ cartData[i].id + '\', \''+ cartData[i].size +'\')" class="btn btn-remove ml-2" data-abc="true" style="margin-top:100px;background-color:grey">Remove</a></td></tr>';
+					cartHTML += '<td class="d-flex justify-content-start" id="'+ i.toString() + '"></td></tr>';
 				};
 			}
 			else {
@@ -667,25 +682,21 @@
 			document.getElementById("cart_list").innerHTML = cartHTML;
 			document.getElementById("total_price").innerHTML = 'RM' + cart.sum().toFixed(2).toString()
 			document.getElementById("final_price").innerHTML = 'RM' + cart.sum().toFixed(2).toString()
+			for (i=0; i<cartData.length; i++){
+					updateBtn(cartData[i].id, i);
+			};
 		}
 		
 		loadCart();
 
 		function updateCart(id, quantity, size){
 			cart.update(id, quantity, size);
+			loadCart();
 		}
 
 		function removeFromCart(id, size){
 			cart.remove(id, size);
 			loadCart();
-		}
-
-		if (wishlist.length != 0) {
-			document.getElementById("wishlist_noti").innerHTML = wishlist.length;
-		}
-		else {
-			var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
-			document.getElementById("wishlist").innerHTML = empty;
 		}
 
 		function openPage(id){

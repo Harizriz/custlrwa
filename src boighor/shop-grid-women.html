@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -434,16 +434,29 @@
                                 <!-- Rounded switch -->
 								<div class="row">
 									<div class="col-12 d-flex justify-content-start">
-                                        <p class="search mr-3">Tops</p>
+                                        <p class="search ml-2">Tops</p>
+                                        <p class="toggle_tops_mv" id="tb_text_mv">Tops</p>
 										<label class="switch" id="resetTB">
-										</label>
-                                            <p class="ml-3 mr-5">Bottoms</p>
-                                        <label class="switch ml-5" id="resetCustomSizing">
+                                        </label>
+                                        <label class="switch_mv" id="resetTB_mv">
+                                        </label>
+                                        <p class="toggle_bottom_mv">Search for Tops / Bottoms</p>
+                                        <p class="search" style="margin-left: 90px;">Bottoms</p>
+                                        <label class="switch" id="resetCustomSizing" style="margin-left: 250px;">
                                         </label>
                                         <div id="notifications"></div>
-                                            <p class="search ml-3 mr-3">Enable custom sizing</p>
+                                        <p class="search" style="margin-left: 130px;">Enable custom sizing</p>
 									</div>
-								</div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-12 d-flex justify-content-start">
+                                        <p class="toggle_tops_mv" id="cs_text">Disabled</p>
+                                        <label class="switch_mv" id="resetCustomSizing_mv">
+                                        </label>
+                                        <div id="notifications"></div>
+										<p class="toggle_cs_mv">Search with Custom Sizing?</p>
+                                    </div>
+                                </div>
                                 <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between mb-2">
                                     <div class="shop__list nav justify-content-center" role="tablist">
                                     </div>
@@ -619,8 +632,10 @@
 		var tb_toggle = 'tops';
 		var tb_search = '&subcategory=tops';
 		setTimeout(function(){
-			document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
-			document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';			
+            document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+            document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+            document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+            document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
 		}, 100);
 		var to_search = '';
 
@@ -632,10 +647,14 @@
 					var measurements = JSON.parse(localStorage.getItem("custom_top"));
 					if (measurements === null){
 						notifyCustomSizing();
-						document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+
+                        document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
 					}
 					else{
+                        document.getElementById("cs_text").innerHTML = "Enabled";
 						var adjusted_measurements = {
 							"bust": measurements.chest,
 							"waist": measurements.waist,
@@ -651,10 +670,13 @@
 					var measurements = localStorage.getItem("custom_bottom");
 					if (measurements === null){
 						notifyCustomSizing();
-						document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
 					}
 					else{
+                        document.getElementById("cs_text").innerHTML = "Enabled";
 						var adjusted_measurements = {
 							"inner_leg": measurements.inseam,
 							"waist": measurements.waist,
@@ -665,19 +687,81 @@
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
 					}
 				}
-			}	
+			}
+            else{
+                document.getElementById("cs_text").innerHTML = "Disabled";
+            }	
 		};
 		
 
 		function toggleTopOrBottom(){
-			if (tb_toggle == 'tops'){
-				tb_toggle = 'bottoms';
-				tb_search = '&subcategory=bottoms';
-			}
-			else{
-				tb_toggle = 'tops';
-				tb_search = '&subcategory=tops';
-			}
+			if (sizing_toggle){
+                if (tb_toggle == 'tops'){
+                    var measurements = localStorage.getItem("custom_bottom");
+					if (measurements === null){
+						notifyCustomSizing();
+                        document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+                        document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+                        document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("cs_text").innerHTML = "Disabled";
+						sizing_toggle = false;
+					}
+                    else{
+                        document.getElementById("cs_text").innerHTML = "Enabled";
+                        document.getElementById("tb_text").innerHTML = "Bottoms";
+                        document.getElementById("tb_text_mv").innerHTML = "Bottoms";
+						var adjusted_measurements = {
+							"inner_leg": measurements.inseam,
+							"waist": measurements.waist,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, women_bottoms, 'bottoms', 'Women')
+						var temp_obj = JSON.parse(localStorage.getItem('best_womens_bottom'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                        tb_toggle = 'bottoms'
+					}
+                }
+                else{
+                    var measurements = localStorage.getItem("custom_top");
+					if (measurements === null){
+						notifyCustomSizing();
+                        document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+                        document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+                        document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()" checked><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()" checked><span class="slider round"></span>';
+                        document.getElementById("cs_text").innerHTML = "Disabled";
+						sizing_toggle = false;
+					}
+                    else{
+                        document.getElementById("cs_text").innerHTML = "Enabled";
+                        document.getElementById("tb_text").innerHTML = "Tops";
+                        document.getElementById("tb_text_mv").innerHTML = "Tops";
+                        var adjusted_measurements = {
+							"bust": measurements.chest,
+							"waist": measurements.waist,
+							"arm": measurements.arm,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, women_tops, 'tops', 'Women')
+						var temp_obj = JSON.parse(localStorage.getItem('best_womens_top'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                        tb_toggle = 'tops'
+					}
+                }
+            } 
+            else {
+                if (tb_toggle == 'tops'){
+                    document.getElementById("tb_text_mv").innerHTML = "Bottoms";
+                    tb_toggle = 'bottoms';
+                    tb_search = '&subcategory=bottoms';
+                }
+                else{
+                    document.getElementById("tb_text_mv").innerHTML = "Tops";
+                    tb_toggle = 'tops';
+                    tb_search = '&subcategory=tops';
+                }
+            }
 		};
 
         var current_page = sessionStorage.getItem("current_page");

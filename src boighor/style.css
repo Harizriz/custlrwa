@@ -2483,6 +2483,14 @@ Setting Styles
     margin-top: 50px;
 }
 
+@media screen and (max-width: 414px) {
+    .input-group {
+        border-radius: 19px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
 .searchbar__content {
     border: 1px solid #ebebeb;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.17);
@@ -2580,6 +2588,17 @@ Setting Styles
     padding-left: 10px;
 }
 
+.search__bar {
+    padding: 0px;
+    margin-top: 230px;
+}
+
+@media screen and (max-width: 414px) {
+    .search__bar {
+        padding: 0px;
+        margin-top: 50px;
+    }
+}
 
 /*******************
 Blocks Styles
@@ -7460,6 +7479,13 @@ MyAccount Styles
     margin-left: 200px; */
 }
 
+.account__title_search {
+    color: #2e2e2e;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
 .account__form {
     border: 1px solid #d3ced2;
     border-radius: 5px;
@@ -7470,13 +7496,12 @@ MyAccount Styles
     margin-left: 200px;
 }
 
-@media screen and (max-width: 600px) {
-    .account__form,
-    .account__title,
-    input[type=submit] {
-        margin-top: 0px;
-        margin-left: 0;
-        margin-right: 0px;
+@media screen and (max-width: 414px) {
+    .account__title_search {
+        color: #2e2e2e;
+        font-size: 28px;
+        font-weight: 600;
+        margin-left: 30px;
     }
 }
 
@@ -9301,6 +9326,13 @@ Search Styles
     width: 100%;
 }
 
+@media screen and (max-width: 414px) {
+    .wrap_search {
+        margin-left: 40px;
+        width: 83%;
+    }
+}
+
 /*-------------------------
 Image Search Page Styles
 -------------------------*/
@@ -9382,9 +9414,16 @@ Image Search Page Styles
   height: 350px;
   width: 265px;
 }
+
 #cf4a img {
   position:absolute;
   left:0;
+}
+
+@media screen and (max-width: 414px) {
+    #cf4a img {
+        display: none;
+      }
 }
 
 #cf4a img {
@@ -9517,10 +9556,17 @@ Image Search Page Styles
      height: 700px;
      width: 600px;
    }
+
    #cf5a img {
      position:absolute;
      left:0;
    }
+
+    @media screen and (max-width: 414px) {
+        #cf5a img {
+            display: none;
+        }
+    }   
    
    #cf5a img {
      -webkit-animation-name: cf5FadeInOut;
@@ -9581,14 +9627,41 @@ Image Search Page Styles
 
     /* The switch - the box around the slider */
     .switch {
-        position: relative;
+        position: absolute;
         display: inline-block;
         width: 50px;
         height: 24px;
+        margin-left: 60px;
+    }
+
+    .switch_mv {
+        position: absolute;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+        margin-left: 84px;
+    }
+
+    @media screen and (max-width: 415px) {
+        .switch {
+           display: none;
+        }
+    }
+
+    @media screen and (max-width: 1600px) and (min-width: 415px) {
+        .switch_mv {
+           display: none;
+        }
     }
     
     /* Hide default HTML checkbox */
     .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .switch_mv input {
         opacity: 0;
         width: 0;
         height: 0;
@@ -9691,3 +9764,97 @@ Image Search Page Styles
     #btnInvisible {
         display:none;
     }
+
+    p.toggle_tops {
+        margin-right: 10px;
+        margin-left: 7px;
+    }
+
+    @media screen and (max-width: 415px) {
+        p.toggle_tops {
+            display: none;
+        }
+    }  
+
+    p.toggle_tops_mv {
+        margin-right: 15px;
+        margin-left: 7px;
+    }
+
+    p.toggle_bottom_mv {
+        margin-left: 150px;
+        position: absolute;
+    }
+
+    @media screen and (max-width: 2000px) and (min-width: 415px) {
+        p.toggle_bottom_mv {
+           display: none;
+        }
+    } 
+
+    p.toggle_bottom {
+        margin-left: 130px;
+        position: absolute;
+    }
+
+    @media screen and (max-width: 415px) {
+        p.toggle_bottom {
+            display: none;
+        }
+    }  
+
+    p.toggle_cs {
+        margin-left: 270px;
+    }
+
+    @media screen and (max-width: 414px) {
+        p.toggle_cs {
+            display: none;
+        }
+    }  
+
+    p.toggle_cs_mv {
+        margin-left: 150px;
+        position: absolute;
+        margin-top: 1px;
+    }
+
+    .cs {
+        margin-left: 250px;
+    }
+
+    @media screen and (max-width: 414px) {
+        .cs {
+            display: none;
+        }
+    }  
+
+    @media screen and (max-width: 416px) {
+        .cs_mv {
+            margin-left: 84px;
+        }
+    }  
+
+    @media screen and (max-width: 2000px) and (min-width: 415px) {
+        p.toggle_tops_mv {
+            display: none;
+        }
+    }  
+
+    @media screen and (max-width: 2000px) and (min-width: 420px) {
+        .cs_mv {
+            display: none;        
+        }
+    }  
+
+    @media screen and (max-width: 2000px) and (min-width: 415px) {
+        p.toggle_cs_mv {
+            display: none;
+        }
+    } 
+
+    @media screen and (max-width: 415px) {
+        p.search {
+            display: none;
+        }
+    } 
