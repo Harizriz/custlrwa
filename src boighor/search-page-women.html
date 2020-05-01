@@ -566,7 +566,8 @@
 			$( document ).ready(function() {
 				$("div").click(
 				NotifyLink("You haven't saved a custom size!", 1000, null, "danger", "upper-body.html")
-				)
+				);
+                sessionStorage.setItem('back_page', window.location.href);
 			});
         };
         

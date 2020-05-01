@@ -623,8 +623,9 @@
         function notifyCustomSizing() {
 			$( document ).ready(function() {
 				$("div").click(
-				NotifyLink("Custom sizing unavailable!", 1000, null, "danger", "upper-body.html")
-				)
+				NotifyLink("You haven't saved a custom size!", 1000, null, "danger", "upper-body.html")
+				);
+                sessionStorage.setItem('back_page', window.location.href);
 			});
         };
         

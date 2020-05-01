@@ -7475,9 +7475,18 @@ MyAccount Styles
     font-size: 28px;
     font-weight: 600;
     margin-top: 50px;
-    /* margin: 0 0 5px;
-    margin-left: 200px; */
+    margin-left: 200px;
 }
+
+@media screen and (max-width: 415px) {
+    .account__title_shop {
+        color: #2e2e2e;
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 50px;
+        margin-left: 15px
+    }
+} 
 
 .account__title_search {
     color: #2e2e2e;
@@ -10008,6 +10017,43 @@ Image Search Page Styles
 
     @media screen and (max-width: 1600px) and (min-width: 514px) {
         .mobileview {
+            display: none;
+        }
+    }
+
+    /*-------------------------
+    fa Styles
+    -------------------------*/
+
+    .dot {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        display: inline-block;
+        margin-right:52px;
+        margin-bottom:10px;
+    }
+
+    @media screen and (max-width: 514px) {
+        .dot_mv {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            display: inline-block;
+            margin-left:275px;
+        }
+    }
+
+    @media screen and (max-width: 1600px) and (min-width: 514px) {
+        .dot_mv {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 514px) {
+        .dot {
             display: none;
         }
     }
