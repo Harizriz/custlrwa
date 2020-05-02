@@ -448,7 +448,7 @@
                                         <p class="search" style="margin-left: 130px;">Enable custom sizing</p>
 									</div>
                                 </div>
-                                <div class="row mt-4">
+                                <div class="row mt-4 mb-5">
                                     <div class="col-md-12 d-flex justify-content-start">
                                         <p class="toggle_tops_mv" id="cs_text">Disabled</p>
                                         <label class="switch_mv" id="resetCustomSizing_mv">
@@ -1060,7 +1060,7 @@
                 onclicktext = "onclick=\"openPage('"+ respData.results[x_grid].id +"')\"";
                 grid += '<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12" ' + onclicktext + '><div class="product__thumb"><a class="first__img"><img src="'
                 grid += respData.results[x_grid].image_url + '" alt="product image"></a></div><div class="product__content content--center"><h4>'
-                grid += respData.results[x_grid].product_name + '</h4><ul class="prize d-flex justify-content-end"><li>' + respData.results[x_grid].currency + '&nbsp;' + respData.results[x_grid].price+ '</li></ul></div></div>';
+                grid += respData.results[x_grid].product_name + '</h4><ul class="prize d-flex"><li>' + respData.results[x_grid].currency + '&nbsp;' + respData.results[x_grid].price+ '</li></ul></div></div>';
             };
             grid += "</div>"
             
@@ -1068,8 +1068,10 @@
             pages_count = Math.ceil(respData.count / 24); // >15 dont show numbers
             
             pagi += '<ul class="wn__pagination"><li><a onclick="prevPage()"><i class="zmdi zmdi-chevron-left"></i></a></li>';
-            for (x_pagi = 1; x_pagi <= pages_count; x_pagi++){
-                pagi += '<li><a onclick= "pageChange('+ x_pagi.toString() +')">'+ x_pagi +'</a></li>';
+            if (pages_count<=10){
+                for (x_pagi = 1; x_pagi <= pages_count; x_pagi++){
+                    pagi += '<li><a onclick= "pageChange('+ x_pagi.toString() +')">'+ x_pagi +'</a></li>';
+                };
             };
             pagi += '<li><a onclick=nextPage()><i class="zmdi zmdi-chevron-right"></i></a></li></ul>';
 
