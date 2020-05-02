@@ -2486,8 +2486,8 @@ Setting Styles
 @media screen and (max-width: 767px) {
     .input-group {
         border-radius: 19px;
-        margin-top: 50px;
-        margin-bottom: 30px;
+        margin-top: 25px;
+        margin-bottom: 40px;
     }
 }
 
@@ -10066,27 +10066,39 @@ Image Search Page Styles
         }
     }  
 
-    @media screen and (max-width: 2000px) and (min-width: 415px) {
+    @media screen and (max-width: 2000px) and (min-width: 767px) {
         p.toggle_tops_mv {
             display: none;
         }
     }  
 
-    @media screen and (max-width: 2000px) and (min-width: 420px) {
+    @media screen and (max-width: 2000px) and (min-width: 767px) {
         .cs_mv {
             display: none;        
         }
     }  
 
-    @media screen and (max-width: 2000px) and (min-width: 415px) {
+    @media screen and (max-width: 2000px) and (min-width: 767px) {
         p.toggle_cs_mv {
             display: none;
         }
     } 
 
-    @media screen and (max-width: 415px) {
+    @media screen and (max-width: 767px) {
         p.search {
             display: none;
+        }
+    } 
+
+    .invisible_mobile {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: 2000px) and (min-width: 767px) {
+        .invisible_mobile {
+            margin-top: 23px;
+            margin-bottom: 0px;
         }
     } 
 
@@ -10152,5 +10164,16 @@ Image Search Page Styles
         .mobile_product {
             display: none;
             height: 0;
+        }
+    }
+
+    /*-------------------------
+    Modal Styles
+    -------------------------*/
+
+    @media screen and (max-width: 767px) {
+        .modal-content.mobile_modal {
+            width:fit-content;
+            margin-left: -80px;
         }
     }
