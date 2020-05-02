@@ -36,276 +36,369 @@
 	<div class="wrapper" id="wrapper">
 		
 		<!-- Header -->
-		<header id="wn__header" class="oth-page header__area header__absolute sticky__header">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-4 col-sm-4 col-7 col-lg-2">
-						<div class="logo">
-							<a href="index.html">
-								<img src="images/logo/yellow1.png" alt="logo images">
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-8 d-none d-lg-block">
-						<nav class="mainmenu__nav">
-							<ul class="meninmenu d-flex justify-content-start">
-								<li class="drop with--one--item"><a href="index.html">Home</a></li>
-								<li class="drop"><a href="#">Shop</a>
-									<div class="megamenu mega03">
-										<ul class="item item03">
-											<li class="title">Shop Layout</li>
-											<li><a href="shop-grid.html">Shop Grid</a></li>
-											<li><a href="single-product.html">Single Product</a></li>
-										</ul>
-										<ul class="item item03">
-											<li class="title">Shop Page</li>
-											<li><a href="my-account.html">My Account</a></li>
-											<li><a href="cart.html">Cart Page</a></li>
-											<li><a href="checkout.html">Checkout Page</a></li>
-											<li><a href="wishlist.html">Wishlist Page</a></li>
-											<li><a href="error404.html">404 Page</a></li>
-											<li><a href="faq.html">Faq Page</a></li>
-										</ul>
-										<ul class="item item03">
-											<li class="title">Bargain Books</li>
-											<li><a href="shop-grid.html">Bargain Bestsellers</a></li>
-											<li><a href="shop-grid.html">Activity Kits</a></li>
-											<li><a href="shop-grid.html">B&N Classics</a></li>
-											<li><a href="shop-grid.html">Books Under $5</a></li>
-											<li><a href="shop-grid.html">Bargain Books</a></li>
-										</ul>
-									</div>
-								</li>
-								<li class="drop"><a href="shop-grid.html">Books</a>
-									<div class="megamenu mega03">
-										<ul class="item item03">
-											<li class="title">Categories</li>
-											<li><a href="shop-grid.html">Biography </a></li>
-											<li><a href="shop-grid.html">Business </a></li>
-											<li><a href="shop-grid.html">Cookbooks </a></li>
-											<li><a href="shop-grid.html">Health & Fitness </a></li>
-											<li><a href="shop-grid.html">History </a></li>
-										</ul>
-										<ul class="item item03">
-											<li class="title">Customer Favourite</li>
-											<li><a href="shop-grid.html">Mystery</a></li>
-											<li><a href="shop-grid.html">Religion & Inspiration</a></li>
-											<li><a href="shop-grid.html">Romance</a></li>
-											<li><a href="shop-grid.html">Fiction/Fantasy</a></li>
-											<li><a href="shop-grid.html">Sleeveless</a></li>
-										</ul>
-										<ul class="item item03">
-											<li class="title">Collections</li>
-											<li><a href="shop-grid.html">Science </a></li>
-											<li><a href="shop-grid.html">Fiction/Fantasy</a></li>
-											<li><a href="shop-grid.html">Self-Improvemen</a></li>
-											<li><a href="shop-grid.html">Home & Garden</a></li>
-											<li><a href="shop-grid.html">Humor Books</a></li>
-										</ul>
-									</div>
-								</li>
-								<li class="drop"><a href="shop-grid.html">Kids</a>
-									<div class="megamenu mega02">
-										<ul class="item item02">
-											<li class="title">Top Collections</li>
-											<li><a href="shop-grid.html">American Girl</a></li>
-											<li><a href="shop-grid.html">Diary Wimpy Kid</a></li>
-											<li><a href="shop-grid.html">Finding Dory</a></li>
-											<li><a href="shop-grid.html">Harry Potter</a></li>
-											<li><a href="shop-grid.html">Land of Stories</a></li>
-										</ul>
-										<ul class="item item02">
-											<li class="title">More For Kids</li>
-											<li><a href="shop-grid.html">B&N Educators</a></li>
-											<li><a href="shop-grid.html">B&N Kids' Club</a></li>
-											<li><a href="shop-grid.html">Kids' Music</a></li>
-											<li><a href="shop-grid.html">Toys & Games</a></li>
-											<li><a href="shop-grid.html">Hoodies</a></li>
-										</ul>
-									</div>
-								</li>
-								<li class="drop"><a href="#">Pages</a>
+	    <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-7 col-lg-2">
+                        <div class="logo">
+                            <a href="portfolio.html">
+                                <img src="images/logo/yellow1.png" alt="logo images">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 d-none d-lg-block">
+                        <nav class="mainmenu__nav">
+                            <ul class="meninmenu d-flex justify-content-start">
+                                <li class="drop"><a href="#">Shop</a>
+                                    <div class="megamenu mega03">
+                                        <ul class="item item03">
+                                            <li class="title">Top Brands | Men</li>
+                                            <li><a onclick="openHeaderLink('tommy hilfiger', '', 'men')">Tommy Hilfiger</a></li>
+                                            <li><a onclick="openHeaderLink('the north face', '', 'men')">The North Face</a></li>
+                                            <li><a onclick="openHeaderLink('polo ralph lauren', '', 'men')">Polo Ralph Lauren</a></li>
+                                            <li><a onclick="openHeaderLink('gucci', '', 'men')">Gucci</a></li>
+                                            <li><a onclick="openHeaderLink('cotton on', '', 'men')">Cotton On</a></li>
+                                        </ul>
+                                        <ul class="item item03">
+                                            <li class="title">Top Brands | Women</a></li>
+                                            <li><a onclick="openHeaderLink('banana republic', '', 'women')">Banana Republic</a></li>
+                                            <li><a onclick="openHeaderLink('forever 21', '', 'women')">FOREVER 21</a></li>
+                                            <li><a onclick="openHeaderLink('h&m', '', 'women')">H&M</a></li>
+                                            <li><a onclick="openHeaderLink('mango', '', 'women')">Mango</a></li>
+                                            <li><a onclick="openHeaderLink('zalora', 'zalora', 'women')">Zalora</a></li>
+                                        </ul>
+                                        <ul class="item item03">
+                                            <li class="title">Top Brands | Kids</a></li>
+                                            <li><a onclick="openHeaderLink('abercrombie & fitch', '', 'kids')">Abercrombie & Fitch</a></li>
+                                            <li><a onclick="openHeaderLink('poney', '', 'kids')">Poney</a></li>
+                                            <li><a onclick="openHeaderLink('disney baby', '', 'kids')">Disney Baby</a></li>
+                                            <li><a onclick="openHeaderLink('kiko', '', 'kids')">KIKO</a></li>
+                                            <li><a onclick="openHeaderLink('akarana baby', '', 'kids')">Akarana Baby</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="#">Men</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Formal</a></li>
+                                            <li><a onclick="openHeaderLink('esprit', 'formal', 'men')">Esprit</a></li>
+                                            <li><a onclick="openHeaderLink('pacolino', 'formal', 'men')">Pacolino</a></li>
+                                            <li><a onclick="openHeaderLink('tommy hilfiger', 'formal', 'men')">Tommy Hilfiger</a></li>
+                                            <li><a onclick="openHeaderLink('boss', 'formal', 'men')">BOSS</a></li>
+                                            <li><a onclick="openHeaderLink('dockers', 'formal', 'men')">Dockers</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Casual</a></li>
+                                            <li><a onclick="openHeaderLink('champion', 'casual', 'men')">Champion</a></li>
+                                            <li><a onclick="openHeaderLink('converse', 'casual', 'men')">Converse</a></li>
+                                            <li><a onclick="openHeaderLink('gucci', 'casual', 'men')">Gucci</a></li>
+                                            <li><a onclick="openHeaderLink('fendi', 'casual', 'men')">Fendi</a></li>
+                                            <li><a onclick="openHeaderLink('gap', 'casual', 'men')">GAP</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Sports</a></li>
+                                            <li><a onclick="openHeaderLink('adidas', 'sports', 'men')">Adidas</a></li>
+                                            <li><a onclick="openHeaderLink('nike', 'sports', 'men')">Nike</a></li>
+                                            <li><a onclick="openHeaderLink('puma', 'sports', 'men')">Puma</a></li>
+                                            <li><a onclick="openHeaderLink('under armour', 'sports', 'men')">Under Armour</a></li>
+                                            <li><a onclick="openHeaderLink('kappa', 'sports', 'men')">Kappa</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="#">Women</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Formal</li>
+                                            <li><a onclick="openHeaderLink('zalora', 'formal', 'women')">Zalora</a></li>
+                                            <li><a onclick="openHeaderLink('mango', 'formal', 'women')">Mango</a></li>
+                                            <li><a onclick="openHeaderLink('ax paris', 'formal', 'women')">AX Paris</a></li>
+                                            <li><a onclick="openHeaderLink('guess', 'formal', 'women')">Guess</a></li>
+                                            <li><a onclick="openHeaderLink('gap', 'formal', 'women')">GAP</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Casual</a></li>
+                                            <li><a onclick="openHeaderLink('esprit', 'casual', 'women')">ESPRIT</a></li>
+                                            <li><a onclick="openHeaderLink('london rag', 'casual', 'women')">London Rag</a></li>
+                                            <li><a onclick="openHeaderLink('polo ralph lauren', 'casual', 'women')">Polo Ralph Lauren</a></li>
+                                            <li><a onclick="openHeaderLink('zalora', 'casual', 'women')">Zalora</a></li>
+                                            <li><a onclick="openHeaderLink('forever 21', 'casual', 'women')">Forever 21</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Sports</a></li>
+                                            <li><a onclick="openHeaderLink('adidas', 'sports', 'women')">Adidas</a></li>
+                                            <li><a onclick="openHeaderLink('nike', 'sports', 'women')">Nike</a></li>
+                                            <li><a onclick="openHeaderLink('puma', 'sports', 'women')">Puma</a></li>
+                                            <li><a onclick="openHeaderLink('Superdry', 'sports', 'women')">Superdry</a></li>
+                                            <li><a onclick="openHeaderLink('under armour', 'sports', 'women')">Under Armour</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="#">Kids</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Baby</li>
+                                            <li><a onclick="openHeaderLink('baby poney', 'baby', 'kids')">Baby Poney</a></li>
+                                            <li><a onclick="openHeaderLink('disney baby', 'baby', 'kids')">Disney Baby</a></li>
+                                            <li><a onclick="openHeaderLink('gap', 'baby', 'kids')">GAP</a></li>
+                                            <li><a onclick="openHeaderLink('mango baby', 'baby', 'kids')">Mango Baby</a></li>
+                                            <li><a onclick="openHeaderLink('poney', 'baby', 'kids')">Poney</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Casual</a></li>
+                                            <li><a onclick="openHeaderLink('abercrombie & fitch', 'casual', 'kids')">Abercrombie & Fitch</a></li>
+                                            <li><a onclick="openHeaderLink('babybol', 'casual', 'kids')">Babybol</a></li>
+                                            <li><a onclick="openHeaderLink('gap', 'casual', 'kids')">GAP</a></li>
+                                            <li><a onclick="openHeaderLink('guess', 'casual', 'kids')">GUESS</a></li>
+                                            <li><a onclick="openHeaderLink('little nuuna', 'casual', 'kids')">Little Nuuna</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Sports</a></li>
+                                            <li><a onclick="openHeaderLink('adidas', 'sports', 'kids')">Adidas</a></li>
+                                            <li><a onclick="openHeaderLink('nike', 'sports', 'kids')">Nike</a></li>
+                                            <li><a onclick="openHeaderLink('puma', 'sports', 'kids')">Puma</a></li>
+                                            <li><a onclick="openHeaderLink('under armour', 'sports', 'kids')">Under Armour</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="contact.html">Help</a>
 									<div class="megamenu dropdown">
 										<ul class="item item01">
-											<li><a href="about.html">About Page</a></li>
-											<li class="label2"><a href="portfolio.html">Portfolio</a>
+											<li><a href="faq.html">FAQs</a></li>
+											<li class="label2"><a href="terms-and-conditions.html">Legal & Privacy</a>
 												<ul>
-													<li><a href="portfolio.html">Portfolio</a></li>
-													<li><a href="portfolio-details.html">Portfolio Details</a></li>
+													<li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+													<li><a href="privacy-and-cookies.html">Privacy and Cookies</a></li>
 												</ul>
 											</li>
-											<li><a href="my-account.html">My Account</a></li>
-											<li><a href="cart.html">Cart Page</a></li>
-											<li><a href="checkout.html">Checkout Page</a></li>
-											<li><a href="wishlist.html">Wishlist Page</a></li>
-											<li><a href="error404.html">404 Page</a></li>
-											<li><a href="faq.html">Faq Page</a></li>
-											<li><a href="team.html">Team Page</a></li>
+											<li><a href="contact.html">Contact Us</a></li>
 										</ul>
 									</div>
-								</li>
-								<li class="drop"><a href="blog.html">Blog</a>
-									<div class="megamenu dropdown">
-										<ul class="item item01">
-											<li><a href="blog.html">Blog Page</a></li>
-											<li><a href="blog-details.html">Blog Details</a></li>
-										</ul>
-									</div>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</nav>
-					</div>
-					<div class="col-md-8 col-sm-8 col-5 col-lg-2">
-						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-							<li class="shop_search">
-                                <a class="search__active" href="#"></a>
-                            </li>
+                                </li>	
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-5 col-lg-2">
+                        <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
                             <li class="wishlist" id="wishlist">
-                                <a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
-                            </li>
+								<a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
+							</li>
 							<li class="shopcart" id="shopcart">
-								<a class="cartbox_active" href="#"><span class="product_qun" id="cart_noti"></span></a>
-								<!-- Start Shopping Cart -->
-								<div class="block-minicart minicart__active">
-									<div class="minicart-content-rapper">
-										<div class="micart__close">
-											<span>close</span>
-										</div>
-										<div class="items-total d-flex justify-content-between" id="cart_count">
-										</div>
-										<div class="total_amount text-right">
-											<span id="cart_total"></span>
-										</div>
-										<div class="mini_action checkout">
-											<a class="checkout__btn" href="cart.html">Go to Checkout</a>
-										</div>
-										<div class="single__items">
-											<div class="miniproduct" id="mini_cart">
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- End Shopping Cart -->
-								</li>
-							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
-								<div class="searchbar__content setting__block">
+								<a class="cartbox_active" href="cart.html"><span class="product_qun" id="cart_noti"></span></a>
+                                <!-- Start Shopping Cart -->
+                                <div class="block-minicart minicart__active">
+                                    <div class="minicart-content-wrapper">
+                                        <div class="micart__close">
+                                            <span>close</span>
+                                        </div>
+                                        <div class="items-total d-flex justify-content-between" id="cart_count">
+                                        </div>
+                                        <div class="total_amount text-right">
+                                            <span id="cart_total"></span>
+                                        </div>
+                                        <div class="mini_action checkout">
+                                            <a class="checkout__btn" href="cart.html">Go to Checkout</a>
+                                        </div>
+                                        <div class="single__items">
+                                            <div class="miniproduct" id="mini_cart">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- End Shopping Cart -->
+                            <li class="setting__bar__icon"><a class="setting__active"></a>
+								<div class="searchbar__content setting__block p-0">
 									<div class="content-inner">
 										<div class="switcher-currency">
 											<strong class="label switcher-label">
-												<span>Currency</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<span class="currency-trigger">USD - US Dollar</span>
-													<ul class="switcher-dropdown">
-														<li>GBP - British Pound Sterling</li>
-														<li>EUR - Euro</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>Language</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<span class="currency-trigger">English01</span>
-													<ul class="switcher-dropdown">
-														<li>English02</li>
-														<li>English03</li>
-														<li>English04</li>
-														<li>English05</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>Select Store</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<span class="currency-trigger">Fashion Store</span>
-													<ul class="switcher-dropdown">
-														<li>Furniture</li>
-														<li>Shoes</li>
-														<li>Speaker Store</li>
-														<li>Furniture</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>My Account</span>
+												<span>Account Options</span>
 											</strong>
 											<div class="switcher-options">
 												<div class="switcher-currency-trigger">
 													<div class="setting__menu">
-														<span><a href="#">Compare Product</a></span>
-														<span><a href="#">My Account</a></span>
-														<span><a href="#">My Wishlist</a></span>
-														<span><a href="#">Sign In</a></span>
-														<span><a href="#">Create An Account</a></span>
+														<span><a href="login.html">Log in</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter">Track My Order</a></span>
+														 <!-- Modal -->
+														 <div class="modal p-0" id="modal_order" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="cursor:default;">
+															<div class="modal-dialog modal-dialog-centered portfolio_modal" role="document">
+																<div class="modal-content mobile_modal">
+																	<div class="modal-header">
+																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: gray;">Track My Order</h4>
+																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																		</button>
+																	</div>
+																	<div class="modal-body pl-2" style="height: 220px;">
+																		<h6 class="pb-3 pl-2" style="text-align:left;"> Email Address</h6>
+																		<input type="text" id="emailTracking" name="emailTracking" style=" height:51px; font-size:14pt; text-align: left; float:left; margin-bottom: 10px; margin-left: 6px;"><br><br>
+																		<h6 class="pb-2 pl-2" style="text-align:left;"> Order Number </h6>
+																		<input type="text" id="orderNumber" name="orderNumber" style=" height:51px; font-size:14pt; text-align: left; float:left; margin-bottom: 10px; margin-left: 6px; margin-top:10px"><br><br>
+																	</div>
+																	<div class="modal-footer" style="background-color: #e1e1e1">
+																		<button type="button" class="btn btn-secondary">Track</button>
+																	</div>
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- Start Mobile Menu -->
-				<div class="row d-none">
-					<div class="col-lg-12 d-none">
-						<nav class="mobilemenu__nav">
-							<ul class="meninmenu">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#">Pages</a>
-									<ul>
-										<li><a href="about.html">About Page</a></li>
-										<li><a href="portfolio.html">Portfolio</a>
-											<ul>
-												<li><a href="portfolio.html">Portfolio</a></li>
-												<li><a href="portfolio-details.html">Portfolio Details</a></li>
-											</ul>
-										</li>
-										<li><a href="my-account.html">My Account</a></li>
-										<li><a href="cart.html">Cart Page</a></li>
-										<li><a href="checkout.html">Checkout Page</a></li>
-										<li><a href="wishlist.html">Wishlist Page</a></li>
-										<li><a href="error404.html">404 Page</a></li>
-										<li><a href="faq.html">Faq Page</a></li>
-										<li><a href="team.html">Team Page</a></li>
-									</ul>
-								</li>
-								<li><a href="shop-grid.html">Shop</a>
-									<ul>
-										<li><a href="shop-grid.html">Shop Grid</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-									</ul>
-								</li>
-								<li><a href="blog.html">Blog</a>
-									<ul>
-										<li><a href="blog.html">Blog Page</a></li>
-										<li><a href="blog-details.html">Blog Details</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-				<!-- End Mobile Menu -->
-	            <div class="mobile-menu d-block d-lg-none">
-	            </div>
-	            <!-- Mobile Menu -->	
-			</div>		
-		</header>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Start Mobile Menu -->
+                <div class="row d-none">
+                    <div class="col-lg-12 d-none">
+                        <nav class="mobilemenu__nav">
+                            <ul class="meninmenu">
+                                <li><a href="#">Shop</a>
+                                    <ul>
+                                        <li><a href="#">Top Brands | Men</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('tommy hilfiger', '', 'men')">Tommy Hilfiger</a></li>
+                                                <li><a onclick="openHeaderLink('the north face', '', 'men')">The North Face</a></li>
+                                                <li><a onclick="openHeaderLink('polo ralph lauren', '', 'men')">Polo Ralph Lauren</a></li>
+                                                <li><a onclick="openHeaderLink('gucci', '', 'men')">Gucci</a></li>
+                                                <li><a onclick="openHeaderLink('cotton on', '', 'men')">Cotton On</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Top Brands | Women</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('banana republic', '', 'women')">Banana Republic</a></li>
+                                                <li><a onclick="openHeaderLink('forever 21', '', 'women')">FOREVER 21</a></li>
+                                                <li><a onclick="openHeaderLink('h&m', '', 'women')">H&M</a></li>
+                                                <li><a onclick="openHeaderLink('mango', '', 'women')">Mango</a></li>
+                                                <li><a onclick="openHeaderLink('zalora', 'zalora', 'women')">Zalora</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Top Brands | Kids</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('abercrombie & fitch', '', 'kids')">Abercrombie & Fitch</a></li>
+                                                <li><a onclick="openHeaderLink('poney', '', 'kids')">Poney</a></li>
+                                                <li><a onclick="openHeaderLink('disney baby', '', 'kids')">Disney Baby</a></li>
+                                                <li><a onclick="openHeaderLink('kiko', '', 'kids')">KIKO</a></li>
+                                                <li><a onclick="openHeaderLink('akarana baby', '', 'kids')">Akarana Baby</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Men</a>
+                                    <ul>
+                                        <li><a href="#">Formal</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('esprit', 'formal', 'men')">Esprit</a></li>
+                                                <li><a onclick="openHeaderLink('pacolino', 'formal', 'men')">Pacolino</a></li>
+                                                <li><a onclick="openHeaderLink('tommy hilfiger', 'formal', 'men')">Tommy Hilfiger</a></li>
+                                                <li><a onclick="openHeaderLink('boss', 'formal', 'men')">BOSS</a></li>
+                                                <li><a onclick="openHeaderLink('dockers', 'formal', 'men')">Dockers</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Casual</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('champion', 'casual', 'men')">Champion</a></li>
+                                                <li><a onclick="openHeaderLink('converse', 'casual', 'men')">Converse</a></li>
+                                                <li><a onclick="openHeaderLink('gucci', 'casual', 'men')">Gucci</a></li>
+                                                <li><a onclick="openHeaderLink('fendi', 'casual', 'men')">Fendi</a></li>
+                                                <li><a onclick="openHeaderLink('gap', 'casual', 'men')">GAP</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Sports</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('adidas', 'sports', 'men')">Adidas</a></li>
+                                                <li><a onclick="openHeaderLink('nike', 'sports', 'men')">Nike</a></li>
+                                                <li><a onclick="openHeaderLink('puma', 'sports', 'men')">Puma</a></li>
+                                                <li><a onclick="openHeaderLink('under armour', 'sports', 'men')">Under Armour</a></li>
+                                                <li><a onclick="openHeaderLink('kappa', 'sports', 'men')">Kappa</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Women</a>
+                                    <ul>
+                                        <li><a href="#">Formal</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('zalora', 'formal', 'women')">Zalora</a></li>
+                                                <li><a onclick="openHeaderLink('mango', 'formal', 'women')">Mango</a></li>
+                                                <li><a onclick="openHeaderLink('ax paris', 'formal', 'women')">AX Paris</a></li>
+                                                <li><a onclick="openHeaderLink('guess', 'formal', 'women')">Guess</a></li>
+                                                <li><a onclick="openHeaderLink('gap', 'formal', 'women')">GAP</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Casual</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('esprit', 'casual', 'women')">ESPRIT</a></li>
+                                                <li><a onclick="openHeaderLink('london rag', 'casual', 'women')">London Rag</a></li>
+                                                <li><a onclick="openHeaderLink('polo ralph lauren', 'casual', 'women')">Polo Ralph Lauren</a></li>
+                                                <li><a onclick="openHeaderLink('zalora', 'casual', 'women')">Zalora</a></li>
+                                                <li><a onclick="openHeaderLink('forever 21', 'casual', 'women')">Forever 21</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Sports</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('adidas', 'sports', 'women')">Adidas</a></li>
+                                                <li><a onclick="openHeaderLink('nike', 'sports', 'women')">Nike</a></li>
+                                                <li><a onclick="openHeaderLink('puma', 'sports', 'women')">Puma</a></li>
+                                                <li><a onclick="openHeaderLink('Superdry', 'sports', 'women')">Superdry</a></li>
+                                                <li><a onclick="openHeaderLink('under armour', 'sports', 'women')">Under Armour</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Kids</a>
+                                    <ul>
+                                        <li><a href="#">Baby</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('baby poney', 'baby', 'kids')">Baby Poney</a></li>
+                                                <li><a onclick="openHeaderLink('disney baby', 'baby', 'kids')">Disney Baby</a></li>
+                                                <li><a onclick="openHeaderLink('gap', 'baby', 'kids')">GAP</a></li>
+                                                <li><a onclick="openHeaderLink('mango baby', 'baby', 'kids')">Mango Baby</a></li>
+                                                <li><a onclick="openHeaderLink('poney', 'baby', 'kids')">Poney</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Casual</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('abercrombie & fitch', 'casual', 'kids')">Abercrombie & Fitch</a></li>
+                                                <li><a onclick="openHeaderLink('babybol', 'casual', 'kids')">Babybol</a></li>
+                                                <li><a onclick="openHeaderLink('gap', 'casual', 'kids')">GAP</a></li>
+                                                <li><a onclick="openHeaderLink('guess', 'casual', 'kids')">GUESS</a></li>
+                                                <li><a onclick="openHeaderLink('little nuuna', 'casual', 'kids')">Little Nuuna</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Sports</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('adidas', 'sports', 'kids')">Adidas</a></li>
+                                                <li><a onclick="openHeaderLink('nike', 'sports', 'kids')">Nike</a></li>
+                                                <li><a onclick="openHeaderLink('puma', 'sports', 'kids')">Puma</a></li>
+                                                <li><a onclick="openHeaderLink('under armour', 'sports', 'kids')">Under Armour</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Help</a>
+                                    <ul>
+                                        <li><a href="faq.html">FAQs</a></li>
+                                        <li><a href="#">Legal & Privacy</a>
+                                            <ul>
+                                                <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+                                                <li><a href="privacy-and-cookies.html">Privacy and Cookies</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- End Mobile Menu -->
+                <div class="mobile-menu d-block d-lg-none">
+                </div>
+                <!-- Mobile Menu -->
+            </div>
+        </header>
 		<!-- //Header -->
 		<!-- Start Search Popup -->
 		<div class="brown--color box-search-content search_active block-bg close__top">
@@ -325,24 +418,6 @@
 		<br>
 		<br>
 		<!-- End Search Popup -->
-        <!-- Start Bradcaump area -->
-        <!--<div class="ht__bradcaump__area bg-image--3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="bradcaump__inner text-center">
-                        	<h2 class="bradcaump-title">Shopping Cart</h2>
-                            <nav class="bradcaump-content">
-                              <a class="breadcrumb_item" href="index.html">Home</a>
-                              <span class="brd-separetor">/</span>
-                              <span class="breadcrumb_item active">Shopping Cart</span>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- End Bradcaump area -->
         <!-- cart-main-area start -->
     	<div class="cart-main-area section-padding--lg bg--white">
             <div class="container">
@@ -350,7 +425,7 @@
                     <div class="col-md-12 col-sm-12 ol-lg-12">
 						<br>
 						<div class="checkout-heading">
-							<h2 style="text-align:center; font-family:sans-serif; font-weight:100px">Shopping Bag</h2>
+                            <h3 class="account__title m-0 pl-3">Cart</h3>
 						</div>
 						<br>
 						<br>
@@ -409,83 +484,12 @@
 												<p class="my-auto">PayPal</p>
 											</div>
 												<a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Checkout </a> 
-												<a href="#" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true" style = "background-color:darkorange;">Continue Shopping</a>
+												<a href="checkout.html" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true" style = "background-color:darkorange;">Continue Shopping</a>
 										</div>
 									</div>
 								</aside>
 							</div>
 						</div>
-						
-						<!-- <form action="#">               
-                            <div class="table-content wnro__table table-responsive">
-                                <table>
-                                    <thead>
-                                        <tr class="title-top">
-                                            <th class="product-thumbnail">Image</th>
-                                            <th class="product-name">Product</th>
-                                            <th class="product-price">Price</th>
-                                            <th class="product-quantity">Quantity</th>
-                                            <th class="product-subtotal">Total</th>
-                                            <th class="product-remove">Remove</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="images/product/sm-3/1.jpg" alt="product img"></a></td>
-                                            <td class="product-name"><a href="#">Natoque penatibus</a></td>
-                                            <td class="product-price"><span class="amount">$165.00</span></td>
-                                            <td class="product-quantity"><input type="number" value="1"></td>
-                                            <td class="product-subtotal">$165.00</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="images/product/sm-3/2.jpg" alt="product img"></a></td>
-                                            <td class="product-name"><a href="#">Quisque fringilla</a></td>
-                                            <td class="product-price"><span class="amount">$50.00</span></td>
-                                            <td class="product-quantity"><input type="number" value="1"></td>
-                                            <td class="product-subtotal">$50.00</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="images/product/sm-3/3.jpg" alt="product img"></a></td>
-                                            <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                            <td class="product-price"><span class="amount">$50.00</span></td>
-                                            <td class="product-quantity"><input type="number" value="1"></td>
-                                            <td class="product-subtotal">$50.00</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </form>  -->
-                        <!--<div class="cartbox__btn">
-                            <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
-                                <li><a href="#">Coupon Code</a></li>
-                                <li><a href="#">Apply Code</a></li>
-                                <li><a href="#">Update Cart</a></li>
-                                <li><a href="#">Check Out</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-6">
-                        <div class="cartbox__total__area">
-                            <div class="cartbox-total d-flex justify-content-between">
-                                <ul class="cart__total__list">
-                                    <li>Cart total</li>
-                                    <li>Sub Total</li>
-                                </ul>
-                                <ul class="cart__total__tk">
-                                    <li>$70</li>
-                                    <li>$70</li>
-                                </ul>
-                            </div>
-                            <div class="cart__total__amount">
-                                <span>Grand Total</span>
-                                <span>$140</span>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
             </div>  
@@ -500,7 +504,7 @@
                            <div class="footer__widget footer__menu">
                               <div class="ft__logo">
                                     <a href="index.html">
-                                       <img src="images/logo/yellow1.png" alt="logo">
+                                       <img src="images/logo/black1.png" alt="logo">
                                     </a>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
                                  </div>
@@ -528,7 +532,6 @@
             </div>
       </footer>
 		<!-- //Footer Area -->
-
 	</div>
 	<!-- //Main wrapper -->
 
@@ -542,6 +545,52 @@
 	<script src="js/cart.js"></script>
 	<script src="js/cart-mini.js"></script>
 	<script>
+        function openHeaderLink(brand, search, gender){
+            var request = new XMLHttpRequest()
+
+			// replaces white space
+            if (search == ''){
+                search = brand
+            }
+
+            search_value = "?search=" + encodeURI(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
+            sessionStorage.setItem("search_term_text", search);
+            sessionStorage.setItem("search_term", search_value);
+			// Open a new connection, using the GET request on the URL endpoint
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value
+            request.open('GET', search, true)
+
+			request.onload = function loadHTML(){
+                var resultText = request.responseText;
+				sessionStorage.setItem("search_result", resultText); 
+                sessionStorage.setItem("current_page", 1);
+                sessionStorage.removeItem("selectBox");
+                headerBrandList(gender);
+			}
+			// Send request
+            request.send();
+        };
+
+        function headerBrandList(gender){
+			var request = new XMLHttpRequest()
+            var search_value = sessionStorage.getItem("search_term");
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                console.log(brands);
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-"+ gender +".html");
+            }
+            // Send request
+            request.send();
+        }
 		var recentCategory = localStorage.getItem('recent_category_cart');
 		function productsearch(){ //sends search request to backend for JSON response
             // Create a request variable and assign a new XMLHttpRequest object to it.
@@ -660,18 +709,17 @@
 
 		var cart = new Cart()
 		var cartData = cart.all();
-		var cartHTML = '';
 		
-
 		function loadCart(){
 			cartData = cart.all();
+            var cartHTML = '';
 			if (cartData.length != 0) {
 				for (i = 0; i<cartData.length; i++){
 					cartHTML += '<tr><td><figure class="itemside align-items-center"><div class="aside"><img src="' + cartData[i].image + '" class="img-sm" onclick="openPage(\'' + cartData[i].page + '\')"></div>';
 					cartHTML += '<figcaption class="info"> <a onclick="openPage(\'' + cartData[i].page + '\')" class="title text-dark" data-abc="true"><strong>'+ cartData[i].name +'</strong></a>';
 					cartHTML += '<p class="text-muted small">SIZE: '+ cartData[i].size + '</p><p onclick="openCategory(\''+ cartData[i].category +'\', \'' + cartData[i].brand +'\')" style="cursor:pointer;">' + cartData[i].brand + '</p></figcaption></figure></td>';
-					cartHTML += '<td class="box-tocart"><input id="qty" class="input-text qty" name="qty" min="1" value="'+ cartData[i].quantity +'" title="Qty" type="number"'
-					cartHTML += ' oninput="updateCart(\''+ cartData[i].id + '\', \''+ cartData[i].quantity +'\', \'' + cartData[i].size + '\')"></td>';
+					cartHTML += '<td class="box-tocart"><input id="qty-' + cartData[i].page + '" class="input-text qty" name="qty" min="1" value="'+ cartData[i].quantity +'" title="Qty" type="number"'
+					cartHTML += ' oninput="updateCart(\''+ cartData[i].id + '\', \'' + cartData[i].page + '\', \'' + cartData[i].size + '\')"></td>';
 					cartHTML += '<td><div class="price-wrap"><var class="price">RM ' + cartData[i].price.toString() + '</var></div></td>';
 					cartHTML += '<td class="d-flex justify-content-start" id="'+ i.toString() + '"></td></tr>';
 				};
@@ -689,9 +737,10 @@
 		
 		loadCart();
 
-		function updateCart(id, quantity, size){
+		function updateCart(id, qty_id ,size){
+            var quantity = document.getElementById("qty-" + qty_id).value;
 			cart.update(id, quantity, size);
-			loadCart();
+			setTimeout(function(){loadCart();}, 500);
 		}
 
 		function removeFromCart(id, size){

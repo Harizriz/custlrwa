@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Single Product | FITTR</title>
+      <title id="tab_title">Single Product | FITTR</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Favicons -->
@@ -28,22 +28,2058 @@
       <![endif]-->
       <!-- Main wrapper -->
       <div class="wrapper" id="wrapper">
-      <!-- Header -->
-      <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-md-4 col-sm-4 col-7 col-lg-2">
-                  <div class="logo">
-                     <a href="index-women.html">
-                     <img src="images/logo/yellow1.png" alt="logo images">
-                     </a>
+         <!-- Header -->
+         <header id="wn__header" class="oth-page header__area header__absolute sticky__header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-7 col-lg-2">
+                        <div class="logo">
+                            <a href="portfolio.html">
+                                <img src="images/logo/yellow1.png" alt="logo images">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 d-none d-lg-block">
+                        <nav class="mainmenu__nav">
+                            <ul class="meninmenu d-flex justify-content-start">
+                                <li class="drop"><a href="#">Shop</a>
+                                    <div class="megamenu mega03">
+                                        <ul class="item item03">
+                                            <li class="title">Top Brands | Men</li>
+                                            <li><a onclick="openHeaderLink('tommy hilfiger', '', 'men')">Tommy Hilfiger</a></li>
+                                            <li><a onclick="openHeaderLink('the north face', '', 'men')">The North Face</a></li>
+                                            <li><a onclick="openHeaderLink('polo ralph lauren', '', 'men')">Polo Ralph Lauren</a></li>
+                                            <li><a onclick="openHeaderLink('gucci', '', 'men')">Gucci</a></li>
+                                            <li><a onclick="openHeaderLink('cotton on', '', 'men')">Cotton On</a></li>
+                                        </ul>
+                                        <ul class="item item03">
+                                            <li class="title">Top Brands | Women</a></li>
+                                            <li><a onclick="openHeaderLink('banana republic', '', 'women')">Banana Republic</a></li>
+                                            <li><a onclick="openHeaderLink('forever 21', '', 'women')">FOREVER 21</a></li>
+                                            <li><a onclick="openHeaderLink('h&m', '', 'women')">H&M</a></li>
+                                            <li><a onclick="openHeaderLink('mango', '', 'women')">Mango</a></li>
+                                            <li><a onclick="openHeaderLink('zalora', 'zalora', 'women')">Zalora</a></li>
+                                        </ul>
+                                        <ul class="item item03">
+                                            <li class="title">Top Brands | Kids</a></li>
+                                            <li><a onclick="openHeaderLink('abercrombie & fitch', '', 'kids')">Abercrombie & Fitch</a></li>
+                                            <li><a onclick="openHeaderLink('poney', '', 'kids')">Poney</a></li>
+                                            <li><a onclick="openHeaderLink('disney baby', '', 'kids')">Disney Baby</a></li>
+                                            <li><a onclick="openHeaderLink('kiko', '', 'kids')">KIKO</a></li>
+                                            <li><a onclick="openHeaderLink('akarana baby', '', 'kids')">Akarana Baby</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="#">Men</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Formal</a></li>
+                                            <li><a onclick="openHeaderLink('esprit', 'formal', 'men')">Esprit</a></li>
+                                            <li><a onclick="openHeaderLink('pacolino', 'formal', 'men')">Pacolino</a></li>
+                                            <li><a onclick="openHeaderLink('tommy hilfiger', 'formal', 'men')">Tommy Hilfiger</a></li>
+                                            <li><a onclick="openHeaderLink('boss', 'formal', 'men')">BOSS</a></li>
+                                            <li><a onclick="openHeaderLink('dockers', 'formal', 'men')">Dockers</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Casual</a></li>
+                                            <li><a onclick="openHeaderLink('champion', 'casual', 'men')">Champion</a></li>
+                                            <li><a onclick="openHeaderLink('converse', 'casual', 'men')">Converse</a></li>
+                                            <li><a onclick="openHeaderLink('gucci', 'casual', 'men')">Gucci</a></li>
+                                            <li><a onclick="openHeaderLink('fendi', 'casual', 'men')">Fendi</a></li>
+                                            <li><a onclick="openHeaderLink('gap', 'casual', 'men')">GAP</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Sports</a></li>
+                                            <li><a onclick="openHeaderLink('adidas', 'sports', 'men')">Adidas</a></li>
+                                            <li><a onclick="openHeaderLink('nike', 'sports', 'men')">Nike</a></li>
+                                            <li><a onclick="openHeaderLink('puma', 'sports', 'men')">Puma</a></li>
+                                            <li><a onclick="openHeaderLink('under armour', 'sports', 'men')">Under Armour</a></li>
+                                            <li><a onclick="openHeaderLink('kappa', 'sports', 'men')">Kappa</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="#">Women</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Formal</li>
+                                            <li><a onclick="openHeaderLink('zalora', 'formal', 'women')">Zalora</a></li>
+                                            <li><a onclick="openHeaderLink('mango', 'formal', 'women')">Mango</a></li>
+                                            <li><a onclick="openHeaderLink('ax paris', 'formal', 'women')">AX Paris</a></li>
+                                            <li><a onclick="openHeaderLink('guess', 'formal', 'women')">Guess</a></li>
+                                            <li><a onclick="openHeaderLink('gap', 'formal', 'women')">GAP</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Casual</a></li>
+                                            <li><a onclick="openHeaderLink('esprit', 'casual', 'women')">ESPRIT</a></li>
+                                            <li><a onclick="openHeaderLink('london rag', 'casual', 'women')">London Rag</a></li>
+                                            <li><a onclick="openHeaderLink('polo ralph lauren', 'casual', 'women')">Polo Ralph Lauren</a></li>
+                                            <li><a onclick="openHeaderLink('zalora', 'casual', 'women')">Zalora</a></li>
+                                            <li><a onclick="openHeaderLink('forever 21', 'casual', 'women')">Forever 21</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Sports</a></li>
+                                            <li><a onclick="openHeaderLink('adidas', 'sports', 'women')">Adidas</a></li>
+                                            <li><a onclick="openHeaderLink('nike', 'sports', 'women')">Nike</a></li>
+                                            <li><a onclick="openHeaderLink('puma', 'sports', 'women')">Puma</a></li>
+                                            <li><a onclick="openHeaderLink('Superdry', 'sports', 'women')">Superdry</a></li>
+                                            <li><a onclick="openHeaderLink('under armour', 'sports', 'women')">Under Armour</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="#">Kids</a>
+                                    <div class="megamenu mega02">
+                                        <ul class="item item02">
+                                            <li class="title">Baby</li>
+                                            <li><a onclick="openHeaderLink('baby poney', 'baby', 'kids')">Baby Poney</a></li>
+                                            <li><a onclick="openHeaderLink('disney baby', 'baby', 'kids')">Disney Baby</a></li>
+                                            <li><a onclick="openHeaderLink('gap', 'baby', 'kids')">GAP</a></li>
+                                            <li><a onclick="openHeaderLink('mango baby', 'baby', 'kids')">Mango Baby</a></li>
+                                            <li><a onclick="openHeaderLink('poney', 'baby', 'kids')">Poney</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Casual</a></li>
+                                            <li><a onclick="openHeaderLink('abercrombie & fitch', 'casual', 'kids')">Abercrombie & Fitch</a></li>
+                                            <li><a onclick="openHeaderLink('babybol', 'casual', 'kids')">Babybol</a></li>
+                                            <li><a onclick="openHeaderLink('gap', 'casual', 'kids')">GAP</a></li>
+                                            <li><a onclick="openHeaderLink('guess', 'casual', 'kids')">GUESS</a></li>
+                                            <li><a onclick="openHeaderLink('little nuuna', 'casual', 'kids')">Little Nuuna</a></li>
+                                        </ul>
+                                        <ul class="item item02">
+                                            <li class="title">Sports</a></li>
+                                            <li><a onclick="openHeaderLink('adidas', 'sports', 'kids')">Adidas</a></li>
+                                            <li><a onclick="openHeaderLink('nike', 'sports', 'kids')">Nike</a></li>
+                                            <li><a onclick="openHeaderLink('puma', 'sports', 'kids')">Puma</a></li>
+                                            <li><a onclick="openHeaderLink('under armour', 'sports', 'kids')">Under Armour</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="drop"><a href="contact.html">Help</a>
+									<div class="megamenu dropdown">
+										<ul class="item item01">
+											<li><a href="faq.html">FAQs</a></li>
+											<li class="label2"><a href="terms-and-conditions.html">Legal & Privacy</a>
+												<ul>
+													<li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+													<li><a href="privacy-and-cookies.html">Privacy and Cookies</a></li>
+												</ul>
+											</li>
+											<li><a href="contact.html">Contact Us</a></li>
+										</ul>
+									</div>
+                                </li>	
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-5 col-lg-2">
+                        <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+                            <li class="wishlist" id="wishlist">
+								<a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
+							</li>
+							<li class="shopcart" id="shopcart">
+								<a class="cartbox_active" href="cart.html"><span class="product_qun" id="cart_noti"></span></a>
+                                <!-- Start Shopping Cart -->
+                                <div class="block-minicart minicart__active">
+                                    <div class="minicart-content-wrapper">
+                                        <div class="micart__close">
+                                            <span>close</span>
+                                        </div>
+                                        <div class="items-total d-flex justify-content-between" id="cart_count">
+                                        </div>
+                                        <div class="total_amount text-right">
+                                            <span id="cart_total"></span>
+                                        </div>
+                                        <div class="mini_action checkout">
+                                            <a class="checkout__btn" href="cart.html">Go to Checkout</a>
+                                        </div>
+                                        <div class="single__items">
+                                            <div class="miniproduct" id="mini_cart">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- End Shopping Cart -->
+                            <li class="setting__bar__icon"><a class="setting__active"></a>
+								<div class="searchbar__content setting__block p-0">
+									<div class="content-inner">
+										<div class="switcher-currency">
+											<strong class="label switcher-label">
+												<span>Account Options</span>
+											</strong>
+											<div class="switcher-options">
+												<div class="switcher-currency-trigger">
+													<div class="setting__menu">
+														<span><a href="login.html">Log in</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter">Track My Order</a></span>
+														 <!-- Modal -->
+														 <div class="modal p-0" id="modal_order" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="cursor:default;">
+															<div class="modal-dialog modal-dialog-centered portfolio_modal" role="document">
+																<div class="modal-content mobile_modal">
+																	<div class="modal-header">
+																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: gray;">Track My Order</h4>
+																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																		</button>
+																	</div>
+																	<div class="modal-body pl-2" style="height: 220px;">
+																		<h6 class="pb-3 pl-2" style="text-align:left;"> Email Address</h6>
+																		<input type="text" id="emailTracking" name="emailTracking" style=" height:51px; font-size:14pt; text-align: left; float:left; margin-bottom: 10px; margin-left: 6px;"><br><br>
+																		<h6 class="pb-2 pl-2" style="text-align:left;"> Order Number </h6>
+																		<input type="text" id="orderNumber" name="orderNumber" style=" height:51px; font-size:14pt; text-align: left; float:left; margin-bottom: 10px; margin-left: 6px; margin-top:10px"><br><br>
+																	</div>
+																	<div class="modal-footer" style="background-color: #e1e1e1">
+																		<button type="button" class="btn btn-secondary">Track</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Start Mobile Menu -->
+                <div class="row d-none">
+                    <div class="col-lg-12 d-none">
+                        <nav class="mobilemenu__nav">
+                            <ul class="meninmenu">
+                                <li><a href="#">Shop</a>
+                                    <ul>
+                                        <li><a href="#">Top Brands | Men</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('tommy hilfiger', '', 'men')">Tommy Hilfiger</a></li>
+                                                <li><a onclick="openHeaderLink('the north face', '', 'men')">The North Face</a></li>
+                                                <li><a onclick="openHeaderLink('polo ralph lauren', '', 'men')">Polo Ralph Lauren</a></li>
+                                                <li><a onclick="openHeaderLink('gucci', '', 'men')">Gucci</a></li>
+                                                <li><a onclick="openHeaderLink('cotton on', '', 'men')">Cotton On</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Top Brands | Women</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('banana republic', '', 'women')">Banana Republic</a></li>
+                                                <li><a onclick="openHeaderLink('forever 21', '', 'women')">FOREVER 21</a></li>
+                                                <li><a onclick="openHeaderLink('h&m', '', 'women')">H&M</a></li>
+                                                <li><a onclick="openHeaderLink('mango', '', 'women')">Mango</a></li>
+                                                <li><a onclick="openHeaderLink('zalora', 'zalora', 'women')">Zalora</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Top Brands | Kids</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('abercrombie & fitch', '', 'kids')">Abercrombie & Fitch</a></li>
+                                                <li><a onclick="openHeaderLink('poney', '', 'kids')">Poney</a></li>
+                                                <li><a onclick="openHeaderLink('disney baby', '', 'kids')">Disney Baby</a></li>
+                                                <li><a onclick="openHeaderLink('kiko', '', 'kids')">KIKO</a></li>
+                                                <li><a onclick="openHeaderLink('akarana baby', '', 'kids')">Akarana Baby</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Men</a>
+                                    <ul>
+                                        <li><a href="#">Formal</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('esprit', 'formal', 'men')">Esprit</a></li>
+                                                <li><a onclick="openHeaderLink('pacolino', 'formal', 'men')">Pacolino</a></li>
+                                                <li><a onclick="openHeaderLink('tommy hilfiger', 'formal', 'men')">Tommy Hilfiger</a></li>
+                                                <li><a onclick="openHeaderLink('boss', 'formal', 'men')">BOSS</a></li>
+                                                <li><a onclick="openHeaderLink('dockers', 'formal', 'men')">Dockers</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Casual</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('champion', 'casual', 'men')">Champion</a></li>
+                                                <li><a onclick="openHeaderLink('converse', 'casual', 'men')">Converse</a></li>
+                                                <li><a onclick="openHeaderLink('gucci', 'casual', 'men')">Gucci</a></li>
+                                                <li><a onclick="openHeaderLink('fendi', 'casual', 'men')">Fendi</a></li>
+                                                <li><a onclick="openHeaderLink('gap', 'casual', 'men')">GAP</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Sports</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('adidas', 'sports', 'men')">Adidas</a></li>
+                                                <li><a onclick="openHeaderLink('nike', 'sports', 'men')">Nike</a></li>
+                                                <li><a onclick="openHeaderLink('puma', 'sports', 'men')">Puma</a></li>
+                                                <li><a onclick="openHeaderLink('under armour', 'sports', 'men')">Under Armour</a></li>
+                                                <li><a onclick="openHeaderLink('kappa', 'sports', 'men')">Kappa</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Women</a>
+                                    <ul>
+                                        <li><a href="#">Formal</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('zalora', 'formal', 'women')">Zalora</a></li>
+                                                <li><a onclick="openHeaderLink('mango', 'formal', 'women')">Mango</a></li>
+                                                <li><a onclick="openHeaderLink('ax paris', 'formal', 'women')">AX Paris</a></li>
+                                                <li><a onclick="openHeaderLink('guess', 'formal', 'women')">Guess</a></li>
+                                                <li><a onclick="openHeaderLink('gap', 'formal', 'women')">GAP</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Casual</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('esprit', 'casual', 'women')">ESPRIT</a></li>
+                                                <li><a onclick="openHeaderLink('london rag', 'casual', 'women')">London Rag</a></li>
+                                                <li><a onclick="openHeaderLink('polo ralph lauren', 'casual', 'women')">Polo Ralph Lauren</a></li>
+                                                <li><a onclick="openHeaderLink('zalora', 'casual', 'women')">Zalora</a></li>
+                                                <li><a onclick="openHeaderLink('forever 21', 'casual', 'women')">Forever 21</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Sports</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('adidas', 'sports', 'women')">Adidas</a></li>
+                                                <li><a onclick="openHeaderLink('nike', 'sports', 'women')">Nike</a></li>
+                                                <li><a onclick="openHeaderLink('puma', 'sports', 'women')">Puma</a></li>
+                                                <li><a onclick="openHeaderLink('Superdry', 'sports', 'women')">Superdry</a></li>
+                                                <li><a onclick="openHeaderLink('under armour', 'sports', 'women')">Under Armour</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Kids</a>
+                                    <ul>
+                                        <li><a href="#">Baby</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('baby poney', 'baby', 'kids')">Baby Poney</a></li>
+                                                <li><a onclick="openHeaderLink('disney baby', 'baby', 'kids')">Disney Baby</a></li>
+                                                <li><a onclick="openHeaderLink('gap', 'baby', 'kids')">GAP</a></li>
+                                                <li><a onclick="openHeaderLink('mango baby', 'baby', 'kids')">Mango Baby</a></li>
+                                                <li><a onclick="openHeaderLink('poney', 'baby', 'kids')">Poney</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Casual</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('abercrombie & fitch', 'casual', 'kids')">Abercrombie & Fitch</a></li>
+                                                <li><a onclick="openHeaderLink('babybol', 'casual', 'kids')">Babybol</a></li>
+                                                <li><a onclick="openHeaderLink('gap', 'casual', 'kids')">GAP</a></li>
+                                                <li><a onclick="openHeaderLink('guess', 'casual', 'kids')">GUESS</a></li>
+                                                <li><a onclick="openHeaderLink('little nuuna', 'casual', 'kids')">Little Nuuna</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Sports</a>
+                                            <ul>
+                                                <li><a onclick="openHeaderLink('adidas', 'sports', 'kids')">Adidas</a></li>
+                                                <li><a onclick="openHeaderLink('nike', 'sports', 'kids')">Nike</a></li>
+                                                <li><a onclick="openHeaderLink('puma', 'sports', 'kids')">Puma</a></li>
+                                                <li><a onclick="openHeaderLink('under armour', 'sports', 'kids')">Under Armour</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Help</a>
+                                    <ul>
+                                        <li><a href="faq.html">FAQs</a></li>
+                                        <li><a href="#">Legal & Privacy</a>
+                                            <ul>
+                                                <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+                                                <li><a href="privacy-and-cookies.html">Privacy and Cookies</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- End Mobile Menu -->
+                <div class="mobile-menu d-block d-lg-none">
+                </div>
+                <!-- Mobile Menu -->
+            </div>
+        </header>
+         <!-- //Header -->
+         <!-- Start main Content -->
+         <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
+            <div class="container">
+               <div class="row" style="height:89px">
+                  <div class="col-12">
+                     <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                           <li class="breadcrumb-item"><a href="portfolio.html">Home</a></li>
+                           <li class="breadcrumb-item"><a href="search-page-men.html">Search</a></li>
+                           <li class="breadcrumb-item"><a href="shop-grid-men.html">Shop Grid</a></li>
+                           <li class="breadcrumb-item active" aria-current="page" id="product_name_bread"></li>
+                        </ol>
+                     </nav>
                   </div>
                </div>
-               <div class="col-lg-8 d-none d-lg-block">
-                  <nav class="mainmenu__nav">
-                     <ul class="meninmenu d-flex justify-content-start">
-                        <li class="drop with--one--item"><a href="index.html">Home</a></li>
-                        <li class="drop">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="row">
+                        <div class="col-sm-2 col-12">
+                           <h3 class="account__title_shop_single_product">Product</h3>
+                        </div>
+                        <div class="col-sm-10 col-12">
+                           <form action="#" onsubmit="return false">
+                              <div class="input-group mb-4 border border-dark rounded-pill p-1">
+                                 <div class="input-group-prepend border-0">
+                                 <button id="button-addon4" type="button" class="btn btn-link text-info"><i class="fa fa-search"></i></button>
+                                 </div>
+                                 <input type="search" id="search_bar" placeholder="Searching for something else?" aria-describedby="button-addon4" class="form-control bg-none border-0" onsearch="productsearch()">
+                              </div>
+                           </form>
+                           <!-- Rounded switch -->
+                           <div class="row">
+                              <div class="col-12 d-flex justify-content-start">
+                                 <p class="search ml-2">Tops</p>
+                                 <p class="toggle_tops_mv" id="tb_text_mv">Tops</p>
+                                 <label class="switch" id="resetTB">
+                                 </label>
+                                 <label class="switch_mv" id="resetTB_mv">
+                                 </label>
+                                 <p class="toggle_bottom_mv">Search for Tops / Bottoms</p>
+                                 <p class="search" style="margin-left: 90px;">Bottoms</p>
+                                 <label class="switch" id="resetCustomSizing" style="margin-left: 250px;">
+                                 </label>
+                                 <div id="notifications"></div>
+                                 <p class="search" style="margin-left: 130px;">Enable custom sizing</p>
+                              </div>
+                           </div>
+                           <div class="row mt-4">
+                              <div class="col-md-12 d-flex justify-content-start">
+                                 <p class="toggle_tops_mv" id="cs_text">Disabled</p>
+                                 <label class="switch_mv" id="resetCustomSizing_mv">
+                                 </label>
+                                 <div id="notifications"></div>
+                                 <p class="toggle_cs_mv">Search with Custom Sizing?</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-9 col-12">
+                     <div class="wn__single__product">
+                        <div class="row" style="padding-top: 32px;">
+                           <div class="col-lg-6 col-12" style="border-top:1px solid #e1e1e1;">
+                              <div class="wn__fotorama__wrapper d-flex justify-content-around" id="image_list" style="padding-top: 30px;">
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-12" style="border-top:1px solid #e1e1e1;">
+                              <div class="product__info__main" style="padding-top: 30px;">
+                                 <h1 id="product_name"></h1>
+                                 <div class="product-reviews-summary d-flex">
+                                    <ul class="rating-summary d-flex" id = "avstar">
+                                    <li><i class="zmdi zmdi-star-outline"></i></li>
+                                    <li><i class="zmdi zmdi-star-outline"></i></li>
+                                    <li><i class="zmdi zmdi-star-outline"></i></li>
+                                    <li><i class="zmdi zmdi-star-outline"></i></li>
+                                    <li><i class="zmdi zmdi-star-outline"></i></li>
+                                    </ul>
+                                 </div> 
+                                 <div class="price-box">
+                                    <span id="product_price"></span>
+                                 </div>
+                                 <div class="product__overview" id="product_description">
+                                 </div>
+                                 <div class="product_meta">
+                                    <span class="posted_in" id="categories">Categories:
+                                       <a href="#">Adventure</a>, 
+                                       <a href="#">Kids, Music</a>
+                                    </span>
+                                 </div>
+                                 <br>
+                                 <div class="website">
+                                    <div class="row">
+                                       <div class="col-sm-4 col-12 p-0 pl-3">
+                                          <div class="row d-flex justify-content-start">
+                                             <div class="product-addto-links clearfix mr-3 ml-3" id="btn">
+                                                <input type="checkbox" id="btnControl"/>
+                                             </div>
+                                          </div>
+                                          <div class="box-tocart d-flex m-0 mb-2 mt-2">
+                                             <span>Qty</span>
+                                             <input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number" oninput="udpateQty()">
+                                          </div>
+                                          <div class="addtocart__action mt-4" id="addToCart">
+                                             <button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart" onclick="addToCart()">Add to Cart</button> 
+                                             <div id="notifications"></div>
+                                          </div>
+                                       </div>
+                                       <div class="col-sm-8 col-12 p-0">
+                                          <div class="col-lg-8 col-12 p-0">
+                                             <div class="box-sizing">
+                                                <div class="row d-flex justify-content-around">
+                                                   <h3 class="wedget__title_size mt-2 pl-1">Select Size</h3>
+                                                   <button type="button" class="btn btn-info btn-sm mb-3" data-toggle="modal" data-target="#modal_product">Size Chart</button>
+                                                   <div class="modal fade" id="modal_product" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                      <div class="modal-dialog modal-dialog-centered" role="document">
+                                                         <div class="modal-content" style="height: 500px;">
+                                                            <div class="modal-header">
+                                                               <h4 class="modal-title" id="exampleModalLongTitle">Size Chart</h4>
+                                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                               <span aria-hidden="true">&times;</span>
+                                                               </button>
+                                                            </div>
+                                                            <div class="modal-body pl-2">
+                                                               <h6 class="pb-3 pl-2"> Product Measurements (in INCHES) </h6>
+                                                               <table class="table table-hover">
+                                                                  <thead>
+                                                                     <tr>
+                                                                        <th class="xl80" width="161" height="21">TOP</th>
+                                                                        <th class="xl75" width="122" data-hover="Available">UK 8-S</th>
+                                                                        <th class="xl75" width="122" data-hover="Available">UK 10-M</th>
+                                                                        <th class="xl75" width="122" data-hover="Available">UK 12-L</th>
+                                                                        <th class="xl73" width="124" data-hover="Available">UK 14-XL</th>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Neck</td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl71"></td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Shoulder</td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl71"></td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Arm Size</td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl71"></td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Chest</td>
+                                                                        <td class="xl69">33</td>
+                                                                        <td class="xl69">35</td>
+                                                                        <td class="xl69">37</td>
+                                                                        <td class="xl71">39</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Across Shoulders</td>
+                                                                        <td class="xl69">14.5</td>
+                                                                        <td class="xl69">15</td>
+                                                                        <td class="xl69">15.5</td>
+                                                                        <td class="xl71">16</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Waist</td>
+                                                                        <td class="xl69">26</td>
+                                                                        <td class="xl69">28</td>
+                                                                        <td class="xl69">30</td>
+                                                                        <td class="xl71">31</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Hip</td>
+                                                                        <td class="xl69">35</td>
+                                                                        <td class="xl69">37</td>
+                                                                        <td class="xl69">39</td>
+                                                                        <td class="xl71">41</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Length of Sleeve</td>
+                                                                        <td class="xl70">4.5</td>
+                                                                        <td class="xl69">4.5</td>
+                                                                        <td class="xl69">5</td>
+                                                                        <td class="xl71">5</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Length of Top</td>
+                                                                        <td class="xl70">23.5</td>
+                                                                        <td class="xl69">24.5</td>
+                                                                        <td class="xl69">25.5</td>
+                                                                        <td class="xl71">26.5</td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="row">
+                                                   <div class="col-sm-7 col-12">
+                                                      <div class="dropdown ml-1 mt-2">
+                                                         <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="sizingRegionDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                         International</button>
+                                                         <div class="dropdown-menu" aria-labelledby="International">
+                                                            <a class="dropdown-item" id="US" onclick="changeFunction(this.id)">US</a>
+                                                            <a class="dropdown-item" id="UK" onclick="changeFunction(this.id)">UK</a>
+                                                            <a class="dropdown-item" id="EU" onclick="changeFunction(this.id)">EU</a>
+                                                            <a class="dropdown-item" id="International" onclick="changeFunction(this.id)">International</a>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-sm-5 col-12">
+                                                      <div class="dropdown mt-2">
+                                                         <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                         XS</button>
+                                                         <div id="sizing_dropdown" class="dropdown-menu" aria-labelledby="International" style="min-width:0rem;">
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!-- Mobile View Starts Here -->
+                                 <div class="mobile_product">
+                                    <div class="row">
+                                       <div class="col-sm-4 col-12 p-0 pl-2">
+                                          <div class="row d-flex justify-content-start">
+                                             <div class="product-addto-links clearfix mr-3 ml-4" id="btn_mv">
+                                                <input type="checkbox" id="btnControl"/>
+                                             </div>
+                                          </div>
+                                          <div class="col-sm-8 col-12 p-0">
+                                             <div class="box-sizing" style="height: 100px;">
+                                                <div class="row d-flex justify-content-around mt-3">
+                                                   <h3 class="wedget__title_size mt-2">Select Size</h3>
+                                                   <button type="button" class="btn btn-info btn-sm mb-3" data-toggle="modal" data-target="#modal_product_mobile">Size Chart</button>
+                                                   <div class="modal fade" id="modal_product_mobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                      <div class="modal-dialog modal-dialog-centered" role="document">
+                                                         <div class="modal-content" style="height: 500px;">
+                                                            <div class="modal-header">
+                                                               <h4 class="modal-title" id="exampleModalLongTitle">Size Chart</h4>
+                                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                               <span aria-hidden="true">&times;</span>
+                                                               </button>
+                                                            </div>
+                                                            <div class="modal-body pl-2">
+                                                               <h6 class="pb-3 pl-2"> Product Measurements (in INCHES) </h6>
+                                                               <table class="table table-hover">
+                                                                  <thead>
+                                                                     <tr>
+                                                                        <th class="xl80" width="161" height="21">TOP</th>
+                                                                        <th class="xl75" width="122" data-hover="Available">UK 8-S</th>
+                                                                        <th class="xl75" width="122" data-hover="Available">UK 10-M</th>
+                                                                        <th class="xl75" width="122" data-hover="Available">UK 12-L</th>
+                                                                        <th class="xl73" width="124" data-hover="Available">UK 14-XL</th>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Neck</td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl71"></td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Shoulder</td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl71"></td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Arm Size</td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl69"></td>
+                                                                        <td class="xl71"></td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Chest</td>
+                                                                        <td class="xl69">33</td>
+                                                                        <td class="xl69">35</td>
+                                                                        <td class="xl69">37</td>
+                                                                        <td class="xl71">39</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Across Shoulders</td>
+                                                                        <td class="xl69">14.5</td>
+                                                                        <td class="xl69">15</td>
+                                                                        <td class="xl69">15.5</td>
+                                                                        <td class="xl71">16</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Waist</td>
+                                                                        <td class="xl69">26</td>
+                                                                        <td class="xl69">28</td>
+                                                                        <td class="xl69">30</td>
+                                                                        <td class="xl71">31</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Hip</td>
+                                                                        <td class="xl69">35</td>
+                                                                        <td class="xl69">37</td>
+                                                                        <td class="xl69">39</td>
+                                                                        <td class="xl71">41</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Length of Sleeve</td>
+                                                                        <td class="xl70">4.5</td>
+                                                                        <td class="xl69">4.5</td>
+                                                                        <td class="xl69">5</td>
+                                                                        <td class="xl71">5</td>
+                                                                     </tr>
+                                                                     <tr>
+                                                                        <td class="xl65" height="21">Length of Top</td>
+                                                                        <td class="xl70">23.5</td>
+                                                                        <td class="xl69">24.5</td>
+                                                                        <td class="xl69">25.5</td>
+                                                                        <td class="xl71">26.5</td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="row">
+                                                   <div class="col-sm-7 col-12">
+                                                      <div class="dropdown ml-1 mt-2">
+                                                         <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="sizingRegionDropdownButton_mv" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">International</button>
+                                                         <div class="dropdown-menu" aria-labelledby="International">
+                                                            <a class="dropdown-item" id="US" onclick="changeFunction(this.id)">US</a>
+                                                            <a class="dropdown-item" id="UK" onclick="changeFunction(this.id)">UK</a>
+                                                            <a class="dropdown-item" id="EU" onclick="changeFunction(this.id)">EU</a>
+                                                            <a class="dropdown-item" id="International" onclick="changeFunction(this.id)">International</a>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-sm-5 col-12" style="margin-top: -46px; margin-left: 155px;">
+                                                      <div class="dropdown mt-2">
+                                                         <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="dropdownMenuButton_mv" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">XS</button>
+                                                         <div id="sizing_dropdown_mv" class="dropdown-menu" aria-labelledby="International" style="min-width:0rem;"></div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="box-tocart d-flex m-0 mb-2 mt-5 ml-2">
+                                          <span>Quantity</span>
+                                          <input id="qty_mv" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number" oninput="udpateQtyMV()" style="height: 37px; margin-right: 15px; margin-top: 0px;">
+                                             <div class="addtocart__action" id="addToCart">
+                                                <button class="btn btn-outline-dark pl-3 pr-3" type="submit" title="Add to Cart" onclick="addToCart()">Add to Cart</button> 
+                                                <div id="notifications"></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!-- Mobile View Ends Here -->
+                                 <div class="row" id="recommend_size">
+                                 </div>
+                                 <br>
+                              <br>
+                              <br>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product__info__detailed">
+                        <div class="pro_details_nav nav justify-content-start" role="tablist">
+                           <a class="nav-item nav-link active" data-toggle="tab" href="#nav-details" role="tab">Details</a>
+                           <a class="nav-item nav-link" data-toggle="tab" href="#nav-review" role="tab">Reviews</a>
+                        </div>
+                        <div class="tab__container">
+                     </div>
+                     <!-- Start Single Tab Content -->
+                     <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
+                        <div class="description__attribute" id="product_details">
+                           <p></p>
+                        </div>
+                     </div> 
+                     <!-- End Single Tab Content -->
+                     <!-- Start Single Tab Content -->
+                     <div class="pro__tab_label tab-pane fade" id="nav-review" role="tabpanel">
+                        <div class="review__attribute" id="get_review">
+                        </div>
+                        <div class="review-fieldset">
+                           <h5>You're reviewing:</h5>
+                           <h5 id="review_product_name"></h5>
+                              <div class="review-field-ratings mt-4">
+                                 <div class="product-review-table">
+                                    <div class="review-field-rating d-flex" id="review_quality">
+                                       <span id="quality">Quality</span>
+                                       <div class="rating d-flex">
+                                          <span id="5" onclick="setQualityStar(this.id)">☆</span>
+                                          <span id="4" onclick="setQualityStar(this.id)">☆</span>
+                                          <span id="3" onclick="setQualityStar(this.id)">☆</span>
+                                          <span id="2" onclick="setQualityStar(this.id)">☆</span>
+                                          <span id="1" onclick="setQualityStar(this.id)">☆</span>
+                                       </div>
+                                    </div>
+                                    <div class="review-field-rating d-flex" id="review_price">
+                                       <span id="price">Price</span>
+                                       <div class="rating d-flex">
+                                          <span id="5" onclick="setPriceStar(this.id)">☆</span>
+                                          <span id="4" onclick="setPriceStar(this.id)">☆</span>
+                                          <span id="3" onclick="setPriceStar(this.id)">☆</span>
+                                          <span id="2" onclick="setPriceStar(this.id)">☆</span>
+                                          <span id="1" onclick="setPriceStar(this.id)">☆</span>
+                                       </div>
+                                    </div>
+                                    <div class="review-field-rating d-flex" id="review_value">
+                                       <span id="value">Value</span>
+                                       <div class="rating d-flex">
+                                          <span id="5" onclick="setValueStar(this.id)">☆</span>
+                                          <span id="4" onclick="setValueStar(this.id)">☆</span>
+                                          <span id="3" onclick="setValueStar(this.id)">☆</span>
+                                          <span id="2" onclick="setValueStar(this.id)">☆</span>
+                                          <span id="1" onclick="setValueStar(this.id)">☆</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="review_form_field">
+                                 <div class="input__box">
+                                    <span>Name</span>
+                                       <input id="reviewer_name" type="text" name="nickname">
+                                 </div>
+                                 <div class="input__box">
+                                    <span>Summary</span>
+                                    <input id="summary" type="text" name="summery">
+                                    </div>
+                                 <div class="input__box">
+                                    <span>Review</span>
+                                    <textarea name="review" id="review"></textarea>
+                                 </div>
+                                 <div class="review-form-actions">
+                                    <button onclick="setReview()">Submit Review</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- End Single Tab Content -->
+                     </div>
+                  </div> 
+                  <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
+                     <div class="shop__sidebar">
+                        <aside class="wedget__categories poroduct--cat">
+                           <h3 class="wedget__title_product" id="brandlist_title"></h3>
+                           <ul id="brandlist">
+                           </ul>
+                        </aside>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- End main Content -->
+         <!-- Footer Area -->
+         <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+            <div class="footer-static-top">
+               <div class="container">
+                  <div class="row">
+                        <div class="col-lg-12">
+                           <div class="footer__widget footer__menu">
+                              <div class="ft__logo">
+                                    <a href="index.html">
+                                       <img src="images/logo/black1.png" alt="logo">
+                                    </a>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                                 </div>
+                              <div class="footer__content">
+                                    <ul class="social__net social__net--2 d-flex justify-content-center">
+                                       <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                       <li><a href="#"><i class="bi bi-google"></i></a></li>
+                                       <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                                       <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                                       <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                                    </ul>
+                                    <ul class="mainmenu d-flex justify-content-center">
+                                       <li><a href="index.html">Trending</a></li>
+                                       <li><a href="index.html">Best Seller</a></li>
+                                       <li><a href="index.html">All Product</a></li>
+                                       <li><a href="index.html">Wishlist</a></li>
+                                       <li><a href="index.html">Blog</a></li>
+                                       <li><a href="index.html">Contact</a></li>
+                                    </ul>
+                              </div>
+                           </div>
+                        </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- //Footer Area -->
+         <!-- QUICKVIEW PRODUCT -->
+         <div id="quickview-wrapper">
+            <!-- Modal -->
+            <div class="modal fade" id="productmodal" tabindex="-1" role="dialog">
+               <div class="modal-dialog modal__container" role="document">
+                  <div class="modal-content">
+                     <div class="modal-header modal__header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     </div>
+                     <div class="modal-body">
+                        <div class="modal-product">
+                           <!-- Start product images -->
+                           <div class="product-images">
+                              <div class="main-image images">
+                                 <img alt="big images" src="images/product/big-img/1.jpg">
+                              </div>
+                           </div>
+                           <!-- end product images -->
+                           <div class="product-info">
+                              <h1>Simple Fabric Bags</h1>
+                              <div class="rating__and__review">
+                                 <ul class="rating">
+                                    <li><span class="ti-star"></span></li>
+                                    <li><span class="ti-star"></span></li>
+                                    <li><span class="ti-star"></span></li>
+                                    <li><span class="ti-star"></span></li>
+                                    <li><span class="ti-star"></span></li>
+                                 </ul>
+                                 <div class="review">
+                                    <a href="#">4 customer reviews</a>
+                                 </div>
+                              </div>
+                              <div class="price-box-3">
+                                 <div class="s-price-box">
+                                    <span class="new-price">$17.20</span>
+                                    <span class="old-price">$45.00</span>
+                                 </div>
+                              </div>
+                              <div class="quick-desc">
+                                 Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern look.
+                              </div>
+                              <div class="select__color">
+                                 <h2>Select color</h2>
+                                 <ul class="color__list">
+                                    <li class="red"><a title="Red" href="#">Red</a></li>
+                                    <li class="gold"><a title="Gold" href="#">Gold</a></li>
+                                    <li class="orange"><a title="Orange" href="#">Orange</a></li>
+                                    <li class="orange"><a title="Orange" href="#">Orange</a></li>
+                                 </ul>
+                              </div>
+                              <div class="select__size">
+                                 <h2>Select size</h2>
+                                 <ul class="color__list">
+                                    <li class="l__size"><a title="L" href="#">L</a></li>
+                                    <li class="m__size"><a title="M" href="#">M</a></li>
+                                    <li class="s__size"><a title="S" href="#">S</a></li>
+                                    <li class="xl__size"><a title="XL" href="#">XL</a></li>
+                                    <li class="xxl__size"><a title="XXL" href="#">XXL</a></li>
+                                 </ul>
+                              </div>
+                              <div class="social-sharing">
+                                 <div class="widget widget_socialsharing_widget">
+                                    <h3 class="widget-title-modal">Share this product</h3>
+                                    <ul class="social__net social__net--2 d-flex justify-content-start">
+                                       <li class="facebook"><a href="#" class="rss social-icon"><i class="zmdi zmdi-rss"></i></a></li>
+                                       <li class="linkedin"><a href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                       <li class="pinterest"><a href="#" class="pinterest social-icon"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                       <li class="tumblr"><a href="#" class="tumblr social-icon"><i class="zmdi zmdi-tumblr"></i></a></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="addtocart-btn">
+                                 <a href="#">Add to cart</a>
+                              </div>
+                           </div>
+                           <!-- .product-info -->
+                        </div>
+                        <!-- .modal-product -->
+                     </div>
+                     <!-- .modal-body -->
+                  </div>
+                  <!-- .modal-content -->
+               </div>
+               <!-- .modal-dialog -->
+            </div>
+            <!-- END Modal -->
+         </div>
+         <!-- END QUICKVIEW PRODUCT -->
+      </div>
+      <!-- //Main wrapper -->
+      <!-- JS Files -->
+      <script src="js/vendor/jquery-3.2.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/plugins.js"></script>
+      <script src="js/active.js"></script>
+      <script src="js/cart.js"></script>
+      <script src="js/cart-mini.js"></script>
+      <script src="js/sizingChart.js"></script>
+      <script src="js/notify.min.js"></script>
+      <script>
+      var addQty = 1
+      var dropdownSize = '';
+      var cart = new Cart();
+
+      function notifyCart() {
+         $( document ).ready(function() {
+            $("div").click(
+               Notify("Added to cart!", 1000, null, "info")
+            )
+         });
+      };
+
+      function notifyCustomSizing() {
+			$( document ).ready(function() {
+				$("div").click(
+				NotifyLink("You haven't saved a custom size!", 1000, null, "danger", "upper-body.html")
+				);
+                sessionStorage.setItem('back_page', window.location.href);
+			});
+      };
+        
+        var sizing_toggle = false;
+		var tb_toggle = 'tops';
+		var tb_search = '&subcategory=tops';
+		setTimeout(function(){
+            document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+            document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+            document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+            document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+		}, 100);
+		var to_search = '';
+
+		function toggleCustomSizing(){
+			sizing_toggle = !sizing_toggle;
+			console.log(sizing_toggle);
+			if (sizing_toggle){
+				if (tb_toggle == 'tops'){
+					var measurements = JSON.parse(localStorage.getItem("custom_top"));
+					if (measurements === null){
+						notifyCustomSizing();
+                        document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+
+                        document.getElementById("cs_text").innerHTML = "Disabled";
+						sizing_toggle = false;
+                  localStorage.removeItem("check_top");
+					}
+					else{
+                        document.getElementById("cs_text").innerHTML = "Enabled";
+						var adjusted_measurements = {
+							"bust": measurements.chest,
+							"waist": measurements.waist,
+							"arm": measurements.arm,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, men_tops, 'tops', 'Men')
+						var temp_obj = JSON.parse(localStorage.getItem('best_mens_top'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                  localStorage.setItem("check_top", "check");
+					}
+				}
+				else{
+					var measurements = localStorage.getItem("custom_bottom");
+					if (measurements === null){
+						notifyCustomSizing();
+                        document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("cs_text").innerHTML = "Disabled";
+						sizing_toggle = false;
+                  localStorage.removeItem("check_bottom");
+					}
+					else{
+                        document.getElementById("cs_text").innerHTML = "Enabled";
+						var adjusted_measurements = {
+							"inner_leg": measurements.inseam,
+							"waist": measurements.waist,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, men_bottoms, 'bottoms', 'Men')
+						var temp_obj = JSON.parse(localStorage.getItem('best_mens_bottom'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                  localStorage.setItem("check_bottom", "check");
+					}
+				}
+			}
+            else{
+                document.getElementById("cs_text").innerHTML = "Disabled";
+            }	
+		};
+		
+
+		function toggleTopOrBottom(){
+			if (sizing_toggle){
+                if (tb_toggle == 'tops'){
+                    var measurements = localStorage.getItem("custom_bottom");
+					if (measurements === null){
+						notifyCustomSizing();
+                        document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+                        document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+                        document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
+                        document.getElementById("cs_text").innerHTML = "Disabled";
+						sizing_toggle = false;
+                  localStorage.removeItem("check_bottom");
+					}
+                    else{
+                        document.getElementById("cs_text").innerHTML = "Enabled";
+                        document.getElementById("tb_text").innerHTML = "Bottoms";
+                        document.getElementById("tb_text_mv").innerHTML = "Bottoms";
+                        localStorage.setItem("check_bottom", "check");
+						var adjusted_measurements = {
+							"inner_leg": measurements.inseam,
+							"waist": measurements.waist,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, men_bottoms, 'bottoms', 'Men')
+						var temp_obj = JSON.parse(localStorage.getItem('best_mens_bottom'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                        tb_toggle = 'bottoms'
+					}
+                }
+                else{
+                    var measurements = localStorage.getItem("custom_top");
+					if (measurements === null){
+						notifyCustomSizing();
+                        document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+                        document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
+                        document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()" checked><span class="slider round"></span>';
+                        document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()" checked><span class="slider round"></span>';
+                        document.getElementById("cs_text").innerHTML = "Disabled";
+						sizing_toggle = false;
+                  localStorage.removeItem("check_top");
+					}
+                    else{
+                        document.getElementById("cs_text").innerHTML = "Enabled";
+                        document.getElementById("tb_text").innerHTML = "Tops";
+                        document.getElementById("tb_text_mv").innerHTML = "Tops";
+                        localStorage.setItem("check_top", "check");
+                        var adjusted_measurements = {
+							"bust": measurements.chest,
+							"waist": measurements.waist,
+							"arm": measurements.arm,
+							"hip": measurements.hip
+						}
+						sizing_match(adjusted_measurements, men_tops, 'tops', 'Men')
+						var temp_obj = JSON.parse(localStorage.getItem('best_mens_top'));
+						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                        tb_toggle = 'tops'
+					}
+                }
+            } 
+            else {
+                if (tb_toggle == 'tops'){
+                    document.getElementById("tb_text_mv").innerHTML = "Bottoms";
+                    tb_toggle = 'bottoms';
+                    tb_search = '&subcategory=bottoms';
+                }
+                else{
+                    document.getElementById("tb_text_mv").innerHTML = "Tops";
+                    tb_toggle = 'tops';
+                    tb_search = '&subcategory=tops';
+                }
+            }
+		};
+
+      function addToCart(){
+         // convert sizing back to the one stored in db, then add to cart       
+         var size_to_add;
+         if (sizingDefault != null){
+            size_to_add = convertedSizingData[convertedSizingIndex] + ", " + sizingDefault;
+         }
+         else{
+            size_to_add = convertedSizingData[convertedSizingIndex].toString();
+         }
+         var size_code = document.getElementById("sizingRegionDropdownButton").innerHTML;
+         if (document.getElementById("sizingRegionDropdownButton").innerHTML != sizingDefault){ //if the current selected size isnt the same as the original
+            sizeConvertCart(sizingDefault); //reset to default
+            if (sizingDefault != null){
+               size_to_add = convertedSizingData[convertedSizingIndex] + ", " + sizingDefault;
+            }
+            else{
+               size_to_add = convertedSizingData[convertedSizingIndex].toString();
+            }
+         };
+         //id, quantity = 1, size, price, name, page, brand, image
+         cart.add(pageData.original_site, addQty, size_to_add, pageData.price, pageData.product_name, pageData.id, pageData.brand, pageData.image_url, pageData.category);
+         notifyCart();
+         localStorage.setItem('recent_category_cart', pageData.category);
+         sizeConvert(size_code);
+         loadMiniCart();
+      }
+
+      function openHeaderLink(brand, search, gender){
+            var request = new XMLHttpRequest()
+
+			// replaces white space
+            if (search == ''){
+                search = brand
+            }
+
+            search_value = "?search=" + encodeURI(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
+            sessionStorage.setItem("search_term_text", search);
+            sessionStorage.setItem("search_term", search_value);
+			// Open a new connection, using the GET request on the URL endpoint
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value
+            request.open('GET', search, true)
+
+			request.onload = function loadHTML(){
+                var resultText = request.responseText;
+				sessionStorage.setItem("search_result", resultText); 
+                sessionStorage.setItem("current_page", 1);
+                sessionStorage.removeItem("selectBox");
+                headerBrandList(gender);
+			}
+			// Send request
+            request.send();
+        };
+
+        function headerBrandList(gender){
+			var request = new XMLHttpRequest()
+            var search_value = sessionStorage.getItem("search_term");
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                console.log(brands);
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-"+ gender +".html");
+            }
+            // Send request
+            request.send();
+        }
+
+      function productsearch(){ //sends search request to backend for JSON response
+         // Create a request variable and assign a new XMLHttpRequest object to it.
+         var request = new XMLHttpRequest()
+
+         // replaces white space
+            search_value = "?search=" + document.getElementById("search_bar").value + "&category=men";
+            sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
+            sessionStorage.setItem("search_term", search_value);
+         // Open a new connection, using the GET request on the URL endpoint
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+            
+            request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+            var resultText = request.responseText;
+            sessionStorage.setItem("search_result", resultText); 
+            sessionStorage.setItem("current_page", 1);
+            sessionStorage.removeItem("selectBox");
+            getBrandList();
+         }
+         // Send request
+            request.send();
+      };
+
+      function getBrandList(){
+      var request = new XMLHttpRequest()
+         var search_value = sessionStorage.getItem("search_term");
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+         request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+               var resultText = (JSON.parse(request.responseText)).results;
+               var i;
+               var brands = [];
+               for (i=0; i<resultText.length; i++){
+                  brands = brands.concat(resultText[i].brand);
+               };
+               sessionStorage.setItem("brand_list", JSON.stringify(brands));
+               window.location.replace("shop-grid-men.html");
+         }
+         // Send request
+         request.send();
+      };
+      
+      pageData = JSON.parse(sessionStorage.getItem("pageRespData"));
+      
+      var sizingDefault = pageData.sizing_type
+      if (sizingDefault == null){
+         sizingDefault = 'International';
+      }
+      var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category, pageData.subcategory);
+      
+      if (pageData.subcategory == 'tops'){
+         var sizing_top = JSON.parse(localStorage.getItem("custom_top"));
+         var custom_check = localStorage.getItem("check_top");
+         if (sizing_top !== null && custom_check !== null){
+            sizing_match(sizing_top, sizing_chart, 'tops', 'Men');
+            var best = JSON.parse(localStorage.getItem('best_mens_top'));
+            var bestHTML = '<div class="alert alert-dark" role="alert"><p>';
+            bestHTML += 'Recommended sizes (based on your measurements): ';
+            bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu + '</p></div>';
+            document.getElementById('recommend_size').innerHTML = bestHTML;
+         }
+      }
+      if (pageData.subcategory == 'bottoms'){
+         var sizing_bottom = JSON.parse(localStorage.getItem("custom_bottom"));
+         var custom_check = localStorage.getItem("check_bottom");
+         if (sizing_bottom !== null && custom_check !== null){
+            sizing_match(sizing_bottom, sizing_chart, 'bottoms', 'Men');
+            var best = JSON.parse(localStorage.getItem('best_mens_bottom'));
+            var bestHTML = 'Recommended sizes (based on your measurements) : ';
+            var bestHTML = '<div class="alert alert-dark" role="alert"><p>';
+            bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu + '</p></div>';
+            document.getElementById('recommend_size').innerHTML = bestHTML;
+         }
+      }
+      
+      document.getElementById("sizingRegionDropdownButton").innerHTML = sizingDefault;
+      document.getElementById("sizingRegionDropdownButton_mv").innerHTML = sizingDefault;
+      //console.log(sizing_chart);
+      // aria-labelledby="International"
+      
+
+      function sizingToCode(size){
+         var sizecode;
+         switch(size){
+            case "International":
+               sizecode = "intl";
+               break;
+            case "US":
+               sizecode = "us";
+               break;
+            case "UK":
+               sizecode = "uk";
+               break;
+            case "EU":
+               sizecode = "eu";
+               break;
+            default:
+               sizecode = "notype";
+         };
+         return sizecode;
+      };
+
+      var sizecode = sizingDefault;
+
+      function loadSizingData(){
+         var size_dropdown = [];
+         var i = 0;
+
+         switch (sizecode){
+            case "intl":
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].intl);
+               }
+               break;
+            case "uk":
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].uk);
+               }
+               break;
+            case "us":
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].us);
+               }
+               break;
+            case "eu":
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].eu);
+               }
+               break;
+            default:
+               for(i=0; i<sizing_chart.length; i++){
+                  size_dropdown.push(sizing_chart[i].intl);
+               }
+               break;
+            }
+         return size_dropdown;
+      };
+
+      var convertedSizingData = loadSizingData();
+      var convertedSizingIndex = 0;
+
+      function updateSizing(id) {
+         document.getElementById("dropdownMenuButton").innerHTML = document.getElementById(id).innerHTML
+         document.getElementById("dropdownMenuButton_mv").innerHTML = document.getElementById(id).innerHTML
+         dropdownSize = document.getElementById(id).innerHTML;
+         convertedSizingIndex = id;
+      };
+
+      function sizingDropdown(){
+         var convSize = '';
+         for(var i = 0; i < convertedSizingData.length; i++){
+            convSize += '<a class="dropdown-item" id="' + i.toString() + '" onclick="updateSizing(this.id)">'+ convertedSizingData[i] +'</a>'
+         }
+         document.getElementById("sizing_dropdown").innerHTML = convSize;
+         document.getElementById("sizing_dropdown_mv").innerHTML = convSize;
+      }
+      
+      function sizeConvert(size_code){
+         sizecode = sizingToCode(size_code);    
+         convertedSizingData = loadSizingData();
+         document.getElementById("dropdownMenuButton").innerHTML = convertedSizingData[convertedSizingIndex];
+         document.getElementById("dropdownMenuButton_mv").innerHTML = convertedSizingData[convertedSizingIndex];
+         sizingDropdown();
+      }
+      function sizeConvertCart(size_code){
+         sizecode = sizingToCode(size_code);    
+         convertedSizingData = loadSizingData();
+         sizingDropdown();
+      }
+      sizeConvert(sizecode);
+
+      function changeFunction(id){
+         document.getElementById("sizingRegionDropdownButton").innerHTML = document.getElementById(id).innerHTML;
+         document.getElementById("sizingRegionDropdownButton_mv").innerHTML = document.getElementById(id).innerHTML;
+         var selectBox = document.getElementById(id).innerHTML;
+         if (selectBox == 'US'){
+               sizeConvert("US");
+         }
+         if (selectBox == 'UK'){
+               sizeConvert("UK");
+         }
+         if (selectBox == 'EU'){
+               sizeConvert("EU");
+         }
+         if (selectBox == 'International'){
+               sizeConvert("International");
+         }
+      };
+
+      var image = '';
+      var categories = 'Categories: <a href="#" onclick="openCategory(\'\')">'+pageData.category+'</a>, <a href="#" onclick="openCategory(\'&brand='+ pageData.brand+'\')">'+pageData.brand+'</a>';
+      var description = '';
+      var x_image = 0;
+      var request = new XMLHttpRequest()
+      var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+      if (wishlist === undefined || wishlist === null){
+         wishlist = [];
+         //console.log('empty wishlist');
+      }
+
+      function notifyWishlist() {
+         $( document ).ready(function() {
+            $("div").click(
+               Notify("Added to wishlist!", 1000, null, "info")
+            )
+         });
+      };
+
+      var pageLoaded = false;
+      
+      function updateBtn(){
+         var wishlist_btn = '<div>';
+         var empty = '';
+         if (wishlist.includes(pageData.original_site)){ //highlighted wishlist button
+            // console.log('this item is on the wishlist!');
+            wishlist_btn += '<label class="wishlist m-0" for="btnControl" style="background-color: #e59285;background-position: 100% center;border-color: #e59285;" onclick="addWishlist()"></label><label class="email"></label>';
+            if (pageLoaded){
+               wishlist_btn += '<div id="notifications"></div>';
+               notifyWishlist();
+            };
+         }
+         else{ //default, unhighlighted wishlist button
+            // console.log('this item is not on the wishlist!');
+            wishlist_btn += '<label class="wishlist m-0" onclick="addWishlist()"></label><label class="email"></label>';
+         };
+         wishlist_btn += '</div>';
+         document.getElementById("btn").innerHTML = wishlist_btn;
+         document.getElementById("btn_mv").innerHTML = wishlist_btn;
+         
+         if (wishlist.length != 0) {
+            document.getElementById("wishlist_noti").innerHTML = wishlist.length;
+         }
+         else {
+            empty += '<a class="wishlist_active" href="wishlist.html"></a>';
+            document.getElementById("wishlist").innerHTML = empty;
+         }
+      };
+
+      updateBtn();
+      pageLoaded = true;
+
+      function addWishlist(){
+         if (wishlist.length === 0){
+            //console.log('creating new wishlist');
+            //console.log('adding to wishlist');
+            wishlist.push(pageData.original_site);
+            localStorage.setItem("recentCategory", pageData.category);
+         }
+         else if (wishlist.includes(pageData.original_site)){
+            var removeIndex = wishlist.indexOf(pageData.original_site);
+            delete wishlist[removeIndex];
+            wishlist = wishlist.filter(item => item);               
+            localStorage.setItem("recentCategory", pageData.category);
+            // console.log('removed from wishlist');
+         }
+         else {
+            //console.log('adding to wishlist');
+            wishlist.push(pageData.original_site);
+            localStorage.setItem("recentCategory", pageData.category);
+         };
+         updateBtn();
+         //console.log(wishlist); 
+         localStorage.setItem("wishlist", JSON.stringify(wishlist));
+         //console.log('wishlist updated'); 
+      };
+      
+      function getStars(stars){
+         // style=";color:#ff5501;"
+         var starText = '<div class="rating_zero d-flex">';
+         var emptyStars = 5 - stars;
+         var i = 0;
+         for (i= 0; i<stars;i++){
+            starText += '<span style="color:#ff5501;">☆</span>';
+         };
+         for(i=0; i<emptyStars; i++){
+            starText += '<span>☆</span>';
+         };
+         starText += '</div></div>';
+         
+         return starText
+      };
+
+      var reviewData
+      function prevPage(){
+         getReview(reviewData.previous)
+      };
+      function nextPage(){
+         getReview(reviewData.next)
+      }
+
+      function getReview(search){
+         var request = new XMLHttpRequest()
+         request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+            reviewData = JSON.parse(request.responseText)
+            var reviewRes = reviewData.results;
+            // console.log(reviewRes)
+            var i;
+            var review = [];
+            for (i=0; i<reviewRes.length; i++){
+               review = review.concat(reviewRes[i].review);
+            };
+            
+            
+            if (reviewRes.length != 0){
+               review = '<h6>Customer Reviews</h6>';
+               for(i=0;i<reviewRes.length;i++){
+                  review += '<p class="mt-4 mb-4">' + reviewRes[i].reviewer_name + '</p><div class="review__ratings__type d-flex"><div class="review-ratings">';
+                  review += '<div class="rating-summary d-flex"><span><strong>Quality</strong></span>' + getStars(reviewRes[i].quality);
+                  review += '<div class="rating-summary d-flex"><span><strong>Price</strong></span>' + getStars(reviewRes[i].price);
+                  review += '<div class="rating-summary d-flex"><span><strong>value</strong></span>' + getStars(reviewRes[i].value);
+                  review += '<div class="rating-summary d-flex"><span><strong>Summary</strong></span><span style="margin-left:20px;">' + reviewRes[i].summary + '</span></div>';
+                  review += '<div class="rating-summary d-flex"><span><strong>Review</strong></span><br><span style="margin-left:20px;">' + reviewRes[i].review + '</span></div></div></div></div>';
+               }
+            }
+            else {
+               review = '<h6>Customer Reviews</h6><p class="mt-4 mb-4">No product review available</p>';
+            }
+            if (reviewData.count > 5){
+               review += '<ul class="wn__pagination">';
+               if (reviewData.previous != null){
+                  review += '<li><a onclick="prevPage()"><i class="zmdi zmdi-chevron-left"></i></a></li>';
+               }
+               if (reviewData.next != null){
+                  review += '<li><a onclick=nextPage()><i class="zmdi zmdi-chevron-right"></i></a></li>';
+               }
+               review += '</ul>';
+            }
+            document.getElementById("get_review").innerHTML = review;
+            if (reviewData.count > 0){
+               var avg_stars = 0
+               for (i = 0; i < reviewData.count; i++){
+                  var review = reviewData.results[i];
+                  var stars = 0;
+                  stars += review.quality;
+                  stars += review.price;
+                  stars += review.value;
+                  stars = stars/3;
+                  avg_stars += stars;
+               }
+               avg_stars = avg_stars/reviewData.count;
+
+               var star_html = '';
+               avg_stars = Math.floor(avg_stars);
+               var remain_stars = 5 - avg_stars
+
+               for (i=0; i<avg_stars; i++){
+                  star_html += '<li><i class="zmdi zmdi-star"></i></li>'
+               }
+               for (i=0; i<remain_stars; i++){
+                  star_html += '<li><i class="zmdi zmdi-star-outline"></i></li>'
+               }
+
+               document.getElementById('avstar').innerHTML = star_html               
+            }
+         }
+         // Send request
+         request.send();
+      };
+
+      getReview('http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id);
+      
+     
+
+      var quality, price, value = 1;
+      function setQualityStar(clicked_id){
+         low = '<span id="quality">Quality</span><div class="rating d-flex">'
+         quality = clicked_id;
+         if (clicked_id == 1){
+            low += '<span id="5" onclick="setQualityStar(this.id)">☆</span><span id="4" onclick="setQualityStar(this.id)">☆</span><span id="3" onclick="setQualityStar(this.id)">☆</span><span id="2" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 2) {
+            low += '<span id="5" onclick="setQualityStar(this.id)">☆</span><span id="4" onclick="setQualityStar(this.id)">☆</span><span id="3" onclick="setQualityStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 3) {
+            low += '<span id="5" onclick="setQualityStar(this.id)">☆</span><span id="4" onclick="setQualityStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 4) {
+            low += '<span id="5" onclick="setQualityStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }  else {
+            low += '<span id="5" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setQualityStar(this.id)">☆</span></div>'
+         }
+         low += '</div>'
+         document.getElementById("review_quality").innerHTML = low;
+      };
+
+      function setPriceStar(clicked_id){
+         priceless = '<span id="price">Price</span><div class="rating d-flex">'
+         price = clicked_id;
+         if (clicked_id == 1){
+            priceless += '<span id="5" onclick="setPriceStar(this.id)">☆</span><span id="4" onclick="setPriceStar(this.id)">☆</span><span id="3" onclick="setPriceStar(this.id)">☆</span><span id="2" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 2) {
+            priceless += '<span id="5" onclick="setPriceStar(this.id)">☆</span><span id="4" onclick="setPriceStar(this.id)">☆</span><span id="3" onclick="setPriceStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 3) {
+            priceless += '<span id="5" onclick="setPriceStar(this.id)">☆</span><span id="4" onclick="setPriceStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 4) {
+            priceless += '<span id="5" onclick="setPriceStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }  else {
+            priceless += '<span id="5" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setPriceStar(this.id)">☆</span></div>'
+         }
+         priceless += '</div>'
+         document.getElementById("review_price").innerHTML = priceless;
+      };
+
+      function setValueStar(clicked_id){
+         zero = '<span id="value">Value</span><div class="rating d-flex">'
+         value = clicked_id;
+         if (clicked_id == 1){
+            zero += '<span id="5" onclick="setValueStar(this.id)">☆</span><span id="4" onclick="setValueStar(this.id)">☆</span><span id="3" onclick="setValueStar(this.id)">☆</span><span id="2" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 2) {
+            zero += '<span id="5" onclick="setValueStar(this.id)">☆</span><span id="4" onclick="setValueStar(this.id)">☆</span><span id="3" onclick="setValueStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 3) {
+            zero += '<span id="5" onclick="setValueStar(this.id)">☆</span><span id="4" onclick="setValueStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }  else if (clicked_id == 4) {
+            zero += '<span id="5" onclick="setValueStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }  else {
+            zero += '<span id="5" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="4" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="3" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="2" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span><span id="1" style=";color:#ff5501;" onclick="setValueStar(this.id)">☆</span></div>'
+         }
+         zero += '</div>'
+         document.getElementById("review_value").innerHTML = zero;
+      };
+
+      function setReview(){
+         // let result = document.querySelector('.result'); 
+         var reviewer_name = document.querySelector('#reviewer_name'); 
+         var summary = document.querySelector('#summary'); 
+         var review = document.querySelector('#review'); 
+
+         var request = new XMLHttpRequest()
+         var search = 'http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id;
+         request.open('POST', search, true);
+         request.setRequestHeader("Content-type", "application/json");
+         var data = JSON.stringify({"product": pageData.id ,"reviewer_name": reviewer_name.value ,"summary": summary.value ,"review": review.value ,"quality": quality ,"price": price ,"value": value});
+         request.onload = function loadHTML() {
+            getReview('http://custlrwa.ddns.net:8000/reviews/?search=' + pageData.id);
+         }
+         // send request
+         request.send(data);
+      };
+
+      var search = 'http://custlrwa.ddns.net:8000/scraped/' + sessionStorage.getItem("search_term") + '&brandlist=true';
+      request.open('GET', search, true)
+      request.onload = function loadHTML(){
+         var resultText = (JSON.parse(request.responseText)).results;
+         // console.log(resultText);
+         var brands = '';
+         var brands_a= '', brands_b= '', brands_c= '', brands_d= '', brands_e= '', brands_f= '', brands_g= '', brands_h= '', brands_i= '', brands_j= '', brands_k= '', brands_l= '', brands_m= '', brands_n= '', brands_o= '', brands_p= '', brands_q= '', brands_r= '', brands_s= '', brands_t= '', brands_u= '', brands_v= '', brands_w= '', brands_x= '', brands_y= '', brands_z= '', brands_num = '';
+         var count_a = 0, count_b = 0, count_c = 0, count_d = 0, count_e = 0, count_f = 0, count_g = 0, count_h = 0, count_i = 0, count_j = 0, count_k = 0, count_l = 0, count_m = 0, count_n = 0, count_o = 0, count_p = 0, count_q = 0, count_r = 0, count_s = 0, count_t = 0, count_u = 0, count_v = 0, count_w = 0, count_x = 0, count_y = 0, count_z = 0, count_num = 0;
+         var count = '';
+         var k = 0;
+         var alphabet = 'A' || 'a';
+         for (i=0; i<resultText.length; i++){         
+            switch(resultText[i].brand.charAt(0)){
+               case "A":
+               case "a":
+                  brands_a += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_a++;
+                  break;
+               case "B":
+               case "b":
+                  brands_b += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_b++;
+                  break;
+               case "C":
+               case "c":
+                  brands_c += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_c++;
+                  break;
+               case "D":
+               case "d":
+                  brands_d += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_d++;
+                  break;
+               case "E":
+               case "e":
+                  brands_e += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_e++;
+                  break;
+               case "F":
+               case "f":
+                  brands_f += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_f++;
+                  break;
+               case "G":
+               case "g":
+                  brands_g += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_g++;
+                  break;
+               case "H":
+               case "h":
+                  brands_h += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_h++;
+                  break;
+               case "I":
+               case "i":
+                  brands_i += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_i++;
+                  break;
+               case "J":
+               case "j":
+                  brands_j += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_j++;
+                  break;
+               case "K":
+               case "k":
+                  brands_k += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_k++;
+                  break;
+               case "L":
+               case "l":
+                  brands_l += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_l++;
+                  break;
+               case "M":
+               case "m":
+                  brands_m += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_m++;
+                  break;
+               case "N":
+               case "n":
+                  brands_n += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_n++;
+                  break;
+               case "O":
+               case "o":
+                  brands_o += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_o++;
+                  break;
+               case "P":
+               case "p":
+                  brands_p += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_p++;
+                  break;
+               case "Q":
+               case "q":
+                  brands_q += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_q++;
+                  break;
+               case "R":
+               case "r":
+                  brands_r += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_r++;
+                  break;
+               case "S":
+               case "s":
+                  brands_s += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_s++;
+                  break;
+               case "T":
+               case "t":
+                  brands_t += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_t++;
+                  break;
+               case "U":
+               case "u":
+                  brands_u += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_u++;
+                  break;
+               case "V":
+               case "v":
+                  brands_v += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_v++;
+                  break;
+               case "W":
+               case "w":
+                  brands_w += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_w++;
+                  break;
+               case "X":
+               case "x":
+                  brands_x += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_x++;
+                  break;
+               case "Y":
+               case "y":
+                  brands_y += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_y++;
+                  break;
+               case "Z":
+               case "z":
+                  brands_z += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_z++;
+                  break;
+               default:
+                  brands_num += '<li><a href="#" onclick="openBrand(\'&brand='+ resultText[i].brand+'\')">'+ resultText[i].brand +'</a></li>';
+                  count_num++;
+                  break;
+            };
+         };
+
+         var search_text = sessionStorage.getItem("search_term_text");
+         if (search_text.length > 12){ //handles search terms that are too long
+            search_text = search_text.substring(0, 11) + '...'
+         }
+         document.getElementById("brandlist_title").innerHTML = 'Brands with \'' + search_text +'\''
+
+         if(count_num != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_num" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>0-9<span id="brand_count_numbers"></span></b></a><ul class="collapse list-unstyled" id="sub_num"><li id="brand_dropdown_numbers"></li></ul></li>';
+            document.getElementById("brand_count_numbers").innerHTML = ' (' + count_num + ')';
+            document.getElementById("brand_dropdown_numbers").innerHTML = brands_num;
+         };
+         if(count_a != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_a" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>A<span id="brand_count_a"></span></b></a><ul class="collapse list-unstyled" id="sub_a"><li id="brand_dropdown_a"></li></ul></li>';
+            document.getElementById("brand_count_a").innerHTML = ' (' + count_a + ')'
+            document.getElementById("brand_dropdown_a").innerHTML = brands_a;
+         };
+         if(count_b != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_b" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>B<span id="brand_count_b"></span></b></a><ul class="collapse list-unstyled" id="sub_b"><li id="brand_dropdown_b"></li></ul></li>';
+            document.getElementById("brand_count_b").innerHTML = ' (' + count_b + ')'
+            document.getElementById("brand_dropdown_b").innerHTML = brands_b;         
+         };
+         if(count_c != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_c" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>C<span id="brand_count_c"></span></b></a><ul class="collapse list-unstyled" id="sub_c"><li id="brand_dropdown_c"></li></ul></li>';
+            document.getElementById("brand_count_c").innerHTML = ' (' + count_c + ')'
+            document.getElementById("brand_dropdown_c").innerHTML = brands_c;
+         };
+         if(count_d != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_d" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>D<span id="brand_count_d"></span></b></a><ul class="collapse list-unstyled" id="sub_d"><li id="brand_dropdown_d"></li></ul></li>';
+            document.getElementById("brand_count_d").innerHTML = ' (' + count_d + ')'
+            document.getElementById("brand_dropdown_d").innerHTML = brands_d;
+         };
+         if(count_e != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_e" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>E<span id="brand_count_e"></span></b></a><ul class="collapse list-unstyled" id="sub_e"><li id="brand_dropdown_e"></li></ul></li>';
+            document.getElementById("brand_count_e").innerHTML = ' (' + count_e + ')'
+            document.getElementById("brand_dropdown_e").innerHTML = brands_e;
+         };
+         if(count_f != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_f" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>F<span id="brand_count_f"></span></b></a><ul class="collapse list-unstyled" id="sub_f"><li id="brand_dropdown_f"></li></ul></li>';
+            document.getElementById("brand_count_f").innerHTML = ' (' + count_f + ')'
+            document.getElementById("brand_dropdown_f").innerHTML = brands_f;
+         };
+         if(count_g != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_g" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>G<span id="brand_count_g"></span></b></a><ul class="collapse list-unstyled" id="sub_g"><li id="brand_dropdown_g"></li></ul></li>';
+            document.getElementById("brand_count_g").innerHTML = ' (' + count_g + ')'
+            document.getElementById("brand_dropdown_g").innerHTML = brands_g;
+         };
+         if(count_h != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_h" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>H<span id="brand_count_h"></span></b></a><ul class="collapse list-unstyled" id="sub_h"><li id="brand_dropdown_h"></li></ul></li>';
+            document.getElementById("brand_count_h").innerHTML = ' (' + count_h + ')'
+            document.getElementById("brand_dropdown_h").innerHTML = brands_h;
+         };
+         if(count_i != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_i" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>I<span id="brand_count_i"></span></b></a><ul class="collapse list-unstyled" id="sub_i"><li id="brand_dropdown_i"></li></ul></li>';
+            document.getElementById("brand_count_i").innerHTML = ' (' + count_i + ')'
+            document.getElementById("brand_dropdown_i").innerHTML = brands_i;
+         };
+         if(count_j != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_j" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>J<span id="brand_count_j"></span></b></a><ul class="collapse list-unstyled" id="sub_j"><li id="brand_dropdown_j"></li></ul></li>';
+            document.getElementById("brand_count_j").innerHTML = ' (' + count_j + ')'
+            document.getElementById("brand_dropdown_j").innerHTML = brands_j;
+         };
+         if(count_k != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_k" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>K<span id="brand_count_k"></span></b></a><ul class="collapse list-unstyled" id="sub_k"><li id="brand_dropdown_k"></li></ul></li>';
+            document.getElementById("brand_count_k").innerHTML = ' (' + count_k + ')'
+            document.getElementById("brand_dropdown_k").innerHTML = brands_k;
+         };
+         if(count_l != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_l" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>L<span id="brand_count_l"></span></b></a><ul class="collapse list-unstyled" id="sub_l"><li id="brand_dropdown_l"></li></ul></li>';
+            document.getElementById("brand_count_l").innerHTML = ' (' + count_l + ')'
+            document.getElementById("brand_dropdown_l").innerHTML = brands_l;
+         };
+         if(count_m != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_m" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>M<span id="brand_count_m"></span></b></a><ul class="collapse list-unstyled" id="sub_m"><li id="brand_dropdown_m"></li></ul></li>';
+            document.getElementById("brand_count_m").innerHTML = ' (' + count_m + ')'
+            document.getElementById("brand_dropdown_m").innerHTML = brands_m;
+         };
+         if(count_n != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_n" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>N<span id="brand_count_n"></span></b></a><ul class="collapse list-unstyled" id="sub_n"><li id="brand_dropdown_n"></li></ul></li>';
+            document.getElementById("brand_count_n").innerHTML = ' (' + count_n + ')'
+            document.getElementById("brand_dropdown_n").innerHTML = brands_n;
+         };
+         if(count_o != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_o" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>O<span id="brand_count_o"></span></b></a><ul class="collapse list-unstyled" id="sub_o"><li id="brand_dropdown_o"></li></ul></li>';
+            document.getElementById("brand_count_o").innerHTML = ' (' + count_o + ')'
+            document.getElementById("brand_dropdown_o").innerHTML = brands_o;
+         };
+         if(count_p != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_p" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>P<span id="brand_count_p"></span></b></a><ul class="collapse list-unstyled" id="sub_p"><li id="brand_dropdown_p"></li></ul></li>';
+            document.getElementById("brand_count_p").innerHTML = ' (' + count_p + ')'
+            document.getElementById("brand_dropdown_p").innerHTML = brands_p;
+         };
+         if(count_q != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_q" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Q<span id="brand_count_q"></span></b></a><ul class="collapse list-unstyled" id="sub_q"><li id="brand_dropdown_q"></li></ul></li>';
+            document.getElementById("brand_count_q").innerHTML = ' (' + count_q + ')'
+            document.getElementById("brand_dropdown_q").innerHTML = brands_q;
+         };
+         if(count_r != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_r" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>R<span id="brand_count_r"></span></b></a><ul class="collapse list-unstyled" id="sub_r"><li id="brand_dropdown_r"></li></ul></li>';
+            document.getElementById("brand_count_r").innerHTML = ' (' + count_r + ')'
+            document.getElementById("brand_dropdown_r").innerHTML = brands_r;
+         };
+         if(count_s != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_s" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>S<span id="brand_count_s"></span></b></a><ul class="collapse list-unstyled" id="sub_s"><li id="brand_dropdown_s"></li></ul></li>';
+            document.getElementById("brand_count_s").innerHTML = ' (' + count_s + ')'
+            document.getElementById("brand_dropdown_s").innerHTML = brands_s;
+         };
+         if(count_t != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_t" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>T<span id="brand_count_t"></span></b></a><ul class="collapse list-unstyled" id="sub_t"><li id="brand_dropdown_t"></li></ul></li>';
+            document.getElementById("brand_count_t").innerHTML = ' (' + count_t + ')'
+            document.getElementById("brand_dropdown_t").innerHTML = brands_t;
+         };
+         if(count_u != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_u" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>U<span id="brand_count_u"></span></b></a><ul class="collapse list-unstyled" id="sub_u"><li id="brand_dropdown_u"></li></ul></li>';
+            document.getElementById("brand_count_u").innerHTML = ' (' + count_u + ')'
+            document.getElementById("brand_dropdown_u").innerHTML = brands_u;
+         };
+         if(count_v != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_v" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>V<span id="brand_count_v"></span></b></a><ul class="collapse list-unstyled" id="sub_v"><li id="brand_dropdown_v"></li></ul></li>';
+            document.getElementById("brand_count_v").innerHTML = ' (' + count_v + ')'
+            document.getElementById("brand_dropdown_v").innerHTML = brands_v;
+         };
+         if(count_w != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_w" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>W<span id="brand_count_w"></span></b></a><ul class="collapse list-unstyled" id="sub_w"><li id="brand_dropdown_w"></li></ul></li>';
+            document.getElementById("brand_count_w").innerHTML = ' (' + count_w + ')'
+            document.getElementById("brand_dropdown_w").innerHTML = brands_w;
+         };
+         if(count_x != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_x" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>X<span id="brand_count_x"></span></b></a><ul class="collapse list-unstyled" id="sub_x"><li id="brand_dropdown_x"></li></ul></li>';
+            document.getElementById("brand_count_x").innerHTML = ' (' + count_x + ')'
+            document.getElementById("brand_dropdown_x").innerHTML = brands_x;
+         };
+         if(count_y != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_y" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Y<span id="brand_count_y"></span></b></a><ul class="collapse list-unstyled" id="sub_y"><li id="brand_dropdown_y"></li></ul></li>';
+            document.getElementById("brand_count_y").innerHTML = ' (' + count_y + ')'
+            document.getElementById("brand_dropdown_y").innerHTML = brands_y;
+         };
+         if(count_z != 0){
+            document.getElementById("brandlist").innerHTML += '<li><a href="#sub_z" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Z<span id="brand_count_z"></span></b></a><ul class="collapse list-unstyled" id="sub_z"><li id="brand_dropdown_z"></li></ul></li>';
+            document.getElementById("brand_count_z").innerHTML = ' (' + count_z + ')'
+            document.getElementById("brand_dropdown_z").innerHTML = brands_z;
+         };
+         
+      }
+      request.send();
+
+      if (pageData.product_description != null){
+         description = "<p>"+ pageData.product_description + "</p>"
+      }
+      else{
+         description = "<p>No product description available</p>"
+      }
+
+      if (pageData.product_description != null){
+         details = "<p>"+ pageData.product_description + "</p>"
+      }
+      else{
+         details = "<p>No product description available</p>"
+      }
+
+      if (pageData.imagelist.length > 0){
+         image += '<div class="fotorama wn__fotorama__action" data-nav="thumbs">'
+         for(x_image in pageData.imagelist){
+            image += '<a href="#"><img src="'+ pageData.imagelist[x_image].image_url + '" alt=""></a>';
+         };
+         image += '</div>'  
+      }
+      else{
+         image += '<div class="fotorama wn__fotorama__action" data-nav="thumbs"">'
+         image += '<a href="#"><img src="'+ pageData.image_url + '" alt=""></a>';
+         image += '</div>'  
+      }
+      
+      function udpateQty() {
+         addQty = document.getElementById("qty").value;
+      };
+
+      function udpateQtyMV() {
+         addQty = document.getElementById("qty_mv").value;
+      };
+
+      document.getElementById("review_product_name").innerHTML = pageData.product_name;
+      document.getElementById("product_name").innerHTML = pageData.product_name;
+      document.getElementById("product_name_bread").innerHTML = pageData.product_name;
+      document.getElementById("product_price").innerHTML = pageData.currency + ' ' + pageData.price;
+      document.getElementById("product_description").innerHTML = description;
+      document.getElementById("categories").innerHTML = categories;
+      document.getElementById("image_list").innerHTML = image;
+      document.getElementById("product_details").innerHTML = details;
+
+      function openCategory(category){
+         // Create a request variable and assign a new XMLHttpRequest object to it.
+         var request = new XMLHttpRequest()
+
+         search_value = "?category=men" + category;
+         // Open a new connection, using the GET request on the URL endpoint
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+         
+         request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+            var resultText = request.responseText;
+            sessionStorage.setItem("search_result", resultText); 
+            sessionStorage.setItem("current_page", 1);
+            sessionStorage.removeItem("selectBox");
+            getBrands(search);
+         }
+         // Send request
+         request.send();
+      };
+
+      function openBrand(brand){
+         // Create a request variable and assign a new XMLHttpRequest object to it.
+         var request = new XMLHttpRequest()
+
+         search_value = sessionStorage.getItem("search_term") + brand;
+         // Open a new connection, using the GET request on the URL endpoint
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+         
+         request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+            var resultText = request.responseText;
+            sessionStorage.setItem("search_result", resultText); 
+            sessionStorage.setItem("current_page", 1);
+            sessionStorage.removeItem("selectBox");
+            getBrands(search);
+         }
+         // Send request
+         request.send();
+      };
+
+      function getBrands(url){
+         var request = new XMLHttpRequest()
+         var search = url + '&brandlist=true';
+         request.open('GET', search, true)
+
+         request.onload = function loadHTML(){
+               var resultText = (JSON.parse(request.responseText)).results;
+               var i;
+               var brands = [];
+               for (i=0; i<resultText.length; i++){
+                  brands = brands.concat(resultText[i].brand);
+               };
+               sessionStorage.setItem("brand_list", JSON.stringify(brands));
+               window.location.replace("shop-grid-men.html");
+         }
+         // Send request
+         request.send();
+      };
+      </script>
+   </body>
+</html>               <li class="drop">
                            <a href="#">Shop</a>
                            <div class="megamenu mega03">
                               <ul class="item item03">

@@ -218,13 +218,13 @@
 												<div class="switcher-currency-trigger">
 													<div class="setting__menu">
 														<span><a href="login.html">Log in</a></span>
-														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter">Track My Orders</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter">Track My Order</a></span>
 														 <!-- Modal -->
 														 <div class="modal p-0" id="modal_order" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="cursor:default;">
 															<div class="modal-dialog modal-dialog-centered portfolio_modal" role="document">
 																<div class="modal-content mobile_modal">
 																	<div class="modal-header">
-																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: gray;">Track My Orders</h4>
+																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: gray;">Track My Order</h4>
 																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																		<span aria-hidden="true">&times;</span>
 																		</button>
@@ -669,6 +669,7 @@
 
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
+						localStorage.removeItem("check_top");
 					}
 					else{
                         notifySizingAvailable();
@@ -682,6 +683,7 @@
 						sizing_match(adjusted_measurements, men_tops, 'tops', 'Men')
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_top'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+						localStorage.setItem("check_top", "check");
 					}
 				}
 				else{
@@ -692,6 +694,7 @@
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
+						localStorage.removeItem("check_bottom");
 					}
 					else{
                         notifySizingAvailable();
@@ -704,6 +707,7 @@
 						sizing_match(adjusted_measurements, men_bottoms, 'bottoms', 'Men')
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_bottom'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+						localStorage.setItem("check_bottom", "check");
 					}
 				}
 			}
@@ -725,6 +729,7 @@
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
+						localStorage.removeItem("check_bottom");
 					}
                     else{
                         notifySizingAvailable();
@@ -740,6 +745,7 @@
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_bottom'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
                         tb_toggle = 'bottoms'
+						localStorage.setItem("check_bottom", "check");
 					}
                 }
                 else{
@@ -752,6 +758,7 @@
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()" checked><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
+						localStorage.removeItem("check_top");
 					}
                     else{
                         notifySizingAvailable();
@@ -767,7 +774,8 @@
 						sizing_match(adjusted_measurements, men_tops, 'tops', 'Men')
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_top'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
-                        tb_toggle = 'tops'
+                        tb_toggle = 'tops';
+						localStorage.setItem("check_top", "check");
 					}
                 }
             } 

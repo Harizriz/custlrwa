@@ -371,10 +371,10 @@ function sizingDetection(sizeType, gender, category){
             sizingType = 'notype'
         }       
     }
-    else if (gender === 'Women'){ //add for bottoms
+    else if (gender === 'Women'){
         if (sizeType == "UK"){
             if (category == 'tops'){
-                sizingType = 'us_uk_women_tops'; //same sizing for both
+                sizingType = 'us_uk_women_tops';
             }
             else{
                 sizingType = 'us_uk_women_bottoms';
@@ -523,6 +523,12 @@ function sizingList(sizing_original, sizeType, gender, category){
             break;
         case 'notype':
             for (i=0; i<sizing_original.length; i++){
+                var noTypeSizing = {
+                    "uk": "0",
+                    "us": "0",
+                    "eu": "0",
+                    "intl": "0"
+                }
                 noTypeSizing.uk = sizing_original[i].sizing;
                 noTypeSizing.us = sizing_original[i].sizing;
                 noTypeSizing.eu = sizing_original[i].sizing;
@@ -533,6 +539,12 @@ function sizingList(sizing_original, sizeType, gender, category){
             break;
         default:
             for (i=0; i<sizing_original.length; i++){
+                var noTypeSizing = {
+                    "uk": "0",
+                    "us": "0",
+                    "eu": "0",
+                    "intl": "0"
+                }
                 noTypeSizing.uk = sizing_original[i].sizing;
                 noTypeSizing.us = sizing_original[i].sizing;
                 noTypeSizing.eu = sizing_original[i].sizing;

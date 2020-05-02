@@ -218,13 +218,13 @@
 												<div class="switcher-currency-trigger">
 													<div class="setting__menu">
 														<span><a href="login.html">Log in</a></span>
-														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter">Track My Orders</a></span>
+														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter">Track My Order</a></span>
 														 <!-- Modal -->
 														 <div class="modal p-0" id="modal_order" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="cursor:default;">
 															<div class="modal-dialog modal-dialog-centered portfolio_modal" role="document">
 																<div class="modal-content mobile_modal">
 																	<div class="modal-header">
-																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: gray;">Track My Orders</h4>
+																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: gray;">Track My Order</h4>
 																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																		<span aria-hidden="true">&times;</span>
 																		</button>
@@ -699,6 +699,7 @@
 
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
+                        localStorage.removeItem("check_top");
 					}
 					else{
                         notifySizingAvailable();
@@ -712,6 +713,7 @@
 						sizing_match(adjusted_measurements, women_tops, 'tops', 'Women')
 						var temp_obj = JSON.parse(localStorage.getItem('best_womens_top'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                        localStorage.setItem("check_top", "check");
 					}
 				}
 				else{
@@ -722,6 +724,7 @@
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
+                        localStorage.removeItem("check_bottom");
 					}
 					else{
                         notifySizingAvailable();
@@ -734,6 +737,7 @@
 						sizing_match(adjusted_measurements, women_bottoms, 'bottoms', 'Women')
 						var temp_obj = JSON.parse(localStorage.getItem('best_womens_bottom'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                        localStorage.setItem("check_bottom", "check");
 					}
 				}
 			}
@@ -755,6 +759,7 @@
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
+                        localStorage.removeItem("check_bottom");
 					}
                     else{
                         notifySizingAvailable();
@@ -770,6 +775,7 @@
 						var temp_obj = JSON.parse(localStorage.getItem('best_womens_bottom'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
                         tb_toggle = 'bottoms'
+                        localStorage.setItem("check_bottom", "check");
 					}
                 }
                 else{
@@ -782,6 +788,7 @@
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()" checked><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
+                        localStorage.removeItem("check_top");
 					}
                     else{
                         notifySizingAvailable();
@@ -798,6 +805,7 @@
 						var temp_obj = JSON.parse(localStorage.getItem('best_womens_top'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
                         tb_toggle = 'tops'
+                        localStorage.setItem("check_top", "check");
 					}
                 }
             } 
@@ -814,6 +822,53 @@
                 }
             }
 		};
+
+        function openHeaderLink(brand, search, gender){
+            var request = new XMLHttpRequest()
+
+			// replaces white space
+            if (search == ''){
+                search = brand
+            }
+
+            search_value = "?search=" + encodeURI(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
+            sessionStorage.setItem("search_term_text", search);
+            sessionStorage.setItem("search_term", search_value);
+			// Open a new connection, using the GET request on the URL endpoint
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value
+            request.open('GET', search, true)
+
+			request.onload = function loadHTML(){
+                var resultText = request.responseText;
+				sessionStorage.setItem("search_result", resultText); 
+                sessionStorage.setItem("current_page", 1);
+                sessionStorage.removeItem("selectBox");
+                headerBrandList(gender);
+			}
+			// Send request
+            request.send();
+        };
+
+        function headerBrandList(gender){
+			var request = new XMLHttpRequest()
+            var search_value = sessionStorage.getItem("search_term");
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                console.log(brands);
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-"+ gender +".html");
+            }
+            // Send request
+            request.send();
+        }
 
         var current_page = sessionStorage.getItem("current_page");
         function openLink(url, page, storage){ //sends search request to backend for JSON response
