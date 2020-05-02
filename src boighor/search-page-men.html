@@ -628,12 +628,20 @@
     <script src="js/notify.min.js"></script>
     <script>
 
-        function notifyCustomSizing() {
+		function notifyCustomSizing(link) {
 			$( document ).ready(function() {
 				$("div").click(
-				NotifyLink("You haven't saved a custom size!", 1000, null, "danger", "upper-body.html")
+				NotifyLink("You haven't saved a custom size!", 1000, null, "danger", link)
 				);
                 sessionStorage.setItem('back_page', window.location.href);
+			});
+        };
+        
+        function notifySizingAvailable() {
+			$( document ).ready(function() {
+				$("div").click(
+				Notify("Custom sizing enabled!", 1000, null, "info")
+				);
 			});
         };
         
@@ -655,7 +663,7 @@
 				if (tb_toggle == 'tops'){
 					var measurements = JSON.parse(localStorage.getItem("custom_top"));
 					if (measurements === null){
-						notifyCustomSizing();
+						notifyCustomSizing("upper-body.html");
                         document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
 
@@ -663,6 +671,7 @@
 						sizing_toggle = false;
 					}
 					else{
+                        notifySizingAvailable();
                         document.getElementById("cs_text").innerHTML = "Enabled";
 						var adjusted_measurements = {
 							"bust": measurements.chest,
@@ -678,13 +687,14 @@
 				else{
 					var measurements = localStorage.getItem("custom_bottom");
 					if (measurements === null){
-						notifyCustomSizing();
+						notifyCustomSizing("lower-body.html");
                         document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
 					}
 					else{
+                        notifySizingAvailable();
                         document.getElementById("cs_text").innerHTML = "Enabled";
 						var adjusted_measurements = {
 							"inner_leg": measurements.inseam,
@@ -708,7 +718,7 @@
                 if (tb_toggle == 'tops'){
                     var measurements = localStorage.getItem("custom_bottom");
 					if (measurements === null){
-						notifyCustomSizing();
+						notifyCustomSizing("lower-body.html");
                         document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
                         document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
                         document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
@@ -717,6 +727,7 @@
 						sizing_toggle = false;
 					}
                     else{
+                        notifySizingAvailable();
                         document.getElementById("cs_text").innerHTML = "Enabled";
                         document.getElementById("tb_text").innerHTML = "Bottoms";
                         document.getElementById("tb_text_mv").innerHTML = "Bottoms";
@@ -734,7 +745,7 @@
                 else{
                     var measurements = localStorage.getItem("custom_top");
 					if (measurements === null){
-						notifyCustomSizing();
+						notifyCustomSizing("upper-body.html");
                         document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
                         document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
                         document.getElementById("resetCustomSizing").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()" checked><span class="slider round"></span>';
@@ -743,6 +754,7 @@
 						sizing_toggle = false;
 					}
                     else{
+                        notifySizingAvailable();
                         document.getElementById("cs_text").innerHTML = "Enabled";
                         document.getElementById("tb_text").innerHTML = "Tops";
                         document.getElementById("tb_text_mv").innerHTML = "Tops";
