@@ -27,11 +27,13 @@ function getCartNotification() {
     var empty = '';
     var miniCartData = miniCart.all();
     if (miniCartData != null) {
-        document.getElementById("cart_noti").innerHTML = miniCartData.length;
-    }
-    else {
-        empty = '<a class="cartbox_active" href="#"></a>';
-        document.getElementById("shopcart").innerHTML = empty;
+        if (miniCartData.length != 0){
+            document.getElementById("shopcart").innerHTML = '<span class="product_qun">' + miniCartData.length + '</span>';
+        }
+        else {
+            empty = '';
+            document.getElementById("shopcart").innerHTML = empty;
+        }
     }
 }
 

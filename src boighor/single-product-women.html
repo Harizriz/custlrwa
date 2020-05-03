@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Favicons -->
       <link rel="shortcut icon" href="images/yellowicon.png">
-      <link rel="apple-touch-icon" href="images/icon.png">
+      <link rel="apple-touch-icon" href="images/yellowicon.png">
       <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
@@ -181,10 +181,10 @@
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
                             <li class="wishlist" id="wishlist">
-								<a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
+								<a class="wishlist_active" href="wishlist.html"></a>
 							</li>
-							<li class="shopcart" id="shopcart">
-								<a class="cartbox_active" href="cart.html"><span class="product_qun" id="cart_noti"></span></a>
+                     <li class="shopcart">
+								<a class="cartbox_active" id="shopcart"></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
                                     <div class="minicart-content-wrapper">
@@ -415,8 +415,8 @@
                      <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                            <li class="breadcrumb-item"><a href="portfolio.html">Home</a></li>
-                           <li class="breadcrumb-item"><a href="search-page-men.html">Search</a></li>
-                           <li class="breadcrumb-item"><a href="shop-grid-men.html">Shop Grid</a></li>
+                           <li class="breadcrumb-item"><a href="search-page-women.html">Search</a></li>
+                           <li class="breadcrumb-item"><a href="shop-grid-women.html">Shop Grid</a></li>
                            <li class="breadcrumb-item active" aria-current="page" id="product_name_bread" style="text-transform: capitalize;"></li>
                         </ol>
                      </nav>
@@ -520,7 +520,7 @@
                                           <div class="col-lg-8 col-12 p-0">
                                              <div class="box-sizing">
                                                 <div class="row d-flex justify-content-around">
-                                                   <h3 class="wedget__title_size mt-2 pl-1">Select Size</h3>
+                                                   <h3 class="wedget__title_size mt-2">Select Size</h3>
                                                    <button type="button" class="btn btn-info btn-sm mb-3" data-toggle="modal" data-target="#modal_product">Size Chart</button>
                                                    <div class="modal fade" id="modal_product" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -614,8 +614,8 @@
                                                 </div>
                                                 <div class="row">
                                                    <div class="col-sm-7 col-12">
-                                                      <div class="dropdown ml-1 mt-2">
-                                                         <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="sizingRegionDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      <div class="dropdown ml-2 mt-2">
+                                                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="sizingRegionDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                          International</button>
                                                          <div class="dropdown-menu" aria-labelledby="International">
                                                             <a class="dropdown-item" id="US" onclick="changeFunction(this.id)">US</a>
@@ -625,9 +625,9 @@
                                                          </div>
                                                       </div>
                                                    </div>
-                                                   <div class="col-sm-5 col-12">
-                                                      <div class="dropdown mt-2">
-                                                         <button class="btn btn-outline-dark dropdown-toggle pl-3 pr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   <div class="col-sm-5 col-12" style="padding-left: 0px;">
+                                                      <div class="dropdown mt-2 ml-2">
+                                                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                          XS</button>
                                                          <div id="sizing_dropdown" class="dropdown-menu" aria-labelledby="International" style="min-width:0rem;">
                                                          </div>
@@ -880,33 +880,31 @@
             <div class="footer-static-top">
                <div class="container">
                   <div class="row">
-                        <div class="col-lg-12">
-                           <div class="footer__widget footer__menu">
-                              <div class="ft__logo">
-                                    <a href="index.html">
-                                       <img src="images/logo/black1.png" alt="logo">
-                                    </a>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
-                                 </div>
-                              <div class="footer__content">
-                                    <ul class="social__net social__net--2 d-flex justify-content-center">
-                                       <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-google"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-youtube"></i></a></li>
-                                    </ul>
-                                    <ul class="mainmenu d-flex justify-content-center">
-                                       <li><a href="index.html">Trending</a></li>
-                                       <li><a href="index.html">Best Seller</a></li>
-                                       <li><a href="index.html">All Product</a></li>
-                                       <li><a href="index.html">Wishlist</a></li>
-                                       <li><a href="index.html">Blog</a></li>
-                                       <li><a href="index.html">Contact</a></li>
-                                    </ul>
+                     <div class="col-lg-12">
+                        <div class="footer__widget footer__menu">
+                           <div class="ft__logo">
+                                 <a href="portfolio.html">
+                                 <img src="images/logo/black1.png" alt="logo">
+                                 </a>
+                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
                               </div>
+                           <div class="footer__content">
+                              <ul class="social__net social__net--2 d-flex justify-content-center">
+                              <li><a href="https://www.facebook.com/custlr/"><i class="bi bi-facebook"></i></a></li>
+                              <li><a href="https://twitter.com/custlr"><i class="bi bi-twitter"></i></a></li>
+                              <li><a href="https://www.linkedin.com/in/custlr/"><i class="bi bi-linkedin"></i></a></li>
+                              <li><a href="https://www.youtube.com/channel/UCox3ZZRUjkqrCRwtrnYSW2A"><i class="bi bi-youtube"></i></a></li>
+                              </ul>
+                              <ul class="mainmenu d-flex justify-content-center">
+                                 <li><a onclick="allProducts('men')">Men Product</a></li>
+                                 <li><a onclick="allProducts('women')">Women Product</a></li>
+                                 <li><a onclick="allProducts('kids')">Kids Product</a></li>
+                                 <li><a href="wishlist.html">Wishlist</a></li>
+                                 <li><a href="contact.html">Contact</a></li>
+                              </ul>
                            </div>
                         </div>
+                     </div>
                   </div>
                </div>
             </div>
@@ -1063,7 +1061,7 @@
 					else{
                         document.getElementById("cs_text").innerHTML = "Enabled";
 						var adjusted_measurements = {
-							"bust": measurements.chest,
+							"chest": measurements.chest,
 							"waist": measurements.waist,
 							"arm": measurements.arm,
 							"hip": measurements.hip
@@ -1087,7 +1085,7 @@
 					else{
                         document.getElementById("cs_text").innerHTML = "Enabled";
 						var adjusted_measurements = {
-							"inner_leg": measurements.inseam,
+							"inseam": measurements.inseam,
 							"waist": measurements.waist,
 							"hip": measurements.hip
 						}
@@ -1124,7 +1122,7 @@
                         document.getElementById("tb_text_mv").innerHTML = "Bottoms";
                         localStorage.setItem("check_bottom", "check");
 						var adjusted_measurements = {
-							"inner_leg": measurements.inseam,
+							"inseam": measurements.inseam,
 							"waist": measurements.waist,
 							"hip": measurements.hip
 						}
@@ -1152,7 +1150,7 @@
                         document.getElementById("tb_text_mv").innerHTML = "Tops";
                         localStorage.setItem("check_top", "check");
                         var adjusted_measurements = {
-							"bust": measurements.chest,
+							"chest": measurements.chest,
 							"waist": measurements.waist,
 							"arm": measurements.arm,
 							"hip": measurements.hip
@@ -1305,28 +1303,30 @@
       }
       var sizing_chart = sizingList(pageData.sizing, pageData.sizing_type, pageData.category, pageData.subcategory);
       
-      if (pageData.subcategory == 'tops'){
-         var sizing_top = JSON.parse(localStorage.getItem("custom_top"));
-         var custom_check = localStorage.getItem("check_top");
-         if (sizing_top !== null && custom_check !== null){
-            sizing_match(sizing_top, sizing_chart, 'tops', 'Women');
-            var best = JSON.parse(localStorage.getItem('best_womens_top'));
-            var bestHTML = '<div class="alert alert-dark" role="alert"><p>';
-            bestHTML += 'Recommended sizes (based on your measurements): ';
-            bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu + '</p></div>';
-            document.getElementById('recommend_size').innerHTML = bestHTML;
+      if(sizingDefault != 'No Size Type'){
+         if (pageData.subcategory == 'tops'){
+            var sizing_top = JSON.parse(localStorage.getItem("custom_top"));
+            var custom_check = localStorage.getItem("check_top");
+            if (sizing_top !== null && custom_check !== null){
+               sizing_match(sizing_top, sizing_chart, 'tops', 'Women');
+               var best = JSON.parse(localStorage.getItem('best_womens_top'));
+               var bestHTML = '<div class="alert alert-dark" role="alert"><p>';
+               bestHTML += 'Recommended sizes (based on your measurements): ';
+               bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu + '</p></div>';
+               document.getElementById('recommend_size').innerHTML = bestHTML;
+            }
          }
-      }
-      if (pageData.subcategory == 'bottoms'){
-         var sizing_bottom = JSON.parse(localStorage.getItem("custom_bottom"));
-         var custom_check = localStorage.getItem("check_bottom");
-         if (sizing_bottom !== null && custom_check !== null){
-            sizing_match(sizing_bottom, sizing_chart, 'bottoms', 'Women');
-            var best = JSON.parse(localStorage.getItem('best_womens_bottom'));
-            var bestHTML = 'Recommended sizes (based on your measurements) : ';
-            var bestHTML = '<div class="alert alert-dark" role="alert"><p>';
-            bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu + '</p></div>';
-            document.getElementById('recommend_size').innerHTML = bestHTML;
+         if (pageData.subcategory == 'bottoms'){
+            var sizing_bottom = JSON.parse(localStorage.getItem("custom_bottom"));
+            var custom_check = localStorage.getItem("check_bottom");
+            if (sizing_bottom !== null && custom_check !== null){
+               sizing_match(sizing_bottom, sizing_chart, 'bottoms', 'Women');
+               var best = JSON.parse(localStorage.getItem('best_womens_bottom'));
+               var bestHTML = '<div class="alert alert-dark" role="alert"><p>';
+               bestHTML += 'Recommended sizes (based on your measurements): ';
+               bestHTML += 'International - ' + best.intl + ' , UK - ' + best.uk + ' , US - ' + best.us + ' , EU - ' + best.eu + '</p></div>';
+               document.getElementById('recommend_size').innerHTML = bestHTML;
+            }
          }
       }
       
@@ -1450,6 +1450,7 @@
       var x_image = 0;
       var request = new XMLHttpRequest()
       var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+      console.log(wishlist);
       if (wishlist === undefined || wishlist === null){
          wishlist = [];
          //console.log('empty wishlist');
@@ -1485,10 +1486,10 @@
          document.getElementById("btn_mv").innerHTML = wishlist_btn;
          
          if (wishlist.length != 0) {
-            document.getElementById("wishlist_noti").innerHTML = wishlist.length;
+            document.getElementById("wishlist").innerHTML = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length + '</span></a>';
          }
          else {
-            empty += '<a class="wishlist_active" href="wishlist.html"></a>';
+            var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
             document.getElementById("wishlist").innerHTML = empty;
          }
       };
@@ -1845,8 +1846,14 @@
          };
 
          var search_text = sessionStorage.getItem("search_term_text");
-         if (search_text.length > 12){ //handles search terms that are too long
-            search_text = search_text.substring(0, 11) + '...'
+         if (search_text != null){
+            if (search_text.length > 12){ //handles search terms that are too long
+               search_text = search_text.substring(0, 11) + '...'
+            }
+            document.getElementById("brandlist_title").innerHTML = 'Brands with \'' + search_text +'\''
+         }
+         else{
+            document.getElementById("brandlist_title").innerHTML = 'Brands';
          }
          document.getElementById("brandlist_title").innerHTML = 'Brands with \'' + search_text +'\''
 
@@ -2094,5 +2101,50 @@
          request.send();
       };
       </script>
+      <script>
+        function allProducts(gender){ //sends search request to backend for JSON response
+            // Create a request variable and assign a new XMLHttpRequest object to it.
+            var request = new XMLHttpRequest()
+
+            // replaces white space
+			search_value = "?search=" + "&category=" + gender;
+            sessionStorage.removeItem("search_term_text");
+			sessionStorage.setItem("search_term", search_value);
+            // Open a new connection, using the GET request on the URL endpoint
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value
+               
+               request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+               var resultText = request.responseText;
+               sessionStorage.setItem("search_result", resultText); 
+               sessionStorage.setItem("current_page", 1);
+               sessionStorage.removeItem("selectBox");
+               footerBrandList(gender);
+            }
+            // Send request
+               request.send();
+         };
+
+         function footerBrandList(gender){
+			var request = new XMLHttpRequest()
+            var search_value = sessionStorage.getItem("search_term");
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-" + gender + ".html");
+            }
+            // Send request
+            request.send();
+		};
+	</script>
    </body>
 </html>

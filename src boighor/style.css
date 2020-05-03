@@ -2420,8 +2420,13 @@ Cart Box Styles
 
 @media only screen and (max-width: 420px) {
     .minicart-content-wrapper {
-        width: 238px;
-        padding: 25px 11px;
+        padding: 25px 20px;
+        padding-bottom: 0px;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+        margin: 4px 0 0;
+        min-width: 100%;
+        top: 100%;
+        z-index: 100;
     }
     .minicart-content-wrapper .single__items .miniproduct .item01 .content h6 a {
         font-size: 13px;
@@ -2667,6 +2672,7 @@ Header Styles
 .header__area .header__sidebar__right {
     height: 90px;
     list-style: outside none none;
+    position: relative;
     z-index: 9;
 }
 
@@ -3301,7 +3307,7 @@ Sticky Header
         z-index: 9;
     }
     .header__area .logo {
-        z-index: 2;
+        z-index: 10;
         position: relative;
     }
     .header__area .container-fluid {
@@ -7591,7 +7597,7 @@ MyAccount Styles
     color: #2e2e2e;
     font-size: 28px;
     font-weight: 600;
-    margin: 0 0 5px;
+    margin: 0 0 30px;
 }
 
 .account__form {
@@ -9013,7 +9019,7 @@ Footer Styles
 }
 
 .footer__menu .footer__content .mainmenu li a:hover {
-    color: #e59285;
+    color: #e7e614;
 }
 
 .page-footer {
@@ -9411,7 +9417,7 @@ a:hover {
 }
 
 .title strong:hover {
-    color: #e59285;
+    color: #e20000;
 
 }
 
@@ -9450,15 +9456,15 @@ a:hover {
 
 .btn-remove {
     color: #ffffff;
-    background-color: #d86666;
-    border-color: #f8f9fa;
-    font-size: 12px
+    background-color: #ffffff;
+    border-color: #ce3131;
+    font-size: 12px;
 }
 
 .btn-remove:hover {
     color: #ffffff;
-    background-color: #d86666;
-    border-color: rgb(0, 0, 0);
+    background-color: #e59285;
+    border-color: #ce3131;
     border-width: 1.2px;
 }
 
@@ -10024,7 +10030,7 @@ Image Search Page Styles
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #ccc;
+        background-color: #2196F3;
         -webkit-transition: .4s;
         transition: .4s;
     }

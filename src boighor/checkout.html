@@ -9,7 +9,7 @@
 
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="images/yellowicon.png">
-	<link rel="apple-touch-icon" href="images/icon.png">
+	<link rel="apple-touch-icon" href="images/yellowicon.png">
 
 	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
@@ -188,10 +188,10 @@
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
                             <li class="wishlist" id="wishlist">
-								<a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
+								<a class="wishlist_active" href="wishlist.html"></a>
 							</li>
-							<li class="shopcart" id="shopcart">
-								<a class="cartbox_active" href="cart.html"><span class="product_qun" id="cart_noti"></span></a>
+                     <li class="shopcart">
+								<a class="cartbox_active" id="shopcart"></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
                                     <div class="minicart-content-wrapper">
@@ -601,40 +601,38 @@
         <!-- End Checkout Area -->
 		<!-- Footer Area -->
 		<footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
-            <div class="footer-static-top">
-               <div class="container">
-                  <div class="row">
-                        <div class="col-lg-12">
-                           <div class="footer__widget footer__menu">
-                              <div class="ft__logo">
-                                    <a href="index.html">
-                                       <img src="images/logo/black1.png" alt="logo">
-                                    </a>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
-                              </div>
-                              <div class="footer__content">
-                                    <ul class="social__net social__net--2 d-flex justify-content-center">
-                                       <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-google"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-youtube"></i></a></li>
-                                    </ul>
-                                    <ul class="mainmenu d-flex justify-content-center">
-                                       <li><a href="index.html">Trending</a></li>
-                                       <li><a href="index.html">Best Seller</a></li>
-                                       <li><a href="index.html">All Product</a></li>
-                                       <li><a href="index.html">Wishlist</a></li>
-                                       <li><a href="index.html">Blog</a></li>
-                                       <li><a href="index.html">Contact</a></li>
-                                    </ul>
-                              </div>
-                           </div>
-                        </div>
-                  </div>
-               </div>
-            </div>
-      </footer>
+			<div class="footer-static-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="footer__widget footer__menu">
+								<div class="ft__logo">
+										<a href="portfolio.html">
+										<img src="images/logo/black1.png" alt="logo">
+										</a>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+									</div>
+								<div class="footer__content">
+									<ul class="social__net social__net--2 d-flex justify-content-center">
+									<li><a href="https://www.facebook.com/custlr/"><i class="bi bi-facebook"></i></a></li>
+									<li><a href="https://twitter.com/custlr"><i class="bi bi-twitter"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/custlr/"><i class="bi bi-linkedin"></i></a></li>
+									<li><a href="https://www.youtube.com/channel/UCox3ZZRUjkqrCRwtrnYSW2A"><i class="bi bi-youtube"></i></a></li>
+									</ul>
+									<ul class="mainmenu d-flex justify-content-center">
+										<li><a onclick="allProducts('men')">Men Product</a></li>
+										<li><a onclick="allProducts('women')">Women Product</a></li>
+										<li><a onclick="allProducts('kids')">Kids Product</a></li>
+										<li><a href="wishlist.html">Wishlist</a></li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 		<!-- //Footer Area -->
 	</div>
 	<!-- //Main wrapper -->
@@ -709,11 +707,11 @@
         var wishlist = getWishlist();
         
         if (wishlist.length != 0) {
-			document.getElementById("wishlist_noti").innerHTML = wishlist.length;
-		}
-		else {
-			var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
-			document.getElementById("wishlist").innerHTML = empty;
+            document.getElementById("wishlist").innerHTML = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length + '</span></a>';
+        }
+        else {
+            var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
+            document.getElementById("wishlist").innerHTML = empty;
         }
 
         var cartData = cart.all();
@@ -728,8 +726,53 @@
         }
         document.getElementById("products").innerHTML = cartHTML;
         document.getElementById("subtotal").innerHTML = 'RM ' + cart.sum().toFixed(2).toString();
-        document.getElementById("order_total").innerHTML = (cart.sum() + 10).toFixed(2).toString();
+        document.getElementById("order_total").innerHTML = 'RM' + (cart.sum() + 10).toFixed(2).toString();
         
+	</script>
+    <script>
+        function allProducts(gender){ //sends search request to backend for JSON response
+            // Create a request variable and assign a new XMLHttpRequest object to it.
+            var request = new XMLHttpRequest()
+
+            // replaces white space
+			search_value = "?search=" + "&category=" + gender;
+            sessionStorage.removeItem("search_term_text");
+			sessionStorage.setItem("search_term", search_value);
+            // Open a new connection, using the GET request on the URL endpoint
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value
+               
+               request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+               var resultText = request.responseText;
+               sessionStorage.setItem("search_result", resultText); 
+               sessionStorage.setItem("current_page", 1);
+               sessionStorage.removeItem("selectBox");
+               footerBrandList(gender);
+            }
+            // Send request
+               request.send();
+         };
+
+         function footerBrandList(gender){
+			var request = new XMLHttpRequest()
+            var search_value = sessionStorage.getItem("search_term");
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-" + gender + ".html");
+            }
+            // Send request
+            request.send();
+		};
 	</script>
 </body>
 </html>

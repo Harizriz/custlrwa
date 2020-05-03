@@ -6,7 +6,7 @@ var men_tops = [
         "intl": "XS",
         "tops": {
             "chest": "35.5",
-            "low_waist": "31",
+            "waist": "31",
             "hip": "35.75",
             "arm": "32.5"
         }
@@ -18,7 +18,7 @@ var men_tops = [
         "intl": "S",
         "tops": {
             "chest": "37",
-            "low_waist": "32.5",
+            "waist": "32.5",
             "hip": "37.5",
             "arm": "33"
         }
@@ -30,7 +30,7 @@ var men_tops = [
         "intl": "M",
         "tops": {
             "chest": "38.5",
-            "low_waist": "34",
+            "waist": "34",
             "hip": "39",
             "arm": "33.5"
         }
@@ -42,7 +42,7 @@ var men_tops = [
         "intl": "L",
         "tops": {
             "chest": "40.25",
-            "low_waist": "35.5",
+            "waist": "35.5",
             "hip": "40.5",
             "arm": "34.25"
         }
@@ -54,7 +54,7 @@ var men_tops = [
         "intl": "XL",
         "tops": {
             "chest": "41.75",
-            "low_waist": "37.25",
+            "waist": "37.25",
             "hip": "42.75",
             "arm": "34.5"
         }
@@ -66,7 +66,7 @@ var men_tops = [
         "intl": "XXL",
         "tops": {
             "chest": "43.25",
-            "low_waist": "38.75",
+            "waist": "38.75",
             "hip": "43.75",
             "arm": "35"
         }
@@ -78,7 +78,7 @@ var men_tops = [
         "intl": "XXXL",
         "tops": {
             "chest": "44.75",
-            "low_waist": "40.25",
+            "waist": "40.25",
             "hip": "45.25",
             "arm": "35.5"
         }
@@ -92,9 +92,9 @@ var men_bottoms = [
         "eu": "44",
         "intl": "XS",
         "bottoms": {
-            "low_waist": "31",
+            "waist": "31",
             "hip": "35.75",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     },
     {
@@ -103,9 +103,9 @@ var men_bottoms = [
         "eu": "46",
         "intl": "S",
         "bottoms": {
-            "low_waist": "32.5",
+            "waist": "32.5",
             "hip": "37.5",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     },
     {
@@ -114,9 +114,9 @@ var men_bottoms = [
         "eu": "48",
         "intl": "M",
         "bottoms": {
-            "low_waist": "34",
+            "waist": "34",
             "hip": "39",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     },
     {
@@ -125,9 +125,9 @@ var men_bottoms = [
         "eu": "50",
         "intl": "L",
         "bottoms": {
-            "low_waist": "35.5",
+            "waist": "35.5",
             "hip": "40.5",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     },
     {
@@ -136,9 +136,9 @@ var men_bottoms = [
         "eu": "52",
         "intl": "XL",
         "bottoms": {
-            "low_waist": "37.25",
+            "waist": "37.25",
             "hip": "42.25",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     },
     {
@@ -147,9 +147,9 @@ var men_bottoms = [
         "eu": "54",
         "intl": "XXL",
         "bottoms": {
-            "low_waist": "38.75",
+            "waist": "38.75",
             "hip": "43.75",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     },
     {
@@ -158,9 +158,9 @@ var men_bottoms = [
         "eu": "56",
         "intl": "XXXL",
         "bottoms": {
-            "low_waist": "40.25",
+            "waist": "40.25",
             "hip": "45.25",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     }
 ];
@@ -172,7 +172,7 @@ var women_tops = [
         "eu": "30",
         "intl": "XS",
         "tops":{
-            "bust": "30",
+            "chest": "30",
             "waist": "23",
             "hip": "33",
             "arm": "30"
@@ -184,7 +184,7 @@ var women_tops = [
         "eu": "32",
         "intl": "XS",
         "tops":{
-            "bust": "31",
+            "chest": "31",
             "waist": "24",
             "hip": "34",
             "arm": "30"
@@ -196,7 +196,7 @@ var women_tops = [
         "eu": "34",
         "intl": "S",
         "tops":{
-            "bust": "32",
+            "chest": "32",
             "waist": "25",
             "hip": "35",
             "arm": "30.75"
@@ -208,7 +208,7 @@ var women_tops = [
         "eu": "36",
         "intl": "S",
         "tops":{
-            "bust": "33",
+            "chest": "33",
             "waist": "26",
             "hip": "36",
             "arm": "30.75"
@@ -220,7 +220,7 @@ var women_tops = [
         "eu": "38",
         "intl": "M",
         "tops":{
-            "bust": "35",
+            "chest": "35",
             "waist": "28",
             "hip": "38",
             "arm": "31.25"
@@ -232,7 +232,7 @@ var women_tops = [
         "eu": "40",
         "intl": "M",
         "tops":{
-            "bust": "37",
+            "chest": "37",
             "waist": "30",
             "hip": "40",
             "arm": "31.25"
@@ -244,7 +244,7 @@ var women_tops = [
         "eu": "42",
         "intl": "L",
         "tops":{
-            "bust": "39",
+            "chest": "39",
             "waist": "32",
             "hip": "42",
             "arm": "31.5"
@@ -259,9 +259,9 @@ var women_bottoms = [
         "eu": "30",
         "intl": "XS",
         "bottoms":{
-            "low_waist": "30.75",
+            "waist": "30.75",
             "hip": "35.5",
-            "inner_leg": "32.25"
+            "inseam": "32.25"
         }
     },
     {
@@ -270,9 +270,9 @@ var women_bottoms = [
         "eu": "32",
         "intl": "XS",
         "bottoms":{
-            "low_waist": "30.75",
+            "waist": "30.75",
             "hip": "35.5",
-            "inner_leg": "32.25"
+            "inseam": "32.25"
         }
     },
     {
@@ -281,9 +281,9 @@ var women_bottoms = [
         "eu": "34",
         "intl": "S",
         "bottoms":{
-            "low_waist": "32.25",
+            "waist": "32.25",
             "hip": "37",
-            "inner_leg": "32.5"
+            "inseam": "32.5"
         }
     },
     {
@@ -292,9 +292,9 @@ var women_bottoms = [
         "eu": "36",
         "intl": "S",
         "bottoms":{
-            "low_waist": "32.25",
+            "waist": "32.25",
             "hip": "37",
-            "inner_leg": "32.5"
+            "inseam": "32.5"
         }
     },
     {
@@ -303,9 +303,9 @@ var women_bottoms = [
         "eu": "38",
         "intl": "M",
         "bottoms":{
-            "low_waist": "33.75",
+            "waist": "33.75",
             "hip": "38.5",
-            "inner_leg": "33"
+            "inseam": "33"
         }
     },
     {
@@ -314,9 +314,9 @@ var women_bottoms = [
         "eu": "40",
         "intl": "M",
         "bottoms":{
-            "low_waist": "33.75",
+            "waist": "33.75",
             "hip": "38.5",
-            "inner_leg": "33"
+            "inseam": "33"
         }
     },
     {
@@ -325,9 +325,9 @@ var women_bottoms = [
         "eu": "42",
         "intl": "L",
         "bottoms":{
-            "low_waist": "35.5",
+            "waist": "35.5",
             "hip": "40",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     }
 ];
@@ -600,7 +600,7 @@ function tops_men(user, size){
     //user gives all sizes in this format
     /*
     { "chest": "41"
-    , "low_waist": "34"
+    , "waist": "34"
     , "hip": "40"
     , "arm": "33"
     }
@@ -614,7 +614,7 @@ function tops_men(user, size){
         "intl": "XXXL",
         "tops": {
             "chest": "44.75",
-            "low_waist": "40.25",
+            "waist": "40.25",
             "hip": "45.25",
             "arm": "35.5"
         }
@@ -632,8 +632,8 @@ function tops_men(user, size){
             score += 0.25;
         };
 
-        var low_waist = (user.low_waist - parseFloat(sizing.low_waist));
-        if (low_waist <= 0 && low_waist >= -0.75){
+        var waist = (user.waist - parseFloat(sizing.waist));
+        if (waist <= 0 && waist >= -0.75){
             score += 0.35;
         };
 
@@ -668,7 +668,7 @@ function tops_women(user, size){
     var scores = [];  //'score' given at the end. best(highest) score is most reccomended size.
     //user gives all sizes in this format
     /*
-    { "bust": "30"
+    { "chest": "30"
     , "waist": "23"
     , "hip": "33"
     , "arm": "30"
@@ -682,7 +682,7 @@ function tops_women(user, size){
         "eu": "30",
         "intl": "XS",
         "tops":{
-            "bust": "30",
+            "chest": "30",
             "waist": "23",
             "hip": "33",
             "arm": "30"
@@ -696,8 +696,8 @@ function tops_women(user, size){
         var sizing = size[i].tops;
         var score = 0;
 
-        var bust = (user.bust - parseFloat(sizing.bust));
-        if (bust <= 0 && bust >= -0.5){
+        var chest = (user.chest - parseFloat(sizing.chest));
+        if (chest <= 0 && chest >= -0.5){
             score += 0.3;
         };
 
@@ -736,9 +736,9 @@ function bottoms_men(user, size){
     var scores = [];  //'score' given at the end. best(highest) score is most reccomended size.
     //user gives all sizes in this format
     /*
-    { "low_waist": "31"
+    { "waist": "31"
     , "hip": "35.75"
-    , "inner_leg": "33.5"
+    , "inseam": "33.5"
     }
     */
     //original sizes are in this format
@@ -749,9 +749,9 @@ function bottoms_men(user, size){
         "eu": "44",
         "intl": "XS",
         "bottoms": {
-            "low_waist": "31",
+            "waist": "31",
             "hip": "35.75",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     }
     */
@@ -762,8 +762,8 @@ function bottoms_men(user, size){
         var sizing = size[i].bottoms;
         var score = 0;
 
-        var low_waist = (user.low_waist - parseFloat(sizing.low_waist));
-        if (low_waist <= 0 && low_waist >= -0.5){
+        var waist = (user.waist - parseFloat(sizing.waist));
+        if (waist <= 0 && waist >= -0.5){
             score += 0.45;
         };
 
@@ -772,8 +772,8 @@ function bottoms_men(user, size){
             score += 0.4;
         };
 
-        var inner_leg = (user.inner_leg - parseFloat(sizing.inner_leg));
-        if (inner_leg <= 0 && inner_leg >= -0.65){
+        var inseam = (user.inseam - parseFloat(sizing.inseam));
+        if (inseam <= 0 && inseam >= -0.65){
             score += 0.15;
         };
 
@@ -797,9 +797,9 @@ function bottoms_women(user, size){
     var scores = [];  //'score' given at the end. best(highest) score is most reccomended size.
     //user gives all sizes in this format
     /*
-    { "low_waist": "31"
+    { "waist": "31"
     , "hip": "35.75"
-    , "inner_leg": "33.5"
+    , "inseam": "33.5"
     }
     */
     //original sizes are in this format
@@ -810,9 +810,9 @@ function bottoms_women(user, size){
         "eu": "44",
         "intl": "XS",
         "bottoms": {
-            "low_waist": "31",
+            "waist": "31",
             "hip": "35.75",
-            "inner_leg": "33.5"
+            "inseam": "33.5"
         }
     }
     */
@@ -823,8 +823,8 @@ function bottoms_women(user, size){
         var sizing = size[i].bottoms;
         var score = 0;
 
-        var low_waist = (user.low_waist - parseFloat(sizing.low_waist));
-        if (low_waist <= 0 && low_waist >= -0.5){
+        var waist = (user.waist - parseFloat(sizing.waist));
+        if (waist <= 0 && waist >= -0.5){
             score += 0.45;
         };
 
@@ -833,8 +833,8 @@ function bottoms_women(user, size){
             score += 0.4;
         };
 
-        var inner_leg = (user.inner_leg - parseFloat(sizing.inner_leg));
-        if (inner_leg <= 0 && inner_leg >= -0.65){
+        var inseam = (user.inseam - parseFloat(sizing.inseam));
+        if (inseam <= 0 && inseam >= -0.65){
             score += 0.15;
         };
 

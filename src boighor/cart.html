@@ -9,7 +9,7 @@
 
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="images/yellowicon.png">
-	<link rel="apple-touch-icon" href="images/icon.png">
+	<link rel="apple-touch-icon" href="images/yellowicon.png">
 
 	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
@@ -188,10 +188,10 @@
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
                             <li class="wishlist" id="wishlist">
-								<a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
+								<a class="wishlist_active" href="wishlist.html"></a>
 							</li>
-							<li class="shopcart" id="shopcart">
-								<a class="cartbox_active" href="cart.html"><span class="product_qun" id="cart_noti"></span></a>
+                            <li class="shopcart">
+								<a class="cartbox_active" id="shopcart"></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
                                     <div class="minicart-content-wrapper">
@@ -212,48 +212,48 @@
                                         </div>
                                     </div>
                                 </div>
-                            <!-- End Shopping Cart -->
-                            <li class="setting__bar__icon"><a class="setting__active"></a>
-								<div class="searchbar__content setting__block p-0">
-									<div class="content-inner">
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>Account Options</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<div class="setting__menu">
-														<span><a href="login.html">Log in</a></span>
-														<span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter">Track My Order</a></span>
-														 <!-- Modal -->
-														 <div class="modal p-0" id="modal_order" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="cursor:default;">
-															<div class="modal-dialog modal-dialog-centered portfolio_modal" role="document">
-																<div class="modal-content mobile_modal">
-																	<div class="modal-header">
-																		<h5 class="modal-title" id="exampleModalLongTitle" style="color: gray;">Track My Order</h4>
-																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																		<span aria-hidden="true">&times;</span>
-																		</button>
-																	</div>
-																	<div class="modal-body pl-2" style="height: 220px;">
-																		<h6 class="pb-3 pl-2" style="text-align:left;"> Email Address</h6>
-																		<input type="text" id="emailTracking" name="emailTracking" style=" height:51px; font-size:14pt; text-align: left; float:left; margin-bottom: 10px; margin-left: 6px;"><br><br>
-																		<h6 class="pb-2 pl-2" style="text-align:left;"> Order Number </h6>
-																		<input type="text" id="orderNumber" name="orderNumber" style=" height:51px; font-size:14pt; text-align: left; float:left; margin-bottom: 10px; margin-left: 6px; margin-top:10px"><br><br>
-																	</div>
-																	<div class="modal-footer" style="background-color: #e1e1e1">
-																		<button type="button" class="btn btn-secondary">Track</button>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-                            </li>
+                                <!-- End Shopping Cart -->
+                                <li class="setting__bar__icon"><a class="setting__active"></a>
+                                    <div class="searchbar__content setting__block p-0">
+                                        <div class="content-inner">
+                                            <div class="switcher-currency">
+                                                <strong class="label switcher-label">
+                                                    <span>Account Options</span>
+                                                </strong>
+                                                <div class="switcher-options">
+                                                    <div class="switcher-currency-trigger">
+                                                        <div class="setting__menu">
+                                                            <span><a href="login.html">Log in</a></span>
+                                                            <span><a href="#exampleModalCenter" data-toggle="modal" data-target= #modal_order id="#exampleModalCenter">Track My Order</a></span>
+                                                            <!-- Modal -->
+                                                            <div class="modal p-0" id="modal_order" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="cursor:default;">
+                                                                <div class="modal-dialog modal-dialog-centered portfolio_modal" role="document">
+                                                                    <div class="modal-content mobile_modal">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalLongTitle" style="color: gray;">Track My Order</h4>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body pl-2" style="height: 220px;">
+                                                                            <h6 class="pb-3 pl-2" style="text-align:left;"> Email Address</h6>
+                                                                            <input type="text" id="emailTracking" name="emailTracking" style=" height:51px; font-size:14pt; text-align: left; float:left; margin-bottom: 10px; margin-left: 6px;"><br><br>
+                                                                            <h6 class="pb-2 pl-2" style="text-align:left;"> Order Number </h6>
+                                                                            <input type="text" id="orderNumber" name="orderNumber" style=" height:51px; font-size:14pt; text-align: left; float:left; margin-bottom: 10px; margin-left: 6px; margin-top:10px"><br><br>
+                                                                        </div>
+                                                                        <div class="modal-footer" style="background-color: #e1e1e1">
+                                                                            <button type="button" class="btn btn-secondary">Track</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                         </ul>
                     </div>
                 </div>
@@ -456,7 +456,7 @@
                                                         <th scope="col" width="150">Product Information</th>
 														<th scope="col" width="90">Quantity</th>
 														<th scope="col" width="120">Price</th>
-														<th scope="col" width="150">Action</th>
+														<th scope="col" width="150" style="border-bottom: 1px solid #e9ecef;">Action</th>
 													</tr>
 												</thead>
 												<tbody class="mb-2" id="cart_list">
@@ -513,40 +513,38 @@
         <!-- cart-main-area end -->
 		<!-- Footer Area -->
 		<footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
-            <div class="footer-static-top">
-               <div class="container">
-                  <div class="row">
+			<div class="footer-static-top">
+                <div class="container">
+                    <div class="row">
                         <div class="col-lg-12">
-                           <div class="footer__widget footer__menu">
-                              <div class="ft__logo">
-                                    <a href="index.html">
-                                       <img src="images/logo/black1.png" alt="logo">
-                                    </a>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
-                                 </div>
-                              <div class="footer__content">
-                                    <ul class="social__net social__net--2 d-flex justify-content-center">
-                                       <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-google"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                                       <li><a href="#"><i class="bi bi-youtube"></i></a></li>
-                                    </ul>
-                                    <ul class="mainmenu d-flex justify-content-center">
-                                       <li><a href="index.html">Trending</a></li>
-                                       <li><a href="index.html">Best Seller</a></li>
-                                       <li><a href="index.html">All Product</a></li>
-                                       <li><a href="index.html">Wishlist</a></li>
-                                       <li><a href="index.html">Blog</a></li>
-                                       <li><a href="index.html">Contact</a></li>
-                                    </ul>
-                              </div>
-                           </div>
+                            <div class="footer__widget footer__menu">
+                                <div class="ft__logo">
+                                        <a href="portfolio.html">
+                                        <img src="images/logo/black1.png" alt="logo">
+                                        </a>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                                    </div>
+                                <div class="footer__content">
+                                        <ul class="social__net social__net--2 d-flex justify-content-center">
+                                        <li><a href="https://www.facebook.com/custlr/"><i class="bi bi-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/custlr"><i class="bi bi-twitter"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/custlr/"><i class="bi bi-linkedin"></i></a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCox3ZZRUjkqrCRwtrnYSW2A"><i class="bi bi-youtube"></i></a></li>
+                                        </ul>
+                                        <ul class="mainmenu d-flex justify-content-center">
+                                            <li><a onclick="allProducts('men')">Men Product</a></li>
+                                            <li><a onclick="allProducts('women')">Women Product</a></li>
+                                            <li><a onclick="allProducts('kids')">Kids Product</a></li>
+                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                </div>
+                            </div>
                         </div>
-                  </div>
-               </div>
-            </div>
-      </footer>
+                    </div>
+                </div>
+			</div>
+		</footer>
 		<!-- //Footer Area -->
 	</div>
 	<!-- //Main wrapper -->
@@ -560,6 +558,7 @@
 	<script src="js/sizingChart.js"></script>
 	<script src="js/cart.js"></script>
 	<script src="js/cart-mini.js"></script>
+    <script src="js/notify.min.js"></script>
 	<script>
         function openHeaderLink(brand, search, gender){
             var request = new XMLHttpRequest()
@@ -689,37 +688,66 @@
         var wishlist = getWishlist();
         
         if (wishlist.length != 0) {
-			document.getElementById("wishlist_noti").innerHTML = wishlist.length;
-		}
-		else {
-			var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
-			document.getElementById("wishlist").innerHTML = empty;
-        }
+            document.getElementById("wishlist").innerHTML = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length + '</span></a>';
+         }
+         else {
+            var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
+            document.getElementById("wishlist").innerHTML = empty;
+         }
 
 		var wishlist = JSON.parse(localStorage.getItem("wishlist"));
         if (wishlist === undefined || wishlist === null){
             wishlist = [];
             //console.log('empty wishlist');
         };
+
+        function notifyWishlist() {
+         $( document ).ready(function() {
+            $("div").click(
+               Notify("Added to wishlist!", 1000, null, "info")
+            )
+          });
+        };
+        
 		function updateBtn(original_site, iter){
 			var wishlist_btn = '';
 			var empty = '';
 			if (wishlist.includes(original_site)){ //highlighted wishlist button
-				wishlist_btn = '<a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ original_site + '\', \'' + iter +'\')" class="btn btn-light" style="background-color:#fff;border-color:#d86666;" data-toggle="tooltip" data-abc="true"><i class="fa fa-heart-clicked"></i></a><a onclick="removeFromCart(\''+ original_site + '\', \''+ cartData[iter].size +'\')" class="btn btn-remove ml-2" data-abc="true" style="background-color:grey">Remove</a>'
+				wishlist_btn = '<a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ original_site + '\', \'' + iter +'\')" class="btn btn-light" style="background-color:#fff;" data-toggle="tooltip" data-abc="true"><i class="fa fa-heart-clicked"></i></a><div id="notifications"></div><a onclick="removeFromCart(\''+ original_site + '\', \''+ cartData[iter].size +'\')" class="btn btn-remove ml-2" data-abc="true" style="background-color:grey">Remove</a>'
+                notifyWishlist();
 			}
 			else{ //default, unhighlighted wishlist button
 				wishlist_btn = '<a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ original_site + '\', \'' + iter +'\')" class="btn btn-light" style="" data-toggle="tooltip" data-abc="true"><i class="fa fa-heart"></i></a><a onclick="removeFromCart(\''+ original_site + '\', \''+ cartData[iter].size +'\')" class="btn btn-remove ml-2" data-abc="true" style="background-color:grey">Remove</a>';
 			};
 			document.getElementById(iter.toString()).innerHTML = wishlist_btn;
 			if (wishlist.length != 0) {
-				empty = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length.toString() +'</span></a>';
-				document.getElementById("wishlist").innerHTML = empty;
-			}
-			else {
-				empty = '<a class="wishlist_active" href="wishlist.html"></a>';
-				document.getElementById("wishlist").innerHTML = empty;
-			}
+                document.getElementById("wishlist").innerHTML = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length + '</span></a>';
+            }
+            else {
+                var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
+                document.getElementById("wishlist").innerHTML = empty;
+            }
         };
+
+        function updateBtnView(original_site, iter){
+			var wishlist_btn = '';
+			var empty = '';
+			if (wishlist.includes(original_site)){ //highlighted wishlist button
+				wishlist_btn = '<a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ original_site + '\', \'' + iter +'\')" class="btn btn-light" style="background-color:#fff;" data-toggle="tooltip" data-abc="true"><i class="fa fa-heart-clicked"></i></a><div id="notifications"></div><a onclick="removeFromCart(\''+ original_site + '\', \''+ cartData[iter].size +'\')" class="btn btn-remove ml-2" data-abc="true">Remove</a>'
+			}
+			else{ //default, unhighlighted wishlist button
+				wishlist_btn = '<a data-original-title="Save to Wishlist" title="" onclick="addWishlist(\''+ original_site + '\', \'' + iter +'\')" class="btn btn-light" style="" data-toggle="tooltip" data-abc="true"><i class="fa fa-heart"></i></a><a onclick="removeFromCart(\''+ original_site + '\', \''+ cartData[iter].size +'\')" class="btn btn-remove ml-2" data-abc="true">Remove</a>';
+			};
+			document.getElementById(iter.toString()).innerHTML = wishlist_btn;
+			if (wishlist.length != 0) {
+                document.getElementById("wishlist").innerHTML = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length + '</span></a>';
+            }
+            else {
+                var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
+                document.getElementById("wishlist").innerHTML = empty;
+            }
+        };
+
 		function addWishlist(original_site, iter){
             if (wishlist.length === 0){
                //console.log('creating new wishlist');
@@ -767,18 +795,18 @@
 			document.getElementById("total_price").innerHTML = 'RM' + cart.sum().toFixed(2).toString()
 			document.getElementById("final_price").innerHTML = 'RM' + cart.sum().toFixed(2).toString()
 			for (i=0; i<cartData.length; i++){
-					updateBtn(cartData[i].id, i);
+                updateBtnView(cartData[i].id, i);
 			};
             getCartNotification();
 		}
         function getCartNotification() {
             var empty = '';
-            cartData = cart.all();
-            if (cartData != null) {
-                document.getElementById("cart_noti").innerHTML = cartData.length;
+            var miniCartData = miniCart.all();
+            if (miniCartData != null) {
+                document.getElementById("shopcart").innerHTML = '<span class="product_qun">' + miniCartData.length + '</span>';
             }
             else {
-                empty = '<a class="cartbox_active" href="#"></a>';
+                empty = '';
                 document.getElementById("shopcart").innerHTML = empty;
             }
         }
@@ -788,8 +816,8 @@
 		function updateCart(id, qty_id ,size){
             var quantity = document.getElementById("qty-" + qty_id).value;
 			cart.update(id, quantity, size);
-			setTimeout(function(){loadCart();}, 500);
-            setTimeout(function(){loadMiniCart();}, 500);
+			loadCart();
+            loadMiniCart();
 		}
 
 		function removeFromCart(id, size){
@@ -818,6 +846,51 @@
 			}
 			// Send request
 			request.send();
+		};
+	</script>
+    <script>
+        function allProducts(gender){ //sends search request to backend for JSON response
+            // Create a request variable and assign a new XMLHttpRequest object to it.
+            var request = new XMLHttpRequest()
+
+            // replaces white space
+			search_value = "?search=" + "&category=" + gender;
+            sessionStorage.removeItem("search_term_text");
+			sessionStorage.setItem("search_term", search_value);
+            // Open a new connection, using the GET request on the URL endpoint
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value
+               
+               request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+               var resultText = request.responseText;
+               sessionStorage.setItem("search_result", resultText); 
+               sessionStorage.setItem("current_page", 1);
+               sessionStorage.removeItem("selectBox");
+               footerBrandList(gender);
+            }
+            // Send request
+               request.send();
+         };
+
+         function footerBrandList(gender){
+			var request = new XMLHttpRequest()
+            var search_value = sessionStorage.getItem("search_term");
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-" + gender + ".html");
+            }
+            // Send request
+            request.send();
 		};
 	</script>
 </body>
