@@ -19,6 +19,13 @@ git push
 ```
 git status
 ```
+4. To update the latest code from staging
+```
+git checkout staging
+git pull
+git checkout *your branch name*
+git merge staging
+```
 
 # custlrwa
 Custlr Web Application
