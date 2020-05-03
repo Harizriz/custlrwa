@@ -332,14 +332,6 @@ var women_bottoms = [
     }
 ];
 
-var noTypeSizing = {
-    "uk": "0",
-    "us": "0",
-    "eu": "0",
-    "intl": "0"
-}
-
-
 function sizingDetection(sizeType, gender, category){ 
     var sizingType = '';
     if (gender == 'Men'){
@@ -371,10 +363,10 @@ function sizingDetection(sizeType, gender, category){
             sizingType = 'notype'
         }       
     }
-    else if (gender === 'Women'){
+    else if (gender === 'Women'){ //add for bottoms
         if (sizeType == "UK"){
             if (category == 'tops'){
-                sizingType = 'us_uk_women_tops';
+                sizingType = 'us_uk_women_tops'; //same sizing for both
             }
             else{
                 sizingType = 'us_uk_women_bottoms';
@@ -433,7 +425,7 @@ function sizingList(sizing_original, sizeType, gender, category){
         case 'eu_men_tops':
             for (i=0; i<sizing_original.length; i++){
                 for(j=0; j<men_tops.length; j++){
-                    if (sizing_original[i].sizing == men_tops[j].uk){
+                    if (sizing_original[i].sizing == men_tops[j].eu){
                         sizing_list.push(men_tops[j]);
                     };
                 };
@@ -476,7 +468,7 @@ function sizingList(sizing_original, sizeType, gender, category){
                 };
             };
             break;
-        case 'us_uk_wowomen_bottoms':
+        case 'us_uk_women_bottoms':
             for (i=0; i<sizing_original.length; i++){
                 for(j=0; j<women_bottoms.length; j++){
                     if (sizing_original[i].sizing == women_bottoms[j].uk || sizing_original[i].sizing == women_bottoms[j].us){
@@ -488,7 +480,7 @@ function sizingList(sizing_original, sizeType, gender, category){
         case 'eu_women_tops':
             for (i=0; i<sizing_original.length; i++){
                 for(j=0; j<women_tops.length; j++){
-                    if (sizing_original[i].sizing == women_tops[j].uk){
+                    if (sizing_original[i].sizing == women_tops[j].eu){
                         sizing_list.push(women_tops[j]);
                     };
                 };
@@ -669,7 +661,6 @@ function tops_men(user, size){
     }
     scores = scores.sort(compare);
     localStorage.setItem('best_mens_top', JSON.stringify(scores[0].original)); //best size in general, this will be sent to backend
-    console.log(scores[0].original);
     return scores; //returns list of sizing with score, unused if in search.
 }
 
