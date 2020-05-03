@@ -27,7 +27,7 @@ class ScrapedResultSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ScrapedResult
-        fields = ('id', 'product_name', 'price', 'currency', 'brand', 'image_url', 'product_description', 'original_site', 'category', 'subcategory', 'imagelist', 'sizing')
+        fields = ('id', 'product_name', 'price', 'currency', 'brand', 'image_url', 'product_description', 'original_site', 'category', 'subcategory', 'imagelist', 'sizing', 'sizing_type', 'occasion')
 
 class CustomSizingSerializer(serializers.ModelSerializer):
     class Meta:

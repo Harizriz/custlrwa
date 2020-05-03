@@ -196,7 +196,7 @@
 					</div>
 					<div class="col-md-6 col-sm-6 col-6 col-lg-2">
 						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-							<li class="shop_search" onclick="focusOnSearch()"><a class="search__active"></a></li>
+							<li class="shop_search" onclick="focusSearch()"><a class="search__active"></a></li>
 							<li class="wishlist" id="wishlist">
                                 <a class="wishlist_active" href="wishlist.html"><span class="product_qun" id="wishlist_noti"></span></a>
                             </li>
@@ -3185,7 +3185,7 @@
 	<script src="js/cart.js"></script>
 	<script src="js/cart-mini.js"></script>
 	<script>
-        function focusOnSearch(){
+        function focusSearch(){
 			setTimeOut(function(){
 				document.getElementById("search_bar").focus();
 			}, 500);
@@ -3197,6 +3197,7 @@
 
 			// replaces white space
             search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
+			sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
@@ -3236,11 +3237,15 @@
 		};
 
 		var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+		if (wishlist === undefined || wishlist === null){
+            wishlist = [];
+            //console.log('empty wishlist');
+        };
 		if (wishlist.length != 0) {
 			document.getElementById("wishlist_noti").innerHTML = wishlist.length;
 		}
 		else {
-			empty += '<a class="wishlist_active" href="wishlist.html"></a>';
+			var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
 			document.getElementById("wishlist").innerHTML = empty;
 		}
 	</script>
