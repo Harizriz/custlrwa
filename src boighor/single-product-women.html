@@ -1343,8 +1343,16 @@
             sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
          // Open a new connection, using the GET request on the URL endpoint
-         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+<<<<<<< HEAD
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)  + tb_search;
             
+=======
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+         if (sizing_toggle){
+				search += to_search;
+				search += tb_search;
+			}            
+>>>>>>> 6db84782b701b51746c4e3203b64614076254e99
             request.open('GET', search, true)
 
          request.onload = function loadHTML(){

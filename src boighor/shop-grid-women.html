@@ -908,7 +908,7 @@
 			sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
-			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)  + tb_search;
             
             request.open('GET', search, true)
 
