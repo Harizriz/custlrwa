@@ -1,4 +1,4 @@
-﻿ <!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/plugins.css">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Cusom css -->
+    <!-- Custom css -->
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Modernizer js -->
@@ -192,7 +192,7 @@
                             <li class="wishlist" id="wishlist">
 								<a class="wishlist_active" href="wishlist.html"></a>
 							</li>
-                     <li class="shopcart">
+                            <li class="shopcart">
 								<a class="cartbox_active" id="shopcart"></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
@@ -214,6 +214,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </li>
                             <!-- End Shopping Cart -->
                             <li class="setting__bar__icon"><a class="setting__active"></a>
 								<div class="searchbar__content setting__block p-0">
@@ -669,7 +670,8 @@
     <script src="js/sizingChart.js"></script>
     <script src="js/notify.min.js"></script>
     <script>
-        function notifyCustomSizing(link) {
+        // notifies the user if they havent saved a custom sizing
+		function notifyCustomSizing(link) {
 			$( document ).ready(function() {
 				$("div").click(
 				NotifyLink("You haven't saved a custom size!", 1000, null, "danger", link)
@@ -678,6 +680,7 @@
 			});
         };
         
+        // notifies the user when they enable custom sizing searching
         function notifySizingAvailable() {
 			$( document ).ready(function() {
 				$("div").click(
@@ -686,6 +689,7 @@
 			});
         };
         
+        // initializing the toggle buttons
         var sizing_toggle = false;
 		var tb_toggle = 'tops';
 		var tb_search = '';
@@ -697,9 +701,9 @@
 		}, 100);
 		var to_search = '';
 
+        // enables custom sizing to search
 		function toggleCustomSizing(){
 			sizing_toggle = !sizing_toggle;
-			// console.log(sizing_toggle);
 			if (sizing_toggle){
 				if (tb_toggle == 'tops'){
 					var measurements = JSON.parse(localStorage.getItem("custom_top"));
@@ -710,7 +714,7 @@
 
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
-                        localStorage.removeItem("check_top");
+						localStorage.removeItem("check_top");
 					}
 					else{
                         notifySizingAvailable();
@@ -724,7 +728,7 @@
 						sizing_match(adjusted_measurements, men_tops, 'tops', 'Men')
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_top'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
-                        localStorage.setItem("check_top", "check");
+						localStorage.setItem("check_top", "check");
 					}
 				}
 				else{
@@ -735,7 +739,7 @@
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
-                        localStorage.removeItem("check_bottom");
+						localStorage.removeItem("check_bottom");
 					}
 					else{
                         notifySizingAvailable();
@@ -748,7 +752,7 @@
 						sizing_match(adjusted_measurements, men_bottoms, 'bottoms', 'Men')
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_bottom'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
-                        localStorage.setItem("check_bottom", "check");
+						localStorage.setItem("check_bottom", "check");
 					}
 				}
 			}
@@ -757,7 +761,7 @@
             }	
 		};
 		
-
+        // toggles searching for tops(shirts, jackets) or bottoms(pants, jeans) ONLY when custom sizing search is enabled
 		function toggleTopOrBottom(){
 			if (sizing_toggle){
                 if (tb_toggle == 'tops'){
@@ -770,7 +774,7 @@
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
-                        localStorage.removeItem("check_bottom");
+						localStorage.removeItem("check_bottom");
 					}
                     else{
                         notifySizingAvailable();
@@ -786,7 +790,7 @@
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_bottom'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
                         tb_toggle = 'bottoms'
-                        localStorage.setItem("check_bottom", "check");
+						localStorage.setItem("check_bottom", "check");
 					}
                 }
                 else{
@@ -799,7 +803,7 @@
                         document.getElementById("resetCustomSizing_mv").innerHTML = '<input type="checkbox" onclick="toggleCustomSizing()"><span class="slider round"></span>';
                         document.getElementById("cs_text").innerHTML = "Disabled";
 						sizing_toggle = false;
-                        localStorage.removeItem("check_top");
+						localStorage.removeItem("check_top");
 					}
                     else{
                         notifySizingAvailable();
@@ -815,8 +819,8 @@
 						sizing_match(adjusted_measurements, men_tops, 'tops', 'Men')
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_top'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
-                        tb_toggle = 'tops'
-                        localStorage.setItem("check_top", "check");
+                        tb_toggle = 'tops';
+						localStorage.setItem("check_top", "check");
 					}
                 }
             } 
@@ -834,70 +838,7 @@
             }
 		};
 
-        function openHeaderLink(brand, search, gender){
-            var request = new XMLHttpRequest()
-
-			// replaces white space
-            if (search == ''){
-                search = brand
-            }
-
-            search_value = "?search=" + encodeURIComponent(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
-            sessionStorage.setItem("search_term_text", search);
-            sessionStorage.setItem("search_term", search_value);
-			// Open a new connection, using the GET request on the URL endpoint
-			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value
-            request.open('GET', search, true)
-
-			request.onload = function loadHTML(){
-                var resultText = request.responseText;
-				sessionStorage.setItem("search_result", resultText); 
-                sessionStorage.setItem("current_page", 1);
-                sessionStorage.removeItem("selectBox");
-                headerBrandList(gender);
-			}
-			// Send request
-            request.send();
-        };
-
-        function headerBrandList(gender){
-			var request = new XMLHttpRequest()
-            var search_value = sessionStorage.getItem("search_term");
-            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
-            request.open('GET', search, true)
-
-            request.onload = function loadHTML(){
-                var resultText = (JSON.parse(request.responseText)).results;
-                var i;
-                var brands = [];
-                for (i=0; i<resultText.length; i++){
-                    brands = brands.concat(resultText[i].brand);
-                };
-                // console.log(brands);
-                sessionStorage.setItem("brand_list", JSON.stringify(brands));
-                window.location.replace("shop-grid-"+ gender +".html");
-            }
-            // Send request
-            request.send();
-        }
-
-        var current_page = sessionStorage.getItem("current_page");
-        function openLink(url, page, storage){ //sends search request to backend for JSON response
-			// Create a request variable and assign a new XMLHttpRequest object to it.
-			var request = new XMLHttpRequest()
-            
-			// Open a new connection, using the GET request on the URL endpoint
-            request.open('GET', url, true)
-
-			request.onload = function loadHTML(){
-				var resultText = request.responseText;
-				sessionStorage.setItem(storage, resultText);
-                window.location.replace(page);
-			}
-			// Send request
-			request.send();
-        }
-        
+        // search bar function
         function search(){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
 			var request = new XMLHttpRequest()
@@ -907,13 +848,10 @@
 			sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
-			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value;
-
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + tb_search;
             if (sizing_toggle){
-                search += to_search;
-                search += tb_search;
-            }
-            
+				search += to_search;
+			}
             request.open('GET', search, true)
 
 			request.onload = function loadHTML(){
@@ -927,6 +865,7 @@
             request.send();
         };
 
+        // related to previous function for search
         function getBrandList(){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
@@ -940,7 +879,6 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
-                // console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-men.html");
             }
@@ -948,6 +886,7 @@
             request.send();
 		};
         
+        // getting response data from search to output
         var respData = JSON.parse(sessionStorage.getItem("search_result"));
         var brandList = JSON.parse(sessionStorage.getItem("brand_list"));
         if (sessionStorage.getItem("selectBox") == ""){
@@ -958,6 +897,8 @@
         };
         var priceRange = [];
         
+
+        // initializes slider for price filtering
         function sliderInit(){
             filteredPrice = JSON.parse(sessionStorage.getItem("filtered_price"));
             if (filteredPrice == null){
@@ -976,6 +917,7 @@
             $('#amount').val('RM' + $('#slider-range').slider('values', 0) + " - RM" + $('#slider-range').slider('values', 1));
         };
 
+        // gets highest and lowest prices of the searched products
         function getMinMaxPrice(range){
 			var url = sessionStorage.getItem("search_term")
             if (url === null){
@@ -1003,6 +945,7 @@
         };
         getMinMaxPrice(priceRange);
 
+        // filter button for the price slider, sends request with specific range of prices to find
         function filterBtn(){
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", 1);
@@ -1011,6 +954,7 @@
             openLink("http://custlrwa.ddns.net:8000/scraped/" + filter_search, "shop-grid-men.html", "search_result");
         };
 
+        // resets filters to minimum and maximum prices
         function resetFilterBtn(){
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", 1);
@@ -1018,6 +962,7 @@
             openLink("http://custlrwa.ddns.net:8000/scraped/" + url, "shop-grid-men.html", "search_result");
         }
 
+        // goes back a page on the results
         function prevPage(){
             if (respData.previous != null){ 
                 sessionStorage.setItem("current_page", (sessionStorage.getItem("current_page") - 1));
@@ -1025,6 +970,7 @@
             }
         };
 
+        // goes to next page of results
         function nextPage(){
             if (respData.next != null){
                 sessionStorage.setItem("current_page", (sessionStorage.getItem("current_page") - 1));
@@ -1032,6 +978,8 @@
             }
         };
 
+
+        // when clicked on, will load a specific page number
         function pageChange(page){
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", page);
@@ -1039,7 +987,7 @@
             
         };
 
-
+        // reorders the results from the page based on filter (price, name)
         function reorderPage(orderby){
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", 1);
@@ -1052,6 +1000,7 @@
                 
         };
 
+        // updates the dropdown for page reordering
         function changeFunction(){
             var selectBox = document.getElementById("selection").value;
             if (selectBox == 'Price (Low to High)'){
@@ -1080,11 +1029,13 @@
             }
         };
 
+        // opens specific page for product
         function openPage(id){
             link = 'http://custlrwa.ddns.net:8000/page/' + id.toString() + '/';
             openLink(link, "single-product-men.html", "pageRespData");
         };
 
+        // opens specific product category (brand, size)
         function openCategory(url, page, storage){
             sessionStorage.removeItem("filtered_price");
             openLink(url, page, storage);
@@ -1092,17 +1043,18 @@
 
         var request = new XMLHttpRequest()
 
+        // get wishlist data
         function getWishlist(){
             var wishlist = JSON.parse(localStorage.getItem("wishlist"));
             if (wishlist === undefined || wishlist === null){
                 wishlist = [];
-                //console.log('empty wishlist');
             }
             return wishlist;
         }
         
         var wishlist = getWishlist();
 
+        // empty wishlist handlers
         if (wishlist.length != 0) {
             document.getElementById("wishlist").innerHTML = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length + '</span></a>';
         }
@@ -1110,7 +1062,8 @@
             var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
             document.getElementById("wishlist").innerHTML = empty;
         }
-            
+        
+        // modifies html content to output results from backend, using for loops for all products to be output in a uniform way
         if (respData.count > 0){
             var grid = '';
             var list = '';
@@ -1180,11 +1133,11 @@
             document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
             document.getElementById("size_dropdown").innerHTML = size; // inserts products in from JSON response of search
         }
-        else{
-            document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // inserts products in from JSON response of search
+        else{ //if no results are found in the backend
+            document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // outputs empty result
         };
-	</script>
-    <script>
+
+                // opens all products for a specifc group (men, women, kids)
         function allProducts(gender){ //sends search request to backend for JSON response
             // Create a request variable and assign a new XMLHttpRequest object to it.
             var request = new XMLHttpRequest()
@@ -1209,7 +1162,8 @@
                request.send();
          };
 
-         function footerBrandList(gender){
+        // related to previous function allProducts
+        function footerBrandList(gender){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';

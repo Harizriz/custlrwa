@@ -22,71 +22,12 @@
     <link rel="stylesheet" href="css/plugins.css">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Cusom css -->
+    <!-- Custom css -->
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Modernizer js -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
-<style>
-    .zoom {
-        padding: 50px;
-        background-image: url('https://www.muji.com/img/garment/coordinate/2016ss/men/detail13.jpg');
-        background-repeat: no-repeat;
-        background-size: 450px 550px;
-        transition: transform .2s;
-        width: 325px;
-        height: 550px;
-    }
-    
-    .zoom2 {
-        padding: 50px;
-        background-image: url('https://i.pinimg.com/originals/3f/de/ee/3fdeeeb4875c59bec310e2383b3219bd.jpg');
-        background-repeat: no-repeat;
-        background-size: 450px 550px;
-        transition: transform .2s;
-        width: 325px;
-        height: 550px;
-    }
-    
-    .zoom3 {
-        padding: 50px;
-        background-image: url('https://www.muji.com/img/garment/coordinate/2016aw/kids/b06.jpg');
-        background-repeat: no-repeat;
-        background-size: 450px 565px;
-        transition: transform .2s;
-        width: 325px;
-        height: 550px;
-    }
-    
-    .zoom:hover {
-        -ms-transform: scale(1.5);
-        /* IE 9 */
-        -webkit-transform: scale(1.5);
-        /* Safari 3-8 */
-        transform: scale(1.07);
-    }
-    
-    .zoom2:hover {
-        -ms-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        transform: scale(1.07);
-    }
-    
-    .zoom3:hover {
-        -ms-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        transform: scale(1.07);
-    }
-    
-    .button {
-        background-color: rgb(255, 255, 255);
-        border: none;
-        text-decoration: none;
-        cursor: pointer;
-    }
-</style>
-
 <body>
     <!-- Main wrapper -->
     <div class="wrapper" id="wrapper">
@@ -246,7 +187,7 @@
                             <li class="wishlist" id="wishlist">
 								<a class="wishlist_active" href="wishlist.html"></a>
 							</li>
-                     <li class="shopcart">
+                            <li class="shopcart">
 								<a class="cartbox_active" id="shopcart"></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
@@ -268,6 +209,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </li>
                             <!-- End Shopping Cart -->
                             <li class="setting__bar__icon"><a class="setting__active"></a>
 								<div class="searchbar__content setting__block p-0">
@@ -520,44 +462,43 @@
                 </div>
                 <!-- End Single Portfolio -->
             </div>
-    </div>
-    </section>
-    <!-- End Portfolio Area -->
-    <!-- Footer Area -->
-    <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
-			<div class="footer-static-top">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="footer__widget footer__menu">
-								<div class="ft__logo">
-										<a href="index.html">
-										<img src="images/logo/black1.png" alt="logo">
-										</a>
-										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
-									</div>
-								<div class="footer__content">
-									<ul class="social__net social__net--2 d-flex justify-content-center">
-									<li><a href="https://www.facebook.com/custlr/"><i class="bi bi-facebook"></i></a></li>
-									<li><a href="https://twitter.com/custlr"><i class="bi bi-twitter"></i></a></li>
-									<li><a href="https://www.linkedin.com/in/custlr/"><i class="bi bi-linkedin"></i></a></li>
-									<li><a href="https://www.youtube.com/channel/UCox3ZZRUjkqrCRwtrnYSW2A"><i class="bi bi-youtube"></i></a></li>
-									</ul>
-									<ul class="mainmenu d-flex justify-content-center">
-										<li><a onclick="allProducts('men')">Men Product</a></li>
-										<li><a onclick="allProducts('women')">Women Product</a></li>
-										<li><a onclick="allProducts('kids')">Kids Product</a></li>
-										<li><a href="wishlist.html">Wishlist</a></li>
-										<li><a href="contact.html">Contact</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-    <!-- //Footer Area -->
+        </section>
+        <!-- End Portfolio Area -->
+        <!-- Footer Area -->
+        <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+            <div class="footer-static-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer__widget footer__menu">
+                                <div class="ft__logo">
+                                    <a href="index.html">
+                                    <img src="images/logo/black1.png" alt="logo">
+                                    </a>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                                </div>
+                                <div class="footer__content">
+                                    <ul class="social__net social__net--2 d-flex justify-content-center">
+                                    <li><a href="https://www.facebook.com/custlr/"><i class="bi bi-facebook"></i></a></li>
+                                    <li><a href="https://twitter.com/custlr"><i class="bi bi-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/custlr/"><i class="bi bi-linkedin"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCox3ZZRUjkqrCRwtrnYSW2A"><i class="bi bi-youtube"></i></a></li>
+                                    </ul>
+                                    <ul class="mainmenu d-flex justify-content-center">
+                                        <li><a onclick="allProducts('men')">Men Product</a></li>
+                                        <li><a onclick="allProducts('women')">Women Product</a></li>
+                                        <li><a onclick="allProducts('kids')">Kids Product</a></li>
+                                        <li><a href="wishlist.html">Wishlist</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //Footer Area -->
 
     </div>
     <!-- //Main wrapper -->
@@ -572,17 +513,18 @@
     <script src="js/cart.js"></script>
     <script src="js/cart-mini.js"></script>
     <script>
+        // get wishlist data
         function getWishlist(){
             var wishlist = JSON.parse(localStorage.getItem("wishlist"));
             if (wishlist === undefined || wishlist === null){
                 wishlist = [];
-                //console.log('empty wishlist');
             }
             return wishlist;
         }
         
         var wishlist = getWishlist();
         
+        // empty wishlist handlers
         if (wishlist.length != 0) {
             document.getElementById("wishlist").innerHTML = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length + '</span></a>';
         }
@@ -591,6 +533,7 @@
             document.getElementById("wishlist").innerHTML = empty;
         }
 
+        // opens links in the header tabs
         function openHeaderLink(brand, search, gender){
             var request = new XMLHttpRequest()
 
@@ -617,6 +560,7 @@
             request.send();
         };
 
+        // related to previous function openHeaderLink
         function headerBrandList(gender){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
@@ -630,7 +574,6 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
-                // console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-"+ gender +".html");
             }
@@ -638,6 +581,7 @@
             request.send();
         }
 
+        // opens all products for a specifc group (men, women, kids)
         function allProducts(gender){ //sends search request to backend for JSON response
             // Create a request variable and assign a new XMLHttpRequest object to it.
             var request = new XMLHttpRequest()
@@ -656,13 +600,14 @@
                sessionStorage.setItem("search_result", resultText); 
                sessionStorage.setItem("current_page", 1);
                sessionStorage.removeItem("selectBox");
-               getBrandList(gender);
+               footerBrandList(gender);
             }
             // Send request
                request.send();
          };
 
-         function getBrandList(gender){
+        // related to previous function allProducts
+        function footerBrandList(gender){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';

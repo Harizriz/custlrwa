@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/plugins.css">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Cusom css -->
+    <!-- Custom css -->
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Modernizer js -->
@@ -667,7 +667,6 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
-                // console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-"+ gender +".html");
             }
@@ -729,7 +728,6 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
-                // console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-kids.html");
             }
@@ -885,7 +883,6 @@
             var wishlist = JSON.parse(localStorage.getItem("wishlist"));
             if (wishlist === undefined || wishlist === null){
                 wishlist = [];
-                //console.log('empty wishlist');
             }
             return wishlist;
         }
@@ -939,7 +936,7 @@
             grid += "</div>"
             
             pages_count = 0;
-            pages_count = Math.ceil(respData.count / 24); // >15 dont show numbers
+            pages_count = Math.ceil(respData.count / 24); // > 15 dont show numbers
             
             pagi += '<ul class="wn__pagination"><li><a onclick="prevPage()"><i class="zmdi zmdi-chevron-left"></i></a></li>';
             if (pages_count<=10){
@@ -956,7 +953,7 @@
             document.getElementById("pagination").innerHTML = pagi; // inserts products in from JSON response of search
         }
         else{
-            document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // inserts products in from JSON response of search
+            document.getElementById("nav-grid").innerHTML = '<p class="d-flex justify-content-center pt-3">No Results</p>'; // outputs empty result
         };
 	</script>
     <script>

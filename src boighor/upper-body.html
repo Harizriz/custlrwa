@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/plugins.css">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Cusom css -->
+    <!-- Custom css -->
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Modernizer js -->
@@ -112,13 +112,6 @@
     input[type=submit]:hover {
         background-color: rgb(252, 248, 27);
         color: black;
-    }
-    
-    .container {
-        margin-top: 150px;
-        border-radius: 5px;
-        background-color: #c9c9c9;
-        padding: 20px;
     }
     
     .col-25 {
@@ -597,7 +590,7 @@
                             <li class="wishlist" id="wishlist">
 								<a class="wishlist_active" href="wishlist.html"></a>
 							</li>
-                     <li class="shopcart">
+                            <li class="shopcart">
 								<a class="cartbox_active" id="shopcart"></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
@@ -619,6 +612,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </li>
                             <!-- End Shopping Cart -->
                             <li class="setting__bar__icon"><a class="setting__active"></a>
 								<div class="searchbar__content setting__block p-0">
@@ -821,23 +815,6 @@
             </div>
         </header>
         <!-- //Header -->
-        <!-- Start Search Popup -->
-        <div class="box-search-content search_active block-bg close__top">
-            <form id="search_mini_form" class="minisearch" action="#">
-                <div class="field__search">
-                    <input type="text" placeholder="Search entire store here...">
-                    <div class="action">
-                        <a href="#"><i class="zmdi zmdi-search"></i></a>
-                    </div>
-                </div>
-            </form>
-            <div class="close__wrap">
-                <span>close</span>
-            </div>
-        </div>
-        <!-- End Search Popup -->
-        <!-- Start Bradcaump area -->
-        <!-- End Bradcaump area -->
         <!-- Start Portfolio Area -->
         <br>
         <br>
@@ -940,9 +917,9 @@
                                     <div class="form__btn">
                                         <button>Login</button>
                                         <label class="label-for-checkbox">
-                                                    <input id="rememberme" class="input-checkbox" name="rememberme" value="forever" type="checkbox">
-                                                    <span>Remember me</span>
-                                                </label>
+                                            <input id="rememberme" class="input-checkbox" name="rememberme" value="forever" type="checkbox">
+                                            <span>Remember me</span>
+                                        </label>
                                     </div>
                                     <a class="forget_pass" href="#">Forgot your password?</a>
                                     <a class="forget_pass" href="#">Dont have an account? Sign Up</a>
@@ -950,8 +927,8 @@
                             </form>
                         </div>
                     </div>
+                </section>
             </div>
-            </section>
         </div>
         <div id="myModal2" class="modal2">
             <!-- Modal content -->
@@ -980,43 +957,44 @@
                             </form>
                         </div>
                     </div>
-
+                </section>
             </div>
-            </section>
         </div>
+        <!-- Footer Area -->
         <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
-            <div class="footer-static-top">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-12">
-                        <div class="footer__widget footer__menu">
-                           <div class="ft__logo">
-                                 <a href="index.html">
-                                 <img src="images/logo/black1.png" alt="logo">
-                                 </a>
-                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
-                              </div>
-                           <div class="footer__content">
-                              <ul class="social__net social__net--2 d-flex justify-content-center">
-                              <li><a href="https://www.facebook.com/custlr/"><i class="bi bi-facebook"></i></a></li>
-                              <li><a href="https://twitter.com/custlr"><i class="bi bi-twitter"></i></a></li>
-                              <li><a href="https://www.linkedin.com/in/custlr/"><i class="bi bi-linkedin"></i></a></li>
-                              <li><a href="https://www.youtube.com/channel/UCox3ZZRUjkqrCRwtrnYSW2A"><i class="bi bi-youtube"></i></a></li>
-                              </ul>
-                              <ul class="mainmenu d-flex justify-content-center">
-                                 <li><a onclick="allProducts('men')">Men Product</a></li>
-                                 <li><a onclick="allProducts('women')">Women Product</a></li>
-                                 <li><a onclick="allProducts('kids')">Kids Product</a></li>
-                                 <li><a href="wishlist.html">Wishlist</a></li>
-                                 <li><a href="contact.html">Contact</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </footer>
+			<div class="footer-static-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="footer__widget footer__menu">
+								<div class="ft__logo">
+                                    <a href="index.html">
+                                    <img src="images/logo/black1.png" alt="logo">
+                                    </a>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                                </div>
+								<div class="footer__content">
+									<ul class="social__net social__net--2 d-flex justify-content-center">
+									<li><a href="https://www.facebook.com/custlr/"><i class="bi bi-facebook"></i></a></li>
+									<li><a href="https://twitter.com/custlr"><i class="bi bi-twitter"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/custlr/"><i class="bi bi-linkedin"></i></a></li>
+									<li><a href="https://www.youtube.com/channel/UCox3ZZRUjkqrCRwtrnYSW2A"><i class="bi bi-youtube"></i></a></li>
+									</ul>
+									<ul class="mainmenu d-flex justify-content-center">
+										<li><a onclick="allProducts('men')">Men Product</a></li>
+										<li><a onclick="allProducts('women')">Women Product</a></li>
+										<li><a onclick="allProducts('kids')">Kids Product</a></li>
+										<li><a href="wishlist.html">Wishlist</a></li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+        <!-- //Footer Area -->
     </div>
     <!-- //Main wrapper -->
     <!-- JS Files -->
@@ -1028,44 +1006,95 @@
     <script src="js/cart.js"></script>
     <script src="js/cart-mini.js"></script>
     <script>
-    
-    function saveSizing(){
-        var chest = document.getElementById('chest').value;
-        var arm = document.getElementById('armLength').value;
-        var waist = document.getElementById('waist').value;
-        var hip = document.getElementById('hip').value;
-        if (chest.length == 0 || arm.length  == 0 || waist.length == 0 || hip.length == 0){
-            alert("Please input a number in all the fields!")
-        }
-        else{
-            var customSize = { "chest": chest
-                            , "arm": arm
-                            , "waist": waist
-                            , "hip": hip
-                            };
-            localStorage.setItem('custom_top', JSON.stringify(customSize));
-            alert('Custom size saved!');
-        };
-    };
-    
-    function getHelp(){
-        alert('Put your measurements in inches, then press the \'Save\' button at the bottom of the page')
-    }
+        // opens links in the header tabs
+        function openHeaderLink(brand, search, gender){
+            var request = new XMLHttpRequest()
 
-    function goBack(){
-        if(sessionStorage.getItem('back_page') != undefined || sessionStorage.getItem('back_page') != null){
-            window.location.replace(sessionStorage.getItem('back_page'));
+			// replaces white space
+            if (search == ''){
+                search = brand
+            }
+
+            search_value = "?search=" + encodeURIComponent(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
+            sessionStorage.setItem("search_term_text", search);
+            sessionStorage.setItem("search_term", search_value);
+			// Open a new connection, using the GET request on the URL endpoint
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value
+            request.open('GET', search, true)
+
+			request.onload = function loadHTML(){
+                var resultText = request.responseText;
+				sessionStorage.setItem("search_result", resultText); 
+                sessionStorage.setItem("current_page", 1);
+                sessionStorage.removeItem("selectBox");
+                headerBrandList(gender);
+			}
+			// Send request
+            request.send();
+        };
+
+        // related to previous function openHeaderLink
+        function headerBrandList(gender){
+			var request = new XMLHttpRequest()
+            var search_value = sessionStorage.getItem("search_term");
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
+            request.open('GET', search, true)
+
+            request.onload = function loadHTML(){
+                var resultText = (JSON.parse(request.responseText)).results;
+                var i;
+                var brands = [];
+                for (i=0; i<resultText.length; i++){
+                    brands = brands.concat(resultText[i].brand);
+                };
+                sessionStorage.setItem("brand_list", JSON.stringify(brands));
+                window.location.replace("shop-grid-"+ gender +".html");
+            }
+            // Send request
+            request.send();
+        };
+
+        // saves sizing into local storage, with handlers for empty fields
+        function saveSizing(){
+            var chest = document.getElementById('chest').value;
+            var arm = document.getElementById('armLength').value;
+            var waist = document.getElementById('waist').value;
+            var hip = document.getElementById('hip').value;
+            if (chest.length == 0 || arm.length  == 0 || waist.length == 0 || hip.length == 0){
+                alert("Please input a number in all the fields!")
+            }
+            else{
+                var customSize = { "chest": chest
+                                , "arm": arm
+                                , "waist": waist
+                                , "hip": hip
+                                };
+                localStorage.setItem('custom_top', JSON.stringify(customSize));
+                alert('Custom size saved!');
+            };
+        };
+        
+        // pops up with info for how to use the page
+        function getHelp(){
+            alert('Put your measurements in inches, then press the \'Save\' button at the bottom of the page')
         }
-        else{
-            window.location.replace('index.html');
-        }
-    };
-    </script>
-    <script>
+
+        // goes back to previous page
+        function goBack(){
+            if(sessionStorage.getItem('back_page') != undefined || sessionStorage.getItem('back_page') != null){
+                window.location.replace(sessionStorage.getItem('back_page'));
+            }
+            else{
+                window.location.replace('index.html');
+            }
+        };
+
+        // gets wishlist data
         var wishlist = JSON.parse(localStorage.getItem("wishlist"));
+
+        // empty wishlist handlers
         if (wishlist === undefined || wishlist === null){
             wishlist = [];
-            //console.log('empty wishlist');
         };
 		if (wishlist.length != 0) {
             document.getElementById("wishlist").innerHTML = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length + '</span></a>';
@@ -1074,61 +1103,8 @@
             var empty = '<a class="wishlist_active" href="wishlist.html"></a>';
             document.getElementById("wishlist").innerHTML = empty;
         }
-        // Get the modal
-        var modal = document.getElementById("myModal");
 
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // // When the user clicks the button, open the modal 
-        // btn.onclick = function() {
-        //     modal.style.display = "block";
-        // }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
-    <script>
-        // Get the modal
-        var modal2 = document.getElementById("myModal2");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn2");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close2")[0];
-
-        // // When the user clicks the button, open the modal 
-        // btn.onclick = function() {
-        //     modal2.style.display = "block";
-        // }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal2.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal2) {
-                modal2.style.display = "none";
-            }
-        }
-    </script>
-    <script>
+        // opens all products for a specifc group (men, women, kids)
         function allProducts(gender){ //sends search request to backend for JSON response
             // Create a request variable and assign a new XMLHttpRequest object to it.
             var request = new XMLHttpRequest()
@@ -1153,7 +1129,8 @@
                request.send();
          };
 
-         function footerBrandList(gender){
+        // related to previous function allProducts
+        function footerBrandList(gender){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
@@ -1172,7 +1149,8 @@
             // Send request
             request.send();
 		};
-	</script>
+    </script>
+    
 </body>
 
 </html>

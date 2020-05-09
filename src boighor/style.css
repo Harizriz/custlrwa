@@ -10295,3 +10295,64 @@ Image Search Page Styles
             display: block;
         }
     }
+
+    /*-------------------------
+    Index Styles
+    -------------------------*/
+
+    .zoom {
+        padding: 50px;
+        background-image: url('https://www.muji.com/img/garment/coordinate/2016ss/men/detail13.jpg');
+        background-repeat: no-repeat;
+        background-size: 450px 550px;
+        transition: transform .2s;
+        width: 325px;
+        height: 550px;
+    }
+    
+    .zoom2 {
+        padding: 50px;
+        background-image: url('https://i.pinimg.com/originals/3f/de/ee/3fdeeeb4875c59bec310e2383b3219bd.jpg');
+        background-repeat: no-repeat;
+        background-size: 450px 550px;
+        transition: transform .2s;
+        width: 325px;
+        height: 550px;
+    }
+    
+    .zoom3 {
+        padding: 50px;
+        background-image: url('https://www.muji.com/img/garment/coordinate/2016aw/kids/b06.jpg');
+        background-repeat: no-repeat;
+        background-size: 450px 565px;
+        transition: transform .2s;
+        width: 325px;
+        height: 550px;
+    }
+    
+    .zoom:hover {
+        -ms-transform: scale(1.5);
+        /* IE 9 */
+        -webkit-transform: scale(1.5);
+        /* Safari 3-8 */
+        transform: scale(1.07);
+    }
+    
+    .zoom2:hover {
+        -ms-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        transform: scale(1.07);
+    }
+    
+    .zoom3:hover {
+        -ms-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        transform: scale(1.07);
+    }
+    
+    .button {
+        background-color: rgb(255, 255, 255);
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+    }

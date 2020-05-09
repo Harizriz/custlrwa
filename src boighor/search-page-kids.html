@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/plugins.css">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Cusom css -->
+    <!-- Custom css -->
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Modernizer js -->
@@ -192,7 +192,7 @@
                             <li class="wishlist" id="wishlist">
 								<a class="wishlist_active" href="wishlist.html"></a>
 							</li>
-                     <li class="shopcart">
+                            <li class="shopcart">
 								<a class="cartbox_active" id="shopcart"></a>
                                 <!-- Start Shopping Cart -->
                                 <div class="block-minicart minicart__active">
@@ -214,6 +214,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </li>
                             <!-- End Shopping Cart -->
                             <li class="setting__bar__icon"><a class="setting__active"></a>
 								<div class="searchbar__content setting__block p-0">
@@ -490,17 +491,17 @@
 						<div class="col-lg-12">
 							<div class="footer__widget footer__menu">
 								<div class="ft__logo">
-										<a href="index.html">
-										<img src="images/logo/black1.png" alt="logo">
-										</a>
-										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
-									</div>
+                                    <a href="index.html">
+                                    <img src="images/logo/black1.png" alt="logo">
+                                    </a>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                                </div>
 								<div class="footer__content">
 									<ul class="social__net social__net--2 d-flex justify-content-center">
-									<li><a href="https://www.facebook.com/custlr/"><i class="bi bi-facebook"></i></a></li>
-									<li><a href="https://twitter.com/custlr"><i class="bi bi-twitter"></i></a></li>
-									<li><a href="https://www.linkedin.com/in/custlr/"><i class="bi bi-linkedin"></i></a></li>
-									<li><a href="https://www.youtube.com/channel/UCox3ZZRUjkqrCRwtrnYSW2A"><i class="bi bi-youtube"></i></a></li>
+                                        <li><a href="https://www.facebook.com/custlr/"><i class="bi bi-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/custlr"><i class="bi bi-twitter"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/custlr/"><i class="bi bi-linkedin"></i></a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCox3ZZRUjkqrCRwtrnYSW2A"><i class="bi bi-youtube"></i></a></li>
 									</ul>
 									<ul class="mainmenu d-flex justify-content-center">
 										<li><a onclick="allProducts('men')">Men Product</a></li>
@@ -613,6 +614,7 @@
     <script src="js/sizingChart.js"></script>
     <script src="js/notify.min.js"></script>
     <script>
+        // search bar function
         function search(){ //sends search request to backend for JSON response
 			// Create a request variable and assign a new XMLHttpRequest object to it.
 			var request = new XMLHttpRequest()
@@ -636,6 +638,7 @@
             request.send();
         };
 
+        // related to previous function for search
         function getBrandList(){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
@@ -649,7 +652,6 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
-                // console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-kids.html");
             }
@@ -657,17 +659,18 @@
             request.send();
 		};
 
+        // get wishlist data
         function getWishlist(){
             var wishlist = JSON.parse(localStorage.getItem("wishlist"));
             if (wishlist === undefined || wishlist === null){
                 wishlist = [];
-                //console.log('empty wishlist');
             }
             return wishlist;
         }
         
         var wishlist = getWishlist();
 
+        // empty wishlist handlers
         if (wishlist.length != 0) {
             document.getElementById("wishlist").innerHTML = '<a class="wishlist_active" href="wishlist.html"><span class="product_qun">' + wishlist.length + '</span></a>';
         }
@@ -676,6 +679,7 @@
             document.getElementById("wishlist").innerHTML = empty;
         }
 
+        // opens links in the header tabs
         function openHeaderLink(brand, search, gender){
             var request = new XMLHttpRequest()
 
@@ -702,6 +706,7 @@
             request.send();
         };
 
+        // related to previous function openHeaderLink
         function headerBrandList(gender){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
@@ -715,15 +720,14 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
-                console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-"+ gender +".html");
             }
             // Send request
             request.send();
         }
-	</script>
-    <script>
+
+        // opens all products for a specifc group (men, women, kids)
         function allProducts(gender){ //sends search request to backend for JSON response
             // Create a request variable and assign a new XMLHttpRequest object to it.
             var request = new XMLHttpRequest()
@@ -748,7 +752,8 @@
                request.send();
          };
 
-         function footerBrandList(gender){
+        // related to previous function allProducts
+        function footerBrandList(gender){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
 			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';

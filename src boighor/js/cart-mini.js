@@ -1,5 +1,6 @@
 var miniCart = new Cart();
 
+// loads minicart popup
 function loadMiniCart(){
     var miniCartData = miniCart.all();
     if (miniCartData != null || miniCartData != undefined){
@@ -23,6 +24,7 @@ function loadMiniCart(){
     getCartNotification();
 }
 
+// updates cart icon in header
 function getCartNotification() {
     var empty = '';
     var miniCartData = miniCart.all();
@@ -39,6 +41,7 @@ function getCartNotification() {
 
 loadMiniCart();
 
+// opens specific product in cart
 function openPage(id){
     link = 'http://custlrwa.ddns.net:8000/page/' + id.toString() + '/';
     openLink(link, "pageRespData");
@@ -61,6 +64,7 @@ function openLink(url, storage){ //sends search request to backend for JSON resp
     request.send();
 }
 
+// removes item from cart
 function removeFromCart(id, size){
     cart.remove(id, size);
     loadMiniCart();

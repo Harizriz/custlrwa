@@ -1,3 +1,4 @@
+// adjustable set sizing from sizing charts for men and womens tops and bottoms
 var men_tops = [
     {
         "uk": "34",
@@ -332,6 +333,7 @@ var women_bottoms = [
     }
 ];
 
+// detects sizing type and whether a product is a top or bottom
 function sizingDetection(sizeType, gender, category){ 
     var sizingType = '';
     if (gender == 'Men'){
@@ -398,6 +400,7 @@ function sizingDetection(sizeType, gender, category){
     return sizingType;
 }
 
+// generates a converted size based on variables
 function sizingList(sizing_original, sizeType, gender, category){
     var sizing_list = []
     var sizingType = sizingDetection(sizeType, gender, category)
@@ -549,6 +552,7 @@ function sizingList(sizing_original, sizeType, gender, category){
     return sizing_list
 }
 
+// matches custom sizes with multiple if-else statements to specifically categorize clothing item and gender
 function sizing_match(user_sizing, size, type, gender){ // user measurements, available sizes(sizing_chart), type(top/bottom), gender
     if (type == 'tops'){
         return top_match(user_sizing, size, gender);

@@ -17,7 +17,7 @@
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/plugins.css">
       <link rel="stylesheet" href="style.css">
-      <!-- Cusom css -->
+      <!-- Custom css -->
       <link rel="stylesheet" href="css/custom.css">
       <!-- Modernizer js -->
       <script src="js/vendor/modernizr-3.5.0.min.js"></script>
@@ -1129,7 +1129,6 @@
 
 		function toggleCustomSizing(){
 			sizing_toggle = !sizing_toggle;
-			// console.log(sizing_toggle);
 			if (sizing_toggle){
 				if (tb_toggle == 'tops'){
 					var measurements = JSON.parse(localStorage.getItem("custom_top"));
@@ -1326,7 +1325,6 @@
                 for (i=0; i<resultText.length; i++){
                     brands = brands.concat(resultText[i].brand);
                 };
-                // console.log(brands);
                 sessionStorage.setItem("brand_list", JSON.stringify(brands));
                 window.location.replace("shop-grid-"+ gender +".html");
             }
@@ -1419,9 +1417,6 @@
       
       document.getElementById("sizingRegionDropdownButton").innerHTML = sizingDefault;
       document.getElementById("sizingRegionDropdownButton_mv").innerHTML = sizingDefault;
-      //console.log(sizing_chart);
-      // aria-labelledby="International"
-      
 
       function sizingToCode(size){
          var sizecode;
@@ -1537,10 +1532,8 @@
       var x_image = 0;
       var request = new XMLHttpRequest()
       var wishlist = JSON.parse(localStorage.getItem("wishlist"));
-      console.log(wishlist);
       if (wishlist === undefined || wishlist === null){
          wishlist = [];
-         //console.log('empty wishlist');
       }
 
       function notifyWishlist() {
@@ -1557,7 +1550,6 @@
          var wishlist_btn = '<div>';
          var empty = '';
          if (wishlist.includes(pageData.original_site)){ //highlighted wishlist button
-            // console.log('this item is on the wishlist!');
             wishlist_btn += '<label class="wishlist m-0" for="btnControl" style="background-color: #e59285;background-position: 100% center;border-color: #e59285;" onclick="addWishlist()"></label>';
             if (pageLoaded){
                wishlist_btn += '<div id="notifications"></div>';
@@ -1565,7 +1557,6 @@
             };
          }
          else{ //default, unhighlighted wishlist button
-            // console.log('this item is not on the wishlist!');
             wishlist_btn += '<label class="wishlist m-0" onclick="addWishlist()"></label>';
          };
          wishlist_btn += '</div>';
@@ -1587,8 +1578,6 @@
       function addWishlist(){
          localStorage.setItem('recent_category_cart', pageData.category.toLowerCase());
          if (wishlist.length === 0){
-            //console.log('creating new wishlist');
-            //console.log('adding to wishlist');
             wishlist.push(pageData.original_site);
             localStorage.setItem("recentCategory", pageData.category);
          }
@@ -1597,21 +1586,16 @@
             delete wishlist[removeIndex];
             wishlist = wishlist.filter(item => item);               
             localStorage.setItem("recentCategory", pageData.category);
-            // console.log('removed from wishlist');
          }
          else {
-            //console.log('adding to wishlist');
             wishlist.push(pageData.original_site);
             localStorage.setItem("recentCategory", pageData.category);
          };
          updateBtn();
-         //console.log(wishlist); 
          localStorage.setItem("wishlist", JSON.stringify(wishlist));
-         //console.log('wishlist updated'); 
       };
       
       function getStars(stars){
-         // style=";color:#ff5501;"
          var starText = '<div class="rating_zero d-flex">';
          var emptyStars = 5 - stars;
          var i = 0;
@@ -1641,7 +1625,6 @@
          request.onload = function loadHTML(){
             reviewData = JSON.parse(request.responseText)
             var reviewRes = reviewData.results;
-            // console.log(reviewRes)
             var i;
             var review = [];
             for (i=0; i<reviewRes.length; i++){
@@ -1786,7 +1769,6 @@
       request.open('GET', search, true)
       request.onload = function loadHTML(){
          var resultText = (JSON.parse(request.responseText)).results;
-         // console.log(resultText);
          var brands = '';
          var brands_a= '', brands_b= '', brands_c= '', brands_d= '', brands_e= '', brands_f= '', brands_g= '', brands_h= '', brands_i= '', brands_j= '', brands_k= '', brands_l= '', brands_m= '', brands_n= '', brands_o= '', brands_p= '', brands_q= '', brands_r= '', brands_s= '', brands_t= '', brands_u= '', brands_v= '', brands_w= '', brands_x= '', brands_y= '', brands_z= '', brands_num = '';
          var count_a = 0, count_b = 0, count_c = 0, count_d = 0, count_e = 0, count_f = 0, count_g = 0, count_h = 0, count_i = 0, count_j = 0, count_k = 0, count_l = 0, count_m = 0, count_n = 0, count_o = 0, count_p = 0, count_q = 0, count_r = 0, count_s = 0, count_t = 0, count_u = 0, count_v = 0, count_w = 0, count_x = 0, count_y = 0, count_z = 0, count_num = 0;
