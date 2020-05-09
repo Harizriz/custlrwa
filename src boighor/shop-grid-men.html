@@ -1134,7 +1134,7 @@
             brand += '<li class="pb-2">'
             for (x_brand in brandList){
                 url = sessionStorage.getItem("search_term")
-                var search_url = 'http://custlrwa.ddns.net:8000/scraped/' + url + '&brand=' + brandList[x_brand]
+                var search_url = 'http://custlrwa.ddns.net:8000/scraped/' + url + '&brand=' + encodeURIComponent(brandList[x_brand]);
                 var search_page = 'shop-grid-men.html'
                 var result_storage = 'search_result'
                 brand += "<li><a onclick=\"openCategory('"+ search_url + "', '"+ search_page +"','" + result_storage + "')\">" + brandList[x_brand] + "</a></li>";
