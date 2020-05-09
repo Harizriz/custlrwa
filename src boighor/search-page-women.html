@@ -659,7 +659,7 @@
         
         var sizing_toggle = false;
 		var tb_toggle = 'tops';
-		var tb_search = '&subcategory=tops';
+		var tb_search = '';
 		setTimeout(function(){
             document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
             document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
@@ -810,11 +810,11 @@
 			var request = new XMLHttpRequest()
 
 			// replaces white space
-            search_value = "?search=" + document.getElementById("search_bar").value + "&category=women";
+            search_value = "?search=" + encodeURIComponent(document.getElementById("search_bar").value) + "&category=women";
 			sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
-			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + tb_search;
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + tb_search;
             if (sizing_toggle){
 				search += to_search;
 			}
@@ -835,7 +835,7 @@
         function getBrandList(){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
-            var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
             request.open('GET', search, true)
 
             request.onload = function loadHTML(){
@@ -880,7 +880,7 @@
                 search = brand
             }
 
-            search_value = "?search=" + encodeURI(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
+            search_value = "?search=" + encodeURIComponent(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
             sessionStorage.setItem("search_term_text", search);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
@@ -947,7 +947,7 @@
          function footerBrandList(gender){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
-			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
             request.open('GET', search, true)
 
             request.onload = function loadHTML(){

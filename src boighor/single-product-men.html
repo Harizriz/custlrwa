@@ -1120,7 +1120,7 @@
         
         var sizing_toggle = false;
 		var tb_toggle = 'tops';
-		var tb_search = '&subcategory=tops';
+		var tb_search = '';
 		setTimeout(function(){
             document.getElementById("resetTB").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
             document.getElementById("resetTB_mv").innerHTML = '<input type="checkbox" onclick="toggleTopOrBottom()"><span class="slider_tb round"></span>';
@@ -1297,7 +1297,7 @@
                 search = brand
             }
 
-            search_value = "?search=" + encodeURI(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
+            search_value = "?search=" + encodeURIComponent(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
             sessionStorage.setItem("search_term_text", search);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
@@ -1341,11 +1341,11 @@
          var request = new XMLHttpRequest()
 
          // replaces white space
-            search_value = "?search=" + document.getElementById("search_bar").value + "&category=men";
+            search_value = "?search=" + encodeURIComponent(document.getElementById("search_bar").value) + "&category=men";
             sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
          // Open a new connection, using the GET request on the URL endpoint
-         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value;
          if (sizing_toggle){
 				search += to_search;
 				search += tb_search;
@@ -1367,7 +1367,7 @@
       function getBrandList(){
       var request = new XMLHttpRequest()
          var search_value = sessionStorage.getItem("search_term");
-         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
          request.open('GET', search, true)
 
          request.onload = function loadHTML(){
@@ -1933,7 +1933,7 @@
             };
          };
 
-         var search_text = sessionStorage.getItem("search_term_text");
+         var search_text = decodeURIComponent(sessionStorage.getItem("search_term_text"));
          if (search_text != null){
             if (search_text.length > 12){ //handles search terms that are too long
                search_text = search_text.substring(0, 11) + '...'
@@ -2134,7 +2134,7 @@
 
          search_value = "?category=men" + category;
          // Open a new connection, using the GET request on the URL endpoint
-         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value;
          
          request.open('GET', search, true)
 
@@ -2153,9 +2153,9 @@
          // Create a request variable and assign a new XMLHttpRequest object to it.
          var request = new XMLHttpRequest()
 
-         search_value = sessionStorage.getItem("search_term") + brand;
+         search_value = sessionStorage.getItem("search_term") + encodeURIComponent(brand);
          // Open a new connection, using the GET request on the URL endpoint
-         var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+         var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value;
          
          request.open('GET', search, true)
 
@@ -2217,7 +2217,7 @@
          function footerBrandList(gender){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
-			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
             request.open('GET', search, true)
 
             request.onload = function loadHTML(){

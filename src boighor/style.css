@@ -611,7 +611,7 @@ h6,
     font-size: 16px;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 767px) and (max-width: 991px) {
     h1,
     .h1 {
         font-size: 36px;
@@ -2622,9 +2622,8 @@ Header Styles
     padding: 30px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
     .shop__sidebar {
-        display: flex;
         flex-direction: column-reverse;
         padding-top: 0px;
     }
@@ -6118,6 +6117,7 @@ Single Product Styles
 .product__info__detailed .pro_details_nav {
     border-bottom: 2px solid #ebebeb;
     margin-bottom: 25px;
+    margin-top: 20px;
 }
 
 .product__info__detailed .pro_details_nav a.nav-item {
@@ -7527,7 +7527,7 @@ Faq Styles
 /*--------------------------
 MyAccount Styles
 ----------------------------*/
-
+ 
 .account__title {
     color: #2e2e2e;
     font-size: 28px;
@@ -9905,7 +9905,7 @@ Image Search Page Styles
      left:0;
    }
 
-    @media screen and (max-width: 1600px) and (min-width: 767px) {
+    @media screen and (max-width: 2000px) and (min-width: 767px) {
         #cf6a img {
             display: none;
         }
@@ -9991,7 +9991,7 @@ Image Search Page Styles
         }
     }
 
-    @media screen and (max-width: 1600px) and (min-width: 767px) {
+    @media screen and (max-width: 2000px) and (min-width: 767px) {
         .switch_mv {
            display: none;
         }
@@ -10172,7 +10172,7 @@ Image Search Page Styles
         }
     }  
 
-    @media screen and (max-width: 416px) {
+    @media screen and (max-width: 767px) {
         .cs_mv {
             margin-left: 84px;
         }
@@ -10218,7 +10218,7 @@ Image Search Page Styles
     Breadcrumb Styles
     -------------------------*/
 
-    @media screen and (max-width: 1600px) and (min-width: 514px) {
+    @media screen and (max-width: 2000px) and (min-width: 767px) {
         .mobileview {
             display: none;
         }
@@ -10238,7 +10238,7 @@ Image Search Page Styles
         margin-bottom:10px;
     }
 
-    @media screen and (max-width: 514px) {
+    @media screen and (max-width: 767px) {
         .dot_mv {
             height: 25px;
             width: 25px;
@@ -10249,13 +10249,13 @@ Image Search Page Styles
         }
     }
 
-    @media screen and (max-width: 1600px) and (min-width: 514px) {
+    @media screen and (max-width: 2000px) and (min-width: 767px) {
         .dot_mv {
             display: none;
         }
     }
 
-    @media screen and (max-width: 514px) {
+    @media screen and (max-width: 767px) {
         .dot {
             display: none;
         }
@@ -10272,7 +10272,7 @@ Image Search Page Styles
         }
     }
 
-    @media screen and (max-width: 2000px) and (min-width: 768px) {
+    @media screen and (max-width: 2000px) and (min-width: 767px) {
         .mobile_product {
             display: none;
             height: 0;
@@ -10287,5 +10287,11 @@ Image Search Page Styles
         .modal-content.mobile_modal {
             width:fit-content;
             margin-left: -80px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .row.sidebar {
+            display: block;
         }
     }

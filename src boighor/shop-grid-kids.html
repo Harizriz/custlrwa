@@ -636,7 +636,7 @@
                 search = brand
             }
 
-            search_value = "?search=" + encodeURI(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
+            search_value = "?search=" + encodeURIComponent(search) + "&category=" + gender + '&brand=' + encodeURIComponent(brand);
             sessionStorage.setItem("search_term_text", search);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
@@ -697,11 +697,11 @@
 			var request = new XMLHttpRequest()
 
 			// replaces white space
-            search_value = "?search=" + document.getElementById("search_bar").value + "&category=kids";
+            search_value = "?search=" + encodeURIComponent(document.getElementById("search_bar").value) + "&category=kids";
 			sessionStorage.setItem("search_term_text", document.getElementById("search_bar").value);
             sessionStorage.setItem("search_term", search_value);
 			// Open a new connection, using the GET request on the URL endpoint
-			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value)
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value;
             
             request.open('GET', search, true)
 
@@ -719,7 +719,7 @@
         function getBrandList(){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
-            var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+            var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
             request.open('GET', search, true)
 
             request.onload = function loadHTML(){
@@ -772,7 +772,7 @@
             }
             
             var min = new XMLHttpRequest();
-            min.open('GET',('http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&ordering=price') , true)
+            min.open('GET',('http://custlrwa.ddns.net:8000/scraped/' + url + '&ordering=price') , true)
 			min.onload = function loadHTML(){
                 var minresult = JSON.parse(min.responseText);
                 range[0] = (Math.floor(minresult.results[0].price));
@@ -781,7 +781,7 @@
             min.send();
             
             var max = new XMLHttpRequest();
-            max.open('GET',('http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&ordering=-price') , true)
+            max.open('GET',('http://custlrwa.ddns.net:8000/scraped/' + url + '&ordering=-price') , true)
 			max.onload = function loadHTML(){
                 var maxresult = JSON.parse(max.responseText);
                 range[1] = (Math.ceil(maxresult.results[0].price));
@@ -796,7 +796,7 @@
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", 1);
             sessionStorage.setItem("filtered_price", JSON.stringify(priceRange));
-            filter_search = encodeURI(url) + "&minprice=" + priceRange[0].toString() + "&maxprice=" + priceRange[1].toString();
+            filter_search = url + "&minprice=" + priceRange[0].toString() + "&maxprice=" + priceRange[1].toString();
             openLink("http://custlrwa.ddns.net:8000/scraped/" + filter_search, "shop-grid-kids.html", "search_result");
         };
 
@@ -804,7 +804,7 @@
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", 1);
             sessionStorage.setItem("filtered_price", JSON.stringify(priceRange));
-            openLink("http://custlrwa.ddns.net:8000/scraped/" + encodeURI(url), "shop-grid-kids.html", "search_result");
+            openLink("http://custlrwa.ddns.net:8000/scraped/" + url, "shop-grid-kids.html", "search_result");
         }
 
         function prevPage(){
@@ -824,7 +824,7 @@
         function pageChange(page){
             url = sessionStorage.getItem("search_term");
             sessionStorage.setItem("current_page", page);
-            openLink(('http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&page=' + page), "shop-grid-kids.html", "search_result");
+            openLink(('http://custlrwa.ddns.net:8000/scraped/' + url + '&page=' + page), "shop-grid-kids.html", "search_result");
             
         };
 
@@ -836,7 +836,7 @@
             if (filteredPrice == null){
                 filteredPrice = priceRange;
             }
-            filter_search = encodeURI(url) + "&minprice=" + filteredPrice[0].toString() + "&maxprice=" + filteredPrice[1].toString() + '&ordering=' + orderby;
+            filter_search = url + "&minprice=" + filteredPrice[0].toString() + "&maxprice=" + filteredPrice[1].toString() + '&ordering=' + orderby;
             openLink(('http://custlrwa.ddns.net:8000/scraped/' + filter_search), "shop-grid-kids.html", "search_result");
                 
         };
@@ -922,7 +922,7 @@
             brand += '<li class="pb-2">'
             for (x_brand in brandList){
                 url = sessionStorage.getItem("search_term")
-                var search_url = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(url) + '&brand=' + brandList[x_brand]
+                var search_url = 'http://custlrwa.ddns.net:8000/scraped/' + url + '&brand=' + brandList[x_brand]
                 var search_page = 'shop-grid-kids.html'
                 var result_storage = 'search_result'
                 brand += "<li><a onclick=\"openCategory('"+ search_url + "', '"+ search_page +"','" + result_storage + "')\">" + brandList[x_brand] + "</a></li>";
@@ -987,7 +987,7 @@
          function footerBrandList(gender){
 			var request = new XMLHttpRequest()
             var search_value = sessionStorage.getItem("search_term");
-			var search = 'http://custlrwa.ddns.net:8000/scraped/' + encodeURI(search_value) + '&brandlist=true';
+			var search = 'http://custlrwa.ddns.net:8000/scraped/' + search_value + '&brandlist=true';
             request.open('GET', search, true)
 
             request.onload = function loadHTML(){
