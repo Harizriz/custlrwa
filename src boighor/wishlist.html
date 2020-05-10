@@ -556,9 +556,9 @@
         
         // generates html elements for wishlist
 		function buildWishlist(){
-			if (wishlist === undefined || wishlist === null){
-				wishlistHTML = '<p>Wishlist Empty</p>!'
-			}
+			if (wishlist === undefined || wishlist === null || wishlist.length === 0){
+                wishlistHTML = '<tr><td class="pl-3">Wishlist Empty!</td><td><td><td><td></td></td></td></td></tr>';
+            }
 			else{
 				for(i in wishlist){
 					getProduct(wishlist[i]);			
