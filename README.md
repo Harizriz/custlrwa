@@ -7,7 +7,7 @@ The basic idea is to create something similar to Booking.com, where a web/mobile
 ## Frontend
 **Done by Hariz, Hanis, and Nooh**
 
-To use the website, just start from src boighor/index.html! The files are all there and linked to each other without any external packages required. Other pages can be opened too, but the general flow for the website should always start from index.html, as everything links from that point!
+To use the website, just start from src boighor/index.html. The files are all there and linked to each other without any external packages required. Other pages can be opened too, but the general flow for the website should always start from index.html, as everything links from that point.
 
 ## Backend
 **Done By Gerald and Brandon**

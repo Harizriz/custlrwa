@@ -1,7 +1,12 @@
+"""
+Querying logic and data management for serializers
+Done by Gerald
+"""
+
 from django.shortcuts import render
 from rest_framework import viewsets, filters, generics, pagination
-from .models import CustomSizing, ScrapedResult, Sizing, ImageUrl, Reviews
-from .serializers import ScrapedResultSerializer, CustomResultSerializer, SizingSerializer, ReviewsSerializer, BrandListSerializer
+from .models import ScrapedResult, Sizing, ImageUrl, Reviews
+from .serializers import ScrapedResultSerializer, SizingSerializer, ReviewsSerializer, BrandListSerializer
 
 class ReviewsPagination(pagination.PageNumberPagination):
     page_size = 5
@@ -99,9 +104,3 @@ class ReviewsAPIView(generics.ListCreateAPIView):
     serializer_class = ReviewsSerializer
     pagination_class = ReviewsPagination
     http_method_names = ['get', 'post', 'delete']
-
-class CustomResultView(viewsets.ModelViewSet):
-    queryset = ScrapedResult.objects.all()
-    serializer_class = CustomResultSerializer
-    pagination_class = ResultPagination
-    http_method_names = ['get']

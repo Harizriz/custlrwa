@@ -1,3 +1,7 @@
+"""
+Clears Database
+Done by Brandon
+"""
 import psycopg2
 
 connection = psycopg2.connect(host='localhost',

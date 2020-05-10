@@ -1,3 +1,8 @@
+"""
+Inserts data from eShakti
+Done by Brandon
+"""
+
 import urllib.request
 import json
 import psycopg2

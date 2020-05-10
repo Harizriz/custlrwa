@@ -1,3 +1,8 @@
+"""
+Models for Database
+Done by Gerald
+"""
+
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
@@ -32,12 +37,3 @@ class Reviews(models.Model):
     quality = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     price = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     value = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
-
-class CustomSizing(models.Model):
-    product = models.ForeignKey(ScrapedResult, on_delete=models.CASCADE, null = True, related_name='custom_sizing')
-    chest_size = models.FloatField(null = True)
-    waist_size = models.FloatField(null = True)
-    sleeve_length = models.FloatField(null = True)
-    shoulder_size = models.FloatField(null = True)
-    neck_size = models.FloatField(null = True)
-    arm_size = models.FloatField(null = True)

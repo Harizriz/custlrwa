@@ -1,5 +1,10 @@
+"""
+Formats and serializes data into JSON format
+Done by Gerald
+"""
+
 from rest_framework import serializers
-from .models import ScrapedResult, CustomSizing, Sizing, ImageUrl, Reviews
+from .models import ScrapedResult, Sizing, ImageUrl, Reviews
 
 class BrandListSerializer(serializers.ModelSerializer):
     class Meta:
@@ -28,16 +33,3 @@ class ScrapedResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = ScrapedResult
         fields = ('id', 'product_name', 'price', 'currency', 'brand', 'image_url', 'product_description', 'original_site', 'category', 'subcategory', 'imagelist', 'sizing', 'sizing_type', 'occasion')
-
-class CustomSizingSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CustomSizing
-        fields = ('product', 'chest_size', 'waist_size', 'sleeve_length', 'shoulder_size', 'neck_size', 'arm_size')
-
-class CustomResultSerializer(serializers.ModelSerializer):
-    imagelist = ImageListSerializer(source ='images', many=True, required=False)
-    sizing = CustomSizingSerializer(required=False)
-
-    class Meta:
-        model = ScrapedResult
-        fields = ('id', 'product_name', 'price', 'currency', 'brand', 'image_url', 'product_description', 'original_site', 'category', 'subcategory', 'imagelist', 'sizing')

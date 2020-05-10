@@ -1,3 +1,8 @@
+"""
+Inserts data from Zalora
+Done by Brandon
+"""
+
 import urllib.request
 import json
 import re
