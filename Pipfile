@@ -11,6 +11,7 @@ beautifulsoup4 = "*"
 django = "==2.2.9"
 djangorestframework = "*"
 pylint = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.7"
