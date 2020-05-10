@@ -699,6 +699,7 @@
 						sizing_match(adjusted_measurements, men_tops, 'tops', 'Men')
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_top'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                        tb_search = '&subcategory=tops';
 						localStorage.setItem("check_top", "check");
 					}
 				}
@@ -723,6 +724,7 @@
 						sizing_match(adjusted_measurements, men_bottoms, 'bottoms', 'Men')
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_bottom'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
+                        tb_search = '&subcategory=bottoms';
 						localStorage.setItem("check_bottom", "check");
 					}
 				}
@@ -761,6 +763,7 @@
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_bottom'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
                         tb_toggle = 'bottoms'
+                        tb_search = '&subcategory=bottoms';
 						localStorage.setItem("check_bottom", "check");
 					}
                 }
@@ -791,6 +794,7 @@
 						var temp_obj = JSON.parse(localStorage.getItem('best_mens_top'));
 						to_search = '&uk=' + temp_obj.uk + '&us=' + temp_obj.us + '&eu=' + temp_obj.eu + '&intl=' + temp_obj.intl
                         tb_toggle = 'tops';
+                        tb_search = '&subcategory=tops';
 						localStorage.setItem("check_top", "check");
 					}
                 }

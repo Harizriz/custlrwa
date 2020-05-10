@@ -945,6 +945,23 @@
         };
         getMinMaxPrice(priceRange);
 
+        // opens links for pages by sending requests to the backend
+        function openLink(url, page, storage){ //sends search request to backend for JSON response
+			// Create a request variable and assign a new XMLHttpRequest object to it.
+			var request = new XMLHttpRequest()
+            
+			// Open a new connection, using the GET request on the URL endpoint
+            request.open('GET', url, true)
+
+			request.onload = function loadHTML(){
+				var resultText = request.responseText;
+				sessionStorage.setItem(storage, resultText);
+                window.location.replace(page);
+			}
+			// Send request
+			request.send();
+        }
+
         // filter button for the price slider, sends request with specific range of prices to find
         function filterBtn(){
             url = sessionStorage.getItem("search_term");

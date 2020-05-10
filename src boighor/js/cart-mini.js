@@ -44,9 +44,9 @@ loadMiniCart();
 // opens specific product in cart
 function openPage(id){
     link = 'http://custlrwa.ddns.net:8000/page/' + id.toString() + '/';
-    openLink(link, "pageRespData");
+    openCartLink(link, "pageRespData");
 };
-function openLink(url, storage){ //sends search request to backend for JSON response
+function openCartLink(url, storage){ //sends search request to backend for JSON response
     // Create a request variable and assign a new XMLHttpRequest object to it.
     var request = new XMLHttpRequest()
     

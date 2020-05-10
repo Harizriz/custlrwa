@@ -10349,10 +10349,3 @@ Image Search Page Styles
         -webkit-transform: scale(1.5);
         transform: scale(1.07);
     }
-    
-    .button {
-        background-color: rgb(255, 255, 255);
-        border: none;
-        text-decoration: none;
-        cursor: pointer;
-    }
