@@ -1,3 +1,4 @@
+// Code created by Gerald
 class Cart{
     //constructor(products) {
     constructor(){

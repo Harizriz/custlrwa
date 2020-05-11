@@ -1,3 +1,4 @@
+// Code created by Gerald and Hariz
 var miniCart = new Cart();
 
 // loads minicart popup

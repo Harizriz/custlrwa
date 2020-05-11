@@ -1,3 +1,4 @@
+// Code written by Gerald
 // adjustable set sizing from sizing charts for men and womens tops and bottoms
 var men_tops = [
     {
